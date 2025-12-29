@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Türk Tarihi | Destansı Kronoloji</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ana:#5a0f14;
+  --vurgu:#d4af37;
+  --koyu:#0f0f0f;
+  --zemin:#f3efe6;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Montserrat,sans-serif;
+  background-color: var(--zemin);
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-attachment: fixed;
+  color:#2b2b2b;
+  overflow-x: hidden;
+}
+
+/* Arka Plan Filigran Efekti */
+body::after {
+    content: "";
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; height: 60%;
+    background: url('https://img.icons8.com/ios/500/000000/wolf.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ========== HERO SLIDER ========== */
+.hero-slider{
+  position:relative;
+  height:40vh;
+  min-height:350px;
+  overflow:hidden;
+  border-bottom: 4px solid var(--vurgu);
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  animation:slider 24s infinite;
+  filter:brightness(.35) sepia(0.3);
+}
+
+.s1{background-image:url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b");animation-delay:0s;}
+.s2{background-image:url("https://images.unsplash.com/photo-1580136579312-94651dfd596d");animation-delay:6s;}
+.s3{background-image:url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da");animation-delay:12s;}
+.s4{background-image:url("https://images.unsplash.com/photo-1580136579312-94651dfd596d");animation-delay:18s;}
+
+@keyframes slider{
+  0%{opacity:0; transform: scale(1);}
+  5%{opacity:1;}
+  25%{opacity:1;}
+  30%{opacity:0; transform: scale(1.1);}
+  100%{opacity:0;}
+}
+
+.hero-text{
+  position:relative; z-index:2; height:100%;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; color:var(--vurgu);
+}
+
+.hero-text h1{
+  font-family:Cinzel,serif; font-size:3.5rem; letter-spacing:8px;
+  text-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* ========== KONTEYNER YAPISI (GRID) ========== */
+.main-wrapper {
+    max-width: 1250px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+    .main-wrapper { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+}
+
+/* ========== DEVLET KARTI ========== */
+.state{
+  display:flex;
+  background:rgba(255,255,255,0.9);
+  margin-bottom:35px;
+  border-left:8px solid var(--ana);
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+  position: relative;
+  transition: .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 0; transform: translateY(30px);
+}
+
+.state.reveal { opacity: 1; transform: translateY(0); }
+
+.state::after {
+    content: "◈"; 
+    position: absolute; top: 10px; right: 10px;
+    color: var(--ana); opacity: 0.1; font-size: 1.5rem;
+}
+
+.state:hover{ transform: scale(1.02); box-shadow: 15px 15px 40px rgba(90, 15, 20, 0.1); }
+
+.state-content{ flex:1; padding:35px; }
+.state-content h3{ font-family:Cinzel,serif; color:var(--ana); font-size: 1.6rem; }
+.state-content span{ color:var(--vurgu); font-weight: bold; margin-bottom: 10px; display: block; }
+.state-content p{ color: #444; font-size: 0.95rem; line-height: 1.8; }
+
+.state-flag{
+  width:130px; background:#f4f4f4;
+  display:flex; align-items:center; justify-content:center;
+  border-left: 1px solid #eee;
+}
+.state-flag img{ width:75px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); }
+
+/* ========== SIDEBAR (SAĞ TARAF) ========== */
+.sidebar-widget {
+    background: var(--ana);
+    color: var(--vurgu);
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 2px solid var(--vurgu);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    position: sticky; top: 100px;
+}
+
+.sidebar-widget h4 { font-family: Cinzel; margin-bottom: 15px; border-bottom: 1px solid var(--vurgu); padding-bottom: 5px; }
+.sidebar-widget ul { list-style: none; padding: 0; }
+.sidebar-widget li { margin-bottom: 10px; font-size: 0.85rem; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 5px; }
+
+/* ========== NAV & FOOTER ========== */
+nav{
+  position:sticky; top:0; background:rgba(15,15,15,.98);
+  display:flex; justify-content:center; gap:25px;
+  padding:18px; color:var(--vurgu); z-index:100;
+  font-family: Cinzel; border-bottom: 3px solid var(--ana);
+}
+
+footer{
+  background:var(--koyu); color:var(--vurgu);
+  text-align:center; padding:80px 20px; border-top: 5px solid var(--ana);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  ASYA • AVRUPA • ANADOLU • CUMHURİYET
+</nav>
+
+<section class="hero-slider">
+  <div class="slide s1"></div>
+  <div class="slide s2"></div>
+  <div class="slide s3"></div>
+  <div class="slide s4"></div>
+  <div class="hero-text">
+    <h1>TÜRK DÜNYASI</h1>
+    <p>Bozkırdan Cihan İmparatorluğuna...</p>
+  </div>
+</section>
+
+<div class="main-wrapper">
+    <div class="state-list">
+       
+       <div class="state">
+  <div class="state-content">
+    <h3>Türkler Hakkında </h3>
+    <p>
+      Türkler, Orta Asya kökenli köklü bir millettir. Tarih sahnesine ilk olarak
+      Orta Asya bozkırlarında çıkmış, zamanla Asya, Avrupa ve Afrika kıtalarına
+      yayılarak geniş bir coğrafyada etkili olmuşlardır.
+    </p>
+    <p>
+      Türk toplumlarında devlet anlayışı büyük önem taşımış, töre adı verilen
+      yazısız hukuk kuralları sosyal hayatı düzenlemiştir. Hükümdarlık anlayışı
+      “kut” inancına dayanmış, devletin halk için var olduğu kabul edilmiştir.
+    </p>
+    <p>
+      Türkler askerî teşkilatları, atlı savaş kültürleri ve disiplinli orduları ile
+      tanınmıştır. Aile yapısı güçlüdür ve kadınlar toplum içinde saygın bir
+      konuma sahip olmuştur.
+    </p>
+    <p>
+      Tarih boyunca farklı dinleri benimseyen Türkler, İslamiyet’i kabul
+      ettikten sonra Türk-İslam medeniyetinin oluşmasında önemli rol
+      oynamışlardır. Kurdukları devletler dünya tarihini derinden etkilemiştir.
+    </p>
+    <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Turk-genel%20-bilgilendirme/turk-genel-bilgi.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+  </div>
+</div>
+        
+        <div class="state">
+          <div class="state-content">
+            <h3>Büyük Hun İmparatorluğu</h3>
+            <span>MÖ 220 – MS 216</span>
+            <p data-path-to-node="0">Asya Hun İmparatorluğu, tarih sahnesine çıkan ilk büyük Türk devleti ve Orta Asya göçebe kavimlerini tek bir çatı altında toplayan ilk siyasi birliktir. MÖ 3. yüzyılda Ötüken merkezli olarak kurulan bu imparatorluk, özellikle <strong data-path-to-node="0" data-index-in-node="226">Mete Han</strong> döneminde askeri ve idari açıdan zirveye ulaşmıştır. Mete Han, günümüz ordularının temeli sayılan <strong data-path-to-node="0" data-index-in-node="333">onlu sistemi</strong> bulmuş ve bu sayede disiplinli, hızlı hareket eden süvari birlikleriyle Çin başta olmak üzere çevre medeniyetler üzerinde büyük bir üstünlük kurmuştur. Hunlar, bozkır hayatının bir gereği olarak ordu-millet anlayışını benimsemiş; kadın-erkek, genç-yaşlı herkesin her an savaşa hazır olduğu dinamik bir toplum yapısı oluşturmuştur.</p>
+            <p data-path-to-node="1">İmparatorluğun stratejik hedefi, <strong data-path-to-node="1" data-index-in-node="33">İpek Yolu</strong>'nun kontrolünü ele geçirerek ekonomik güç kazanmak ve Çin'i vergiye bağlayarak yerleşik kültürün asimile edici etkisinden korunmaktır. Bu dönemde Türk mitolojisinin ve töresinin temelleri atılmış, devlet yönetimi "Kurultay" ve "İkili Teşkilat" (Doğu-Batı) sistemine göre şekillenmiştir. Asya Hunları, sadece askeri başarılarıyla değil, aynı zamanda demir işleme sanatındaki ustalıkları ve hayvan üslubuna dayalı sanat anlayışlarıyla da bozkır kültürünün öncüsü olmuşlardır. MS 216 yılında iç karışıklıklar ve Çin baskıları sonucu yıkılsa da, Hunların bıraktığı miras; Avrupa Hunları'ndan Göktürkler'e kadar tüm Türk devletlerinin yönetim şablonunu oluşturmuştur.</p> 
+            
+              
+        
+    <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Buyuk-hun-imparatorlugu/buyuk-hun.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+            <p>&nbsp;</p>
+          </div>
+          <div class="state-flag"><img src="Buyuk-hun-imparatorlugu/hun imparatorluğu.jpeg" width="300" height="168" alt=""/></div>
+        </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Avrupa Hun İmparatorluğu</h3>
+            <span>375 – 469</span>
+            <p data-path-to-node="0">Avrupa Hun Devleti, Kavimler Göçü'nün ardından Macaristan merkezli kurulan ve Avrupa siyasetine yön veren ilk Türk devletidir. 375 yılında Balamir önderliğinde temelleri atılan bu devlet, özellikle Uldız döneminde dış politikasını netleştirerek Bizans'ı baskı altında tutmuş, Batı Roma ile ise barbar kavimlere karşı zaman zaman iş birliği yapmıştır.</p>
+            <p data-path-to-node="1">Devletin en güçlü dönemi, "Tanrı'nın Kamçısı" olarak bilinen <strong data-path-to-node="1" data-index-in-node="61">Attila</strong> zamanında yaşanmıştır. Attila, Doğu Roma&rsquo;yı (Bizans) ağır vergilere bağlamış, ardından rotasını Batı&rsquo;ya çevirerek Galya ve İtalya seferlerine çıkmıştır. Papa&rsquo;nın ricası ve Roma&rsquo;nın hristiyan dünyasındaki kutsallığı gibi nedenlerle Roma şehrini yıkmadan geri çekilen Attila, Hun İmparatorluğu'nu döneminin en büyük askeri gücü haline getirmiştir.</p>
+            <p data-path-to-node="2">Attila'nın 453 yılındaki ölümünden sonra, oğulları arasındaki taht kavgaları ve egemenlik altındaki kavimlerin isyanları devleti zayıflatmıştır. 469 yılında siyasi varlığı sona eren Hunlar, Avrupa'ya askeri disiplin, pantolon ve ceket kullanımı gibi kültürel unsurları taşımış; bugünkü Avrupa milletlerinin ve devlet yapılarının oluşmasında köprü vazifesi görmüşlerdir.</p>
+           
+               <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Avrupa-hun-devleti/Avrupa-hun.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Avrupa-hun-devleti/avrupahun.jpeg" width="190" height="148" alt=""/></div>
+        </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Ak Hun İmparatorluğu</h3>
+            <span>420 – 552</span>
+            <p data-path-to-node="0">Ak Hun İmparatorluğu, tarih sahnesine 4. yüzyılın ortalarında çıkan ve Orta Asya'dan Hindistan içlerine kadar uzanan geniş bir coğrafyada hüküm süren, Türk kökenli en savaşçı ve stratejik devletlerden biridir. Büyük Hun İmparatorluğu'nun parçalanmasının ardından batıya yönelen kütlelerin oluşturduğu bu devlet, Bizans kaynaklarında Eftalitler, Çin kaynaklarında ise Ye-ta adıyla anılır. Başkenti bugünkü Afganistan sınırları içinde yer alan kadim Belh şehri olan imparatorluk, göçebeliğin askeri disiplini ile yerleşik hayatın ticari gücünü ustalıkla birleştirmiştir.</p>
+            <p data-path-to-node="1">Siyasi tarihleri incelendiğinde, Ak Hunların dönemin iki büyük gücü olan Sasani İmparatorluğu ve Gupta İmparatorluğu üzerinde kurduğu mutlak üstünlük dikkat çeker. Özellikle Aksuvar Han döneminde Sasaniler ağır bir yenilgiye uğratılmış, Sasani Şahı Firuz savaş meydanında hayatını kaybetmiş ve İran toprakları uzun süre Ak Hunlara vergi ödemek zorunda kalmıştır. Öyle ki, İran'da çıkan Mazdek İsyanı gibi büyük iç karışıklıklar bile Ak Hun ordusunun müdahalesiyle bastırılmış, bu da onların bölgedeki "karar verici güç" konumunu pekiştirmiştir.</p>
+            <p data-path-to-node="2">Güneyde ise Toraman Han ve ardından gelen Mihiragula, Hindistan'ın kuzeyini tamamen kontrol altına alarak Türk hakimiyetini Hint alt kıtasına taşımışlardır. Hindistan'ın Atilla'sı olarak anılan Mihiragula döneminde devlet en geniş sınırlarına ulaşmış; İpek Yolu'nun kontrolü sayesinde hem ekonomik hem de kültürel bir zirve yaşanmıştır. Kendi adlarına gümüş para bastıran Ak Hunlar, Gök Tanrı inancını korumakla birlikte hakimiyetleri altındaki Budizm ve Maniheizm gibi inançlara karşı da hoşgörülü bir yönetim sergilemişlerdir.</p>
+            <p data-path-to-node="3">Bu görkemli imparatorluğun sonu, 567 yılında bölgedeki güç dengelerinin değişmesiyle gelmiştir. Ak Hunların Orta Asya'daki hakimiyetinden rahatsız olan Kök Türk Kağanlığı (İstemi Yabgu) ile Sasani İmparatorluğu (Anuşirvan) gizli bir ittifak kurarak devlete iki koldan saldırmıştır. Bu büyük kıskacın ardından Ak Hun toprakları Ceyhun Nehri sınır kabul edilerek paylaşılmış ve imparatorluk tarih sahnesinden çekilmiştir. Ancak bıraktıkları miras, bugün bile Hindistan ve Orta Asya toplumlarının etnik ve kültürel yapısında varlığını hissettirmeye devam etmektedir.</p>
+            <p>&nbsp;</p>
+           <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/ak-hun-imparatorlugu/akhunimparatorlugu.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="ak-hun-imparatorlugu/akhun.png" width="265" height="190" alt=""/></div>
+        </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Köktürk Kağanlığı</h3>
+            <span>552 – 745</span>
+            <p data-path-to-node="0">Kök Türk Devleti, Türk adını resmi bir devlet ismi olarak dünya tarihine kazıyan ve Orta Asya&rsquo;nın uçsuz bucaksız bozkırlarını tek bir bayrak altında toplayan tarihteki en görkemli siyasi yapılardan biridir. Bu devletin kuruluşu, Altay Dağları çevresinde demircilikle uğraşan ve Avar Kağanlığı&rsquo;na bağlı yaşayan Türk boylarının, Bumin Kağan önderliğinde başlattığı büyük bir bağımsızlık mücadelesine dayanır. Beş yüz elli iki yılında Avar hakimiyetine son vererek Ötüken merkezli kurulan bu imparatorluk, Türk devlet geleneğinin en temel unsurlarından biri olan ikili teşkilat yapısını benimsemiştir. Devletin doğu kanadını asıl kağan sıfatıyla Bumin yönetirken, batı toprakları kardeşi İstemi Yabgu&rsquo;nun idaresine bırakılmıştır. İstemi Yabgu, batıda yürüttüğü akıllı diplomasi ve askeri seferlerle Ak Hun İmparatorluğu&rsquo;nu ortadan kaldırmış, Sasaniler ve Bizans ile doğrudan diplomatik ilişkiler kurarak İpek Yolu&rsquo;nun kontrolünü Türklerin eline geçirmiştir.</p>
+            <p data-path-to-node="1">Zaman içerisinde Çin&rsquo;in böl ve yönet politikaları ve iç çekişmeler sonucunda devlet zayıflayarak Doğu ve Batı olarak ikiye bölünmüş, ardından bir fetret devrine girerek Çin hakimiyeti altına girmiştir. Ancak Türk milletinin bağımsızlık arzusu sönmemiş, Kürşad gibi kahramanların başlattığı direniş ruhu elli yıllık bir esaretin ardından Kutluk Kağan liderliğinde yeniden alevlenmiştir. İlteriş unvanını alan Kutluk Kağan, Türk boylarını ikinci kez bir araya getirerek devleti yeniden ayağa kaldırmıştır. Bu ikinci dönemde Bilge Kağan, Kültigin ve büyük devlet adamı Tonyukuk, imparatorluğun altın çağını yaşatmışlardır. Bu dönemin en kıymetli mirası olan Orhun Yazıtları, Türk tarihinin, dilinin ve devlet felsefesinin ilk yazılı belgeleri olarak dikilmiştir. Bu anıtlar aracılığıyla Türk milletine birlik olması, Çin entrikalarına karşı uyanık kalması ve töreye sıkı sıkıya bağlı kalması öğütlenmiştir.</p>
+            <p data-path-to-node="2">Kök Türklerin sosyal ve ekonomik hayatı, bozkırın zorlu şartlarına uyum sağlayan hayvancılık ve ileri düzeydeki demircilik faaliyetleri üzerine kuruludur. Türkler, maden işlemedeki ustalıkları sayesinde dönemin en dayanıklı silahlarını üretmiş ve askeri teknolojide üstünlük kurmuşlardır. Toplumun temeli ise yazısız hukuk kuralları olan töre ile korunmuştur. Devletin temel felsefesi olan Gök Tanrı inancı, kainatın yaratıcısına duyulan bağlılığı ve doğaya olan saygıyı temsil etmiştir. Sekizinci yüzyılın ortalarında taht kavgaları ve Uygur gibi diğer Türk boylarının yükselişiyle Kök Türk Devleti siyasi varlığını kaybetse de, bıraktığı devlet teşkilatlanması ve kültürel bilinç, kendisinden sonra gelen tüm Türk devletlerinin temel taşı olmuştur.</p>
+            <p>&nbsp;</p>
+             <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Kokturrk-devleti/kokturk.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Kokturrk-devleti/köktürkdevleti.png" width="275" height="183" alt=""/></div>
+        </div>
+ <div class="state">
+          <div class="state-content">
+            <h3>Avar kağanlığı </h3>
+            <span>552- 558</span>
+            <p data-start="155" data-end="569"><strong data-start="155" data-end="173">Avar Kağanlığı</strong>, Orta Asya kökenli bir Türk devletidir ve 6. yüzyılın ortalarından 9. yüzyılın başlarına kadar tarih sahnesinde önemli bir rol oynamıştır. Avarların kökeni kesin olarak net olmamakla birlikte, büyük çoğunlukla Göktürk baskısı sonucunda Orta Asya&rsquo;dan batıya göç eden Türk topluluklarından biri oldukları kabul edilir. Bu göç süreci, Avarların Avrupa tarihine doğrudan etki etmelerini sağlamıştır.</p>
+            <p data-start="571" data-end="973">Avarlar, 558 yılında Bizans kaynaklarında ilk kez görülmüş, kısa süre içerisinde Karadeniz&rsquo;in kuzeyinden Orta Avrupa&rsquo;ya doğru ilerlemişlerdir. 6. yüzyılın sonlarına doğru bugünkü Macaristan Ovası (Pannonia) merkez olmak üzere <strong data-start="797" data-end="815">Avar Kağanlığı</strong>nı kurmuşlardır. Devletin başında &ldquo;kağan&rdquo; unvanını taşıyan hükümdar bulunmaktaydı ve bu durum Avarların Türk devlet geleneğini sürdürdüklerini göstermektedir.</p>
+            <p data-start="975" data-end="1404">Avar Kağanlığı, özellikle askerî gücüyle dikkat çekmiştir. Atlı göçebe savaş taktiklerini Avrupa&rsquo;ya taşıyan Avarlar, üzengi kullanımını Avrupa&rsquo;da yaygınlaştırmış ve bu durum Avrupa askerî tarihinde önemli bir dönüşüm yaratmıştır. Slav kavimleri üzerinde büyük bir baskı kurmuşlar, Balkanlar&rsquo;da ve Orta Avrupa&rsquo;da uzun süre hâkimiyet sağlamışlardır. Avarlar, Slavların Avrupa içlerine yayılmasında da dolaylı bir rol oynamışlardır.</p>
+            <p data-start="1406" data-end="1828">Bizans İmparatorluğu ile Avarlar arasında hem savaşlar hem de diplomatik ilişkiler yaşanmıştır. Avarlar zaman zaman Bizans&rsquo;ı vergiye bağlamış, İstanbul&rsquo;u kuşatacak kadar güçlenmişlerdir. Özellikle 626 yılında Sasanilerle birlikte gerçekleştirilen İstanbul Kuşatması, Avarların ulaştığı askerî gücün en önemli göstergelerinden biridir. Ancak bu kuşatma başarısız olmuş ve Avarların gücü yavaş yavaş zayıflamaya başlamıştır.</p>
+            <p data-start="1830" data-end="2182">Avar Kağanlığı&rsquo;nın zayıflamasında iç karışıklıklar, Slav isyanları ve dış baskılar etkili olmuştur. 8. yüzyıldan itibaren Frank Krallığı (özellikle Şarlman) Avarlar üzerine seferler düzenlemiş, bu seferler sonucunda Avarların siyasi gücü büyük ölçüde kırılmıştır. 9. yüzyılın başlarında Avar Kağanlığı tamamen yıkılmış ve tarih sahnesinden silinmiştir.</p>
+            <p data-start="2184" data-end="2530">Avarlar yazılı eser bırakmadıkları için kültürleri hakkında bilgiler sınırlıdır; ancak arkeolojik buluntular, onların gelişmiş bir metal işçiliğine, süsleme sanatına ve askerî donanıma sahip olduklarını göstermektedir. Devlet yapıları, töre anlayışları ve kağanlık sistemiyle Türk devlet geleneğinin Avrupa&rsquo;daki temsilcilerinden biri olmuşlardır.</p>
+            <p data-start="2532" data-end="2783">Sonuç olarak Avar Kağanlığı, Türk tarihinin Avrupa&rsquo;ya uzanan önemli halkalarından biridir. Hem Avrupa&rsquo;nın siyasi yapısını hem de askerî teknolojisini etkilemiş, Türklerin tarih sahnesindeki yayılma alanının ne kadar geniş olduğunu açıkça göstermiştir.</p>
+            <p data-path-to-node="0">&nbsp;</p>
+           <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Avar-kaganl%C4%B1g%C4%B1/avar.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Avar-kaganlıgı/avar.png" width="290" height="174" alt=""/></div>
+      </div>
+ <div class="state">
+          <div class="state-content">
+            <h3>Hazar kağanlığı </h3>
+            <span>558-650</span>
+            <p data-start="252" data-end="711">Hazar Kağanlığı, <strong data-start="269" data-end="301">6. yüzyılın ikinci yarısında</strong>, genel kabul gören görüşe göre <strong data-start="333" data-end="395">yaklaşık 558–650 yılları arasında teşekkül etmeye başlamış</strong>, <strong data-start="397" data-end="439">7. yüzyılın ortalarında (yaklaşık 650)</strong> ise tam anlamıyla bağımsız ve güçlü bir devlet haline gelmiştir. Hazarlar, <strong data-start="515" data-end="565">Batı Göktürk Kağanlığı&rsquo;nın dağılmasından sonra</strong> tarih sahnesine çıkmış ve kısa sürede <strong data-start="604" data-end="692">Kafkaslar, Hazar Denizi&rsquo;nin kuzeyi, İdil (Volga) ve Don nehirleri arasındaki bölgeye</strong> hâkim olmuşlardır.</p>
+            <p data-start="713" data-end="1185">Hazar Kağanlığı&rsquo;nın en dikkat çekici özelliklerinden biri, <strong data-start="772" data-end="792">stratejik konumu</strong> sayesinde <strong data-start="803" data-end="839">ticaret yollarını kontrol etmesi</strong>dir. İpek Yolu&rsquo;nun kuzey kolu Hazar topraklarından geçmekteydi. Bu durum Hazarları hem ekonomik açıdan güçlendirmiş hem de Bizans, İslam dünyası ve Doğu Avrupa kavimleriyle sürekli ilişki içinde olmalarını sağlamıştır. Başkentleri zamanla değişmekle birlikte en bilinen merkezleri <strong data-start="1120" data-end="1132">Balanjar</strong>, <strong data-start="1134" data-end="1146">Semender</strong> ve özellikle <strong data-start="1160" data-end="1175">İtil (Atil)</strong> olmuştur.</p>
+            <p data-start="1187" data-end="1497">Siyasi yapı açısından Hazarlar, <strong data-start="1219" data-end="1244">ikili yönetim sistemi</strong> uygulamışlardır. Devletin başında sembolik yetkilere sahip <strong data-start="1304" data-end="1313">Kağan</strong> bulunurken, asıl yönetim ve askeri yetkiler <strong data-start="1358" data-end="1383">Bek (ya da Hakan-Bek)</strong> adlı yöneticinin elindeydi. Bu sistem, devletin uzun süre istikrarlı bir şekilde yönetilmesine katkı sağlamıştır.</p>
+            <p data-start="1499" data-end="1932">Hazar Kağanlığı&rsquo;nın tarihsel açıdan en önemli özelliklerinden biri, <strong data-start="1567" data-end="1634">Museviliği (Yahudiliği) resmi din olarak benimsemiş olmalarıdır</strong>. Bu durum, Türk tarihinde benzersiz bir örnektir. Bununla birlikte devlet içinde <strong data-start="1716" data-end="1733">din özgürlüğü</strong> hâkimdi; Musevilik dışında <strong data-start="1761" data-end="1804">İslam, Hristiyanlık ve Gök Tanrı inancı</strong> bir arada varlığını sürdürebilmiştir. Bu hoşgörülü yapı, Hazarların çok uluslu ve çok kültürlü bir devlet olmasını sağlamıştır.</p>
+            <p data-start="1934" data-end="2310">Askerî açıdan Hazarlar, özellikle <strong data-start="1968" data-end="1999">Arap-İslam ordularına karşı</strong> Kafkaslar&rsquo;da uzun süre direnmişlerdir. <strong data-start="2039" data-end="2063">Hazar–Arap Savaşları</strong> (7–8. yüzyıllar), İslam ordularının Kafkaslar ve Doğu Avrupa&rsquo;ya ilerleyişini yavaşlatmış, bu yönüyle Hazarlar Bizans için de bir <strong data-start="2193" data-end="2210">tampon devlet</strong> görevi görmüştür. Bizans ile çoğu zaman ittifak ilişkileri kurulmuş, siyasi evlilikler yapılmıştır.</p>
+            <p data-start="2312" data-end="2587">Ekonomik hayat ticarete dayalıydı. Gümrük vergileri, kervan ticareti ve nehir taşımacılığı devlet gelirlerinin önemli bir kısmını oluşturuyordu. Ayrıca tarım, hayvancılık ve zanaatkârlık da gelişmişti. Hazarlar kendi adlarına <strong data-start="2538" data-end="2552">para basan</strong> Türk devletlerinden biri olmuştur.</p>
+            <p data-start="2589" data-end="3023">Hazar Kağanlığı&rsquo;nın <strong data-start="2609" data-end="2641">zayıflama süreci 9. yüzyılda</strong> başlamıştır. İç karışıklıklar, ticaret yollarının yön değiştirmesi ve özellikle <strong data-start="2722" data-end="2756">Rus (Kiev Rusyası) saldırıları</strong> devletin gücünü kırmıştır. <strong data-start="2784" data-end="2850">965 yılında Kiev Rus Prensi Svyatoslav&rsquo;ın İtil&rsquo;i ele geçirmesi</strong>, Hazar Kağanlığı&rsquo;nın fiilen yıkılmasına yol açmıştır. Bu tarihten sonra Hazarlar siyasi varlıklarını kaybetmiş, halkın bir kısmı farklı topluluklar içinde asimile olmuştur.</p>
+            <p data-start="3025" data-end="3277">Sonuç olarak Hazar Kağanlığı, <strong data-start="3055" data-end="3083">6–10. yüzyıllar arasında</strong> Doğu Avrupa ve Kafkasya tarihinde önemli bir rol oynamış, <strong data-start="3142" data-end="3168">Türk siyasi geleneğini</strong>, <strong data-start="3170" data-end="3208">ticaret merkezli devlet anlayışını</strong> ve <strong data-start="3212" data-end="3230">dinî hoşgörüyü</strong> başarıyla uygulamış güçlü bir Türk devletidir.</p>
+            <p data-start="203" data-end="626">&nbsp;</p>
+            <p data-path-to-node="0">&nbsp;</p>
+            <p>&nbsp;</p>
+           <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Hazar-kaganl%C4%B1g%C4%B1/hazarlar.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Hazar-kaganlıgı/hazardevleti.jpeg" width="310" height="163" alt=""/></div>
+      </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Uygur Kağanlığı</h3>
+            <span>744 – 840</span>
+            <p data-path-to-node="0">Uygur Devleti (744-840), Türk tarihinde yerleşik hayata geçiş ve kültürel dönüşüm açısından en kritik dönüm noktasını oluşturur. II. Kök Türk Devleti&rsquo;nin zayıflamasını fırsat bilen Uygurlar; Basmil ve Karluk boylarıyla ittifak kurarak 744 yılında Ötüken merkezli bağımsızlıklarını ilan etmişlerdir. Devletin kurucusu, "Kutlug Bilge Kül Kağan" unvanını alan liderdir. Onun döneminde başkent, stratejik ve ticari bir merkez olan Karabalgasun&rsquo;a (Ordu-Balık) taşınmış, bu durum devletin bozkır geleneğinden şehirleşmeye doğru ilk adımını atmasını sağlamıştır.</p>
+            <p data-path-to-node="1">Moyen-Çor (Bayan Çor) Kağan dönemi, devletin askeri ve siyasi açıdan en güçlü olduğu evredir. Bu dönemde Çin&rsquo;deki iç karışıklıklardan (An Luşan İsyanı) yararlanılarak Çin üzerinde büyük bir nüfuz kurulmuş ve Talas Savaşı sonrası oluşan boşlukta Orta Asya ticaret yolları kontrol altına alınmıştır. Ancak Uygur tarihinin asıl kırılma noktası, Bögü Kağan&rsquo;ın 762 yılında Çin seferi sırasında tanıştığı Maniheizm dinini resmi din ilan etmesidir. Bu inanç sistemi, hayvansal gıdaları ve savaşı yasakladığı için Türklerin askeri disiplinini ve savaşçı özelliklerini zayıflatmış; fakat buna karşılık tarım, mimari, kağıt-matbaa kullanımı, sanat ve yerleşik yaşamın gelişmesini hızlandırmıştır. Türkler bu sayede kütüphaneler kurmuş, freskler yapmış ve kendilerine özgü 18 harfli Uygur Alfabesi&rsquo;ni geliştirmişlerdir.</p>
+            <p data-path-to-node="2">Dokuzuncu yüzyıla gelindiğinde devlet; hanedan çekişmeleri, Maniheizm&rsquo;in getirdiği toplumsal dönüşümün yarattığı huzursuzluklar ve ağır kış şartlarının tetiklediği kıtlıklarla sarsılmaya başlamıştır. Bu zayıflığı değerlendiren Kuzeyli komşuları Kırgızlar, 840 yılında büyük bir saldırı düzenleyerek Uygur başkentini ele geçirmiş ve devleti yıkmışlardır. Devletin yıkılmasından sonra Uygurlar; Çin&rsquo;in içlerine ve Doğu Türkistan bölgelerine göç ederek Kansu (Sarı Uygur) ve Turfan (Kansu Uygur) gibi daha küçük ama kültürel açıdan çok ileri medeniyetler kurmaya devam etmişlerdir. Moğolların devlet teşkilatlanmasında ve Türkleşmesinde de "Hoca" ve memur olarak görev alarak büyük rol oynamışlardır.</p>
+              <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/uygur-kaganl%C4%B1g%C4%B1/uygurlar.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="uygur-kaganlıgı/uygur.png" width="263" height="192" alt=""/></div>
+        </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Karahanlı Devleti</h3>
+            <span>840 – 1212</span>
+            <p data-path-to-node="0">Karahanlı Devleti (840-1212), Türk-İslam sentezinin temellerini atan, Orta Asya&rsquo;da İslamiyet&rsquo;i resmi din olarak kabul eden ilk büyük Türk devletidir. Uygur Devleti'nin 840 yılında Kırgızlar tarafından yıkılmasının ardından, Karluk, Çiğil ve Yağma gibi Türk boylarının birleşmesiyle <strong data-path-to-node="0" data-index-in-node="282">Bilge Kül Kadir Han</strong> tarafından kurulmuştur. Devletin merkezi başlangıçta Balasagun iken, daha sonra Kaşgar ve Semerkant gibi önemli ticaret ve kültür merkezleri başkentlik yapmıştır.</p>
+            <p data-path-to-node="1">Karahanlı tarihinin en önemli dönüm noktası, <strong data-path-to-node="1" data-index-in-node="45">Satuk Buğra Han</strong>&rsquo;ın İslamiyet&rsquo;i kabul ederek "Abdülkerim" adını alması ve 940&rsquo;lı yıllarda bu dini devletin resmi inancı haline getirmesidir. Bu değişim, Türklerin yaşam tarzında köklü bir dönüşüm başlatmış; göçebe bozkır kültürüyle İslam medeniyeti harmanlanmıştır. Karahanlılar, bu dönemde ilk Türk-İslam eserlerini vererek kültürel bir rönesans yaşatmışlardır. Kaşgarlı Mahmud&rsquo;un <strong data-path-to-node="1" data-index-in-node="426">Divânu Lugâti't-Türk</strong> ve Yusuf Has Hacib&rsquo;in <strong data-path-to-node="1" data-index-in-node="469">Kutadgu Bilig</strong> adlı eserleri bu dönemin en kıymetli miraslarıdır. Ayrıca tarihteki ilk düzenli posta teşkilatını ve "ribat" adı verilen ilk kervansaray örneklerini inşa ederek ticareti ve güvenliği geliştirmişlerdir.</p>
+            <p data-path-to-node="2">Askeri ve siyasi açıdan Karahanlılar, komşuları olan Samanoğulları Devleti ile uzun süre mücadele etmiş ve bu devleti yıkarak Maveraünnehir bölgesine hakim olmuşlardır. Ancak zamanla hanedan üyeleri arasındaki taht kavgaları ve ikili devlet teşkilatının getirdiği yönetim zorlukları devleti zayıflatmıştır. 1042 yılında devlet, <strong data-path-to-node="2" data-index-in-node="328">Doğu ve Batı Karahanlılar</strong> olmak üzere ikiye bölünmüştür. Doğu Karahanlılar, Kaşgar merkezli olarak hüküm sürmüş ve 1211&rsquo;de Moğol kökenli <strong data-path-to-node="2" data-index-in-node="465">Karahitaylar</strong> tarafından yıkılmıştır. Batı Karahanlılar ise Semerkant merkezli olarak varlığını sürdürmüş, önce Selçuklulara tabi olmuş, 1212 yılında ise <strong data-path-to-node="2" data-index-in-node="618">Harzemşahlar</strong> tarafından tarihten silinmiştir.</p>
+              <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Karahanl%C4%B1-devleti/Karahanl%C4%B1.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Karahanlı-devleti/karahanlı.png" width="282" height="178" alt=""/></div>
+        </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Gazneli Devleti</h3>
+            <span>963 – 1186</span>
+            <p data-path-to-node="0">Gazneli Devleti (963-1187), ismini kurulduğu bölge olan Afganistan'ın Gazne şehrinden alan ve Türk tarihinde "İmparatorluk" karakteri taşıyan en önemli erken dönem devletlerinden biridir. Devletin temelleri, Samanoğulları&rsquo;nın bir Türk komutanı olan <strong data-path-to-node="0" data-index-in-node="249">Alp Tigin</strong> tarafından atılmış olsa da, tam bağımsız bir devlet haline gelmesi ve teşkilatlanması <strong data-path-to-node="0" data-index-in-node="345">Sebük Tigin</strong> döneminde gerçekleşmiştir. Karahanlıların aksine, Gazneliler çok uluslu bir yapıya sahip olmuş; bünyesinde Türk, Afgan, Hint ve İranlı toplulukları barındırmıştır.</p>
+            <p data-path-to-node="1">Devletin en parlak dönemi ve dünya tarihindeki en etkili lideri <strong data-path-to-node="1" data-index-in-node="64">Gazneli Mahmut</strong>&rsquo;tur. Sultan Mahmut, İslam dünyasında "Sultan" unvanını kullanan ilk Türk hükümdarıdır. Onun döneminde Hindistan&rsquo;a tam <strong data-path-to-node="1" data-index-in-node="197">17 sefer</strong> düzenlenmiş; bu seferler sonucunda İslamiyet Hindistan&rsquo;ın içlerine kadar yayılmış ve bugünkü Pakistan ile Bangladeş&rsquo;in temelleri atılmıştır. Bu dönemde Gazne, bir bilim ve kültür merkezi haline gelmiş; ünlü bilim insanı <strong data-path-to-node="1" data-index-in-node="426">Biruni</strong> ve şair <strong data-path-to-node="1" data-index-in-node="441">Firdevsi</strong> gibi isimler Sultan&rsquo;ın sarayında himaye edilmiştir. Gazneli Mahmut, Biruni için "Sarayımın en değerli hazinesi" diyerek bilime verdiği önemi göstermiştir.</p>
+            <p data-path-to-node="2">Gazneliler için çöküş süreci, Sultan Mahmut&rsquo;un ölümünden sonra tahta geçen oğlu Sultan Mesud döneminde başlamıştır. Yükselen bir güç olan Selçuklular ile yapılan ve Türk tarihinin en önemli meydan savaşlarından biri kabul edilen <strong data-path-to-node="2" data-index-in-node="229">1040 Dandanakan Savaşı</strong>, Gazneliler için ağır bir yenilgiyle sonuçlanmıştır. Bu savaştan sonra devlet, Horasan ve İran topraklarını kaybederek Hindistan ve Afganistan civarına sıkışmış, merkezi otoritesini büyük ölçüde yitirmiştir. Uzun bir zayıflama döneminin ardından, Afgan yerlisi olan <strong data-path-to-node="2" data-index-in-node="518">Gurlular</strong> tarafından 1187 yılında tamamen yıkılmışlardır.</p>
+              <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Gazneliler/Gazneliler.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Gazneliler/gazneliler.jpeg" width="80" height="102" alt=""/></div>
+        </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Büyük Selçuklu İmparatorluğu</h3>
+            <span>1037 – 1194</span>
+            <p data-path-to-node="1">Büyük Selçuklu İmparatorluğu (1037-1157), Türklerin İslam dünyasındaki liderliğini perçinleyen ve Orta Asya&rsquo;dan Anadolu&rsquo;ya kadar uzanan geniş topraklarda hüküm sürmüş bir cihan devletidir. Oğuzların Kınık boyuna mensup olan Selçuklular, sadece askeri zaferleriyle değil, kurdukları idari sistemle de Türk-İslam medeniyetine altın çağını yaşatmışlardır.</p>
+            <p data-path-to-node="2">Devletin temelleri, 1040 yılında Gaznelilere karşı kazanılan Dandanakan Savaşı ile atılmıştır. Bu zaferle birlikte Tuğrul Bey "Sultan" ilan edilmiş, kardeşi Çağrı Bey ise orduların başında fetih hareketlerini yönetmiştir. Tuğrul Bey döneminde Bağdat&rsquo;ın Şii baskısından kurtarılması, Selçukluların İslam dünyasının siyasi koruyucusu konumuna gelmesini sağlamıştır. Devletin en parlak dönemi ise Sultan Alp Arslan ve Sultan Melikşah zamanlarında yaşanmıştır. 1071 yılında kazanılan Malazgirt Meydan Muharebesi, Anadolu&rsquo;nun kapılarını Türklere açarak dünya tarihinin akışını değiştirmiştir. Sultan Melikşah döneminde ise sınırlar Kaşgar&rsquo;dan Boğaziçi&rsquo;ne kadar genişleyerek imparatorluk zirve noktasına ulaşmıştır.</p>
+            <p data-path-to-node="3">Bu büyük başarının arkasındaki en önemli isimlerden biri de ünlü Vezir Nizamülmülk&rsquo;tür. Nizamülmülk, hem devletin yönetim esaslarını belirleyen "Siyasetname" adlı eseri kaleme almış hem de dünyaca ünlü "Nizamiye Medreseleri"ni kurarak eğitim ve kültür hayatını canlandırmıştır. Ayrıca "İkta" adı verilen toprak sistemiyle hem güçlü bir ordu beslenmiş hem de tarımsal üretim güvence altına alınmıştır.</p>
+            <p data-path-to-node="4">Ancak Sultan Melikşah ve Nizamülmülk&rsquo;ün ardı ardına ölümleri, devleti bir fetret devrine sürüklemiştir. İçeride Hasan Sabbah&rsquo;ın liderliğindeki Bâtınilik (Haşhaşiler) faaliyetleri merkezi otoriteyi sarsarken, dışarıda Haçlı Seferleri ve doğuda Moğol asıllı Karahitayların baskısı artmıştır. 1141 yılında Karahitaylara karşı kaybedilen Katvan Savaşı, imparatorluğun çöküşünü hızlandırmıştır. Son büyük hükümdar Sultan Sencer&rsquo;in 1157 yılında ölümüyle Büyük Selçuklu Devleti parçalanmış; yerini Türkiye Selçukluları gibi bağımsız devletlere ve atabeyliklere bırakmıştır.</p>
+              <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/buyuk-selcuklu-devleti/Buyuk-selcuklu.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="buyuk-selcuklu-devleti/selçuklu devleti.png" width="275" height="183" alt=""/></div>
+        </div>
+  <div class="state">
+          <div class="state-content">
+            <h3>Anadolu(türkiye) Selçuklu devleti</h3>
+            <span>1037 – 1194</span>
+            <p data-path-to-node="1">Anadolu (Türkiye) Selçuklu Devleti (1075-1308), Malazgirt Zaferi&rsquo;nden sonra Anadolu&rsquo;yu gerçek anlamda bir Türk yurduna dönüştüren, Büyük Selçuklu Devleti&rsquo;nin devamı niteliğindeki devlettir. Devletin kurucusu, Selçuk Bey&rsquo;in soyundan gelen <strong data-path-to-node="1" data-index-in-node="238">Kutalmışoğlu Süleyman Şah</strong>&rsquo;tır. İznik&rsquo;i (Nicaea) fethederek başkent yapan Süleyman Şah, Boğazlara kadar dayanarak Bizans&rsquo;ı tehdit etmiş ve devletin temellerini atmıştır. Ancak Süleyman Şah&rsquo;ın ölümü ve I. Haçlı Seferi&rsquo;nin başlamasıyla devlet büyük bir sarsıntı geçirmiştir. Kalabalık Haçlı orduları karşısında başkent İznik kaybedilmiş, <strong data-path-to-node="1" data-index-in-node="573">I. Kılıç Arslan</strong> devlet merkezini mecburen Konya&rsquo;ya taşımak zorunda kalmıştır. Bu taktiksel geri çekilme, devletin Orta Anadolu&rsquo;da kök salmasını sağlamıştır.</p>
+            <p data-path-to-node="2">Devletin kaderini belirleyen ve Anadolu&rsquo;nun tapusunun alındığı olay ise <strong data-path-to-node="2" data-index-in-node="72">II. Kılıç Arslan</strong> döneminde gerçekleşen <strong data-path-to-node="2" data-index-in-node="111">Miryokefalon Savaşı</strong>&rsquo;dır (1176). Bizans İmparatoru Manuel Komnenos, Türkleri Anadolu&rsquo;dan atmak için büyük bir orduyla gelmiş, ancak II. Kılıç Arslan Eğirdir Gölü yakınlarındaki dar bir geçitte Bizans ordusunu pusuya düşürerek imha etmiştir. Bu zaferin diplomatik sonucu çok nettir: Bizans&rsquo;ın Türkleri Anadolu&rsquo;dan atma ümidi tamamen sona ermiş ve Avrupalı kaynaklar Anadolu&rsquo;dan artık "Turkey" (Türkiye) olarak bahsetmeye başlamıştır.</p>
+            <p data-path-to-node="3">Anadolu Selçuklu Devleti&rsquo;nin "Altın Çağı" ise <strong data-path-to-node="3" data-index-in-node="46">I. Alaaddin Keykubad</strong> dönemidir. Bu dönemde devlet sadece askeri değil, ticari bir imparatorluğa dönüşmüştür. Alaaddin Keykubad, Akdeniz&rsquo;de Alanya&rsquo;yı (Alaiye), Karadeniz&rsquo;de ise Sinop ve Suğdak&rsquo;ı alarak devleti bir deniz gücü haline getirmiştir. Venedik ve Kıbrıs krallıklarıyla ticaret antlaşmaları yapılmış, dünya tarihinde ilk defa tüccarların mallarına "devlet sigortası" uygulanmıştır. Anadolu&rsquo;nun dört bir yanı <strong data-path-to-node="3" data-index-in-node="461">kervansaraylarla</strong> donatılmış, ticaret yolları güvenli hale getirilmiştir. Ayrıca Moğol tehlikesini önceden sezen Sultan, doğu sınırlarını güçlendirmiş ve Eyyubilerle ittifak kurmaya çalışarak müthiş bir diplomasi yürütmüştür.</p>
+            <p data-path-to-node="4">Ancak bu parlak dönem uzun sürmemiştir. Alaaddin Keykubad&rsquo;ın şüpheli ölümü (zehirlendiği düşünülür) ve yerine geçen oğlu <strong data-path-to-node="4" data-index-in-node="121">II. Gıyaseddin Keyhüsrev</strong>&rsquo;in yetersiz yönetimi devleti uçuruma sürüklemiştir. Türkmenlerin devlet yönetimine küsmesiyle çıkan <strong data-path-to-node="4" data-index-in-node="246">Babai İsyanı</strong>, devleti içten çürütmüş ve ordusunu zayıflatmıştır. Bu zayıflığı gören Moğol komutanı Baycu Noyan, 1243 yılında <strong data-path-to-node="4" data-index-in-node="371">Kösedağ Savaşı</strong>&rsquo;nda Selçuklu ordusunu ağır bir yenilgiye uğratmıştır. Bu savaş, devletin fiilen bitişidir. Anadolu Selçuklu Devleti, Moğol İlhanlı Devleti&rsquo;ne bağlı bir vasal haline gelmiş, sultanlar Moğolların atadığı birer vali konumuna düşmüştür. Otoritenin kaybolmasıyla Anadolu&rsquo;da İkinci Beylikler Dönemi (Osmanlı, Karamanlı vb.) başlamış ve 1308 yılında son sultan II. Mesud&rsquo;un ölümüyle devlet resmen tarihe karışmıştır.</p>
+              <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Anadolu-selcuklu-devleti/andolu-selcuklu.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Anadolu-selcuklu-devleti/anadoluselçukşu .png" width="318" height="159" alt=""/></div>
+      </div>
+        <div class="state">
+          <div class="state-content">
+            <h3>Harzemşahlar Devleti </h3>
+            <span>420 – 552</span>
+            <p data-start="312" data-end="760"><strong data-start="312" data-end="336">Harzemşahlar Devleti</strong>, Orta Asya&rsquo;da Harzem bölgesinde kurulmuş, Türk-İslam tarihinin önemli devletlerinden biridir. Devlet, <strong data-start="439" data-end="455">1077 yılında</strong> resmen kurulmuş olup, <strong data-start="478" data-end="501">kurucusu Anuş Tegin</strong>&rsquo;dir. Anuş Tegin, Büyük Selçuklu Devleti&rsquo;nde görev yapan bir Türk komutanıydı ve Selçuklu sultanı Melikşah tarafından Harzem bölgesine vali olarak atanmıştır. Onun soyundan gelen yöneticiler zamanla bağımsızlık kazanarak Harzemşahlar Devleti&rsquo;ni oluşturmuştur.</p>
+            <p data-start="762" data-end="1189">Harzemşahlar Devleti, özellikle <strong data-start="794" data-end="825">Alaaddin Muhammed Harzemşah</strong> döneminde en güçlü zamanlarını yaşamıştır. Bu dönemde devlet; Horasan, Maveraünnehir, İran, Afganistan ve Irak&rsquo;ın doğusuna kadar genişlemiş, Büyük Selçuklu Devleti&rsquo;nin mirasını devralan en güçlü siyasi yapı haline gelmiştir. Harzemşahlar, İslam dünyasında siyasi birliği sağlamaya çalışmış, ticaret yollarını kontrol altına alarak ekonomik açıdan da güçlenmiştir.</p>
+            <p data-start="1191" data-end="1542">Devletin yönetim yapısı <strong data-start="1215" data-end="1247">Türk-İslam devlet geleneğine</strong> dayanıyordu. Hükümdar &ldquo;Harzemşah&rdquo; unvanını kullanmış, ordu büyük ölçüde Türk askerlerden oluşmuştur. Medreseler desteklenmiş, bilim ve kültür gelişmiş; özellikle matematik, astronomi ve tıp alanlarında ilerlemeler yaşanmıştır. Harzem bölgesi bu dönemde önemli bir ilim merkezi hâline gelmiştir.</p>
+            <p data-start="1544" data-end="2001">Harzemşahlar Devleti&rsquo;nin zayıflaması, <strong data-start="1582" data-end="1616">Moğollarla yaşanan mücadeleler</strong> sonucunda gerçekleşmiştir. Alaaddin Muhammed Harzemşah&rsquo;ın Moğollarla ilişkilerde yaptığı siyasi hatalar, <strong data-start="1722" data-end="1781">Cengiz Han&rsquo;ın Orta Asya&rsquo;ya büyük bir sefer başlatmasına</strong> neden olmuştur. Moğol orduları kısa sürede Harzemşah topraklarını istila etmiş, şehirler yakılıp yıkılmıştır. Devlet, <strong data-start="1900" data-end="1916">1231 yılında</strong>, Alaaddin Muhammed&rsquo;in oğlu <strong data-start="1944" data-end="1980">Celaleddin Harzemşah&rsquo;ın ölümüyle</strong> tamamen yıkılmıştır.</p>
+            <p data-start="2003" data-end="2184">Harzemşahlar Devleti, kısa ömürlü olmasına rağmen Orta Asya ve İslam tarihinde derin izler bırakmış, Moğol istilası öncesindeki son büyük Türk-İslam devleti olarak tarihe geçmiştir.</p>
+            <p data-start="343" data-end="788">&nbsp;</p>
+            <p data-path-to-node="0">&nbsp;</p>
+           <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Harzemsahlar/harzemsah.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Harzemsahlar/harzemşahlar.png" width="281" height="179" alt=""/></div>
+        </div>
+ <div class="state">
+          <div class="state-content">
+            <h3>Altın orda devleti </h3>
+            <span>420 – 552</span>
+            <p data-path-to-node="0">Ak Hun İmparatorluğu, tarih sahnesine 4. yüzyılın ortalarında çıkan ve Orta Asya'dan Hindistan içlerine kadar uzanan geniş bir coğrafyada hüküm süren, Türk kökenli en savaşçı ve stratejik devletlerden biridir. Büyük Hun İmparatorluğu'nun parçalanmasının ardından batıya yönelen kütlelerin oluşturduğu bu devlet, Bizans kaynaklarında Eftalitler, Çin kaynaklarında ise Ye-ta adıyla anılır. Başkenti bugünkü Afganistan sınırları içinde yer alan kadim Belh şehri olan imparatorluk, göçebeliğin askeri disiplini ile yerleşik hayatın ticari gücünü ustalıkla birleştirmiştir.</p>
+            <p data-path-to-node="1">Siyasi tarihleri incelendiğinde, Ak Hunların dönemin iki büyük gücü olan Sasani İmparatorluğu ve Gupta İmparatorluğu üzerinde kurduğu mutlak üstünlük dikkat çeker. Özellikle Aksuvar Han döneminde Sasaniler ağır bir yenilgiye uğratılmış, Sasani Şahı Firuz savaş meydanında hayatını kaybetmiş ve İran toprakları uzun süre Ak Hunlara vergi ödemek zorunda kalmıştır. Öyle ki, İran'da çıkan Mazdek İsyanı gibi büyük iç karışıklıklar bile Ak Hun ordusunun müdahalesiyle bastırılmış, bu da onların bölgedeki "karar verici güç" konumunu pekiştirmiştir.</p>
+            <p data-path-to-node="2">Güneyde ise Toraman Han ve ardından gelen Mihiragula, Hindistan'ın kuzeyini tamamen kontrol altına alarak Türk hakimiyetini Hint alt kıtasına taşımışlardır. Hindistan'ın Atilla'sı olarak anılan Mihiragula döneminde devlet en geniş sınırlarına ulaşmış; İpek Yolu'nun kontrolü sayesinde hem ekonomik hem de kültürel bir zirve yaşanmıştır. Kendi adlarına gümüş para bastıran Ak Hunlar, Gök Tanrı inancını korumakla birlikte hakimiyetleri altındaki Budizm ve Maniheizm gibi inançlara karşı da hoşgörülü bir yönetim sergilemişlerdir.</p>
+            <p data-path-to-node="3">Bu görkemli imparatorluğun sonu, 567 yılında bölgedeki güç dengelerinin değişmesiyle gelmiştir. Ak Hunların Orta Asya'daki hakimiyetinden rahatsız olan Kök Türk Kağanlığı (İstemi Yabgu) ile Sasani İmparatorluğu (Anuşirvan) gizli bir ittifak kurarak devlete iki koldan saldırmıştır. Bu büyük kıskacın ardından Ak Hun toprakları Ceyhun Nehri sınır kabul edilerek paylaşılmış ve imparatorluk tarih sahnesinden çekilmiştir. Ancak bıraktıkları miras, bugün bile Hindistan ve Orta Asya toplumlarının etnik ve kültürel yapısında varlığını hissettirmeye devam etmektedir.</p>
+            <p>&nbsp;</p>
+           <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Alt%C4%B1n-orda-imparatorlugu/Alt%C4%B1n-orda.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Altın-orda-imparatorlugu/altın orda.png" width="275" height="183" alt=""/></div>
+      </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Büyük Timur İmparatorluğu</h3>
+            <span>1370 – 1507</span>
+            <p data-path-to-node="0">Büyük Timur İmparatorluğu (1370-1507), askeri dehası dünya tarihçileri tarafından tartışmasız kabul edilen Emir Timur tarafından Çağatay Hanlığı&rsquo;nın mirası üzerine kurulmuş, Semerkant merkezli devasa bir Türk-İslam devletidir. Kendisi Cengiz Han soyundan gelmediği için "Han" unvanı yerine "Emir" unvanını kullanan Timur, meşruiyetini sağlamak için Cengiz soyundan bir prensesle evlenmiş ve "Gürgan" (Damat) lakabını almıştır. Timur&rsquo;un vizyonu, Cengiz Han&rsquo;ın imparatorluğunu İslam sancağı altında yeniden diriltmekti ve bu doğrultuda ömrünü at sırtında, bir seferden diğerine koşarak geçirmiştir.</p>
+            <p data-path-to-node="1">Devletin askeri tarihi, inanılması güç zaferlerle doludur. Timur, ordusunu satranç tahtasındaki taşlar gibi hassas bir stratejiyle yönetmiştir. En kritik mücadelelerinden ilki, Altın Orda Devleti Hükümdarı Toktamış Han&rsquo;a karşı yaptığı Kunduzca (1391) ve Terek (1395) savaşlarıdır. Bu savaşlarla Altın Orda Devleti&rsquo;ni yıkarak kuzeydeki Türk hakimiyetini zayıflatmış, ancak bu durum istemeden de olsa Rus knezliklerinin güçlenmesine yol açmıştır. Güneyde Hindistan&rsquo;a girerek Delhi&rsquo;yi ele geçirmiş, batıda ise Karakoyunluları ve Memlükleri yenerek Suriye ve Irak&rsquo;ı hakimiyeti altına almıştır.</p>
+            <p data-path-to-node="2">Timur&rsquo;un en çok bilinen ve Türk tarihi açısından en travmatik zaferi ise 1402 Ankara Savaşı&rsquo;dır. Osmanlı Sultanı Yıldırım Bayezid ile girdiği bu mücadeleyi kazanan Timur, Bayezid&rsquo;i esir almış ve Osmanlı Devleti&rsquo;ni 11 yıl sürecek bir Fetret Devri&rsquo;ne sokarak İstanbul&rsquo;un fethini yarım asır geciktirmiştir. Diplomasi alanında da oldukça aktif olan Timur, Osmanlılara karşı Fransa Kralı VI. Charles ve Kastilya Kralı ile mektuplaşarak Avrupa devletleriyle stratejik ittifak arayışlarına girmiştir. "Korku, itaati sağlar" prensibiyle hareket etmiş, teslim olmayan şehirlere karşı çok sert cezalar uygulayarak psikolojik üstünlüğü daima elinde tutmuştur.</p>
+            <p data-path-to-node="3">Bu devlet sadece savaşla değil, aynı zamanda "Timurlu Rönesansı" olarak bilinen bilim ve sanat atılımıyla da tarihe geçmiştir. Başkent Semerkant, dönemin en gözde bilim merkezi haline getirilmiştir. Timur&rsquo;un torunu Uluğ Bey, bir hükümdar olmasının yanı sıra büyük bir astronom olarak tarihe geçmiş ve Semerkant Rasathanesi&rsquo;ni kurmuştur. Ali Şir Nevai gibi şairler ise Türkçeyi bir edebiyat dili olarak zirveye taşımıştır. Ancak 1405 yılında Timur&rsquo;un Çin seferine giderken ölmesi üzerine devlet, taht kavgalarıyla zayıflamaya başlamış; Şahruh döneminde istikrar sağlansa da sonrasında Özbeklerin saldırılarıyla yıkılmıştır. Bu imparatorluğun küllerinden doğan Timur&rsquo;un torunu Babür Şah ise Hindistan&rsquo;a giderek orada Babür İmparatorluğu&rsquo;nu kurmuştur.</p>
+            <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Timur-imparatorlugu/Timur-imparatorlugu.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Timur-imparatorlugu/timu.jpeg" width="317" height="159" alt=""/></div>
+        </div>
+ <div class="state">
+          <div class="state-content">
+            <h3>Babür Devleti</h3>
+            <span>420 – 552</span>
+            <p data-path-to-node="0">Ak Hun İmparatorluğu, tarih sahnesine 4. yüzyılın ortalarında çıkan ve Orta Asya'dan Hindistan içlerine kadar uzanan geniş bir coğrafyada hüküm süren, Türk kökenli en savaşçı ve stratejik devletlerden biridir. Büyük Hun İmparatorluğu'nun parçalanmasının ardından batıya yönelen kütlelerin oluşturduğu bu devlet, Bizans kaynaklarında Eftalitler, Çin kaynaklarında ise Ye-ta adıyla anılır. Başkenti bugünkü Afganistan sınırları içinde yer alan kadim Belh şehri olan imparatorluk, göçebeliğin askeri disiplini ile yerleşik hayatın ticari gücünü ustalıkla birleştirmiştir.</p>
+            <p data-path-to-node="1">Siyasi tarihleri incelendiğinde, Ak Hunların dönemin iki büyük gücü olan Sasani İmparatorluğu ve Gupta İmparatorluğu üzerinde kurduğu mutlak üstünlük dikkat çeker. Özellikle Aksuvar Han döneminde Sasaniler ağır bir yenilgiye uğratılmış, Sasani Şahı Firuz savaş meydanında hayatını kaybetmiş ve İran toprakları uzun süre Ak Hunlara vergi ödemek zorunda kalmıştır. Öyle ki, İran'da çıkan Mazdek İsyanı gibi büyük iç karışıklıklar bile Ak Hun ordusunun müdahalesiyle bastırılmış, bu da onların bölgedeki "karar verici güç" konumunu pekiştirmiştir.</p>
+            <p data-path-to-node="2">Güneyde ise Toraman Han ve ardından gelen Mihiragula, Hindistan'ın kuzeyini tamamen kontrol altına alarak Türk hakimiyetini Hint alt kıtasına taşımışlardır. Hindistan'ın Atilla'sı olarak anılan Mihiragula döneminde devlet en geniş sınırlarına ulaşmış; İpek Yolu'nun kontrolü sayesinde hem ekonomik hem de kültürel bir zirve yaşanmıştır. Kendi adlarına gümüş para bastıran Ak Hunlar, Gök Tanrı inancını korumakla birlikte hakimiyetleri altındaki Budizm ve Maniheizm gibi inançlara karşı da hoşgörülü bir yönetim sergilemişlerdir.</p>
+            <p data-path-to-node="3">Bu görkemli imparatorluğun sonu, 567 yılında bölgedeki güç dengelerinin değişmesiyle gelmiştir. Ak Hunların Orta Asya'daki hakimiyetinden rahatsız olan Kök Türk Kağanlığı (İstemi Yabgu) ile Sasani İmparatorluğu (Anuşirvan) gizli bir ittifak kurarak devlete iki koldan saldırmıştır. Bu büyük kıskacın ardından Ak Hun toprakları Ceyhun Nehri sınır kabul edilerek paylaşılmış ve imparatorluk tarih sahnesinden çekilmiştir. Ancak bıraktıkları miras, bugün bile Hindistan ve Orta Asya toplumlarının etnik ve kültürel yapısında varlığını hissettirmeye devam etmektedir.</p>
+            <p>&nbsp;</p>
+           <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/babur-mparatorlugu/babur.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="babur-mparatorlugu/babür.png" width="296" height="170" alt=""/></div>
+      </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Osmanlı İmparatorluğu</h3>
+            <span>1299 – 1922</span>
+            <p data-path-to-node="0">Osmanlı İmparatorluğu (1299-1922), bir uç beyliği olarak tarih sahnesine çıkıp, üç kıtaya hükmeden ve "Devlet-i Ebed Müddet" (Sonsuz Devlet) idealini taşıyan, dünya tarihinin en uzun ömürlü ve en etkili imparatorluklarından biridir. Oğuzların Kayı boyuna mensup Osman Bey tarafından Söğüt ve Domaniç çevresinde temelleri atılan bu devlet, uyguladığı hoşgörü politikası (İstimalet) ve askeri dehasıyla 600 yılı aşkın bir süre ayakta kalmıştır.</p>
+            <h3 data-path-to-node="1">1. Kuruluş Dönemi: Beylikten Devlete (1299-1453)</h3>
+            <p data-path-to-node="2">Devletin ilk yılları, Bizans sınırında gaza ve cihat anlayışıyla yapılan fetihlerle geçmiştir. <strong data-path-to-node="2" data-index-in-node="95">Osman Bey</strong>, 1302 yılında Bizans ile yapılan ilk ciddi savaş olan <strong data-path-to-node="2" data-index-in-node="159">Koyunhisar Savaşı</strong>'nı kazanarak devletin bağımsızlığını perçinlemiştir. Oğlu <strong data-path-to-node="2" data-index-in-node="235">Orhan Bey</strong>, Bursa&rsquo;yı fethederek başkent yapmış, "Yaya ve Müsellem" adıyla ilk düzenli orduyu kurmuş ve Rumeli&rsquo;ye geçişin ilk adımı olan Çimpe Kalesi&rsquo;ni almıştır.</p>
+            <p data-path-to-node="3">Balkanlardaki ilerleyiş <strong data-path-to-node="3" data-index-in-node="24">I. Murad</strong> döneminde hızlanmıştır. <strong data-path-to-node="3" data-index-in-node="57">Sırpsındığı</strong> ve <strong data-path-to-node="3" data-index-in-node="72">I. Kosova</strong> savaşlarıyla Haçlı ittifakları bozguna uğratılmış, Edirne başkent yapılmıştır. Ancak bu hızlı yükseliş, <strong data-path-to-node="3" data-index-in-node="186">Yıldırım Bayezid</strong> döneminde bir kesintiye uğramıştır. Haçlılara karşı kazanılan şanlı <strong data-path-to-node="3" data-index-in-node="271">Niğbolu Zaferi</strong>&rsquo;ne rağmen, doğudan gelen Timur tehlikesi 1402 <strong data-path-to-node="3" data-index-in-node="332">Ankara Savaşı</strong>&rsquo;nda felakete dönüşmüştür. Bayezid&rsquo;in esir düşmesiyle devlet 11 yıl sürecek bir otorite boşluğu (Fetret Devri) yaşamış, ancak <strong data-path-to-node="3" data-index-in-node="471">Çelebi Mehmed</strong>&rsquo;in (devletin ikinci kurucusu) birliği yeniden sağlamasıyla yıkılmaktan kurtulmuştur. <strong data-path-to-node="3" data-index-in-node="570">II. Murad</strong>, Varna ve II. Kosova zaferleriyle Balkanların Türk yurdu olduğunu kesinleştirmiştir.</p>
+            <h3 data-path-to-node="4">2. Yükseliş Dönemi: Cihan İmparatorluğu (1453-1579)</h3>
+            <p data-path-to-node="5">Bu dönem, <strong data-path-to-node="5" data-index-in-node="10">Fatih Sultan Mehmed</strong>'in 1453 yılında İstanbul&rsquo;u fethetmesiyle başlar. Bu olay sadece bir şehir değişimi değil, Orta Çağ&rsquo;ı kapatıp Yeni Çağ&rsquo;ı başlatan evrensel bir olaydır. Fatih, Karadeniz&rsquo;i bir Türk gölü haline getirmiş ve mutlak merkezi otoriteyi sağlamıştır.</p>
+            <p data-path-to-node="6">Devletin yönü <strong data-path-to-node="6" data-index-in-node="14">Yavuz Sultan Selim</strong> ile doğuya dönmüştür. Şah İsmail&rsquo;e karşı kazanılan <strong data-path-to-node="6" data-index-in-node="84">Çaldıran Zaferi</strong> ile Safevi tehlikesi durdurulmuş; <strong data-path-to-node="6" data-index-in-node="134">Mercidabık</strong> ve <strong data-path-to-node="6" data-index-in-node="148">Ridaniye</strong> savaşlarıyla Memlük Devleti yıkılmıştır. Bu sayede Halifelik Osmanlılara geçmiş, Kutsal Topraklar (Mekke-Medine) himaye altına alınmış ve Baharat Yolu kontrolü ele geçirilmiştir.</p>
+            <p data-path-to-node="7">İmparatorluğun zirvesi ise <strong data-path-to-node="7" data-index-in-node="27">Kanuni Sultan Süleyman</strong> dönemidir. "Muhteşem Süleyman", batıda Belgrad&rsquo;ı almış, <strong data-path-to-node="7" data-index-in-node="106">Mohaç Meydan Muharebesi</strong>&rsquo;nde Macar ordusunu sadece 2 saatte yok etmiştir. Viyana ilk kez kuşatılmışsa da alınamamıştır. Denizlerde ise <strong data-path-to-node="7" data-index-in-node="240">Barbaros Hayreddin Paşa</strong> komutasındaki donanma, <strong data-path-to-node="7" data-index-in-node="287">Preveze Deniz Zaferi</strong> ile Akdeniz&rsquo;i bir Türk gölüne çevirmiştir. Bu dönemde Fransa&rsquo;ya verilen kapitülasyonlar, başlangıçta ticari canlılık ve siyasi ittifak amacı taşısa da ileride devletin başına bela olacaktır.</p>
+            <h3 data-path-to-node="8">3. Duraklama ve Gerileme: Dengelerin Değişimi (1579-1792)</h3>
+            <p data-path-to-node="9">Sokollu Mehmed Paşa&rsquo;nın ölümüyle başlayan bu süreçte, merkezi otorite zayıflamış, "Kafes Usulü" nedeniyle tecrübesiz padişahlar tahta çıkmış ve Yeniçeri Ocağı bozulmuştur. Doğuda İran, batıda Avusturya ile yapılan uzun ve yıpratıcı savaşlar ekonomiyi sarsmıştır.</p>
+            <p data-path-to-node="10">Dönüm noktası, 1683 <strong data-path-to-node="10" data-index-in-node="20">II. Viyana Kuşatması</strong>'ndaki ağır yenilgidir. Bu bozgunun ardından kurulan "Kutsal İttifak"a karşı Osmanlı direnememiş ve 1699 <strong data-path-to-node="10" data-index-in-node="145">Karlofça Antlaşması</strong> ile ilk kez büyük toprak kaybı yaşamıştır. Gerileme döneminde Lale Devri gibi batılılaşma hareketleri başlasa da, Rusya ile yapılan savaşlar felaketle sonuçlanmıştır. 1774 <strong data-path-to-node="10" data-index-in-node="337">Küçük Kaynarca Antlaşması</strong> ile halkı Müslüman olan Kırım kaybedilmiş ve Rusya&rsquo;ya iç işlere müdahale hakkı tanınmıştır.</p>
+            <h3 data-path-to-node="11">4. Dağılma ve Çöküş: Hasta Adam (1792-1922)</h3>
+            <p data-path-to-node="12">Bu dönemde devlet, "Denge Politikası" izleyerek büyük güçlerin (İngiltere, Rusya, Fransa) çıkar çatışmalarından yararlanıp ayakta kalmaya çalışmıştır. <strong data-path-to-node="12" data-index-in-node="151">III. Selim</strong> (Nizam-ı Cedid) ve <strong data-path-to-node="12" data-index-in-node="181">II. Mahmud</strong> (Vaka-i Hayriye ile Yeniçerilerin kaldırılması) gibi padişahlar devleti modernleştirmeye çalışmıştır. Tanzimat ve Islahat Fermanları ile hukuksal eşitlik sağlanmaya çalışılsa da milliyetçilik akımının etkisiyle Balkan ulusları birer birer isyan etmiştir.</p>
+            <p data-path-to-node="13"><strong data-path-to-node="13" data-index-in-node="0">93 Harbi</strong> (1877-78 Osmanlı-Rus Savaşı) büyük bir yıkım getirmiş, Ruslar İstanbul önlerine (Yeşilköy) kadar gelmiştir. <strong data-path-to-node="13" data-index-in-node="117">II. Abdülhamid</strong>, İslamcılık politikasıyla devleti 33 yıl daha bir arada tutmayı başarsa da I. Dünya Savaşı&rsquo;nın patlak vermesi sonu getirmiştir. İttifak Devletleri safında savaşa giren Osmanlı; Çanakkale&rsquo;de destan yazmasına rağmen, müttefiklerinin yenilmesiyle savaşı kaybetmiş sayılmıştır. 1918 Mondros Ateşkesi ve 1920 Sevr Antlaşması ile fiilen biten imparatorluk, Mustafa Kemal Paşa önderliğindeki Milli Mücadele&rsquo;nin başarısı ve 1922&rsquo;de saltanatın kaldırılmasıyla resmen tarihe karışmıştır.</p>
+             <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/Osmanl%C4%B1-imparatorluk.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Osmanlı-imparatorlugu/osmanlı devleti.png" width="298" height="169" alt=""/></div>
+        </div>
+
+        <div class="state">
+          <div class="state-content">
+            <h3>Türkiye Cumhuriyeti</h3>
+            <span>1923 – Günümüz</span>
+            <p data-start="278" data-end="832">Türkiye Cumhuriyeti, Osmanlı Devleti&rsquo;nin I. Dünya Savaşı sonrasında yaşadığı siyasi ve askeri çöküşün ardından, Mustafa Kemal Atatürk liderliğinde yürütülen Millî Mücadele sonucunda kurulmuştur. 1919&rsquo;da Samsun&rsquo;a çıkışla başlayan bağımsızlık hareketi, Amasya Genelgesi, Erzurum ve Sivas Kongreleri ile örgütlenmiş; 23 Nisan 1920&rsquo;de Türkiye Büyük Millet Meclisi&rsquo;nin açılmasıyla millet egemenliğine dayalı yeni bir yönetim anlayışı fiilen hayata geçirilmiştir. Kurtuluş Savaşı&rsquo;nın kazanılmasının ardından 29 Ekim 1923&rsquo;te Türkiye Cumhuriyeti ilan edilmiştir.</p>
+            <p data-start="834" data-end="1267">Cumhuriyetin ilk yıllarında siyasal, hukuksal, toplumsal ve kültürel alanlarda köklü reformlar yapılmıştır. Saltanat ve hilafet kaldırılmış, laiklik ilkesine dayalı bir devlet yapısı benimsenmiş, eğitim birliği sağlanmış, medeni kanun kabul edilmiş ve çağdaş hukuk sistemi kurulmuştur. Harf devrimi, kadınlara tanınan siyasal ve sosyal haklar, ekonomik alanda devletçilik politikaları bu dönemin temel adımları arasında yer almıştır.</p>
+            <p data-start="1269" data-end="1599">Atatürk&rsquo;ün vefatından sonra İsmet İnönü döneminde II. Dünya Savaşı&rsquo;nın getirdiği zorluklar yaşanmış, Türkiye savaş dışında kalmaya çalışmıştır. Savaş sonrasında çok partili hayata geçilmiş, 1950&rsquo;de Demokrat Parti iktidara gelmiştir. Bu dönem, demokratikleşme girişimleriyle birlikte siyasi gerilimlerin arttığı bir süreç olmuştur.</p>
+            <p data-start="1601" data-end="1910">1960, 1971 ve 1980 askerî müdahaleleri, Türkiye&rsquo;nin siyasal hayatında önemli kırılma noktaları yaratmıştır. Bu müdahaleler sonrası yeni anayasalar hazırlanmış, siyasal sistem yeniden şekillendirilmiştir. 1980&rsquo;lerden itibaren serbest piyasa ekonomisine geçiş hızlanmış, dışa açılma politikaları benimsenmiştir.</p>
+            <p data-start="1912" data-end="2248">1990&rsquo;lı yıllar ekonomik krizler, koalisyon hükümetleri ve güvenlik sorunlarıyla geçmiştir. 2000&rsquo;li yıllarda siyasi istikrar arayışları, Avrupa Birliği süreci, ekonomik reformlar ve anayasal değişiklikler gündeme gelmiştir. 2017 yılında yapılan anayasa değişikliğiyle parlamenter sistemden cumhurbaşkanlığı hükümet sistemine geçilmiştir.</p>
+            <p data-start="2250" data-end="2552">Türkiye Cumhuriyeti, kuruluşundan bu yana egemenliğin millete ait olduğu, üniter devlet yapısına sahip, demokratik ve laik bir cumhuriyet olarak varlığını sürdürmektedir. Zaman içinde siyasi, ekonomik ve toplumsal dönüşümler yaşamış; bölgesel ve küresel gelişmelerden etkilenerek yoluna devam etmiştir.</p>
+            <p>&nbsp;</p>
+              <blockquote>
+      <p class="s3"><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Turkiye-cumhuriyeti/Turkiye-cumhuriyeti.html"><em><strong>detaylı incele</strong></em></a></p>
+    </blockquote>
+          </div>
+          <div class="state-flag"><img src="Turkiye-cumhuriyeti/türkiye.jpeg" width="291" height="173" alt=""/></div>
+        </div>
+
+    </div>
+
+    <aside class="sidebar">
+        
+        <div class="sidebar-widget">
+            <h4>Biliyor muydunuz?</h4>
+            <p style="font-size: 0.85rem; color: #fff; line-height: 1.6;">
+                Dünyadaki ilk "Onluk Ordu Sistemi" MÖ 209 yılında Mete Han tarafından kurulmuştur.
+            </p>
+        </div>
+
+        <div class="sidebar-widget" style="background: white; color: var(--ana);">
+            <h4>Temel Destanlar</h4>
+            <ul>
+                <li>• Oğuz Kağan Destanı</li>
+                <li>• Ergenekon Destanı</li>
+                <li>• Manas Destanı</li>
+                <li>• Göç Destanı</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h4>Dönüm Noktaları</h4>
+            <ul>
+                <li><strong>751</strong> - Talas Savaşı</li>
+                <li><strong>1071</strong> - Malazgirt Zaferi</li>
+                <li><strong>1453</strong> - İstanbul'un Fethi</li>
+                <li><strong>1922</strong> - Büyük Taarruz</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background: white; color: var(--ana);">
+            <h4>Devlet Unvanları</h4>
+            <ul>
+                <li>• <strong>Kağan:</strong> Devlet Başkanı</li>
+                <li>• <strong>Kurultay:</strong> Meclis</li>
+                <li>• <strong>Tigin:</strong> Prens</li>
+                <li>• <strong>Şad:</strong> Vali</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h4>Tarihi Başkentler</h4>
+            <ul>
+                <li>Ötüken</li>
+                <li>Semerkant</li>
+                <li>Konya</li>
+                <li>İstanbul</li>
+            </ul>
+        </div>
+
+    </aside>
+</div>
+
+<footer>
+  <p>TÜRK TARİHİ PORTALI © 2025</p>
+  <p style="font-size: 0.8rem; margin-top: 15px; letter-spacing: 2px;">"MUHTAÇ OLDUĞUN KUDRET, DAMARLARINDAKİ ASİL KANDA MEVCUTTUR!"</p>
+</footer>
+
+<script>
+const reveal = () => {
+    const states = document.querySelectorAll('.state');
+    states.forEach(state => {
+        const top = state.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100) state.classList.add('reveal');
+    });
+};
+window.addEventListener('scroll', reveal);
+reveal();
+</script>
+
+</body>
+</html>
