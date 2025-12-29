@@ -1,3 +1,85 @@
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:linear-gradient(180deg,#f5faff,#ffffff);
+  color:#1a1a1a;
+  line-height:1.8;
+}
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#ffffffee;
+  backdrop-filter:blur(8px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+}
+.logo{font-weight:700;color:#b30000}
+.nav-links{list-style:none;display:flex;gap:20px;margin:0;padding:0}
+.nav-links a{text-decoration:none;color:#333;font-weight:500}
+.nav-links a:hover{color:#b30000}
+header{
+  background:linear-gradient(90deg,#ffefef,#ffffff);
+  padding:40px 20px;
+  text-align:center;
+  animation:fadeDown 1.5s ease;
+}
+header img{width:120px;animation:wave 3s infinite ease-in-out}
+header h1{font-size:2.6rem;margin-top:20px;color:#b30000}
+section{
+  max-width:1100px;
+  margin:60px auto;
+  padding:40px;
+  background:#ffffff;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+h2{
+  color:#b30000;
+  border-bottom:3px solid #ffcccc;
+  padding-bottom:10px;
+}
+.timeline li{
+  margin:15px 0;
+  padding-left:20px;
+  border-left:4px solid #ffcccc;
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  section{margin:30px 10px;padding:25px}
+  header h1{font-size:2rem}
+}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wave{0%,100%{transform:rotate(0deg)}50%{transform:rotate(2deg)}}
+</style>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <span class="logo">🇹🇷 Türkiye Cumhuriyeti</span>
+    <ul class="nav-links">
+      <li><a href="..//">Ana Sayfa</a></li>
+      <li><a href="#">Kurtuluş Savaşı</a></li>
+      <li><a href="#">İnkılaplar</a></li>
+      <li><a href="#">Çok Partili Hayat</a></li>
+      <li><a href="#">Darbeler</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" alt="Türkiye Bayrağı">
+  <h1>Türkiye Cumhuriyeti Tarihi</h1>
+  <p>Osmanlı’nın yıkılışından modern Türkiye’ye uzanan kapsamlı ve akademik anlatım</p>
+</header>
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -83,7 +165,7 @@
 <p>Osmanlı Devleti’nin Yıkılışından Günümüze Türkiye Cumhuriyeti’nin Siyasal, Askerî ve Toplumsal Tarihi</p>
 </header>
 
-<section>
+<section data-aos="fade-up">
 <h2>1. Osmanlı Devleti’nin Yıkılışı (Derinlemesine)</h2>
 
 <h3>Ekonomik Nedenler</h3>
@@ -107,7 +189,7 @@
 <p>30 Ekim 1918’de imzalanan Mondros Ateşkes Antlaşması ile Osmanlı orduları terhis edilmiş, limanlar ve demiryolları İtilaf Devletleri’nin denetimine bırakılmıştır. 1920’de imzalanan Sevr Antlaşması ise Osmanlı Devleti’ni hukuken ortadan kaldırmayı amaçlamış, Türk milleti bu antlaşmayı reddetmiştir.</p>
 </section>
 
-<section>
+<section data-aos="fade-up">
 <h2>2. Kurtuluş Savaşı (Askerî, Siyasi ve Stratejik Açıdan Derinlemesine)</h2>
 
 <h3>Kurtuluş Savaşı’nın Zorunlu Hale Gelmesi</h3>
@@ -163,256 +245,75 @@
 <p>Büyük Taarruz’un ardından Türk ordusu, Yunan kuvvetlerini Ege’ye doğru takip etmiştir. 9 Eylül 1922’de İzmir’in kurtarılmasıyla Anadolu’daki Yunan işgali sona ermiştir.</p>
 <p>Bu süreç, sadece askerî bir başarı değil, aynı zamanda Türk milletinin moral ve özgüveninin yeniden kazanılması anlamına gelmiştir.</p>
 
+<h3>Sakarya Meydan Muharebesi – Harita ve Cephe Mantığıyla Askerî İnceleme</h3>
+<p>Sakarya Savaşı’nda cephe hattı, klasik anlamda sabit bir savunma çizgisi şeklinde oluşturulmamıştır. Mustafa Kemal Paşa, coğrafi koşulları ve kuvvet dengesini dikkate alarak savunmayı geniş bir alana yaymıştır. Bu anlayış, ordunun belirli bir hat üzerinde kuşatılmasını engellemiş ve düşmanın ilerledikçe zayıflamasını sağlamıştır.</p>
+<p>Sakarya Nehri’nin doğusu, Türk ordusu için doğal bir savunma hattı oluşturmuş; dağlık ve engebeli arazi, Yunan ordusunun ağır silahlarını etkin kullanmasını zorlaştırmıştır. Harita üzerinde bakıldığında Türk birliklerinin yay şeklinde konuşlandığı, Yunan ordusunun ise dar ve uzun ikmal hatlarına bağımlı kaldığı görülmektedir.</p>
+
+<h3>Batı Cephesi Komutanları – Ayrıntılı Askerî ve Kişisel Analiz</h3>
+<p><strong>İsmet İnönü</strong>, Batı Cephesi Komutanlığı görevine getirildiğinde karşılaştığı en büyük sorun, düzensiz kuvvetlerden düzenli orduya geçiş süreciydi. Kuvayı Milliye birliklerinin disiplin altına alınması, asker kaçaklarının önlenmesi ve merkezi komutanlığın kabul ettirilmesi ciddi direnişle karşılaştı. İnönü, bu süreci askerî disiplin, sabır ve siyasi destekle yönetmiş; I. ve II. İnönü Savaşları sayesinde hem ordunun moralini yükseltmiş hem de TBMM’nin iç ve dış meşruiyetini güçlendirmiştir.</p>
+<p><strong>Fevzi Çakmak</strong>, Genelkurmay Başkanı olarak savaşın teknik ve stratejik boyutundan sorumluydu. Cephelerin birbirinden kopuk hareket etmesini engellemiş, lojistik planlamayı merkezileştirmiştir. Özellikle topçu birliklerinin sevki, cephane dağılımı ve insan gücü planlamasında belirleyici rol oynamıştır.</p>
+<p><strong>Mustafa Kemal Atatürk</strong>, cephe komutanlarının üzerinde, nihai karar mercii olarak hareket etmiştir. Stratejik hedefleri belirlemiş, riskli ama sonuç alıcı kararlar almıştır. Sakarya’da savunmayı, Büyük Taarruz’da ise kesin hücumu tercih etmesi, onun esnek ve durumsal liderliğinin göstergesidir.</p>
+
+<h3>TBMM’nin Savaş Dönemindeki İç Muhalefeti ve Krizleri</h3>
+<p>TBMM içinde Kurtuluş Savaşı süresince tam bir görüş birliği bulunmamaktaydı. Birinci Grup olarak adlandırılan çoğunluk, Mustafa Kemal Paşa’nın liderliğini ve merkeziyetçi yönetimi desteklerken; İkinci Grup, meclisin yetkilerinin devredilmesine ve askerî otoritenin güçlenmesine karşı çıkmıştır.</p>
+<p>Başkomutanlık yetkisinin Mustafa Kemal Paşa’ya verilmesi, bu muhalefetin en yoğunlaştığı konudur. Muhalif milletvekilleri, bu yetkinin meclisin üstünlüğünü zayıflatacağını savunmuş; destekleyenler ise savaş koşullarında hızlı karar almanın zorunlu olduğunu belirtmiştir.</p>
+<p>Ekonomik krizler, asker kaçakları, iç isyanlar ve lojistik yetersizlikler TBMM’yi sürekli baskı altında tutmuştur. Buna rağmen meclis, yasama ve yürütme yetkilerini birlikte kullanarak savaşın siyasi merkezî olmayı başarmıştır.</p>
+<p>Tekâlif-i Milliye Emirleri de mecliste ciddi tartışmalara neden olmuş, ancak ordunun ayakta kalabilmesi için kaçınılmaz görülmüştür.</p>
+
+<h3>Mustafa Kemal Atatürk’ün Askerî Liderliği – Derinlemesine Analiz</h3>
+<p>Mustafa Kemal Atatürk’ün askerî liderliği, klasik Osmanlı komutanlık anlayışından farklı olarak bilimsel analiz, gerçekçilik ve ulusal hedeflerle şekillenmiştir. Cephede sadece askerî başarıyı değil, bu başarının siyasi sonuçlarını da hesaplamıştır.</p>
+<p>Sakarya Savaşı’nda savunma ağırlıklı strateji benimsemesi, ordunun yok edilmesini önlemiş ve zaman kazandırmıştır. Büyük Taarruz’da ise ani ve kesin hücum anlayışıyla düşmanın tamamen imhasını hedeflemiştir. Bu iki zıt stratejiyi başarıyla uygulaması, onun duruma göre liderlik yeteneğini ortaya koyar.</p>
+<p>Atatürk, komutanlarını seçerken liyakat ve uyum kriterlerini esas almış, askerî kararları kişisel otoritesine değil, ortak akla dayandırmıştır. Fevzi Çakmak ve İsmet İnönü ile kurduğu uyumlu komuta yapısı bunun en somut örneğidir.</p>
+<p>Onun askerî liderliği, sadece Kurtuluş Savaşı’nı kazanmakla kalmamış; Türkiye Cumhuriyeti’nin savunma anlayışının ve modern Türk Silahlı Kuvvetleri’nin doktrinsel temelini oluşturmuştur.</p>
+
+<h3>Mudanya Ateşkesi – Askerî ve Diplomatik Zemin</h3>
+<p>Mudanya Ateşkesi, 11 Ekim 1922’de imzalanmış ve Kurtuluş Savaşı’nı fiilen sona erdiren askerî-siyasi bir dönüm noktası olmuştur. Büyük Taarruz ve Başkomutanlık Meydan Muharebesi sonrası Yunan ordusunun Anadolu’da tutunma imkânı kalmamış, İtilaf Devletleri doğrudan Türkiye ile masaya oturmak zorunda kalmıştır.</p>
+<p>Ateşkes görüşmelerinde Türkiye’yi İsmet Paşa temsil etmiş; İngiltere, Fransa ve İtalya ise İtilaf Devletleri adına katılmıştır. İstanbul Hükûmeti görüşmelere dahil edilmemiş, böylece TBMM’nin tek meşru temsilci olduğu fiilen kabul edilmiştir.</p>
+<p>Mudanya ile Doğu Trakya savaşsız şekilde Türkiye’ye bırakılmış, İstanbul ve Boğazlar Türk yönetimine geçmiştir. Bu durum, Lozan Barış Antlaşması’na giden yolun askerî temelini oluşturmuştur.</p>
+
+<h3>Lozan Barış Antlaşması’na Giden Diplomatik Süreç</h3>
+<p>Lozan Konferansı öncesinde Türkiye, askeri zaferini diplomatik kazanıma dönüştürme mücadelesi vermiştir. Sevr Antlaşması’nı reddeden TBMM, tam bağımsızlık ilkesinden taviz vermemiştir.</p>
+<p>Konferansta kapitülasyonlar, sınırlar, azınlıklar, Osmanlı borçları ve Boğazlar rejimi en çetin tartışma konuları olmuştur. İsmet Paşa başkanlığındaki Türk heyeti, özellikle kapitülasyonlar konusunda geri adım atmamıştır.</p>
+<p>24 Temmuz 1923’te imzalanan Lozan Barış Antlaşması ile Türkiye Cumhuriyeti’nin bağımsızlığı uluslararası alanda tanınmış, yeni Türk devletinin hukuki temeli atılmıştır.</p>
+
+<h3>Kurtuluş Savaşı Kronolojik Zaman Çizelgesi</h3>
+<ul class="timeline">
+<li>19 Mayıs 1919 – Mustafa Kemal’in Samsun’a çıkışı</li>
+<li>22 Haziran 1919 – Amasya Genelgesi</li>
+<li>23 Temmuz – 7 Ağustos 1919 – Erzurum Kongresi</li>
+<li>4–11 Eylül 1919 – Sivas Kongresi</li>
+<li>23 Nisan 1920 – TBMM’nin açılması</li>
+<li>10 Ocak 1921 – I. İnönü Savaşı</li>
+<li>23 Ağustos – 13 Eylül 1921 – Sakarya Meydan Muharebesi</li>
+<li>26–30 Ağustos 1922 – Büyük Taarruz</li>
+<li>11 Ekim 1922 – Mudanya Ateşkesi</li>
+<li>24 Temmuz 1923 – Lozan Barış Antlaşması</li>
+</ul>
+
 <h3>Kurtuluş Savaşı’nın Askerî ve Siyasi Sonuçları</h3>
-<p>Kurtuluş Savaşı sonucunda Türk milleti tam bağımsızlığını kazanmış, Misak-ı Milli hedefleri büyük ölçüde gerçekleştirilmiştir. Mudanya Ateşkes Antlaşması ve ardından Lozan Barış Antlaşması ile Türkiye Cumhuriyeti uluslararası alanda tanınmıştır.</p>
-<p>Bu savaş, sömürge altındaki milletlere örnek olmuş ve modern Türkiye Cumhuriyeti’nin doğuşunu sağlamıştır.</p>
+<p>Kurtuluş Savaşı, Türk milletinin kendi kaderini tayin etme iradesini ortaya koyduğu tarihsel bir mücadele olmuştur. Savaş sonucunda tam bağımsız, egemen ve üniter bir devlet kurulmuş; milli egemenlik ilkesi esas alınmıştır.</p>
+<p>Bu süreç, Türkiye Cumhuriyeti’nin ilanına giden yolu açmış ve modern Türk devletinin temellerini oluşturmuştur.</p>
+
+<section data-aos="fade-up">
+<h2>Çok Partili Hayata Geçiş Süreci</h2>
+<p>Türkiye Cumhuriyeti’nde çok partili hayata geçiş, demokratikleşme arayışlarının doğal bir sonucu olarak ortaya çıkmıştır. Cumhuriyet’in ilk yıllarında tek parti yönetimi, inkılapların yerleşmesi ve devletin kurumsallaşması için zorunlu görülmüştür. Ancak II. Dünya Savaşı sonrasında dünyada demokrasi rüzgârlarının güçlenmesi ve Türkiye’nin Batı bloğuna yönelmesi, çok partili hayata geçişi kaçınılmaz kılmıştır.</p>
+<p>İlk deneme 1924’te Terakkiperver Cumhuriyet Fırkası ile yapılmış, ancak parti kısa sürede kapatılmıştır. 1930’da Serbest Cumhuriyet Fırkası kurulmuş, halktan büyük ilgi görmesi rejim açısından kontrolsüz bir sürece yol açabileceği endişesiyle feshedilmiştir. Bu iki deneme, çok partili hayat için toplumsal ve siyasal altyapının henüz olgunlaşmadığını göstermiştir.</p>
+<p>Asıl geçiş 1945 sonrası gerçekleşmiştir. 1946’da Demokrat Parti’nin kurulmasıyla Türkiye resmen çok partili siyasal yaşama adım atmıştır. 1950 seçimleriyle iktidarın barışçıl yolla el değiştirmesi, Türk demokrasi tarihi açısından bir dönüm noktası olmuştur.</p>
 </section>
 
-<section>
-<h2>3. Cemiyetler (Derinlemesine Anlatım)</h2>
-
-<h3>Cemiyetlerin Ortaya Çıkış Nedenleri</h3>
-<p>Mondros Ateşkes Antlaşması sonrasında Osmanlı Devleti’nin ordusu dağıtılmış, Anadolu’nun birçok bölgesi İtilaf Devletleri tarafından işgal edilmiştir. Merkezi otoritenin zayıflaması ve İstanbul Hükûmeti’nin etkisiz kalması üzerine halk, kendi kaderini korumak amacıyla cemiyetler kurmaya başlamıştır. Bu cemiyetler, Türk milletinin bağımsızlık mücadelesinde önemli rol oynamıştır.</p>
-
-<h3>Yararlı (Millî) Cemiyetler</h3>
-<p>Yararlı cemiyetler, Türk vatanının bütünlüğünü ve milletin bağımsızlığını korumayı amaçlamıştır. Bu cemiyetler genellikle bölgesel olarak kurulmuş, daha sonra Mustafa Kemal Atatürk’ün öncülüğünde tek çatı altında toplanmıştır.</p>
-
-<h4>Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti</h4>
-<p>Mustafa Kemal Atatürk ve Temsil Heyeti tarafından kurulmuştur. Amacı, Anadolu ve Rumeli’nin Türk vatanı olduğunu dünyaya duyurmak ve işgallere karşı halkı bilinçlendirmektir. Bu cemiyet, TBMM’nin açılmasıyla fiilen devletin siyasi temelini oluşturmuş ve daha sonra Cumhuriyet Halk Fırkası’na dönüşmüştür.</p>
-
-<h4>Trakya-Paşaeli Müdafaa-i Hukuk Cemiyeti</h4>
-<p>Trakya’nın Yunanistan’a verilmesini önlemek amacıyla kurulmuştur. Bölgenin Türk yurdu olduğunu savunmuş ve gerekirse bağımsız bir Trakya devleti kurmayı hedeflemiştir.</p>
-
-<h4>Doğu Anadolu Müdafaa-i Hukuk Cemiyeti</h4>
-<p>Ermeni Devleti kurulmasını engellemek amacıyla kurulmuştur. Erzurum Kongresi’nin toplanmasında bu cemiyet etkili olmuştur.</p>
-
-<h4>Kilikyalılar Cemiyeti</h4>
-<p>Çukurova bölgesinde Fransız ve Ermeni işgallerine karşı faaliyet göstermiştir. Bölgenin Türk nüfus yapısını savunmuştur.</p>
-
-<h4>Milli Kongre Cemiyeti</h4>
-<p>Basın ve yayın yoluyla Türk halkının haklı mücadelesini dünya kamuoyuna duyurmayı amaçlamıştır. Silahlı mücadele yerine propaganda faaliyetlerine ağırlık vermiştir.</p>
-
-<h3>Zararlı Cemiyetler</h3>
-<p>Zararlı cemiyetler, işgalci devletlerin çıkarları doğrultusunda hareket etmiş ve Osmanlı Devleti’nin parçalanmasını hedeflemiştir. Bu cemiyetler azınlıklar ve bazı Osmanlı aydınları tarafından kurulmuştur.</p>
-
-<h4>Mavri Mira Cemiyeti</h4>
-<p>Rumlar tarafından kurulmuştur. Amacı, Bizans İmparatorluğu’nu yeniden canlandırmak ve Batı Anadolu’yu Yunanistan’a katmaktır. Yunan işgallerini desteklemiştir.</p>
-
-<h4>Pontus Rum Cemiyeti</h4>
-<p>Karadeniz Bölgesi’nde Pontus Rum Devleti kurmayı amaçlamıştır. Çeteler kurarak Türk köylerine saldırılar düzenlemiştir.</p>
-
-<h4>Hınçak ve Taşnak Cemiyetleri</h4>
-<p>Ermeni milliyetçiliği doğrultusunda faaliyet göstermiş, Doğu Anadolu’da bağımsız Ermeni Devleti kurmayı hedeflemiştir.</p>
-
-<h4>İngiliz Muhipler Cemiyeti</h4>
-<p>Osmanlı Devleti’nin İngiliz mandasına girmesini savunmuştur. İçinde bazı Osmanlı yöneticileri ve aydınları da yer almıştır.</p>
-
-<h4>Wilson Prensipleri Cemiyeti</h4>
-<p>Amerikan mandasını savunmuş, Osmanlı’nın tek başına kurtulamayacağını iddia etmiştir.</p>
-
-<h3>Cemiyetlerin Kapatılması ve Sonuçları</h3>
-<p>Mustafa Kemal Atatürk, milli mücadelede başıbozukluğu önlemek amacıyla tüm yararlı cemiyetleri Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti çatısı altında toplamıştır. Zararlı cemiyetler ise TBMM tarafından yasaklanmış ve faaliyetlerine son verilmiştir.</p>
-<p>Cemiyetler, Kurtuluş Savaşı’nın örgütlenmesinde büyük rol oynamış ve Türkiye Cumhuriyeti’nin kurulmasına giden yolu açmıştır.</p>
+<section data-aos="fade-up">
+<h2>Darbeler ve Askerî Müdahaleler</h2>
+<p>Türkiye Cumhuriyeti tarihinde askerî müdahaleler, siyasal istikrarsızlık, ekonomik krizler ve demokrasi tartışmalarıyla yakından ilişkilidir. İlk askerî darbe 27 Mayıs 1960’ta gerçekleşmiş, Demokrat Parti iktidarı sona erdirilmiştir. Darbenin gerekçesi olarak anayasal düzenin ihlal edildiği iddia edilmiştir.</p>
+<p>1960 darbesi sonrasında 1961 Anayasası hazırlanmış, bu anayasa özgürlükleri genişletmiş ancak vesayetçi kurumları da güçlendirmiştir. 12 Mart 1971 muhtırası, 12 Eylül 1980 darbesi ve 28 Şubat 1997 süreci, Türk siyasal hayatında askerî vesayetin farklı biçimlerde sürdüğünü göstermiştir.</p>
+<p>15 Temmuz 2016’da gerçekleştirilen darbe girişimi ise halkın doğrudan direnişiyle engellenmiş, bu yönüyle önceki müdahalelerden ayrılmıştır. Bu olay, sivil iradenin güçlenmesi açısından tarihî bir kırılma noktası olmuştur.</p>
 </section>
 
-<section>
-<h2>4. Atatürk İnkılapları ve Kanunlar (Derinlemesine Anlatım)</h2>
-
-<h3>İnkılapların Genel Amacı</h3>
-<p>Atatürk inkılapları, Osmanlı Devleti’nden miras kalan geleneksel yapıyı çağdaş, laik ve milli bir devlet düzenine dönüştürmek amacıyla yapılmıştır. Bu inkılapların temel hedefi, bireyi kul anlayışından çıkararak özgür ve eşit bir yurttaş haline getirmek, Türkiye Cumhuriyeti’ni çağdaş uygarlıklar seviyesine ulaştırmaktır.</p>
-<p>İnkılaplar plansız değil, birbirini tamamlayan bir bütün olarak uygulanmıştır. Önce siyasi alanda egemenlik millete verilmiş, ardından hukuk, eğitim, toplum ve ekonomi alanlarında köklü değişikliklere gidilmiştir.</p>
-
-<h3>Siyasi İnkılaplar</h3>
-<p><strong>Saltanatın Kaldırılması (1922):</strong> Osmanlı padişahlığı sona erdirilerek egemenliğin kaynağının millet olduğu resmen kabul edilmiştir. Bu adım, milli egemenliğin önündeki en büyük engelin kaldırılması anlamına gelmektedir.</p>
-<p><strong>Cumhuriyetin İlanı (1923):</strong> Devletin yönetim şekli cumhuriyet olarak belirlenmiş, halkın kendi yöneticilerini seçmesi esas alınmıştır.</p>
-<p><strong>Halifeliğin Kaldırılması (1924):</strong> Din ve devlet işlerinin ayrılması yönünde atılmış en önemli adımlardan biridir. Laik devlet anlayışının temeli bu kararla güçlenmiştir.</p>
-
-<h3>Hukuk Alanındaki İnkılaplar</h3>
-<p><strong>Medeni Kanun’un Kabulü (1926):</strong> İsviçre Medeni Kanunu örnek alınarak hazırlanan bu kanunla kadın-erkek eşitliği sağlanmış, çok eşlilik kaldırılmış ve resmi nikâh zorunlu hale getirilmiştir.</p>
-<p><strong>Ceza ve Ticaret Kanunları:</strong> Avrupa’dan alınan çağdaş kanunlarla hukuk birliği sağlanmış, şeri hukuk uygulamalarına son verilmiştir.</p>
-
-<h3>Toplumsal ve Kültürel İnkılaplar</h3>
-<p><strong>Şapka Kanunu (1925):</strong> Toplumda çağdaş görünümü sağlamak ve dinî simgelerin devlet düzeninden çıkarılmasını amaçlamıştır. Kanun, bazı bölgelerde tepkilere yol açsa da devlet otoritesi kararlılıkla uygulanmıştır.</p>
-<p><strong>Kılık Kıyafet Kanunu:</strong> Özellikle devlet memurlarının modern ve laik kıyafetler giymesi zorunlu hale getirilmiştir.</p>
-<p><strong>Soyadı Kanunu (1934):</strong> Toplumda aile düzenini ve resmi işlemleri kolaylaştırmak amacıyla çıkarılmış, Mustafa Kemal’e “Atatürk” soyadı verilmiştir.</p>
-
-<h3>Eğitim ve Kültür Alanındaki İnkılaplar</h3>
-<p><strong>Tevhid-i Tedrisat Kanunu (1924):</strong> Eğitim öğretim birleştirilmiş, medreseler kapatılarak çağdaş eğitim sistemi kurulmuştur.</p>
-<p><strong>Harf İnkılabı (1928):</strong> Arap alfabesi yerine Latin alfabesi kabul edilmiştir. Okuma yazma oranı kısa sürede artmış, halk eğitimi hız kazanmıştır.</p>
-<p><strong>Türk Dil ve Tarih Kurumları:</strong> Milli kültürün geliştirilmesi ve Türk tarihinin bilimsel temellere dayandırılması amaçlanmıştır.</p>
-
-<h3>Ekonomik İnkılaplar</h3>
-<p>Devletçilik ilkesi doğrultusunda sanayi yatırımları yapılmış, fabrikalar kurulmuş ve ekonomik bağımsızlık hedeflenmiştir. İzmir İktisat Kongresi ile milli ekonomi anlayışı benimsenmiştir.</p>
-
-<h3>İnkılapların Sonuçları</h3>
-<p>Atatürk inkılapları sayesinde Türkiye Cumhuriyeti kısa sürede çağdaş bir devlet yapısına kavuşmuştur. Bu reformlar, Türk toplumunun sosyal, kültürel ve hukuki yapısını kökten değiştirmiş ve modern Türkiye’nin temellerini oluşturmuştur.</p>
-</section>
-
-<section>
-<h2>5. Çok Partili Hayata Geçiş Süreci (Derinlemesine Anlatım)</h2>
-
-<h3>Tek Parti Döneminin Özellikleri (1923–1945)</h3>
-<p>Türkiye Cumhuriyeti’nin kuruluşundan itibaren Cumhuriyet Halk Fırkası (daha sonra Cumhuriyet Halk Partisi) ülkeyi tek başına yönetmiştir. Bu dönemin temel amacı, yeni kurulan devletin inkılapları yerleştirmesi, rejimi koruması ve ülkeyi iç tehditlere karşı ayakta tutmasıdır. Çok partili hayata geçiş denemeleri yapılmış ancak rejime yönelik tehditler nedeniyle bu girişimler kısa ömürlü olmuştur.</p>
-
-<h3>İlk Çok Partili Hayat Denemeleri</h3>
-
-<h4>Terakkiperver Cumhuriyet Fırkası (1924)</h4>
-<p>Kazım Karabekir, Ali Fuat Cebesoy, Rauf Orbay ve Refet Bele gibi Milli Mücadele’nin önde gelen komutanları tarafından kurulmuştur. Parti, daha liberal bir ekonomi ve demokratik bir yönetim anlayışını savunmuştur. Ancak Şeyh Sait İsyanı’nın ardından rejime karşı tehdit oluşturduğu gerekçesiyle Takrir-i Sükûn Kanunu kapsamında kapatılmıştır.</p>
-
-<h4>Serbest Cumhuriyet Fırkası (1930)</h4>
-<p>Mustafa Kemal Atatürk’ün isteğiyle Fethi Okyar tarafından kurulmuştur. Amaç, hükümeti denetleyecek bir muhalefet partisi oluşturmaktı. Ancak kısa sürede rejim karşıtı grupların partiye yönelmesi nedeniyle kapatılmıştır. Bu durum, toplumun henüz çok partili hayata hazır olmadığını göstermiştir.</p>
-
-<h3>Çok Partili Hayata Geçişin Uluslararası ve İç Nedenleri</h3>
-<p>İkinci Dünya Savaşı sonrasında dünyada demokrasi anlayışı güç kazanmış, Türkiye de Batı bloğuna yaklaşmak istemiştir. Ayrıca ekonomik sıkıntılar, savaş yıllarının yarattığı toplumsal baskılar ve halkın yönetime katılma isteği çok partili hayata geçişi zorunlu hale getirmiştir.</p>
-
-<h3>Demokrat Parti’nin Kuruluşu (1946)</h3>
-<p>Celal Bayar, Adnan Menderes, Refik Koraltan ve Fuat Köprülü tarafından kurulmuştur. Demokrat Parti, halkın ekonomik ve siyasi taleplerine daha yakın bir politika izlemiş, devletçiliğe karşı daha serbest bir ekonomik anlayışı savunmuştur.</p>
-
-<h3>1946 ve 1950 Seçimleri</h3>
-<p>1946 seçimleri açık oy–gizli sayım yöntemiyle yapılmış ve tartışmalara yol açmıştır. 1950 seçimleri ise gizli oy–açık sayım esasına göre gerçekleştirilmiş, Demokrat Parti büyük bir zafer kazanarak iktidara gelmiştir. Bu seçim, Türk demokrasi tarihinde bir dönüm noktasıdır.</p>
-
-<h3>Demokrat Parti Dönemi (1950–1960)</h3>
-<p>Demokrat Parti döneminde ekonomik büyüme hedeflenmiş, tarım desteklenmiş ve özel sektör teşvik edilmiştir. Ancak zamanla basın özgürlüğünün kısıtlanması, muhalefete baskılar ve ekonomik sorunlar ortaya çıkmıştır. Bu gelişmeler, 27 Mayıs 1960 askeri darbesine zemin hazırlamıştır.</p>
-
-<h3>Çok Partili Hayatın Sonuçları</h3>
-<p>Çok partili hayata geçiş, halkın yönetime katılımını artırmış ve demokratik kültürün gelişmesine katkı sağlamıştır. Ancak siyasi kutuplaşmalar ve demokratik tecrübe eksikliği, Türkiye’de askeri müdahalelere açık bir ortam oluşturmuştur.</p>
-</section>
-
-<section>
-<h2>6. Türkiye Cumhuriyeti Cumhurbaşkanları (Derinlemesine Dönem Analizi)</h2>
-
-<h3>Mustafa Kemal Atatürk (1923–1938)</h3>
-<p>Türkiye Cumhuriyeti’nin kurucusu ve ilk cumhurbaşkanıdır. Atatürk’ün temel hedefi, çağdaş, laik ve bağımsız bir Türk devleti kurmaktı. Bu dönemde inkılaplar hızla hayata geçirilmiş, saltanat ve halifelik kaldırılmış, hukuk, eğitim ve toplumsal alanda köklü reformlar yapılmıştır.</p>
-<p>Dış politikada "Yurtta sulh, cihanda sulh" ilkesi benimsenmiş, Lozan Antlaşması’nın uygulanması sağlanmış ve Hatay meselesi diplomatik yollarla çözülmüştür. Atatürk dönemi, modern Türkiye’nin temelinin atıldığı dönemdir.</p>
-
-<h3>İsmet İnönü (1938–1950)</h3>
-<p>Atatürk’ün vefatından sonra cumhurbaşkanı seçilen İsmet İnönü, Türkiye’yi İkinci Dünya Savaşı gibi son derece zorlu bir süreçte yönetmiştir. Savaşın dışında kalmak için denge politikası izlenmiş, bu sayede ülke büyük bir yıkımdan korunmuştur.</p>
-<p>İç politikada ekonomik sıkıntılar yaşanmış, Varlık Vergisi gibi uygulamalar toplumsal tepkilere neden olmuştur. İnönü dönemi, çok partili hayata geçişin temellerinin atıldığı bir geçiş dönemi olmuştur.</p>
-
-<h3>Celal Bayar (1950–1960)</h3>
-<p>Demokrat Parti’nin iktidara gelmesiyle cumhurbaşkanı seçilmiştir. Bu dönem, halkın yönetime daha fazla katıldığı ve liberal ekonomik politikaların uygulandığı bir süreçtir.</p>
-<p>Ancak hükümet ile muhalefet arasındaki gerilimler, basın özgürlüğüne yönelik baskılar ve ekonomik sorunlar artmış, bu durum 27 Mayıs 1960 askeri darbesiyle sonuçlanmıştır.</p>
-
-<h3>Cemal Gürsel (1961–1966)</h3>
-<p>27 Mayıs 1960 darbesinin ardından devlet başkanı olmuş, 1961 Anayasası’nın hazırlanmasında önemli rol oynamıştır. Bu anayasa, özgürlükleri genişleten bir anayasa olarak kabul edilir.</p>
-<p>Cemal Gürsel dönemi, askeri müdahale sonrası demokratik düzene dönüş çabalarının yaşandığı bir dönemdir.</p>
-
-<h3>Cevdet Sunay (1966–1973)</h3>
-<p>Eski Genelkurmay Başkanı olan Sunay, siyasi istikrarsızlıkların arttığı bir dönemde görev yapmıştır. 1971 Muhtırası bu dönemde verilmiştir.</p>
-<p>Devlet otoritesini koruma amacıyla askerin siyasette etkisi artmıştır.</p>
-
-<h3>Fahri Korutürk (1973–1980)</h3>
-<p>Soğuk Savaş koşullarında görev yapan Korutürk, Kıbrıs Barış Harekâtı’nın gerçekleştiği dönemin cumhurbaşkanıdır.</p>
-<p>Ancak artan sağ-sol çatışmaları ve siyasi istikrarsızlık, 12 Eylül 1980 darbesine zemin hazırlamıştır.</p>
-
-<h3>Kenan Evren (1982–1989)</h3>
-<p>12 Eylül 1980 askeri darbesinin lideridir. 1982 Anayasası bu dönemde hazırlanmış ve yürürlüğe girmiştir.</p>
-<p>Bu dönem, siyasi partilerin kapatıldığı ve temel hakların kısıtlandığı bir dönem olarak tarihe geçmiştir.</p>
-
-<h3>Turgut Özal (1989–1993)</h3>
-<p>Liberal ekonomi politikalarının mimarıdır. Serbest piyasa ekonomisi güçlendirilmiş, Türkiye dünya ekonomisine entegre edilmiştir.</p>
-<p>Dış politikada daha aktif bir çizgi izlenmiş, Körfez Savaşı sürecinde Türkiye önemli rol oynamıştır.</p>
-
-<h3>Süleyman Demirel (1993–2000)</h3>
-<p>Siyasi tecrübesiyle tanınan Demirel, koalisyonlar döneminde görev yapmıştır. 28 Şubat süreci bu dönemde yaşanmıştır.</p>
-<p>Demirel, anayasal düzeni koruma vurgusuyla öne çıkmıştır.</p>
-
-<h3>Ahmet Necdet Sezer (2000–2007)</h3>
-<p>Hukukçu kimliğiyle bilinen Sezer, laiklik ve hukuk devleti ilkelerine vurgu yapmıştır. 2001 ekonomik krizi bu dönemde yaşanmıştır.</p>
-<p>Devlet kurumları arasındaki yetki tartışmaları sıkça gündeme gelmiştir.</p>
-
-<h3>Abdullah Gül (2007–2014)</h3>
-<p>AK Parti iktidarı döneminde cumhurbaşkanı seçilmiştir. AB süreci ve demokratikleşme reformları bu dönemde öne çıkmıştır.</p>
-<p>367 krizi, cumhurbaşkanlığı seçim sisteminde değişikliğe yol açmıştır.</p>
-
-<h3>Recep Tayyip Erdoğan (2014– )</h3>
-<p>Halk tarafından seçilen ilk cumhurbaşkanıdır. 2017 referandumu ile Türkiye Cumhurbaşkanlığı Hükûmet Sistemi’ne geçmiştir.</p>
-<p>Bu dönemde dış politika daha aktif hale gelmiş, terörle mücadele ve sınır ötesi operasyonlar yoğunlaşmıştır.</p>
-
-</section>
-
-<section>
-<h2>7. Darbeler ve Askerî Müdahaleler (Sebep–Süreç–Sonuç Analizi)</h2>
-
-<h3>Darbelerin Türkiye Siyasi Hayatındaki Yeri</h3>
-<p>Türkiye Cumhuriyeti tarihinde askerî darbeler, genellikle siyasal istikrarsızlık, ekonomik krizler, toplumsal çatışmalar ve demokrasiye yönelik tehdit iddiaları gerekçe gösterilerek yapılmıştır. Ancak her askerî müdahale, demokratik süreci kesintiye uğratmış ve uzun vadede toplumsal travmalara yol açmıştır.</p>
-
-<h3>27 Mayıs 1960 Darbesi</h3>
-<p><strong>Sebepleri:</strong> Demokrat Parti iktidarının muhalefet üzerindeki baskıları, basın özgürlüğünün kısıtlanması, üniversite olayları ve ordunun siyasete müdahale isteği.</p>
-<p><strong>Süreç:</strong> Türk Silahlı Kuvvetleri yönetime el koymuş, Demokrat Parti yöneticileri tutuklanmıştır.</p>
-<p><strong>Sonuçları:</strong> Başbakan Adnan Menderes ve iki bakan idam edilmiştir. 1961 Anayasası hazırlanarak yürürlüğe girmiş, bu anayasa özgürlükleri genişletmiştir.</p>
-
-<h3>12 Mart 1971 Muhtırası</h3>
-<p><strong>Sebepleri:</strong> Artan sağ-sol çatışmaları, ekonomik sorunlar ve siyasi otorite boşluğu.</p>
-<p><strong>Süreç:</strong> Ordu, hükümete muhtıra vermiş, hükümet istifa etmek zorunda kalmıştır.</p>
-<p><strong>Sonuçları:</strong> Siyasi özgürlükler kısıtlanmış, sıkıyönetim ilan edilmiştir.</p>
-
-<h3>12 Eylül 1980 Darbesi</h3>
-<p><strong>Sebepleri:</strong> Yoğun iç çatışmalar, terör olayları, ekonomik kriz ve meclisin cumhurbaşkanı seçememesi.</p>
-<p><strong>Süreç:</strong> Ordu yönetime el koymuş, TBMM kapatılmış, siyasi partiler feshedilmiştir.</p>
-<p><strong>Sonuçları:</strong> 1982 Anayasası kabul edilmiştir. Siyasi yasaklar getirilmiş, temel hak ve özgürlükler sınırlandırılmıştır.</p>
-
-<h3>28 Şubat 1997 Süreci (Postmodern Darbe)</h3>
-<p><strong>Sebepleri:</strong> Laiklik tartışmaları ve Refah Partisi iktidarına yönelik endişeler.</p>
-<p><strong>Süreç:</strong> MGK kararlarıyla hükümet istifaya zorlanmıştır.</p>
-<p><strong>Sonuçları:</strong> Refah Partisi kapatılmış, başörtüsü yasağı gibi uygulamalar yaygınlaşmıştır.</p>
-
-<h3>27 Nisan 2007 E-Muhtırası</h3>
-<p><strong>Sebepleri:</strong> Cumhurbaşkanlığı seçimi sürecindeki siyasi gerilim.</p>
-<p><strong>Süreç:</strong> Genelkurmay internet sitesinden bildiri yayımlamıştır.</p>
-<p><strong>Sonuçları:</strong> Sivil irade güçlenmiş, askerî vesayet gerilemiştir.</p>
-
-<h3>15 Temmuz 2016 Darbe Girişimi</h3>
-<p><strong>Sebepleri:</strong> FETÖ yapılanmasının devlet kurumlarına sızması.</p>
-<p><strong>Süreç:</strong> Askeri unsurlar yönetime el koymaya çalışmış, halkın direnişiyle başarısız olmuştur.</p>
-<p><strong>Sonuçları:</strong> Olağanüstü hal ilan edilmiş, FETÖ ile mücadele başlatılmış, demokratik sistem korunmuştur.</p>
-
-<h3>Darbelerin Türkiye’ye Etkileri</h3>
-<p>Askerî müdahaleler, Türkiye’de demokrasinin gelişimini yavaşlatmış, toplumsal kutuplaşmayı artırmış ve siyasal güven sorunlarına yol açmıştır. Ancak özellikle 2000’li yıllardan sonra sivil siyaset güç kazanmış ve darbelere karşı toplumsal bilinç artmıştır.</p>
-</section>
-
-<section>
-<h2>8. Türkiye Cumhuriyeti Askerî Harekâtları</h2>
-<p>Türkiye Cumhuriyeti, ulusal güvenliğini sağlamak amacıyla çeşitli askerî harekâtlar gerçekleştirmiştir.</p>
-<p>1974 Kıbrıs Barış Harekâtı, Kıbrıs Türk halkını korumak ve anayasal düzeni sağlamak amacıyla yapılmıştır.</p>
-<p>Son yıllarda gerçekleştirilen Fırat Kalkanı, Zeytin Dalı ve Barış Pınarı harekâtları, sınır güvenliği ve terörle mücadele kapsamında yapılmıştır.</p>
-<p>Bu harekâtlar Türkiye’nin bölgesel güvenlik politikasının bir parçasıdır.</p>
-</section>
-
-<footer>
-<p>© Türkiye Cumhuriyeti Tarihi Bilgi Sitesi – Eğitim ve Bilgilendirme Amaçlıdır</p>
-</footer>
-</body>
-</html>
-
-<section>
-<h2>8. Türkiye Cumhuriyeti Askerî Harekâtları (Derinlemesine Anlatım)</h2>
-
-<h3>Askerî Harekâtların Genel Çerçevesi</h3>
-<p>Türkiye Cumhuriyeti, kuruluşundan itibaren hem sınır güvenliğini sağlamak hem de ulusal çıkarlarını korumak amacıyla çeşitli askerî harekâtlarda bulunmuştur. Bu harekâtlar, uluslararası hukuk, garantörlük hakları ve meşru müdafaa ilkeleri çerçevesinde gerçekleştirilmiştir.</p>
-
-<h3>Kıbrıs Barış Harekâtı (1974)</h3>
-<p><strong>Nedenleri:</strong> Kıbrıs’ta Rumlar tarafından gerçekleştirilen Enosis girişimleri, Türk toplumuna yönelik baskılar ve 1974’te yapılan Yunan destekli darbe, Türkiye’yi harekete geçirmiştir. Türkiye, 1960 Garanti Antlaşması’ndan doğan hakkını kullanmıştır.</p>
-<p><strong>Süreç:</strong> 20 Temmuz 1974’te başlayan harekât iki aşamada gerçekleştirilmiştir. Türk Silahlı Kuvvetleri adaya çıkarma yapmış ve Türk halkının güvenliği sağlanmıştır.</p>
-<p><strong>Sonuçları:</strong> Kıbrıs’ta iki toplumlu yapı fiilen oluşmuş, 1983’te Kuzey Kıbrıs Türk Cumhuriyeti ilan edilmiştir. Harekât, Türkiye’nin Doğu Akdeniz’deki stratejik konumunu güçlendirmiştir.</p>
-
-<h3>Terörle Mücadele ve Sınır Ötesi Operasyonlar</h3>
-<p>1980’li yıllardan itibaren PKK terör örgütünün faaliyetleri Türkiye’nin güvenlik politikalarında belirleyici olmuştur. Bu kapsamda Güneydoğu Anadolu’da ve sınır ötesinde çok sayıda operasyon düzenlenmiştir.</p>
-
-<h4>Kuzey Irak Operasyonları</h4>
-<p>Irak’ın kuzeyinde konuşlanan terör unsurlarına karşı yapılan bu operasyonlar, Türkiye’nin sınır güvenliğini sağlamayı ve terör tehdidini kaynağında yok etmeyi amaçlamıştır.</p>
-
-<h3>Suriye Operasyonları</h3>
-
-<h4>Fırat Kalkanı Harekâtı (2016)</h4>
-<p>DEAŞ ve PYD/YPG unsurlarını sınır hattından temizlemek amacıyla yapılmıştır. Türkiye’nin güney sınırında bir terör koridoru oluşması engellenmiştir.</p>
-
-<h4>Zeytin Dalı Harekâtı (2018)</h4>
-<p>Afrin bölgesinde gerçekleştirilen bu harekât, terör unsurlarını etkisiz hale getirmeyi ve bölge halkının güvenliğini sağlamayı hedeflemiştir.</p>
-
-<h4>Barış Pınarı Harekâtı (2019)</h4>
-<p>Suriye’nin kuzeyinde güvenli bölge oluşturmak ve mülteci dönüşlerini sağlamak amacıyla yapılmıştır.</p>
-
-<h3>Askerî Harekâtların Türkiye’ye Etkileri</h3>
-<p>Bu harekâtlar, Türkiye’nin savunma kapasitesini artırmış, yerli ve milli savunma sanayisinin gelişmesini hızlandırmıştır. Aynı zamanda Türkiye’nin bölgesel bir askerî güç olarak konumunu pekiştirmiştir.</p>
+<section data-aos="fade-up">
+<h2>Atatürk İnkılapları ve Temel Kanunlar</h2>
+<p>Atatürk inkılapları, Osmanlı’dan devralınan geleneksel yapının yerine çağdaş, laik ve milli bir devlet oluşturmayı hedeflemiştir. Bu inkılaplar siyasi, sosyal, hukuki, kültürel ve ekonomik alanlarda köklü dönüşümler getirmiştir.</p>
+<p><strong>Şapka Kanunu (1925):</strong> Kılık kıyafet alanında birlik sağlamak ve çağdaş görünümü benimsetmek amacıyla çıkarılmıştır. Toplumda yer yer tepkiler doğmuş, ancak devlet otoritesi kararlılıkla uygulanmıştır.</p>
+<p><strong>Kılık Kıyafet Düzenlemeleri:</strong> Dinî kıyafetlerin kamu alanında sınırlandırılması, laik devlet anlayışının bir parçası olmuştur.</p>
+<p><strong>Harf İnkılabı (1928):</strong> Okuma yazmayı kolaylaştırmak ve Batı ile kültürel entegrasyonu sağlamak amacıyla Latin alfabesine geçilmiştir.</p>
+<p><strong>Medeni Kanun (1926):</strong> Kadın–erkek eşitliği sağlanmış, aile ve miras hukukunda çağdaş düzenlemeler yapılmıştır.</p>
+<p><strong>Eğitim Reformları:</strong> Tevhid-i Tedrisat Kanunu ile eğitim birleştirilmiş, laik ve bilimsel eğitim sistemi kurulmuştur.</p>
 </section>
