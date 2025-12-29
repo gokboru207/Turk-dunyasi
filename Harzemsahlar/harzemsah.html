@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harzemşahlar Devleti | İslam'ın Muhafızları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --turkuaz: #40e0d0;
+            --altin: #d4af37;
+            --fildisi: #fffdf5;
+            --text-dark: #2c3e50;
+            --soft-shadow: rgba(0, 0, 0, 0.05);
+            --accent: #b22222;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            margin: 0;
+            background-color: var(--fildisi);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Başlık ve Giriş */
+        header {
+            background: linear-gradient(rgba(255, 253, 245, 0.85), rgba(255, 253, 245, 0.85)), url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Khwarezmian_Empire_1200.png') center/cover;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 6px solid var(--altin);
+            animation: fadeInDown 1.5s;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4em;
+            margin: 0;
+            letter-spacing: 4px;
+            color: var(--text-dark);
+        }
+
+        nav {
+            background: #ffffff;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 2px 15px var(--soft-shadow);
+            border-bottom: 1px solid #eee;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--altin);
+            border-bottom: 2px solid var(--altin);
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 60px;
+            box-shadow: 0 5px 35px var(--soft-shadow);
+            border-radius: 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent);
+            font-size: 2.3em;
+            border-bottom: 3px double var(--altin);
+            display: inline-block;
+            margin-bottom: 35px;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--text-dark);
+            border-left: 5px solid var(--turkuaz);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: #fdfbf0;
+            border: 1px solid #f1e9c9;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .flag-img {
+            display: block;
+            margin: -70px auto 40px;
+            width: 320px;
+            border: 5px solid white;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 5px;
+        }
+
+        .grid-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .mini-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .mini-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--altin);
+        }
+
+        footer {
+            background: #fdfbf0;
+            color: #7f8c8d;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropcap {
+            float: left;
+            font-size: 4em;
+            line-height: 0.8;
+            padding-right: 12px;
+            color: var(--altin);
+            font-family: 'Cinzel';
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HARZEMŞAHLAR DEVLETİ</h1>
+    <p style="font-size: 1.4em; color: #555; letter-spacing: 2px;">Selçukluların Mirasçısı, Bozkırın Mağrur Gücü (1077 - 1231)</p>
+</header>
+
+<div class="animate__animated animate__zoomIn">
+<img src="harzemşahlar.png" class="flag-img" alt="Harzemşahlar Bayrağı"></div>
+
+<nav> 
+   <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a> 
+    <a href="#kurulus"> Kuruluş</a>
+    <a href="#hukumdarlar">Ulu Şahlar</a>
+    <a href="#kultur">Medeniyet</a>
+    <a href="#mogol">Moğol İstilası</a>
+    <a href="#yikilis">Yıkılış</a>
+</nav>
+
+<div class="container">
+
+    <section id="kurulus">
+        <h2>Devletin Doğuşu ve Yükselişi</h2>
+        <p><span class="dropcap">H</span>arzemşahlar, Ceyhun Nehri'nin döküldüğü Harezm bölgesinde, Büyük Selçuklu Devleti'ne bağlı bir valilik olarak tarih sahnesine çıkmışlardır. Devletin temelleri, Selçuklu sultanı Melikşah'ın taştdarı (saray görevlisi) olan <strong>Anuş Tigin</strong> tarafından atılmıştır. Ancak Harzemşahlar, sadece yerel bir güç olarak kalmamış, Selçukluların zayıflamasıyla birlikte İslam dünyasının yeni liderliğine soyunmuşlardır.</p>
+        
+        <div class="info-card">
+            <strong>Stratejik Konum:</strong> Harezm bölgesi, dönemin en verimli topraklarına ve en işlek ticaret yollarına sahipti. Bu bölgeyi kontrol eden Harzemşahlar, kısa sürede askeri ve ekonomik bir dev haline geldiler. 12. yüzyılın sonuna gelindiğinde, İran, Horasan ve Maveraünnehir bölgelerini tamamen kontrol altına alarak "Selçukluların Gerçek Mirasçısı" olduklarını ilan ettiler.
+        </div>
+        
+    </section>
+
+    <section id="hukumdarlar">
+        <h2>Ulu Şahlar ve Büyük Fetihler</h2>
+        
+        <h3>İl Arslan ve Bağımsızlık Yolunda</h3>
+        <p>Atsız’ın ölümünden sonra tahta çıkan İl Arslan, devletin tam bağımsızlığını sağlama yolunda büyük adımlar atmıştır. O, hem Karahitaylar ile mücadele etmiş hem de Selçuklu iç işlerine müdahale ederek Harzemşahların ağırlığını tüm Orta Asya'ya hissettirmiştir.</p>
+
+        <h3>Alaaddin Tekiş (Altın Çağ)</h3>
+        <p>Harzemşahları gerçek bir imparatorluk yapan hükümdardır. 1194 yılında son Irak Selçuklu sultanını yenerek Selçuklu mirasını tamamen devralmış ve halife tarafından "Doğu ve Batı'nın Sultanı" olarak tanınmıştır. Onun döneminde kütüphaneler dolmuş, ordular Hindistan sınırlarına dayanmıştır.</p>
+
+        <div class="info-card">
+            <strong>Alaaddin Muhammed ve Gücün Zirvesi:</strong> Tekiş'ten sonra tahta çıkan Alaaddin Muhammed, imparatorluğu en geniş sınırlarına ulaştırdı. Ancak bu büyük güç, beraberinde aşırı bir özgüven getirdi. Kendisini "İskender-i Sani" (İkinci İskender) olarak adlandıran sultan, Bağdat'taki halife ile çatışmaya girmiş ve doğudan yaklaşan Moğol tehlikesini küçümsemiştir.
+        </div>
+    </section>
+
+    <section id="kultur">
+        <h2>Bilim, Mimari ve Devlet Yapısı</h2>
+        <p>Harzemşahlar dönemi, İslam medeniyetinin "Rönesans" yaşadığı son büyük duraklardan biridir. Başkent <strong>Gürgenç</strong>, o dönemin ilim merkeziydi.</p>
+        <div class="grid-system">
+            <div class="mini-card">
+                <h3>Bilim Adamları</h3>
+                <p>Ünlü tıp bilgini <strong>Zeynüddin Cürcani</strong>, tıp tarihinin en büyük eserlerinden biri olan 'Harezmşah Tezkiresi'ni burada kaleme almıştır. Matematik ve astronomi çalışmaları devlet tarafından desteklenmiştir.</p>
+            </div>
+            <div class="mini-card">
+                <h3>Devlet Yönetimi</h3>
+                <p>Harzemşahlar, Selçuklu merkez teşkilatını daha da geliştirmişlerdir. Orduda "Harezm Süvarileri" adı verilen, ağır zırhlı ve disiplinli bir birlik yapısı kurmuşlar, bu sayede bozkırda üstünlük sağlamışlardır.</p>
+            </div>
+            <div class="mini-card">
+                <h3>Mimari Yapı</h3>
+                <p>Turkuaz çinili kubbeler ve devasa kervansaraylar Harzem mimarisinin imzasıdır. Gürgenç'teki camiler, Moğol istilasına kadar ihtişamın sembolü olmuştur.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mogol">
+        <h2>Otrar Faciası ve Moğol İstilası</h2>
+        <p>Harzemşahların kaderini belirleyen en acı olay <strong>Otrar Faciası</strong>'dır. 1218 yılında Cengiz Han’ın gönderdiği ticaret kervanının Otrar valisi İnalcık tarafından katledilmesi, insanlık tarihinin en yıkıcı savaşlarından birine davetiye çıkarmıştır.</p>
+        <p>Cengiz Han'ın bizzat yönettiği Moğol orduları, Harezm şehirlerini birer birer kuşatarak yerle bir etmiştir. Sultan Alaaddin Muhammed çaresizlik içinde Hazar Denizi'ndeki bir adaya kaçarak orada hayatını kaybetmiş, devletin yükü genç prens Celaleddin'in omuzlarına kalmıştır.</p>
+    </section>
+
+    <section id="yikilis">
+        <h2>Celaleddin Harzemşah ve Son Direniş</h2>
+        <p>Devletin son büyük kahramanı <strong>Celaleddin Harzemşah</strong>, Moğollara karşı gösterdiği destansı direnişle tanınır. İndus Nehri kıyısında Moğol ordusuna karşı verdiği mücadele Cengiz Han'ı bile kendisine hayran bırakmıştır.</p>
+        <div class="info-card" style="border-left: 5px solid var(--accent);">
+            <strong>Yassıçemen Savaşı ve Çöküş:</strong> Celaleddin Harzemşah, Moğollardan kaçarken Anadolu'ya yönelmiş ancak 1230 yılında Anadolu Selçuklu Sultanı I. Alaaddin Keykubat ile <strong>Yassıçemen Savaşı</strong>'nda karşı karşıya gelmiştir. Bu kardeş savaşı Harzemşahların sonunu hızlandırmış, 1231 yılında Celaleddin'in ölümüyle bu büyük imparatorluk tarihe karışmıştır.
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Türk Tarihi Portalı - Harzemşahlar Özel Koleksiyonu</p>
+    <p><em>"İslam'ın kalkanı olanlar, tarihin tozlu sayfalarında birer yıldız gibi parlamaya devam eder."</em></p>
+</footer>
+
+<script>
+    // Kaydırma (Scroll) Reveal Efekti
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach((section) => {
+        observer.observe(section);
+    });
+
+    // İlk bölümü anında yükle
+    window.onload = () => {
+        document.querySelector('section').classList.add('reveal');
+    };
+</script>
+
+</body>
+</html>

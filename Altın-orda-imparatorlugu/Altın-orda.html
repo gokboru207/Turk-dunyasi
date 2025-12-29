@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altın Orda Devleti | Bozkırın Devasa İmparatorluğu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --gold: #ffcc00;
+            --deep-red: #8b0000;
+            --bg-parchment: #f9f4e8;
+            --text-dark: #1a1a1a;
+            --sidebar-gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            margin: 0;
+            background-color: var(--bg-parchment);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Başlık Bölümü */
+        header {
+            background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(139, 0, 0, 0.9)), url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Golden_Horde_map_1389.png') center/cover;
+            color: var(--gold);
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 10px solid var(--gold);
+            animation: fadeInDown 1.5s;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5em;
+            margin: 0;
+            letter-spacing: 6px;
+            text-shadow: 4px 4px 15px rgba(0,0,0,0.6);
+        }
+
+        .flag-box {
+            display: block;
+            margin: -80px auto 40px;
+            width: 320px;
+            border: 6px solid var(--gold);
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: white;
+            padding: 10px;
+            position: relative;
+            z-index: 10;
+        }
+
+        nav {
+            background: #111;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            background: white;
+            padding: 70px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.1);
+            border-radius: 20px;
+        }
+
+        section {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+
+        section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--deep-red);
+            font-size: 2.5em;
+            border-bottom: 4px solid var(--gold);
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 40px;
+            border-left: 6px solid var(--deep-red);
+            padding-left: 15px;
+        }
+
+        .detail-card {
+            background: #fffcf0;
+            border: 1px solid #eaddc0;
+            padding: 35px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: white;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 5px solid var(--deep-red);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: white;
+        }
+
+        th {
+            background: var(--deep-red);
+            color: var(--gold);
+            padding: 20px;
+            text-align: left;
+            font-family: 'Cinzel';
+        }
+
+        td {
+            padding: 18px;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            background: #000;
+            color: #777;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .dropcap {
+            float: left;
+            font-size: 4.2em;
+            line-height: 0.8;
+            padding-right: 15px;
+            color: var(--deep-red);
+            font-family: 'Cinzel';
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ALTIN ORDA DEVLETİ</h1>
+    <p style="font-size: 1.6em; letter-spacing: 4px;">Cuci Ulusu'ndan Cihan İmparatorluğuna</p>
+</header>
+
+<div class="flag-box animate__animated animate__zoomIn">
+    <img src="altın orda.png" width="300" alt="Altın Orda Bayrağı">
+</div>
+
+<nav> 
+   <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a>
+    <a href="#kurulus">Kuruluş</a>
+    <a href="#hukumdarlar">Büyük Hanlar</a>
+    <a href="#yonetim">Devlet Yönetimi</a>
+    <a href="#bilim">Bilim ve Mimari</a>
+    <a href="#cokus">Çöküş</a>
+</nav>
+
+<div class="container">
+
+    <section id="kurulus">
+        <h2>Bozkırın Yeniden İnşası: Kuruluş</h2>
+        <p><span class="dropcap">A</span>ltın Orda Devleti, 1242 yılında Cengiz Han’ın en büyük oğlu Cuci’nin soyundan gelen <strong>Batu Han</strong> tarafından kurulmuştur. Cengiz Han ölmeden önce imparatorluğu oğulları arasında paylaştırmış, Batı bölgelerini (Deşt-i Kıpçak) Cuci’ye vermişti. Cuci'nin erken ölümü üzerine oğlu Batu, efsanevi "Batı Seferi"ni tamamlayarak İdil Nehri merkezli bu devasa devleti ilan etti.</p>
+        <div class="detail-card">
+            <strong>Coğrafi Kapsam:</strong> Devletin sınırları doğuda İrtiş Nehri'nden, batıda Tuna boylarına; kuzeyde Rus ormanlarından güneyde Kafkasya ve Kırım sahillerine kadar uzanıyordu. Bu devasa coğrafya, hem Asya'nın ipek yollarını hem de Avrupa'nın kürk yollarını kontrol eden bir merkezdi.
+        </div>
+    </section>
+
+    <section id="hukumdarlar">
+        <h2>Güneşin Altındaki Hanlar ve Savaşları</h2>
+        
+        <h3>Batu Han (1227-1255): Avrupa'nın Titreyişi</h3>
+        <p>Batu Han, sadece bir devlet kurucusu değil, tarihin en büyük stratejistlerinden biridir. Onun önderliğindeki ordular Avrupa'nın kapılarını kırmıştır.</p>
+        <ul>
+            <li><strong>Legnica ve Mohi Savaşları (1241):</strong> Batu Han komutasındaki süvariler, aynı anda hem Polonya ordusunu (Legnica) hem de Macar ordusunu (Mohi) imha ederek Adriyatik kıyılarına kadar ulaştılar. Bu savaşlar, Avrupa şövalyeliğinin bozkır taktikleri karşısındaki çöküşünü simgeler.</li>
+            <li><strong>Rus Knezliklerinin Bağlanması:</strong> Batu Han, tüm Rus knezlerini "Yarlık" (Atama Belgesi) almak için Saray şehrine gelmeye mecbur bırakmış, Rusya'nın 250 yıllık "Tatar Boyunduruğu" dönemini başlatmıştır.</li>
+        </ul>
+
+        <h3>Berke Han (1257-1266): İslamiyet ve Memlük İttifakı</h3>
+        <p>Berke Han, Altın Orda'nın kültürel çehresini değiştiren liderdir. İslamiyet'i kabul eden ilk Moğol-Türk hanıdır.</p>
+        <ul>
+            <li><strong>İlhanlılar ile Mücadele:</strong> Kuzeni Hülagü Han'ın Bağdat'ı yıkmasına tepki göstererek İlhanlılar ile savaşmıştır. Bu, bir Türk devletinin İslam dünyasını korumak adına başka bir Türk-Moğol devletiyle çatıştığı tarihi bir dönüm noktasıdır.</li>
+            <li><strong>Ayn Calut Sonrası Destek:</strong> Memlük Sultanı Baybars ile kurduğu ittifak, İslam medeniyetinin ayakta kalmasını sağlamıştır.</li>
+        </ul>
+
+        <h3>Özbek Han (1313-1341): İhtişamın Zirvesi</h3>
+        <p>Altın Orda'nın "Altın Çağı" Özbek Han dönemidir. Devletin resmi dinini İslam olarak ilan etmiş ve başkent Saray'ı dünyanın en büyük şehirlerinden biri yapmıştır.</p>
+      <div class="detail-card">
+            <strong>Kalka ve Terke Savaşları Öncesi Güç:</strong> Özbek Han döneminde ordu 300.000 atlıya ulaşmıştı. Cenevizliler ve Venedikliler ile ticaret anlaşmaları yapılmış, İpek Yolu'nun kuzey hattı tamamen canlandırılmıştır.
+      </div>
+    </section>
+
+    <section id="yonetim">
+        <h2>Devlet Yapılanması ve Yönetim Sistemi</h2>
+        <p>Altın Orda, Moğol yasası olan <strong>Cengiz Yasası</strong> ile Kıpçak Türklerinin geleneklerini birleştiren merkeziyetçi bir yapıdaydı.</p>
+      <div class="grid-layout">
+            <div class="feature-item">
+                <h3>Merkezi Teşkilat</h3>
+                <p><strong>Kurultay:</strong> En üst karar organıydı. Hanın seçimi ve savaş ilanı burada yapılırdı. <br><strong>Beklerbegi:</strong> Başkomutan ve hanın sağ kolu. <br><strong>Vezir:</strong> Maliye ve sivil işlerden sorumluydu.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Baskaklar ve Vergiler</h3>
+                <p>Rus knezliklerinden ve diğer bölgelerden vergi toplamakla görevli "Baskak" adı verilen askeri valiler vardı. Bu sistem, Rusya'nın mali idaresinin temelini atmıştır.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Yamskiy (Posta) Sistemi</h3>
+                <p>Devletin dört bir yanına haber ulaştıran, her 30-40 kilometrede bir kurulan atlı istasyon sistemidir. Bu sistem sayesinde haberleşme hızı dönemin Avrupa'sından on kat daha hızlıydı.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bilim">
+        <h2>Bilim, Kültür ve Mimari Şaheserler</h2>
+        <p>Altın Orda, sanıldığının aksine çok gelişmiş bir şehir kültürüne sahipti. Özellikle Özbek Han ve Canibeg Han dönemlerinde başkent Saray Berke bir bilim merkeziydi.</p>
+        
+        <h3>Mimari Yapılar: Saray Berke</h3>
+        <p>Başkent Saray, 14. yüzyılda yaklaşık 600.000 nüfusa sahipti (Dönemin Londra'sı 50.000 idi). Şehirde su kanalları, ısıtmalı hamamlar, kütüphaneler ve devasa camiler bulunuyordu. Mimari üslup, Selçuklu, Orta Asya ve İslam sanatının bir karışımıydı.</p>
+
+        <h3>Bilim Adamları ve Düşünürler</h3>
+        <ul>
+            <li><strong>Kutbeddin Razi:</strong> Mantık ve felsefe alanında devletin himayesinde büyük eserler vermiştir.</li>
+            <li><strong>Sadeddin Taftazani:</strong> Belagat ve kelam ilminde otorite kabul edilen bu büyük alim, Altın Orda saraylarında dersler vermiştir.</li>
+            <li><strong>Tıbbi Gelişmeler:</strong> Şehirlerde cüzamhaneler ve modern hastaneler kurulmuş, çiçek aşısının ilkel versiyonları bozkır hekimleri tarafından kullanılmıştır.</li>
+        </ul>
+    </section>
+
+    <section id="cokus">
+        <h2>Yıkılış: Timur'un Darbesi ve Parçalanma</h2>
+        <p>Devletin çöküşü, 14. yüzyılın sonunda patlak veren <strong>"Büyük Karışıklık"</strong> ve Emir Timur ile yapılan savaşlarla başlamıştır.</p>
+        <table>
+            <tr>
+                <th>Olay</th>
+                <th>Tarih</th>
+                <th>Sonuç</th>
+            </tr>
+            <tr>
+                <td>Kulikovo Savaşı</td>
+                <td>1380</td>
+                <td>Rus knezlerinin ilk kez Altın Orda ordusunu (Mamay Bey komutasında) yenmesi.</td>
+            </tr>
+            <tr>
+                <td>Terke Nehri Savaşı</td>
+                <td>1395</td>
+                <td><strong>Emir Timur</strong>, Toktamış Han'ı ağır bir yenilgiye uğrattı ve Altın Orda şehirlerini yakıp yıktı.</td>
+            </tr>
+            <tr>
+                <td>Hanlıklara Bölünme</td>
+                <td>15. yy</td>
+                <td>Devlet; Kırım, Kazan, Ejderhan (Astırahan), Kasım ve Sibir hanlıklarına ayrıldı.</td>
+            </tr>
+        </table>
+        <p>1502 yılında Kırım Hanlığı'nın son darbeyi vurmasıyla Altın Orda resmen tarihe karışmıştır. Ancak bıraktığı miras, modern Rusya'nın devlet teşkilatından, Kırım ve Tatar kültürüne kadar her yerde yaşamaktadır.</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Türk Tarihi Dijital Portalı | Altın Orda Arşivi</p>
+    <p><em>"Saray'ın altın kubbeleri çökmüş olsa da, bozkırın adaleti tarihin tozlu sayfalarında parlıyor."</em></p>
+</footer>
+
+<script>
+    // Kaydırma (Scroll) Reveal Animasyonu
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+                // İçerideki öğeler için ekstra gecikmeli animasyon
+                const delayItems = entry.target.querySelectorAll('.feature-item, .detail-card, table');
+                delayItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate__animated', 'animate__fadeInUp');
+                        item.style.opacity = "1";
+                    }, index * 200);
+                });
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('section').forEach((section) => {
+        observer.observe(section);
+    });
+
+    // Başlık ve bayrak için anında animasyon
+    window.onload = () => {
+        document.querySelector('header').style.opacity = "1";
+    };
+</script>
+
+</body>
+</html>

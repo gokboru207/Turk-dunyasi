@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmanlı Arşivi | Cihan Şümul Tarihçe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-red: #5e0d0d;
+            --deep-gold: #b08d57;
+            --parchment: #fdfaf1;
+            --ink-black: #1a1a1a;
+            --sidebar-bg: #f4eee0;
+        }
+
+        /* Giriş Efekti */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseGold {
+            0% { filter: drop-shadow(0 0 5px var(--deep-gold)); }
+            50% { filter: drop-shadow(0 0 15px #ffd700); }
+            100% { filter: drop-shadow(0 0 5px var(--deep-gold)); }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--parchment);
+            color: var(--ink-black);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), 
+                        url('https://images.unsplash.com/photo-1526649661456-89c7ed4d0018?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--deep-gold);
+        }
+
+        .flag-img {
+            width: 150px;
+            animation: pulseGold 3s infinite ease-in-out;
+            margin-bottom: 15px;
+        }
+
+        header h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 3rem; 
+            color: var(--deep-gold);
+            letter-spacing: 5px;
+        }
+
+        /* NAV */
+        .nav-quick {
+            background: var(--royal-red);
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-quick a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-quick a:hover { color: var(--deep-gold); }
+
+        /* ANA YAPI: 3 SÜTUNLU SİSTEM */
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Yan Sütunlar (Notlar) */
+        .sidebar {
+            padding: 20px;
+            font-size: 0.9rem;
+            height: fit-content;
+            position: sticky;
+            top: 80px;
+        }
+
+        .note-card {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--deep-gold);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 3px 3px 0px var(--deep-gold);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .note-card h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--royal-red);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--deep-gold);
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+        }
+
+        /* ANA İÇERİK */
+        .content {
+            background: white;
+            padding: 40px;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .period-box {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px double #eee;
+        }
+
+        h2 { 
+            font-family: 'Cinzel', serif; 
+            color: var(--royal-red); 
+            text-align: center; 
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .monarch-detail {
+            border-left: 4px solid var(--royal-red);
+            padding-left: 20px;
+            margin: 25px 0;
+        }
+
+        .monarch-detail h3 { font-family: 'Cinzel', serif; color: #444; margin-bottom: 10px; }
+
+        .info-card { 
+            background: #fdfbf7; 
+            padding: 20px; 
+            border: 1px inset var(--deep-gold); 
+            margin-top: 15px;
+            font-size: 1.05rem;
+        }
+
+        footer { 
+            background: var(--ink-black); 
+            color: var(--deep-gold); 
+            text-align: center; 
+            padding: 40px; 
+            margin-top: auto;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 1100px) {
+            .main-wrapper { grid-template-columns: 1fr; }
+            .sidebar { position: static; display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header><img src="osmanlı devleti.png" width="298" height="169" alt=""/>
+    <h1>OSMANLI İMPARATORLUĞU</h1>
+    <p style="color: #ccc; font-style: italic;">"Cihan Şümul Devlet-i Aliyye"</p>
+</header>
+
+<nav class="nav-quick">
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a>
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/osmanl%C4%B1-kurulus.html">Kuruluş</a>
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/osmanl%C4%B1-yukselis.html">Yükseliş</a>
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/osmanl%C4%B1-duraklama.html">Duraklama</a>
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/osmanl%C4%B1-dag%C4%B1lma.html">Dağılma</a>
+</nav>
+
+<div class="main-wrapper">
+    
+    <aside class="sidebar left">
+        <div class="note-card">
+            <h4>Devşirme Sistemi</h4>
+            <p>Hristiyan ailelerin çocuklarının eğitilerek devlet hizmetine (Yeniçeri veya Enderun) alınması sistemidir. Liyakat esaslıdır.</p>
+        </div>
+        <div class="note-card">
+            <h4>Millet Sistemi</h4>
+            <p>Toplum din temeline göre ayrılırdı. Müslüman, Rum, Ermeni ve Yahudi cemaatleri kendi inançlarında serbestti.</p>
+        </div>
+        <div class="note-card">
+            <h4>Enderun Mektebi</h4>
+            <p>Sarayın iç kısmında bulunan, devlet adamı ve sanatçı yetiştiren dünyanın ilk ve en disiplinli bürokrasi okuludur.</p>
+        </div>
+        <div class="note-card">
+            <h4>Tuğra</h4>
+            <p>Padişahın imzasıdır. Her padişahın kendine has, sanat değeri yüksek bir tuğrası bulunurdu.</p>
+        </div>
+    </aside>
+
+    <main class="content">
+        
+        <section id="kurulus" class="period-box">
+            <h2>I. KURULUŞ: AŞİRETTEN DEVLETE</h2>
+            <p><strong>Detaylı Tarihçe:</strong> 1299-1453 yılları arasını kapsar. Söğüt ve Domaniç bölgesinde başlayan bu yolculuk, Bizans'ın zayıf uç sınırlarını kullanarak Balkanlar'a kadar uzanmıştır.</p>
+            
+            <div class="monarch-detail">
+                <h3>Osman Gazi (Kurucu Ruh)</h3>
+                <p>Şeyh Edebali'nin manevi desteğini alarak "İstimalet" (hoşgörü) politikasını başlattı. <b>1302 Koyunhisar Savaşı</b> ile ilk büyük Bizans galibiyetini aldı.</p>
+            </div>
+
+            <div class="monarch-detail">
+                <h3>I. Murad (Hüdavendigar)</h3>
+                <p>Devletin sınırlarını Avrupa'ya taşıdı. <b>Edirne</b>'yi fethedip başkent yaptı. <b>Sırpsındığı</b> ve <b>I. Kosova</b> savaşlarıyla Balkan hakimiyetini perçinledi. Savaş meydanında şehit edilen tek padişahtır.</p>
+            </div>
+
+            <div class="info-card">
+                <strong>Ankara Savaşı (1402):</strong> Yıldırım Bayezid ile Timur arasındaki bu savaş sonucu devlet yıkılma tehlikesi geçirdi. 11 yıl süren <b>Fetret Devri</b>'ne Çelebi Mehmed son vererek devleti ikinci kez kurdu.
+            </div>
+        </section>
+
+        <section id="yukselis" class="period-box">
+            <h2>II. YÜKSELME: CİHAN HAKİMİYETİ</h2>
+            <div class="monarch-detail">
+                <h3>Fatih Sultan Mehmed</h3>
+                <p>1453 İstanbul'un fethi sadece bir şehir alımı değil, Roma mirasına konmaktır. Karadeniz'i <b>Cenevizlilerden</b> temizleyerek bir Türk gölüne dönüştürdü. Sahn-ı Seman Medreseleri ile bilime büyük önem verdi.</p>
+            </div>
+
+            <div class="monarch-detail">
+                <h3>Kanuni Sultan Süleyman</h3>
+                <p>Zirve noktasıdır. <b>1526 Mohaç</b> ile Orta Avrupa Osmanlı nüfuzuna girdi. <b>Preveze Deniz Zaferi</b> ile Akdeniz kontrol edildi. Fransa'ya verilen ilk kapitülasyonlar aslında siyasi bir ittifak amacı taşıyordu.</p>
+            </div>
+        </section>
+
+        <section id="duraklama" class="period-box">
+            <h2>III. DURAKLAMA VE GERİLEME</h2>
+            <p>Merkezi otoritenin bozulması, ordudaki disiplinsizlik ve Avrupa'daki <b>Rönesans/Reform</b> hareketlerinin takip edilememesi bu dönemi şekillendirmiştir.</p>
+            <div class="monarch-detail">
+                <h3>Genç Osman & IV. Murad</h3>
+                <p><b>Genç Osman:</b> İlk ciddi reform denemesini yaptı ancak Yeniçeriler tarafından katledildi. <b>IV. Murad:</b> Sert disiplini geri getirdi, Bağdat ve Revan'ı geri aldı.</p>
+            </div>
+            <div class="info-card">
+                <strong>Karlofça (1699):</strong> İlk büyük toprak kaybı. Osmanlı artık savunma pozisyonuna geçmeye başladı.
+            </div>
+        </section>
+
+        <section id="dagilma" class="period-box">
+            <h2>IV. DAĞILMA: EN UZUN YÜZYIL</h2>
+            <div class="monarch-detail">
+                <h3>II. Mahmut & II. Abdülhamid</h3>
+                <p><b>II. Mahmut:</b> Yeniçeri Ocağı'nı (1826) kaldırıp modern orduyu kurdu. <b>Tanzimat</b> ve <b>Islahat</b> fermanları ile azınlıkların kopuşu engellenmeye çalışıldı.</p>
+                <p><b>II. Abdülhamid:</b> Denge siyaseti izledi. Hicaz Demiryolu, Ziraat Bankası ve binlerce modern okul onun döneminde açıldı.</p>
+            </div>
+            <div class="info-card">
+                <strong>Yıkılış:</strong> I. Dünya Savaşı'nda yedi cephede savaşan Osmanlı, <b>1 Kasım 1922</b>'de saltanatın kaldırılmasıyla resmen tarihe geçti.
+            </div>
+        </section>
+    </main>
+
+    <aside class="sidebar right">
+        <div class="note-card">
+            <h4>Tımar Sistemi</h4>
+            <p>Devletin topraklarını işlemesi karşılığında asker yetiştiren sistemdir. Hem tarım hem savunma için hayati önemdeydi.</p>
+        </div>
+        <div class="note-card">
+            <h4>Hattatlık</h4>
+            <p>Kur'an-ı Kerim'i en güzel şekilde yazma sanatı. Osmanlılar hat sanatını zirveye taşımışlardır.</p>
+        </div>
+        <div class="note-card">
+            <h4>Hilafet</h4>
+            <p>1517 Mısır Seferi ile Yavuz Sultan Selim'e geçmiş, Osmanlı padişahları tüm Müslümanların lideri olmuştur.</p>
+        </div>
+        <div class="note-card">
+            <h4>Kaptan-ı Derya</h4>
+            <p>Donanmanın en üst rütbeli komutanıdır. En meşhuru Barbaros Hayreddin Paşa'dır.</p>
+        </div>
+    </aside>
+
+</div>
+
+<footer>
+  <p>Devlet-i Aliyye-i Osmâniyye Arşivi &copy; 2025</p>
+  <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">"Geçmişini iyi bil ki, geleceğe sağlam basasın." - Şeyh Edebali</p>
+</footer>
+
+</body>
+</html>

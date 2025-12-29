@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmanlı Cihan Devleti | Yükselme Dönemi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #c0392b;
+            --gold: #d4af37;
+            --bg-light: #fdfcfb;
+            --card-bg: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body 
+		{
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            background-image: radial-gradient(#e5e5f7 0.5px, transparent 0.5px), radial-gradient(#e5e5f7 0.5px, #fdfcfb 0.5px);
+            background-size: 20px 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                        url('https://images.unsplash.com/photo-1590076175573-45544a0b61b9?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: var(--primary);
+            margin: 0;
+            letter-spacing: 5px;
+            animation: tracking-in-expand 1.5s ease-out;
+        }
+
+        header p {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            animation: fadeInUp 2s ease;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 50px;
+            padding: 20px;
+        }
+
+        /* Padişah Kartları */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .section-card.is-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            font-size: 2.2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .detail-box {
+            background: #f9f9f9;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        /* List Stilize */
+        .war-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .war-item {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .war-item:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .war-item strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Animasyonlar */
+        @keyframes tracking-in-expand {
+            0% { letter-spacing: -0.5em; opacity: 0; }
+            40% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Geri Düğmesi */
+        #btn-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gold);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OSMANLI İMPARATORLUĞU</h1>
+        <p>Yükseliş Devri: Cihanın Hakimi (1453 - 1579)</p>
+    </header>
+
+    <div class="container">
+<div class= bgcolor:"yellow" color:"blac" aling:"blue" > <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/Osmanl%C4%B1-imparatorluk.html" href:"index.html">Anasayfa</a></div>
+      <div class="section-card">
+            <span class="badge">1451 - 1481</span>
+            <h2>I. Fatih Sultan Mehmet</h2>
+            <p>Osmanlı'yı bir dünya imparatorluğuna dönüştüren dehadır. Sadece kılıcıyla değil, mühendisliği ve yedi dil bilmesiyle tanınan bir entelektüeldir.</p>
+            
+            <div class="war-list">
+                <div class="war-item">
+                    <strong>İstanbul'un Fethi (1453)</strong>
+                    1000 yıllık Bizans yıkıldı. Orta Çağ kapandı, Yeni Çağ başladı. Gemilerin karadan yürütülmesi dünya savaş tarihine geçti.
+                </div>
+                <div class="war-item">
+                    <strong>Otlukbeli Savaşı (1473)</strong>
+                    Doğu Anadolu'da Akkoyunlu Uzun Hasan mağlup edildi. Bu zafer, ateşli silahların (top ve tüfek) üstünlüğünü kanıtladı.
+                </div>
+                <div class="war-item">
+                    <strong>Kırım'ın Fethi (1475)</strong>
+                    Cenevizlilerden alınan Kırım ile Karadeniz bir Türk gölüne dönüştü, İpek Yolu kontrolü sağlandı.
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <strong>Yenilik:</strong> Sahn-ı Seman Medreseleri ile yükseköğretim sistemleştirildi. Topkapı Sarayı inşa edildi. İlk kez altın para (Sultani) basıldı.
+            </div>
+        </div>
+
+        <div class="section-card">
+            <span class="badge">1512 - 1520</span>
+            <h2>II. Yavuz Sultan Selim</h2>
+            <p>Sekiz yıla seksen yıllık iş sığdıran padişah. İmparatorluğun yönünü Doğu'ya çevirmiş ve hazineyi ağzına kadar doldurmuştur.</p>
+            
+            <div class="war-list">
+                <div class="war-item">
+                    <strong>Çaldıran Savaşı (1514)</strong>
+                    Safevi hükümdarı Şah İsmail mağlup edilerek Şii tehdidi ve Anadolu üzerindeki bölücü faaliyetler durduruldu.
+                </div>
+                <div class="war-item">
+                    <strong>Mercidabık & Ridaniye (1516-1517)</strong>
+                    Memlük Devleti yıkıldı. Mısır, Suriye, Filistin ve Hicaz toprakları Osmanlı'ya katıldı.
+                </div>
+                <div class="war-item">
+                    <strong>Halifelik Makamı</strong>
+                    Kutsal emanetler İstanbul'a getirildi ve Osmanlı Padişahları İslam dünyasının lideri (Halife) oldu.
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <span class="badge">1520 - 1566</span>
+            <h2>III. Kanuni Sultan Süleyman (Muhteşem)</h2>
+            <p>46 yıl ile en uzun süre tahtta kalan hükümdar. Adaletli kanunları nedeniyle "Kanuni", ihtişamı nedeniyle Batı'da "Magnificent" (Muhteşem) olarak anılır.</p>
+            
+            <div class="war-list">
+                <div class="war-item">
+                    <strong>Mohaç Meydan Savaşı (1526)</strong>
+                    Sadece 2 saatte Macar ordusu imha edildi. Dünya tarihinin en kısa süreli meydan savaşıdır.
+                </div>
+                <div class="war-item">
+                    <strong>Preveze Deniz Zaferi (1538)</strong>
+                    Barbaros Hayreddin Paşa, Haçlı donanmasını yok etti. Akdeniz tamamen Osmanlı egemenliğine girdi.
+                </div>
+                <div class="war-item">
+                    <strong>Viyana Kuşatması (1529)</strong>
+                    Avrupa'nın kalbi kuşatıldı. Teknik nedenlerle alınamasa da Osmanlı'nın gücü tüm Avrupa'da korku saldı.
+                </div>
+            </div>
+            
+            <div class="detail-box">
+                <strong>Yönetim:</strong> Mimar Sinan dönemidir. Süleymaniye ve Selimiye gibi şaheserler bu dönemde yükseldi. Kapitülasyonlar (Fransa örneği) ticareti canlandırmak için verildi.
+            </div>
+        </div>
+
+        <div class="section-card">
+            <span class="badge">1566 - 1579</span>
+            <h2>IV. II. Selim & Sokollu Mehmet Paşa</h2>
+            <p>Ordunun başında sefere gitmeyen ilk padişah olsa da, dahi Sadrazam Sokollu sayesinde imparatorluk gücünü korumuştur.</p>
+            
+            <div class="war-list">
+                <div class="war-item">
+                    <strong>Kıbrıs'ın Fethi (1571)</strong>
+                    Doğu Akdeniz'in güvenliği için çok kritik olan ada Venediklilerden alındı.
+                </div>
+                <div class="war-item">
+                    <strong>İnebahtı Yenilgisi</strong>
+                    Osmanlı donanması ilk kez yakıldı ancak Sokollu'nun meşhur sözüyle "Siz bizim sakalımızı kestiniz (donanma), biz sizin kolunuzu kestik (Kıbrıs)."
+                </div>
+                <div class="war-item">
+                    <strong>Kanal Projeleri</strong>
+                    Don-Volga ve Süveyş Kanalı projeleri bu dönemde devletin ufkunu göstermek adına planlanmıştır.
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>Cihan Hakimiyeti ve Devlet Yönetimi</h2>
+            <p>Yükselme döneminde yönetim "Liyakat" ve "Merkeziyetçilik" üzerine kuruluydu. Osmanlı, fethettiği yerlerdeki halka dini özgürlük tanıyan <strong>İstimalet (Hoşgörü) Politikası</strong> uygulamıştır.</p>
+            <ul>
+                <li><strong>Divan-ı Hümayun:</strong> Bugünkü bakanlar kurulu. Son söz padişahındır ancak kararlar tartışılır.</li>
+                <li><strong>Tımar Sistemi:</strong> Devlet hazinesinden para çıkmadan devasa bir ordu (Cebelü) beslenir ve topraklar sürekli işlenir.</li>
+                <li><strong>Enderun:</strong> Dünyanın ilk kamu yönetimi okulu. Yetenekli çocuklar burada devlet adamı olarak yetiştirilir.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <button id="btn-top" title="Yukarı Çık" style="color: white; font-weight: bold;">↑</button>
+
+    <script>
+        // Scroll Animation (Intersection Observer)
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Top Button Logic
+        const topBtn = document.getElementById("btn-top");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+        topBtn.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
+</body>
+</html>

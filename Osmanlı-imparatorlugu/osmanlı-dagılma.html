@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmanlı Dağılma Dönemi | Derin Arşiv (1792-1922)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-burgundy: #6d1c1c;
+            --paper: #fcf9f2;
+            --ink: #202020;
+            --gold-accent: #b5935a;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--paper);
+            color: var(--ink);
+            margin: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Modern Yan Menü */
+        .sidebar {
+            position: fixed;
+            left: 0; top: 0; width: 280px; height: 100vh;
+            background: var(--ink);
+            color: #ddd;
+            padding: 40px 20px;
+            z-index: 1000;
+            overflow-y: auto;
+            border-right: 4px solid var(--gold-accent);
+        }
+
+        .sidebar h2 { font-family: 'Cinzel', serif; color: var(--gold-accent); font-size: 1.2rem; margin-bottom: 30px; text-align: center; }
+        .sidebar a { display: block; color: #bbb; text-decoration: none; padding: 12px 15px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; border-left: 2px solid transparent; transition: 0.3s; }
+        .sidebar a:hover { color: white; border-left: 2px solid var(--gold-accent); background: #2c2c2c; }
+
+        /* Ana İçerik */
+        main { margin-left: 310px; padding: 60px; max-width: 1200px; }
+
+        header {
+            text-align: center;
+            margin-bottom: 100px;
+            padding-bottom: 50px;
+            border-bottom: 1px double var(--gold-accent);
+        }
+
+        header h1 { font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--deep-burgundy); margin: 0; }
+        header p { font-family: 'Montserrat', sans-serif; letter-spacing: 4px; color: #666; font-weight: 300; }
+
+        /* Padişah ve Olay Bölümleri */
+        .archive-section {
+            background: white;
+            border: 1px solid #e8e1d5;
+            padding: 50px;
+            margin-bottom: 120px;
+            position: relative;
+            box-shadow: 20px 20px 0px rgba(181, 147, 90, 0.1);
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1s ease-out;
+        }
+
+        .archive-section.active { opacity: 1; transform: translateX(0); }
+
+        .archive-section::before {
+            content: "VESİKA NO: " attr(data-no);
+            position: absolute;
+            top: -15px; left: 30px;
+            background: var(--gold-accent);
+            color: white;
+            padding: 5px 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--deep-burgundy); margin-bottom: 10px; }
+        .padişah-unvan { font-style: italic; color: var(--gold-accent); display: block; margin-bottom: 30px; font-size: 1.1rem; }
+
+        /* Detay Kutuları */
+        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+        .detail-box { background: #fdfdfd; border: 1px solid #f0f0f0; padding: 25px; border-top: 3px solid var(--ink); }
+        .detail-box h4 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; color: var(--gold-accent); margin-top: 0; }
+
+        /* Harp Jurnali */
+        .war-journal {
+            background: #fff8f8;
+            border: 1px solid #ebdada;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .war-journal h3 { font-family: 'Cinzel', serif; color: var(--deep-burgundy); border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .war-journal ul { padding-left: 20px; }
+        .war-journal li { margin-bottom: 15px; }
+
+        @media (max-width: 1000px) {
+            .sidebar { display: none; }
+            main { margin-left: 0; padding: 20px; }
+            .detail-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>DAĞILMA DÖNEMİ </h2> 
+        <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/Osmanl%C4%B1-imparatorluk.html">Anasayfa</a>
+        <a href="#selim3">III. Selim (Nizam-ı Cedid)</a>
+        <a href="#mustafa4">IV. Mustafa (İsyanlar)</a>
+        <a href="#mahmut2">II. Mahmut (Büyük Reform)</a>
+        <a href="#mecid">Abdülmecid (Tanzimat)</a>
+        <a href="#aziz">Abdülaziz (Donanma Hamlesi)</a>
+        <a href="#murad5">V. Murad (Kısa Saltanat)</a>
+        <a href="#hamid2">II. Abdülhamid (Strateji)</a>
+        <a href="#resad">V. Mehmed Reşad (Cihan Harbi)</a>
+        <a href="#vahideddin">VI. Mehmed Vahideddin (Veda)</a>
+    </aside>
+
+    <main>
+        <header>
+            <h1>DAĞILMA DÖNEMİ</h1>
+            <p>1792 - 1922 | EN UZUN YÜZYIL</p>
+        </header>
+
+        <section class="archive-section" id="selim3" data-no="001">
+            <h2>III. Selim</h2>
+            <span class="padişah-unvan">Nizam-ı Cedid'in Banisi (1789-1807)</span>
+            <p>Osmanlı'nın modernleşme çabalarını sistemli bir ordu ve diplomasiyle başlatan padişahtır. Dağılma döneminin eşiğindeki ilk büyük reformcudur.</p>
+            
+            <div class="detail-grid">
+                <div class="detail-box">
+                    <h4>İdari Yenilikler</h4>
+                    <ul>
+                        <li><strong>Daimi Elçilikler:</strong> Londra, Paris ve Viyana'da ilk kez sürekli temsilcilikler açılarak Avrupa diplomasisi yakından izlendi.</li>
+                        <li><strong>Meşveret Meclisleri:</strong> Islahatlar için devlet adamlarından "Layiha" (rapor) toplandı.</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h4>Askeri Reform: Nizam-ı Cedid</h4>
+                    Avrupa tarzında eğitim gören, modern tüfek ve üniformalara sahip ilk ordu. Finansmanı için <strong>İrad-ı Cedid</strong> hazinesi kuruldu.
+                </div>
+            </div>
+
+            <div class="war-journal">
+                <h3>Detaylı Savaş Arşivi: Akka Kuşatması (1799)</h3>
+                <ul>
+                    <li><strong>Strateji:</strong> Napolyon, İngiltere'nin Hindistan yolunu kesmek için Mısır'a saldırdı. Hedefi Suriye üzerinden İstanbul'a yürümekti.</li>
+                    <li><strong>Kırılma Noktası:</strong> 80 yaşındaki Cezzar Ahmet Paşa ve Nizam-ı Cedid ordusu Akka önünde Napolyon'u durdurdu.</li>
+                    <li><strong>Sonuç:</strong> Napolyon "Akka'da durdurulmasaydım tüm Doğu'yu ele geçirebilirdim" diyerek ilk büyük yenilgisini aldı.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="archive-section" id="mahmut2" data-no="002">
+            <h2>II. Mahmut</h2>
+            <span class="padişah-unvan">Devletin Yeniden İnşası (1808-1839)</span>
+            <p>Osmanlı tarihinin en radikal değişimlerini yapan padişahtır. Eski kurumları yıkarak modern Türkiye'nin idari iskeletini kurmuştur.</p>
+
+            <div class="detail-grid">
+                <div class="detail-box">
+                    <h4>Vaka-i Hayriye (1826)</h4>
+                    Yeniçeri Ocağı tamamen kaldırıldı. Bu olay, padişahın reform yapmasının önündeki en büyük engelin kalkmasıdır. Yerine <strong>Asakir-i Mansure-i Muhammediye</strong> kuruldu.
+                </div>
+                <div class="detail-box">
+                    <h4>Merkezi Otorite Hamleleri</h4>
+                    <ul>
+                        <li><strong>Sened-i İttifak:</strong> Ayanlarla imzalandı. İlk kez padişahın yetkileri hukuken sınırlandı.</li>
+                        <li><strong>Nazırlıklar:</strong> Divan-ı Hümayun yerine Hariciye, Dahiliye gibi modern bakanlıklar kuruldu.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="war-journal">
+                <h3>Detaylı Savaş Arşivi: Mısır ve Yunan İsyanları</h3>
+                <ul>
+                    <li><strong>Navarin Baskını (1827):</strong> İngiliz-Fransız-Rus donanması Osmanlı donanmasını yaktı. Bu, devleti savunmasız bıraktı.</li>
+                    <li><strong>Hünkar İskelesi Antlaşması (1833):</strong> Kendi valisi Kavalalı'ya karşı Rusya'dan yardım istemek zorunda kalan Osmanlı, Boğazlar üzerindeki tam yetkisini son kez kullandı.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="archive-section" id="mecid" data-no="003">
+            <h2>Sultan Abdülmecid</h2>
+            <span class="padişah-unvan">Tanzimat ve Hukuk Devleti (1839-1861)</span>
+            <div class="detail-grid">
+                <div class="detail-box">
+                    <h4>Tanzimat Fermanı (1839)</h4>
+                    Müslüman-Gayrimüslim ayrımı gözetmeksizin herkesin can, mal ve namus güvenliği devlet garantisine alındı. Padişah, yasaların kendisinden üstün olduğunu kabul etti.
+                </div>
+                <div class="detail-box">
+                    <h4>Islahat Fermanı (1856)</h4>
+                    Avrupalı devletlerin baskısıyla, Gayrimüslimlere daha geniş (Müslümanların haklarını aşan) haklar tanındı.
+                </div>
+            </div>
+
+            <div class="war-journal">
+                <h3>Detaylı Savaş Arşivi: Kırım Savaşı (1853-1856)</h3>
+                <ul>
+                    <li><strong>Önem:</strong> Rusya'nın "Hasta Adam" olarak nitelediği Osmanlı'yı paylaşma isteği.</li>
+                    <li><strong>İttifak:</strong> İngiltere ve Fransa ilk kez Osmanlı yanında Rusya'ya savaş açtı.</li>
+                    <li><strong>Sonuç:</strong> Paris Antlaşması ile Osmanlı bir Avrupa devleti sayıldı ancak ilk kez dış borç alarak ekonomik bağımlılık sürecine girdi.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="archive-section" id="hamid2" data-no="004">
+            <h2>II. Abdülhamid</h2>
+            <span class="padişah-unvan">Strateji ve Eğitim Hamlesi (1876-1909)</span>
+            <p>En zorlu dönemde denge politikası güden, eğitim ve teknolojiye (Demiryolları, Telgraf) en çok yatırım yapan padişahtır.</p>
+
+            <div class="detail-grid">
+                <div class="detail-box">
+                    <h4>Eğitim ve Kalkınma</h4>
+                    Siyasal Bilgiler, Hukuk, Tıp ve Mühendislik okulları modernleştirildi. <strong>Hicaz Demiryolu</strong> ile İslam dünyası arasında fiziksel bağ kuruldu.
+                </div>
+                <div class="detail-box">
+                    <h4>I. Meşrutiyet</h4>
+                    İlk anayasa (Kanun-i Esasi) ilan edildi ve Mebusan Meclisi açıldı. Halk ilk kez yönetime dahil oldu.
+                </div>
+            </div>
+
+            <div class="war-journal">
+                <h3>Detaylı Savaş Arşivi: 93 Harbi & Dömeke</h3>
+                <ul>
+                    <li><strong>93 Harbi (1877-78):</strong> Rus ordusu İstanbul Yeşilköy'e kadar geldi. Berlin Antlaşması ile Sırbistan, Karadağ ve Romanya bağımsız oldu.</li>
+                    <li><strong>Dömeke Meydan Muharebesi (1897):</strong> Yunanlılara karşı kazanılan son büyük meydan zaferidir.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="archive-section" id="vahideddin" data-no="005">
+            <h2>VI. Mehmed Vahideddin</h2>
+            <span class="padişah-unvan">Son Padişah ve Veda (1918-1922)</span>
+            <div class="war-journal">
+                <h3>I. Dünya Savaşı'nın Sonu ve Tasfiye</h3>
+                <ul>
+                    <li><strong>Mondros Mütarekesi:</strong> Osmanlı topraklarının fiilen işgale açık hale gelmesi.</li>
+                    <li><strong>Saltanatın Kaldırılması:</strong> 1 Kasım 1922'de TBMM tarafından saltanatın kaldırılmasıyla 623 yıllık Osmanlı Devleti resmen sona erdi.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Sayfa kaydırma animasyonu
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.archive-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

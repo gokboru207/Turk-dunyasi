@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygur Kağanlığı | Medeniyetin Aydınlığı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --u-gold: #FFD700;
+            --u-red: #E31E24;
+            --u-bg: #FFFFFF;
+            --u-soft: #F9F9F9;
+            --u-text: #2C3E50;
+            --u-border: #F0EAD6;
+        }
+
+        /* --- ANİMASYONLAR --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+            50% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.4); }
+            100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+        }
+
+        @keyframes lineExpand {
+            from { width: 0; left: 50%; }
+            to { width: 250px; left: calc(50% - 125px); }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--u-bg); color: var(--u-text); line-height: 1.8; overflow-x: hidden; }
+
+        /* --- HERO BÖLÜMÜ (KUTUSUZ VE ŞEFFAF) --- */
+        .hero {
+            height: 55vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 5px solid var(--u-gold);
+            text-align: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1.5s ease-out;
+            color: white;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            color: var(--u-gold);
+            letter-spacing: 18px;
+            margin-bottom: 15px;
+            animation: titleGlow 4s infinite ease-in-out;
+            position: relative;
+        }
+
+        /* İsmin altındaki dekoratif çizgi */
+        .hero-content h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            height: 3px;
+            background: white;
+            animation: lineExpand 2s forwards 0.8s;
+        }
+
+        .hero-content p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            letter-spacing: 3px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* --- SAYFA DÜZENİ --- */
+        .page-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr 320px;
+            gap: 40px;
+            padding: 60px 20px;
+        }
+
+        .animate-div { opacity: 0; animation: fadeInUp 1s forwards; }
+        .main-content { animation-delay: 0.3s; }
+
+        .media-card {
+            background: var(--u-soft);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--u-border);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin-bottom: 30px;
+        }
+
+        .media-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: var(--u-gold);
+        }
+
+        .video-placeholder {
+            width: 100%; height: 180px; background: #eee;
+            display: flex; justify-content: center; align-items: center;
+            text-align: center; color: #888; border-bottom: 3px solid var(--u-red);
+        }
+
+        .article-section h2 {
+            font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--u-red);
+            margin-bottom: 30px; display: flex; align-items: center; gap: 20px;
+        }
+
+        .article-section h2::after { content: ""; flex: 1; height: 1px; background: var(--u-border); }
+
+        .detail-item {
+            padding: 25px; background: var(--u-soft); border-radius: 10px;
+            border-bottom: 3px solid var(--u-gold); transition: 0.3s;
+        }
+
+        .detail-item:hover { transform: scale(1.02); background: #fff; }
+
+        footer { border-top: 1px solid var(--u-border); padding: 80px 20px; text-align: center; background: var(--u-soft); }
+
+        @media (max-width: 1200px) {
+            .page-container { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 3.5rem; letter-spacing: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p style="letter-spacing: 6px; font-weight: 300; margin-bottom: 10px; opacity: 0.9;">TÜRK TARİHİNDE BİR DEVRİM</p>
+            <h1>UYGURLAR</h1>
+            <p>"Şehirlerin ve Kağıdın Efendileri"</p>
+        </div>
+    </section>
+
+    <div class="page-container">
+        
+      <aside class="sidebar">
+            <div><a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a></div>
+            <div class="media-card animate-div" style="animation-delay: 0.4s;">
+              <div class="media-info" style="padding:15px">
+               <img src="uygur.png" width="263" height="192" alt=""/>
+                <h4 style="color:var(--u-red); font-family:'Cinzel'"></h4>
+                <h4 style="color:var(--u-red); font-family:'Cinzel'">Manevi Semboller</h4>
+                    <p style="font-size:0.85rem">Egemenlik nişanları ve Uygur tamgaları.</p>
+              </div>
+            </div>
+        </aside>
+
+        <main class="main-content animate-div">
+            <section class="article-section">
+              <h2 data-start="376" data-end="418"><strong data-start="379" data-end="418">Uygur Devleti&rsquo;nin Kuruluşu (744)</strong></h2>
+ <h2><strong>Uygur Devleti (744–840)</strong></h2>
+
+<h3><strong>1. Kuruluş Öncesi Siyasi Ortam</strong></h3>
+<p>
+Uygur Devleti’nin ortaya çıkışı, II. Göktürk Kağanlığı’nın çözülme sürecinin
+doğrudan bir sonucudur. 8. yüzyılın başlarında Göktürk Devleti,
+merkezî otoritenin zayıflaması, kağanlar arasındaki taht mücadeleleri,
+boy beylerinin bağımsızlaşması ve ekonomik dengesizlikler nedeniyle
+siyasi istikrarını kaybetmiştir.
+</p>
+<p>
+Bu süreçte Orta Asya bozkırlarında yaşayan Türk boyları arasında
+liderlik mücadelesi başlamış, özellikle Uygurlar, Karluklar ve Basmiller
+ön plana çıkmıştır. Bu üç boy, Göktürk yönetimine karşı
+742–744 yılları arasında askerî ve siyasi bir ittifak kurmuştur.
+</p>
+
+<h3><strong>2. Uygur Devleti’nin Kuruluşu (744)</strong></h3>
+<p>
+Göktürk Devleti’nin yıkılmasının ardından, siyasi üstünlüğü ele geçiren
+Uygurlar 744 yılında bağımsız bir devlet kurmuşlardır.
+Devletin kurucusu, Uygur boyunun önde gelen liderlerinden
+<strong>Kutluk Bilge Kül Kağan</strong>’dır.
+</p>
+<p>
+Kuruluş süreci yalnızca bir iktidar değişimi değil,
+Türk devlet anlayışında köklü bir dönüşümü de beraberinde getirmiştir.
+Uygurlar, göçebe yaşam tarzını terk ederek yerleşik hayata geçmiş,
+şehir merkezli bir devlet modeli benimsemiştir.
+</p>
+
+<h3><strong>3. Başkent Ordu-Balık (Karabalgasun)</strong></h3>
+<p>
+Uygur Devleti’nin başkenti Ordu-Balık, Türk tarihinde planlı şekilde
+kurulan ilk büyük şehirlerden biridir. Şehir;
+surlar, saraylar, tapınaklar, idari binalar ve ticaret alanlarıyla
+donatılmıştır.
+</p>
+<p>
+Ordu-Balık yalnızca bir yönetim merkezi değil,
+aynı zamanda kültür, sanat ve ticaretin toplandığı
+bir medeniyet merkezidir.
+</p>
+
+<h3><strong>4. Uygur Hükümdarları</strong></h3>
+
+<p><strong>Kutluk Bilge Kül Kağan (744–747)</strong></p>
+<p>
+Uygur Devleti’nin kurucusudur. Devletin idari ve siyasi temellerini atmış,
+Göktürk geleneğini korurken yerleşik düzeni teşvik etmiştir.
+</p>
+
+<p><strong>Moyen-Çur (Bayan Çor) Kağan (747–759)</strong></p>
+<p>
+Uygur Devleti’nin en güçlü hükümdarıdır.
+İç düzeni sağlamış, sınırları genişletmiş ve
+İpek Yolu ticaretini Uygur hâkimiyeti altına almıştır.
+Çin ile diplomatik ilişkiler geliştirmiştir.
+</p>
+
+<p><strong>Bögü Kağan (759–779)</strong></p>
+<p>
+Onun döneminde Maniheizm resmî din olarak kabul edilmiştir.
+Bu durum askerî fetihlerin azalmasına,
+ticaret ve kültürel faaliyetlerin artmasına yol açmıştır.
+</p>
+
+<h3><strong>5. Siyasi ve İdari Yapı</strong></h3>
+<p>
+Uygur Devleti kağanlık sistemiyle yönetilmiştir.
+Ancak önceki Türk devletlerinden farklı olarak
+yönetim daha kurumsal bir yapıya kavuşturulmuştur.
+</p>
+<ul>
+    <li><strong>Kağan:</strong> Devletin en üst yöneticisi</li>
+    <li><strong>Hatun:</strong> Diplomasi ve yönetimde etkili</li>
+    <li><strong>Aygucı:</strong> Vezir, devlet işlerinden sorumlu</li>
+    <li><strong>Tudun:</strong> Vergi ve eyalet denetimi</li>
+    <li><strong>Buyruklar:</strong> Askerî ve idari görevliler</li>
+</ul>
+
+<h3><strong>6. Önemli Olaylar ve Savaşlar</strong></h3>
+<p>
+Uygur Devleti, büyük çaplı fetih savaşları yerine
+ticaret ve diplomasiye dayalı bir siyaset izlemiştir.
+</p>
+<p>
+Tang Hanedanı döneminde Çin’de çıkan
+<strong>An Luşan İsyanı</strong> Uygurlar tarafından bastırılmış,
+bunun karşılığında Uygurlar büyük ticari imtiyazlar elde etmiştir.
+</p>
+
+<h3><strong>7. Yıkılış Süreci (840)</strong></h3>
+<p>
+9. yüzyılın başlarında iç karışıklıklar artmış,
+merkezi otorite zayıflamıştır.
+Bu durumdan yararlanan <strong>Yenisey Kırgızları</strong>,
+840 yılında Ordu-Balık’ı ele geçirerek
+Uygur Devleti’ne son vermiştir.
+</p>
+
+<h3><strong>8. Mimari ve Sanat</strong></h3>
+<p>
+Uygurlar, Türk tarihinde kalıcı mimari eserler
+inşa eden ilk topluluklardan biridir.
+</p>
+<ul>
+    <li>Ordu-Balık Sarayları</li>
+    <li>Bezeklik Mağaraları freskleri</li>
+    <li>Maniheist ve Budist tapınaklar</li>
+</ul>
+
+<h3><strong>9. Bilim, Kültür ve Bilginler</strong></h3>
+<p>
+Uygur Devleti’nde bilim ve kültür devlet politikası hâline gelmiştir.
+Astronomi, tıp, matematik ve hukuk alanlarında eserler verilmiştir.
+</p>
+<p>
+Uygurlar, hareketli harfli matbaayı kullanan
+ilk Türk toplumu olmuş, yazılı belgelerle
+hukuki ve ticari hayatı düzenlemiştir.
+</p>
+
+<h3><strong>10. Tarihsel Miras</strong></h3>
+<p>
+Uygur Devleti, Türk tarihinin göçebelikten yerleşikliğe,
+sözlü kültürden yazılı medeniyete geçişinin
+en önemli temsilcisidir.
+Bıraktıkları miras, Karahanlılar ve
+Türk-İslam devletleri üzerinde derin etkiler bırakmıştır.
+</p>
+                <div style="padding:20px; background:var(--u-soft); border-left:5px solid var(--u-gold); font-style:italic; margin-top:20px;">
+                    "Bilgi, Uygur saraylarında kütüphaneler dolusu kitapla korundu."
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="media-card animate-div" style="animation-delay: 0.6s;">
+                <div class="media-info" style="padding:20px">
+                    <h4 style="color:var(--u-red); font-family:'Cinzel'">📍 Stratejik Merkezler</h4>
+                    <ul style="list-style:none; margin-top:10px; font-size:0.9rem;">
+                        <li>• Beşbalık</li>
+                        <li>• Turfan</li>
+                        <li>• Kaşgar</li>
+                    </ul>
+                </div>
+          </div>
+
+            <div class="media-card animate-div" style="border-color:var(--u-gold); background:#fffcf0; animation-delay: 0.8s;">
+                <div class="media-info" style="padding:20px">
+                    <h4 style="color:var(--u-gold); font-family:'Cinzel'">Altın Bilgi</h4>
+                    <p style="font-size:0.85rem">Uygur Alfabesi, Moğol İmparatorluğu'nun da resmi yazı dili olmuştur.</p>
+                </div>
+            </div>
+      </aside>
+
+    </div>
+
+    <footer>
+        <h2 style="font-family:'Cinzel'; color:var(--u-red); margin-bottom:10px;">Bilgi Mirastır</h2>
+        <p>© 2025 Uygur Medeniyet Arşivi</p>
+    </footer>
+
+</body>
+</html>

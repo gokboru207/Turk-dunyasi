@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babür İmparatorluğu | Doğu'nun İhtişamlı Güneşi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --imperial-gold: #c5a021;
+            --emerald-green: #004d40;
+            --marble-white: #fdfdfd;
+            --text-dark: #2c3e50;
+            --accent-red: #b22222;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Modern tarayıcılar için yumuşak kaydırma */
+        }
+
+        /* Başlık Bölümü */
+        header {
+            background: linear-gradient(rgba(0, 77, 64, 0.85), rgba(0, 77, 64, 0.85)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mughal_Empire_map.png/1200px-Mughal_Empire_map.png') center/cover fixed;
+            color: var(--marble-white);
+            text-align: center;
+            padding: 150px 20px;
+            border-bottom: 10px solid var(--imperial-gold);
+        }
+        
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3em, 8vw, 5.5em); /* Mobil uyumlu font boyutu */
+            margin: 0;
+            letter-spacing: 10px;
+            text-shadow: 3px 3px 20px rgba(0,0,0,0.5);
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        .flag-box {
+            display: block;
+            margin: -100px auto 40px;
+            width: 300px;
+            border: 8px solid var(--imperial-gold);
+            border-radius: 150px 150px 0 0; /* Kubbe formu */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            background: white;
+            padding: 15px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Navigasyon - Fixlenmiş Tıklama Alanı */
+        nav {
+            background: #ffffff;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--emerald-green);
+        }
+
+        nav a {
+            color: var(--emerald-green);
+            text-decoration: none;
+            margin: 5px 15px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            transition: 0.4s;
+            font-size: 1em;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: var(--imperial-gold);
+            transform: scale(1.05);
+        }
+
+        /* Ana İçerik */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            background: var(--marble-white);
+            padding: clamp(20px, 5vw, 80px);
+            box-shadow: 0 0 100px rgba(0,0,0,0.05);
+            border-radius: 15px;
+            border-top: 15px solid var(--imperial-gold);
+        }
+
+        section {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--emerald-green);
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .info-panel {
+            background: #f9fbf9;
+            border-left: 10px solid var(--emerald-green);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .ruler-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .ruler-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-bottom: 5px solid var(--imperial-gold);
+            transition: 0.3s;
+        }
+
+        .ruler-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .highlight-text {
+            color: var(--accent-red);
+            font-family: 'Cinzel', serif;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            overflow-x: auto;
+            display: block; /* Mobilde tabloyu kaydırılabilir yapar */
+        }
+
+        th { background: var(--emerald-green); color: white; padding: 15px; font-family: 'Cinzel'; }
+        td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+
+        .dropcap {
+            float: left; font-size: 4em; line-height: 0.8;
+            padding-right: 12px; color: var(--emerald-green);
+            font-family: 'Playfair Display'; font-weight: bold;
+        }
+
+        footer {
+            background: #111; color: var(--imperial-gold);
+            padding: 60px 20px; text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>BABÜR İMPARATORLUĞU</h1>
+    <p style="font-size: 1.4em; letter-spacing: 2px;">Gürkanlılar: Hindistan'daki Muhteşem Türk-İslam Mirası</p>
+</header>
+
+<div class="flag-box animate__animated animate__zoomIn">
+    <img src="babür.png" width="296" alt="Babür Bayrağı">
+</div>
+
+<nav id="mainNav">
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html" class="external-link">Anasayfa</a>
+    <a href="#kurulus">Kuruluş</a>
+    <a href="#sahlar">Büyük Şahlar</a>
+    <a href="#askeri">Askeri Deha</a>
+    <a href="#mimari">Sanat & Mimari</a>
+    <a href="#yikilis">Son Dönem</a>
+    
+</nav>
+
+<div class="container">
+
+    <section id="kurulus">
+        <h2>İmparatorluğun Şafağı</h2>
+        <p><span class="dropcap">B</span>abür İmparatorluğu, 1526'da Timur'un torunu <strong>Zahirüddin Muhammed Babür Şah</strong> tarafından kurulmuştur. Fergana'dan çıkarılan Babür Şah, askeri dehası ve sarsılmaz azmiyle Kabil'i almış, ardından Panipat sahrasında Delhi Sultanlığı'nı devirerek Hindistan'da 300 yıl sürecek Türk hakimiyetini başlatmıştır.</p>
+        
+        <div class="info-panel">
+            <strong>Kültürel Derinlik:</strong> Babür Şah'ın kendi elleriyle yazdığı <em>Babürname</em>, Türk edebiyatının ilk gerçek otobiyografisidir. Sadece savaşları değil, Hindistan'ın bitki örtüsünü, hayvanlarını ve halkın yaşamını akademik bir titizlikle anlatır.
+        </div>
+    </section>
+
+    <section id="sahlar">
+        <h2>Büyük Şahlar Dönemi</h2>
+        <div class="ruler-grid">
+            <div class="ruler-card">
+                <strong class="highlight-text">EKBER ŞAH</strong>
+                <p>Devleti kurumsallaştıran en büyük hükümdardır. İdari reformları ve "Sulh-i Küll" (Mutlak barış) politikasıyla farklı inançları bir arada tutmuştur.</p>
+            </div>
+            <div class="ruler-card">
+                <strong class="highlight-text">ŞAH CİHAN</strong>
+                <p>İmparatorluğun ihtişamını mermere kazıyan sultan. Tac Mahal'i inşa ettirerek sanatın ve aşkın zirvesini dünyaya göstermiştir.</p>
+            </div>
+            <div class="ruler-card">
+                <strong class="highlight-text">EVRENGZİB</strong>
+                <p>İmparatorluk sınırlarını güney Hindistan'ın en uç noktasına kadar genişleten, devletin en büyük yüzölçümüne sahip olduğu dönemin şahıdır.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="askeri">
+        <h2>Askeri Deha: Ateşli Silahlar</h2>
+        <div class="info-panel">
+            <h3>Panipat (1526) ve Tulumba Taktiği</h3>
+            <p>Babür Şah, sayıca az olmasına rağmen, Osmanlı'dan gelen topçular (Mustafa Rumi ve Üstat Ali) sayesinde fillerle korunan Hint ordularını bozguna uğratmıştır. <strong>Ateşli silahların</strong> Hindistan'daki ilk büyük kullanımı bu savaştadır.</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Savaş</th>
+                    <th>Rakip</th>
+                    <th>Sonuç</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Panipat</td>
+                    <td>İbrahim Ludi</td>
+                    <td>Kesin Babür Zaferi</td>
+                </tr>
+                <tr>
+                    <td>Kanva</td>
+                    <td>Rana Sanga</td>
+                    <td>Kuzey Hindistan Hakimiyeti</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="mimari">
+        <h2>Mimari Mucizeler</h2>
+        <div class="ruler-grid">
+            <div class="card" style="padding:20px; border-left: 5px solid var(--imperial-gold);">
+                <h4 style="color:var(--emerald-green)">TAC MAHAL</h4>
+                <p>Mümtaz Mahal anısına Şah Cihan tarafından yaptırılan bu şaheser, Osmanlı mimarlarının (İsmail Efendi) ve dünya ustalarının ortak dehasıdır.</p>
+            </div>
+            <div class="card" style="padding:20px; border-left: 5px solid var(--imperial-gold);">
+                <h4 style="color:var(--emerald-green)">KIZIL KALE</h4>
+                <p>Delhi'deki imparatorluk ikametgahı. İçindeki mücevherlerle süslü "Tavus Kuşu Tahtı" dönemin zenginliğini simgeler.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="yikilis">
+        <h2>Sönüş: Sömürge ve İntıra</h2>
+        <p>18. yüzyıldan itibaren zayıflayan merkezi otorite, yerel güçlerin ve İngilizlerin yükselişine engel olamadı. 1858 yılında İngiliz sömürge yönetimi, son hükümdar II. Bahadır Şah'ı tahttan indirerek bu ulu çınarı yıktı.</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>Babür İmparatorluğu Tarih Arşivi | 2025</p>
+    <p><em>"Devletler yıkılır, lakin Türk'ün vurduğu mühür baki kalır."</em></p>
+</footer>
+
+<script>
+    // 1. SCROLL REVEAL (Kaydırınca Belirme)
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+                const children = entry.target.querySelectorAll('.ruler-card, .info-panel, table, .card');
+                children.forEach((child, i) => {
+                    setTimeout(() => {
+                        child.classList.add('animate__animated', 'animate__fadeInUp');
+                        child.style.opacity = "1";
+                    }, i * 150);
+                });
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => revealObserver.observe(section));
+
+    // 2. AKILLI KAYDIRMA (Link Hatasını Düzelten Kısım)
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Eğer link dış bir sayfaya (anasayfa gibi) gidiyorsa engelleme!
+            if (this.classList.contains('external-link')) {
+                return; 
+            }
+
+            e.preventDefault();
+            const targetID = this.getAttribute('href');
+            const targetSection = document.querySelector(targetID);
+            
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70, // Navigasyon çubuğu payı
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

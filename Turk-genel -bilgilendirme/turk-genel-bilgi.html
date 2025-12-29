@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türk Kültür ve Medeniyet Portalı | Tam Arşiv</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ana-renk: #00adb5;
+            --altin: #d4af37;
+            --arka-plan: #ffffff;
+            --kart-gri: #fdfdfd;
+            --yazi: #2d3436;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--arka-plan); color: var(--yazi); line-height: 1.8; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* --- NAVİGASYON --- */
+        nav {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(15px);
+            z-index: 999;
+            border-bottom: 1px solid #eee;
+        }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: var(--ana-renk); }
+        .nav-links a { text-decoration: none; color: var(--yazi); margin-left: 25px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--ana-renk); }
+
+        /* --- HERO --- */
+        header.hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content-wrapper { position: relative; display: inline-block; text-align: left; }
+        .sub-text { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--altin); margin-bottom: 8px; display: block; opacity: 0; transform: translateX(-15px); animation: slideInLeft 1s ease forwards; }
+        .animated-title { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--yazi); white-space: nowrap; overflow: hidden; border-right: 3px solid var(--altin); width: 0; animation: typing 3s steps(35) forwards 0.8s, blink 0.7s step-end infinite; }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { from, to { border-color: transparent; } 50% { border-color: var(--altin); } }
+        @keyframes slideInLeft { to { opacity: 1; transform: translateX(0); } }
+
+        /* --- İÇERİK YAPISI --- */
+        section { padding: 100px 10%; }
+        .section-title { font-family: 'Cinzel', serif; font-size: 2.5rem; margin-bottom: 50px; color: var(--yazi); border-bottom: 2px solid var(--altin); display: inline-block; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 60px; }
+        
+        .card { background: var(--kart-gri); padding: 50px; border-radius: 4px; border-left: 6px solid var(--altin); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .card h3 { font-family: 'Cinzel', serif; margin-bottom: 30px; color: var(--ana-renk); font-size: 1.8rem; }
+        .card p { font-size: 1.1rem; text-align: justify; margin-bottom: 40px; color: #333; line-height: 2; }
+        
+        /* ÖRNEKLEM GRİDİ - DAHA GENİŞ */
+        .example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; border-top: 1px double #ddd; padding-top: 40px; }
+        .ex-item { background: #fff; padding: 25px; border: 1px solid #eee; transition: 0.3s; }
+        .ex-item:hover { border-color: var(--altin); transform: translateY(-5px); }
+        .ex-item b { color: var(--altin); display: block; margin-bottom: 12px; font-family: 'Cinzel', serif; font-size: 1.15rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
+        .ex-item i { font-size: 0.95rem; color: #555; font-style: normal; }
+
+        .category-tag { font-size: 0.8rem; text-transform: uppercase; color: var(--altin); letter-spacing: 4px; display: block; margin-bottom: 15px; font-weight: 800; }
+
+        footer { padding: 80px; text-align: center; background: #0a0a0a; color: #fff; }
+        footer p { opacity: 0.6; font-size: 0.9rem; letter-spacing: 2px; }
+
+        @media (max-width: 768px) { .animated-title { font-size: 1.5rem; } .card { padding: 30px; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MEDENİYET TASAVVURU</div>
+        <div class="nav-links"> 
+          
+            <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">ANASAYFA</a>
+            <a href="#kultur">MİTOLOJİ</a>
+            <a href="#devlet">TÖRE</a>
+            <a href="#muhendislik">ESTETİK</a>
+            <a href="#cografya">STRATEJİ</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content-wrapper">
+            <p class="sub-text">Köklerden Geleceğe Akıl ve Ruh</p>
+            <h1 class="animated-title">Tarih değil, hatalar tekerrür eder.</h1>
+        </div>
+    </header>
+
+    <section id="kultur">
+        <span class="category-tag">Kolektif Hafıza</span>
+        <h2 class="section-title">Sözlü Gelenek ve Mitoloji</h2>
+        <div class="card">
+            <h3>Bozkırın Kadim Kozmolojisi</h3>
+            <p>Türklerde sözlü gelenek ve mitoloji, bozkır kültürünün derinliklerinden süzülüp gelen, bir milletin kolektif hafızasını, inançlarını ve evren tasavvurunu nesilden nesile aktaran devasa bir kültürel mirastır. Henüz yerleşik hayata geçilmeden çok önce, Türklerin göçebe yaşam tarzı içerisinde şekillenen bu gelenek; ozanlar, kamlar (şamanlar) ve bahşılar aracılığıyla kopuz eşliğinde dile getirilmiş, yazıya geçirilmeden yüzyıllarca diri kalmıştır. Türk mitolojisi, sadece efsanelerden ibaret değil; evrenin oluşumu, insanın türeyişi ve doğaüstü güçlerle olan ilişkisini içeren karmaşık bir kozmoloji sunar. Bu mitolojik dünyanın merkezinde Gök Tanrı (Tengri) inancı yer alırken; evren Gök, Yer ve Yeraltı olmak üzere üç katmana ayrılır. Üst dünyada iyilik ve aydınlığın temsilcisi Ülgen, yeraltı dünyasında ise karanlık ve kötülüğün hükümdarı Erlik Han bulunur. Türk düşüncesinde doğa canlıdır; dağlar, su kaynakları ve ormanlar "İyeler" (koruyucu ruhlar) ile doludur.</p>
+            
+            
+
+            <div class="example-grid">
+                <div class="ex-item"><b>◈ Destanların Kandamarı</b><i>Oğuz Kağan Destanı'nda ideal hükümdar tipi ve devlet kurma bilinci; Ergenekon ve Bozkurt destanlarında ise yok olmanın eşiğinden dönen bir milletin küllerinden doğuşu işlenir.</i></div>
+                <div class="ex-item"><b>◈ Dede Korkut Mirası</b><i>Oğuz Türklerinin sosyal yaşamını, ahlak anlayışını ve kahramanlıklarını hem lirik hem de epik bir dille günümüze taşıyan en görkemli yapı taşıdır.</i></div>
+                <div class="ex-item"><b>◈ Sözlü Edebiyat Türleri</b><i>Savlar yaşam tecrübesini, sagular ölüm karşısındaki vakur duruşu, koşuklar ise doğa ve aşk sevgisini formüle eden kadim türlerdir.</i></div>
+                <div class="ex-item"><b>◈ Alp-Eren Ruhu</b><i>İslamiyet’in kabulüyle yeni unsurlarla harmanlansa da, özündeki o tabiatla bütünleşik mitolojik köklerini ve kimliğini asla kaybetmemiştir.</i></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="devlet" style="background-color: #fcfcfc;">
+        <span class="category-tag">Siyasal Felsefe</span>
+        <h2 class="section-title">Devlet Yapısı ve Töre</h2>
+        <div class="card">
+            <h3>İl Gider, Töre Kalır: Sarsılmaz Düzen</h3>
+            <p>Türk devlet yapısı ve "töre" kavramı, binlerce yıllık bozkır kültürünün süzgecinden geçerek şekillenmiş, sarsılmaz bir hukuki ve sosyal düzeni temsil eder. Türklerin tarih sahnesine çıktığı ilk dönemlerden itibaren devlet, sadece bir toprak parçasını yöneten mekanizma değil, "İl" (veya El) adı verilen ve töre ile ayakta duran kutsal bir organizasyon olarak görülmüştür. Bu yapının temelinde, evrenin düzeni ile devletin düzeni arasında kurulan manevi bir bağ vardır. Türk düşüncesinde dünya, Gök Tanrı tarafından bir düzene oturtulmuştur ve hükümdarın (Kağan) asıl görevi, Tanrı’dan aldığı "Kut" (yönetme yetkisi) ile bu ilahi düzeni yeryüzünde tesis etmektir. Ancak bu yetki sınırsız değildir; Kağan’ın meşruiyeti, töreye uymasına ve halkını refah içinde yaşatmasına bağlıdır.</p>
+            
+            <div class="example-grid">
+                <div class="ex-item"><b>◈ Törenin Dört Sarsılmaz Sütunu</b><i>Adalet (konilik), iyilik (uzluk), eşitlik (tüzlük) ve insanlık (kişilik) üzerine inşa edilen bu sistem, hükümdarın yetkilerini bile hukukla sınırlar.</i></div>
+                <div class="ex-item"><b>◈ Toplumsal Piramit</b><i>Toplumun en küçük birimi olan "Oguş"tan (aile), "Urug" (sülale), "Boy" ve nihayetinde "Budun" (millet) yapısına kadar her kademe birbirine töreyle bağlıdır.</i></div>
+                <div class="ex-item"><b>◈ Kurultay ve Meşveret</b><i>Demokratik bir danışma meclisi işlevi görerek Kağan’ın kararlarını denetleyen ve boy beylerinin söz hakkına sahip olduğu katılımcı yönetim modeli.</i></div>
+                <div class="ex-item"><b>◈ Kut ve Meşruiyet Kaybı</b><i>Hükümdar töreye aykırı hareket ettiğinde halkın üzerindeki otoritesini kaybeder ve Kut'un kendisinden alındığına inanılır.</i></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="muhendislik">
+        <span class="category-tag">Yaratıcı Sentez</span>
+        <h2 class="section-title">Sanat ve Estetik Mühendisliği</h2>
+        <div class="card">
+            <h3>Rasyonel Akıl ve Yaratıcı Ruhun Birleşimi</h3>
+            <p>Sanat ve mühendislik, insanlık tarihinin başlangıcından beri iç içe geçmiş iki temel yaratım disiplinidir. Sanat; hayal gücü, estetik ve duygusal ifade aracılığıyla insanın ruhsal dünyasına hitap ederken; mühendislik, matematik ve fizik yasalarını kullanarak fiziksel sorunlara somut çözümler üretir. Ancak bu iki alan arasındaki keskin ayrım, modern dünyada yerini "estetik mühendisliği" kavramına bırakmıştır. Estetik mühendisliği, bir yapının veya nesnenin sadece mükemmel çalışmasını değil, aynı zamanda göze hoş gelmesini, kullanıcıda bir hayranlık uyandırmasını ve çevresiyle görsel bir uyum yakalamasını hedefler. Bu yaklaşımda "biçim" ve "işlev" artık birbirinden bağımsız iki unsur değil, birbirini tamamlayan bir bütündür.</p>
+            
+            
+
+            <div class="example-grid">
+                <div class="ex-item"><b>◈ Mimari ve Statik Deha</b><i>Antik tapınaklardan modern gökdelenlere kadar her yapıda, statik hesaplamaların yanı sıra altın oran gibi matematiksel estetik kurallar kullanılmıştır.</i></div>
+                <div class="ex-item"><b>◈ Leonardo da Vinci Modeli</b><i>Makinelerin dişlileri arasındaki kusursuz matematik, aynı zamanda görsel bir sanat eseri niteliği taşır; akıl ve ruh burada el sıkışır.</i></div>
+                <div class="ex-item"><b>◈ Endüstriyel Estetik</b><i>Akıllı telefon tasarımlarından aerodinamik otomobil gövdelerine kadar mühendislik verimliliği ile sanatsal zeka artık birbirinden ayrı düşünülemez.</i></div>
+                <div class="ex-item"><b>◈ Kültür Nesnesi Olarak Teknoloji</b><i>Bu birliktelik sayesinde teknoloji sadece soğuk bir araç olmaktan çıkıp, yaşam alanlarımızı güzelleştiren birer kültür nesnesine dönüşür.</i></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cografya" style="background-color: #f4f7f6;">
+        <span class="category-tag">Jeopolitik Bilinç</span>
+        <h2 class="section-title">Coğrafya ve Strateji</h2>
+        <div class="card">
+            <h3>Coğrafyanın Stratejik Parşömeni</h3>
+            <p>Coğrafya ve strateji arasındaki ilişki, tarihin akışını belirleyen en temel unsurlardan biridir ve "Coğrafya kaderdir" sözüyle özetlenen bu bağ, devletlerin hayatta kalma reflekslerini doğrudan şekillendirir. Strateji, bir hedefe ulaşmak için eldeki imkanların planlı kullanımıyken; coğrafya, bu imkanların sınırlarını ve yönünü belirleyen fiziksel sahnedir. Bir milletin üzerinde yaşadığı toprakların dağlık yapısı, su kaynaklarına erişimi, iklimi ve komşularıyla olan sınırları, o milletin sadece ekonomik faaliyetlerini değil, aynı zamanda askeri doktrinlerini ve dış politika tercihlerini de belirler. Jeopolitik, coğrafi verilerin siyasi ve stratejik kararlara dönüştürülmesi sürecidir.</p>
+            
+            <div class="example-grid">
+                <div class="ex-item"><b>◈ Arazi ve Askeri Doktrin</b><i>Yüksek dağlar doğal kale görevi görürken, geniş ovalar Türklerin süvari birlikleri gibi hızlı hareket kabiliyeti gerektiren askeri yapıların doğmasına neden olmuştur.</i></div>
+                <div class="ex-item"><b>◈ Kritik Geçiş Güzergahları</b><i>İpek Yolu veya enerji koridorları üzerinde bulunmak, bir coğrafyayı stratejik cazibe merkezi yaparken devletleri çok yönlü diplomasiye zorunlu kılar.</i></div>
+                <div class="ex-item"><b>◈ Tarihsel Kanıtlar</b><i>Napolyon’un Rusya kışına karşı yenilmesi veya kale konumlarının önemi, coğrafyanın stratejiyi nasıl mağlup edebileceğinin en net kanıtıdır.</i></div>
+                <div class="ex-item"><b>◈ Modern Jeopolitik</b><i>Modern dünyada siber ve uzay stratejileri bile hala yeryüzündeki fiziksel kontrol noktaları ve kaynak merkezleri etrafında dönmeye devam etmektedir.</i></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="font-family: 'Cinzel'; margin-bottom: 20px;">MEDENİYET PORTALI</h2>
+        <p>© 2025 | Kadim Geçmişin Modern Yüzü</p>
+    </footer>
+
+</body>
+</html>

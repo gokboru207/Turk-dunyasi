@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Büyük Hun İmparatorluğu | Tarihsel Başyapıt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* TASARIM BÖLÜMÜ (DEĞİŞTİRİLMEDİ) */
+        :root {
+            --hun-gold: #D4AF37;
+            --hun-red: #8B0000;
+            --hun-dark: #121212;
+            --bg-creme: #fdfaf0;
+            --accent-glow: rgba(212, 175, 55, 0.4);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-creme);
+            color: #2c3e50;
+            font-family: 'Lora', serif;
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, transparent 20%, var(--bg-creme) 80%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 8px solid var(--hun-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: var(--hun-red);
+            margin: 0;
+            letter-spacing: 10px;
+            animation: titleEntrance 2s ease-out;
+        }
+
+        @keyframes titleEntrance {
+            from { transform: scale(1.2); opacity: 0; filter: blur(10px); }
+            to { transform: scale(1); opacity: 1; filter: blur(0); }
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 350px 1fr 350px;
+            gap: 40px;
+            max-width: 1800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .side-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 5px solid var(--hun-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .side-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 40px var(--accent-glow);
+        }
+
+        .side-card h4 {
+            color: var(--hun-red);
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            background: white;
+            padding: 70px;
+            border-radius: 25px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.03);
+            border: 1px solid #f1f1f1;
+        }
+
+        section {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1.2s ease-out;
+        }
+
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        .example-block {
+            background: linear-gradient(to right, #fffdf2, #ffffff);
+            border-left: 6px solid var(--hun-red);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: var(--hun-gold);
+            color: white;
+            padding: 25px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 25px var(--accent-glow);
+            animation: float 4s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .timeline-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-right: 6px solid var(--hun-red);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .event-node {
+            padding-left: 25px;
+            border-left: 3px solid var(--hun-gold);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .event-node::before {
+            content: "";
+            position: absolute;
+            left: -10px; top: 0;
+            width: 18px; height: 18px;
+            background: var(--hun-red);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+		nav{
+  position:sticky; top:0; background:yellow;
+  display:flex; justify-content:center; gap:25px;
+  padding:18px; color:var(--vurgu); z-index:100;
+  font-family: Cinzel; border-bottom: 3px solid var(--ana);
+}
+
+        footer {
+            background: var(--hun-dark);
+            color: var(--hun-gold);
+            padding: 80px 20px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+
+        @media (max-width: 1400px) {
+            .layout { grid-template-columns: 1fr; }
+            .side-panel, .timeline-panel { display: none; }
+        }
+    </style>
+</head>
+<body>
+<nav>
+<a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">ANASAYFA'YA DÖN </a></nav>
+
+<header>
+    <h1>BÜYÜK HUN İMPARATORLUĞU</h1>
+    <p style="font-family: 'Cinzel'; font-size: 1.2rem; color: var(--hun-gold);">"Bozkırın Güneşle Yıkandığı Topraklar"</p>
+</header>
+
+<div class="layout">
+    
+    <aside class="side-panel">
+        <div class="side-card">
+            <h4>💡 Savaş Lojistiği ve Hız</h4>
+            <p>Bir Hun süvarisi, sefere çıkarken yanında **3 ile 5 yedek at** bulundururdu. Atların her biri farklı arazi koşulları için (bataklık, bozkır, dağ) eğitilirdi. Yorulan atın üzerinden eyerini diğerine aktaran süvari, mola vermeden günde **150-180 km** mesafe katedebilirdi. Bu hız, düşmanın henüz savunma hattı kurmasına fırsat bırakmadan Hunların şehrin kapısına dayanmasını sağlardı.</p>
+        </div>
+        <div class="side-card">
+            <h4>🏹 Islıklı Okun Mühendisliği</h4>
+            <p>Mete Han'ın "Çavuş Oku" olarak da bilinen icadı, okun ucuna eklenen delikli kemik halkalardan oluşurdu. Bu ok atıldığında çıkan keskin ses, binlerce süvarinin savaşın gürültüsü içinde komutanın ateş emrini aynı anda almasını sağlayan bir **sesli komuta sistemi** işlevi görürdü.</p>
+        </div>
+        <div class="side-card">
+            <h4>🧬 Sosyal Sınıfsızlık</h4>
+            <p>Hun toplumu "Ordu-Millet" yapısındaydı. Kadınlar ve erkekler aynı askeri eğitimi alır, gerektiğinde kadınlar da otağı ve toprakları savunurdu. Avrupa'da görülen "Kölelik" sistemi Hunlarda yoktu; herkes özgürdü ve liyakatle devlet kademelerinde yükselebilirdi.</p>
+        </div>
+        <div class="side-card">
+            <h4>🏛️ Kurultay Meclisi</h4>
+            <p>Kağan, devlet işlerinde tek başına karar vermezdi. **Kurultay** adı verilen meclis; boy beylerinden oluşur, savaş, barış ve hükümdar seçimi gibi kritik konularda son sözü söylerdi. Bu, Türklerin demokratik danışma kültürünün ilk örneğidir.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <div style="text-align: center; margin-bottom: 80px;">
+            <img src="hun imparatorluğu.jpeg" alt="Hun Bayrağı" style="border: 6px double var(--hun-gold); border-radius: 10px; width: 500px; box-shadow: 0 20px 50px rgba(0,0,0,0.1);">
+        </div>
+
+        <section class="section">
+            <h2>I. Teoman Han: Merkezi Otoritenin Doğuşu</h2>
+            <p>MÖ 220 yılında **Teoman Han**, tarafından temelleri atılmıştır.Asya Hun İmparatorluğu&rsquo;nun kurucusu Teoman Han, bozkırın en büyük sorununa çözüm getirerek parçalanmış haldeki Türk boylarını ilk kez tek bir siyasi çatı altında birleştirmiştir. Bu birleşme, "Şanyü" unvanı ile dini bir meşruiyet kazanmış ve merkezi otoritenin ilk tohumlarını atmıştır. Teoman, dışarıda Çin baskısına karşı bir set oluştururken içeride ise boy beylerini merkeze bağlayarak kabile konfederasyonundan devletleşmeye geçişi başlatmıştır.</p>
+            <div class="example-block">
+                <strong>Diplomatik Strateji:</strong> Hunların yükselişini gören Çin İmparatoru Qin Shi Huang, Hun akınlarını "doğal bir afet" gibi algılamıştır. 21.000 kilometrelik **Çin Seddi**, aslında sadece bir duvar değil, Hunların askeri lojistiğine karşı Çin'in girdiği devasa bir savunma çöküşüdür.
+            </div>
+        </section>
+
+        <div class="stat-box">
+            <div class="stat-item"><span>MÖ 209</span>Mete'nin Tahtı</div>
+            <div class="stat-item"><span>18.000k</span>En Geniş Sınır</div>
+            <div class="stat-item"><span>300k</span>Atlı Savaşçı</div>
+        </div>
+
+        <section class="section">
+            <h2>II. Mete Han: "Toprak Devletin Temelidir" (MÖ 209-174),</h2>
+            <p data-path-to-node="0">Mete Han, Asya Hun İmparatorluğu&rsquo;nun en parlak dönemini yaşatan, Türk devlet geleneğinin ve askeri teşkilatlanmasının gerçek kurucusu kabul edilen karizmatik bir hükümdardır. Tarihi kaynaklarda azmi, disiplini ve stratejik zekasıyla öne çıkan Mete, sadece bir fatih değil, aynı zamanda bir sistem mimarıdır.</p>
+            <p data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0">Askeri Deha ve Onlu Sistem</strong> Mete Han&rsquo;ın dünya tarihine en büyük mirası, günümüz modern ordularının bile temelini oluşturan **"Onlu Sistem"**dir. Orduyu on, yüz, bin ve on bin kişilik birimlere ayırarak, bozkırın düzensiz birliklerini dünyanın en disiplinli savaş makinesine dönüştürmüştür. Islıklı okları icat ederek savaş meydanında iletişimi ve eş zamanlı saldırıyı mümkün kılmış, "Turan Taktiği" (Kurt Kapanı) ile kendisinden sayıca çok üstün orduları dize getirmiştir.</p>
+            <p data-path-to-node="2"><strong data-path-to-node="2" data-index-in-node="0">Siyasi Birlik ve Vatan Bilinci</strong> Mete Han, Orta Asya&rsquo;da yaşayan tüm Türk boylarını ve diğer göçebe toplulukları tarihte ilk kez tek bir bayrak altında toplayarak "siyasi birlik" kavramını gerçekleştirmiştir. Onun yönetim anlayışında toprak, hükümdarın şahsi mülkü değil, milletin vazgeçilmez ortak varlığıdır. Tung-huların çorak bir toprak parçasını istemesi üzerine söylediği "Toprak devletin temelidir, kimseye verilemez" sözü, Türk milliyetçiliğinin ve vatan savunmasının ilk yazılı olmayan kanunu kabul edilir.</p>
+            <p data-path-to-node="3"><strong data-path-to-node="3" data-index-in-node="0">Çin Politikası ve Stratejik Vizyon</strong> Çin&rsquo;i mağlup etmesine rağmen orayı işgal edip kalabalık Çin nüfusu içinde asimile olmak yerine, Çin&rsquo;i vergiye bağlamayı tercih etmiştir. Bu kararı, onun milletinin kültürel kimliğini koruma konusundaki derin öngörüsünü ve stratejik dehasını gösterir</p>
+            <p>&nbsp;</p>
+            
+            <div class="example-block">
+                <strong>Vatan Bilinci Örneği:</strong> Komşu Tunguz boyu, Mete Han'dan önce en iyi atını, sonra eşini istemiştir. Barış bozulmasın diye Mete bunları vermiştir. Ancak en sonunda iki devlet arasında kalan, hiçbir işe yaramayan, çorak bir toprak parçasını istediklerinde; Mete Han **"At ve kadın benim şahsi malımdı, verdim. Ancak toprak milletindir; kimse onu veremez!"** diyerek Tunguzları tek bir seferde haritadan silmiştir.
+            </div>
+
+            
+
+            <h3>Paiteng Muharebesi ve Turan Taktiği</h3>
+            <p>MÖ 200 yılında, 320.000 kişilik Çin ordusuna karşı Mete Han, tarihin en büyük pususunu kurmuştur. **Turan Taktiği** (Hilal Taktiği) ile merkez kuvvetleri sahte bir yenilgiyle geri çekmiş, Çin İmparatoru'nu Baideng Dağı'nda kıstırmıştır. Çin, Hunların üstünlüğünü kabul ederek yıllık vergiye bağlanmıştır.</p>
+        </section>
+
+<section class="section">
+            <h2>Devlet Yönetimi ve Siyasi Yapı            </h2>
+            <p data-path-to-node="2">Hunlarda devlet, <strong data-path-to-node="2" data-index-in-node="17">"Kut"</strong> inancı etrafında şekillenirdi. Hükümdarın yönetme yetkisini Gök Tanrı&rsquo;dan aldığına inanılır, bu da hükümdarın otoritesini dini bir meşruiyete dayandırırdı. Ancak bu yetki sınırsız değildi; hükümdar, <strong data-path-to-node="2" data-index-in-node="222">"Töre"</strong> adı verilen yazısız hukuk kurallarına uymak zorundaydı.</p>
+            <p data-path-to-node="3">İmparatorluğun geniş sınırlarını yönetebilmek için <strong data-path-to-node="3" data-index-in-node="51">"İkili Teşkilat"</strong> sistemi uygulanırdı. Devlet; doğu ve batı olmak üzere ikiye ayrılır, güneşin doğduğu taraf olan doğu her zaman kutsal sayılır ve asıl hükümdar (Şanyü) burada otururdu. Batı kanadı ise genellikle hanedan üyesi bir prens (Yabgu) tarafından merkeze bağlı olarak yönetilirdi.</p>
+            <p data-path-to-node="4">Devletin en kritik organlarından biri <strong data-path-to-node="4" data-index-in-node="38">Kurultay</strong> adı verilen danışma meclisiydi. Boy beylerinin katıldığı bu mecliste; savaş ve barış kararları alınır, yeni hükümdar seçilir ve önemli davalar görüşülürdü. Bu durum, Hun yönetiminde son söz hükümdarda olsa bile ortak aklın ve danışmanın önemini göstermektedir.</p>
+            <h3 data-path-to-node="5">Ordu-Millet Anlayışı ve Sosyal Hayat</h3>
+            <p data-path-to-node="6">Hun toplumunda sosyal sınıflaşma veya kölelik sistemi yoktu. Halk, günlük yaşamında hayvancılıkla uğraşsa da her an savaşa hazır bir asker gibi eğitilirdi. Bu yapıya Türk tarihinde <strong data-path-to-node="6" data-index-in-node="181">"Ordu-Millet"</strong> anlayışı denir. Kadınlar ve erkekler birlikte ata biner, ok atar ve gerektiğinde vatan savunmasında görev alırdı. Mete Han&rsquo;ın kurduğu <strong data-path-to-node="6" data-index-in-node="329">Onlu Sistem</strong> sayesinde, toplum askeri bir hiyerarşiyle örgütlenmiş; bu da devlete muazzam bir mobilizasyon hızı ve disiplin kazandırmıştır.</p>
+            <h3 data-path-to-node="7">İnanç Sistemi ve Kültürel Doku</h3>
+            <p data-path-to-node="8">Hunlar, tek bir yaratıcıya inanılan <strong data-path-to-node="8" data-index-in-node="36">Gök Tanrı (Tengri)</strong> inancına sahipti. Bunun yanı sıra doğadaki dağ, su ve ağaç gibi varlıkların birer ruhu olduğuna inanılan "Yer-Sub" kültü ve atalara duyulan derin saygıyı ifade eden "Atalar Kültü" inanç sisteminin önemli parçalarıydı.</p>
+            <p data-path-to-node="9">Hunlar, ölülerini <strong data-path-to-node="9" data-index-in-node="18">Kurgan</strong> denilen oda şeklindeki mezarlara, kıymetli eşyaları ve atlarıyla birlikte gömerlerdi. Mezar başlarına, ölen kişinin hayattayken öldürdüğü düşman sayısı kadar <strong data-path-to-node="9" data-index-in-node="183">Balbal</strong> adı verilen taş heykeller dikilmesi, hem kahramanlığın bir nişanı hem de ahiret inancının bir göstergesiydi.</p>
+  <p>&nbsp;</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin-top: 30px;">
+                <tr style="background: var(--hun-red); color: white;">
+                    <th width="25%" style="padding: 15px;">Hükümdarlar</th>
+                    <th width="17%">tahtta kaldığı süre</th>
+                    <th width="58%">Önemli not</th>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border-bottom: 1px solid #eee;">Teoman (Tuman)</td>
+                    <td style="border-bottom: 1px solid #eee;">MÖ 220 – MÖ 209</td>
+                    <td style="border-bottom: 1px solid #eee;"><table cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><span data-path-to-node="4,1,1,0"> </span></td>
+                        <td><span data-path-to-node="4,1,2,0">Bilinen ilk Hun hükümdarı ve kurucu.</span></td>
+                      </tr>
+                    </table></td>
+                </tr>
+                <tr>
+                  <td style="padding: 15px; border-bottom: 1px solid #eee;">Mete Han (Modu)</td>
+                  <td style="border-bottom: 1px solid #eee;">MÖ 209 – MÖ 174</td>
+                  <td style="border-bottom: 1px solid #eee;">İmparatorluğun en parlak dönemi, Onluk Sistem.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 15px; border-bottom: 1px solid #eee;">Ki-ok (Lao-shang)</td>
+                  <td style="border-bottom: 1px solid #eee;">MÖ 174 – MÖ 161</td>
+                  <td style="border-bottom: 1px solid #eee;">Çin ile ipek yolu ticareti ve akrabalık bağları.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 15px; border-bottom: 1px solid #eee;">Kün-çin (Jun-chen)</td>
+                  <td style="border-bottom: 1px solid #eee;">MÖ 161 – MÖ 126</td>
+                  <td style="border-bottom: 1px solid #eee;">Çin ile uzun süren savaşlar ve savunma dönemi.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 15px; border-bottom: 1px solid #eee;">İ-çih-sie</td>
+                  <td style="border-bottom: 1px solid #eee;">MÖ 126 – MÖ 114</td>
+                  <td style="border-bottom: 1px solid #eee;">Hun-Çin savaşlarının şiddetlendiği dönem.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 15px; border-bottom: 1px solid #eee;">Ho-han-ye</td>
+                  <td style="border-bottom: 1px solid #eee;">MÖ 58 – MÖ 31</td>
+                  <td style="border-bottom: 1px solid #eee;">Devletin Doğu ve Batı olarak ikiye ayrıldığı süreç.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 15px; border-bottom: 1px solid #eee;">Çiçi Yabgu</td>
+                  <td style="border-bottom: 1px solid #eee;">MÖ 56 – MÖ 36</td>
+                  <td style="border-bottom: 1px solid #eee;"><p><strong data-path-to-node="3,7,2,0" data-index-in-node="0">"Bağımsızlığı feda etmeyi utanç verici"</strong> sayan, milli istiklal düşüncesinin ilk temsilcisi aynı zamanda kavimler göçünü başlatan adımı batıya doğru göç etmesi başlatmıştır . </p></td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border-bottom: 1px solid #eee;">Ho-han-ye</td>
+                    <td style="border-bottom: 1px solid #eee;">MÖ 58 – MÖ 31</td>
+                    <td style="border-bottom: 1px solid #eee;">Devletin Doğu ve Batı olarak ikiye ayrıldığı süreç.</td>
+                </tr>
+            </table>
+        </section>
+
+<section class="section">
+            <h2> Ekonomi, Sanat ve İpek Yolu</h2>
+            <p data-path-to-node="2">Hun Devleti&rsquo;nin ekonomik yapısı, bozkırın sert doğasına uyum sağlamış olan hayvancılık ve stratejik ticaret yollarının kontrolü üzerine kurulmuştur. Toplumun temel geçim kaynağı olan hayvancılık; at, koyun ve sığır sürülerine dayanıyordu. Atlar hem savaşın vazgeçilmez unsuru hem de ulaşımın temeliyken, koyun sürüleri beslenme ve giyim ihtiyacını karşılıyordu. Hunlar, göçebe yaşamın yanı sıra belirli bölgelerde tarımla da uğraşmış, özellikle tahıl ambarları kurarak yerleşik hayata dair ekonomik izler bırakmışlardır.</p>
+            <p data-path-to-node="3">Ekonominin en stratejik ayağını ise İpek Yolu hakimiyeti oluşturmaktaydı. Hunlar, Çin&rsquo;den başlayıp Batı&rsquo;ya uzanan bu devasa ticaret yolunun Orta Asya güzergahını kontrol altında tutarak büyük bir güç elde etmişlerdir. Bu yoldan geçen kervanlardan alınan gümrük vergileri ve sağlanan güvenlik hizmeti, devlet hazinesinin en büyük gelir kaynaklarından biriydi. Özellikle Mete Han döneminde Çin&rsquo;in vergiye bağlanmasıyla birlikte ipek, gümüş ve tarım ürünleri Hun coğrafyasına akmış, bu da Hunları bölgenin ekonomik merkezi haline getirmiştir. İpek Yolu sadece bir ticaret hattı değil, aynı zamanda Hunların Batı ve Doğu kültürleriyle etkileşim kurmasını sağlayan kültürel bir köprü vazifesi görmüştür.</p>
+            <p data-path-to-node="4">Sanat alanında ise Hunlar, dünyada "Hayvan Üslubu" olarak bilinen kendilerine has bir sanat tarzı geliştirmişlerdir. Bu tarzda, günlük hayatta kullanılan kemer tokaları, kılıç kabzaları, at koşum takımları ve mobilyalar; kurt, kartal, geyik ve kaplan gibi hayvan figürleriyle süslenmiştir. Genellikle iki hayvanın mücadelesini anlatan bu dinamik tasvirler, bozkırdaki yaşam mücadelesini ve Hunların savaşçı ruhunu yansıtmaktadır. Maden işçiliğinde, özellikle demir ve altını işlemede çok ileri giden Hunlar, aynı zamanda dokumacılıkta da büyük bir ustalık sergilemişlerdir. Altay Dağları&rsquo;ndaki Pazırık Kurganı&rsquo;ndan çıkarılan ve dünyanın en eski düğümlü halısı olan Pazırık Halısı, Hun sanatının inceliğini, estetik derinliğini ve o dönemdeki yüksek medeniyet seviyesini kanıtlayan en somut belgedir.</p>
+            <p data-path-to-node="5">Sonuç olarak Hunlar; askeri güçlerini İpek Yolu&rsquo;ndan gelen ticari zenginlikle birleştirmiş, bu zenginliği de bozkırın ruhunu taşıyan eşsiz bir sanat anlayışıyla taçlandırmışlardır.</p>
+            <p>.</p>
+        </section>
+        <section class="section">
+         
+         <h2>   devlet yıkılışı süreci  </h2>
+         <p>Asya Hun İmparatorluğu&rsquo;nun yıkılış süreci, tek bir askeri yenilgiden ziyade; ekonomik zayıflama, iç taht kavgaları ve Çin&rsquo;in yürüttüğü stratejik yıpratma politikasının bir sonucudur</p>
+         <h3 data-path-to-node="1">Asya Hun İmparatorluğu&rsquo;nun Yıkılış Süreci</h3>
+         <p data-path-to-node="2">Hun Devleti&rsquo;nin sarsılmaya başlaması, Mete Han gibi güçlü liderlerin ardından gelen veraset kavgaları ve Çin&rsquo;in uyguladığı "böl ve yönet" politikasıyla yakından ilgilidir. Hunların askeri gücünü savaş meydanında tam olarak kıramayan Çin, strateji değiştirerek Hun sarayına prensesler ve elçiler göndermeye başlamıştır. Bu gruplar, Hun boy beylerini birbirine düşürmüş, hakan ile boylar arasındaki güveni zedeleyerek merkezi otoritenin temellerini oymuştur.</p>
+<p data-path-to-node="3">Ekonomik açıdan ise Hunlar, İpek Yolu üzerindeki hakimiyetlerini yavaş yavaş Çin&rsquo;e kaptırmışlardır. Ticaret yollarının kontrolünün el değiştirmesi ve Çin&rsquo;in ipek ticaretini bir siyasi baskı aracı olarak kullanması, Hun ekonomisini ciddi bir krize sokmuştur. Geçimini hayvancılık ve ticaret vergileriyle sağlayan Hun boyları, merkezin ekonomik gücü zayıflayınca kendi başlarına hareket etmeye başlamış, bu da siyasi birliğin parçalanmasına yol açmıştır.</p>
+         <p data-path-to-node="4">Devletin tarihindeki en büyük kırılma noktası milattan önce 58 yılında yaşanmıştır.  Hakan Hohan-yeh, ekonomik çöküşten kurtulmak için Çin himayesine girmeyi önerdiğinde, kardeşi <strong data-path-to-node="3" data-index-in-node="216">Çiçi Yabgu</strong> buna şiddetle karşı çıkmıştır. Çiçi, bağımsızlığı feda etmeyi "atalarına ve Türk töresine ihanet" saymış, "Gülünç ve utanç verici bir köleliktense, ölmeyi yeğleriz" diyerek kendine sadık boylarla Batı Türkistan&rsquo;a çekilmiştir.</p>
+         <p data-path-to-node="4">Bu karar, Türklerin tarihinde <strong data-path-to-node="4" data-index-in-node="30">"Batı&rsquo;ya yönelme"</strong> stratejisinin ilk büyük adımıdır. Çiçi Yabgu&rsquo;nun Batı Türkistan&rsquo;da kurduğu devlet, Çin ile girdiği amansız mücadele sonunda yıkılmış olsa da, onun peşinden giden Hun kitleleri Çin boyunduruğuna girmemiş, daha batıya; Hazar Denizi ve Aral Gölü arasındaki bölgeye yerleşmişlerdir. Çiçi'nin bu "boyun eğmeyen" ruhu, nesiller sonra Avrupa'yı sarsacak olan asıl büyük göç (kavimler göçü) dalgasının insan kaynağını ve motivasyonunu oluşturmuştur.</p>
+         <p data-path-to-node="5">Milattan sonraki yıllarda Doğu Hunları da kendi içinde Kuzey ve Güney olarak ikiye bölünerek gücünü tamamen kaybetmiştir. Güney Hunları Çin&rsquo;e daha yakın bir politika izleyip asimile olurken, Kuzey Hunları hem Çin&rsquo;in hem de Orta Asya&rsquo;da güçlenen Sienpi kavminin saldırılarıyla sarsılmıştır. Milattan sonra 216 yılına gelindiğinde, Asya Hun İmparatorluğu siyasi bir yapı olarak tamamen tarihe karışmıştır. Ancak bu yıkılış bir son olmamış; bağımsızlığına düşkün Hun boylarının batıya göç ederek Kavimler Göçü&rsquo;nü başlatması, Avrupa Hun Devleti gibi yeni ve güçlü yapıların kurulmasına zemin hazırlamıştır.</p>
+         <p>&nbsp;</p>
+         
+        <section class="section">
+          <h2> kavimler göçü  </h2>
+            <p data-path-to-node="2">Kavimler Göçü, milattan sonra 375 yılında Hun Türklerinin batıya doğru hareketiyle sırasıyla Hunlar, Hazar Denizi'nin üzerinden batıya doğru yürüyünce önlerine çıkan ilk topluluk olan <strong data-path-to-node="2" data-index-in-node="91">Alanlar</strong>'ı yerinden oynattılar. Hunlardan kaçan Alanlar, Karadeniz'in kuzeyindeki <strong data-path-to-node="2" data-index-in-node="172">Ostrogotlar</strong>'ı (Doğu Gotları) sürükledi. Bu baskı zincirleme bir etki yarattı ve <strong data-path-to-node="2" data-index-in-node="252">Vizigotlar</strong> (Batı Gotları) Roma sınırlarına dayandı. Onların yarattığı kargaşayla <strong data-path-to-node="2" data-index-in-node="333">Vandallar</strong>, <strong data-path-to-node="2" data-index-in-node="344">Süevler</strong> ve <strong data-path-to-node="2" data-index-in-node="355">Gepidler</strong> de Avrupa'nın içlerine, Fransa ve İspanya'ya kadar savruldular. En sonunda bu büyük itişme, <strong data-path-to-node="2" data-index-in-node="456">Franklar</strong>'ın bugünkü Fransa'ya, <strong data-path-to-node="2" data-index-in-node="487">Angıl ve Saksonlar</strong>'ın ise İngiltere adasına yerleşmesiyle sonuçlandı. ve yaklaşık iki asır boyunca Avrupa ile Asya kıtalarını sarsan devasa bir nüfus hareketidir. Bu tarihi olayın başlamasındaki en temel etken, Orta Asya&rsquo;da hakimiyetini kaybeden Kuzey Hunlarının, Çin esareti altına girmek yerine bağımsızlıklarını koruma arzusuyla batıya yönelmeleridir. Hunlar, Hazar Denizi ile Aral Gölü arasındaki bölgeden geçerek İdil (Volga) nehrini aşmış ve Avrupa&rsquo;nın kapılarına dayanmışlardır.</p>
+            <p data-path-to-node="3">Göçün başlamasındaki en büyük itici güçlerden biri de <strong data-path-to-node="3" data-index-in-node="54">iklim değişikliği ve ekonomik zorunluluklardır.</strong> O dönemde Orta Asya steplerinde baş gösteren şiddetli kuraklık ve meraların yetersiz kalması, hayvancılıkla geçinen Türk boylarını ve diğer göçebe toplulukları yaşayabilecekleri daha verimli topraklara göç etmeye mecbur bırakmıştır. Hunların bu coğrafi zorunlulukla batıya ilerlemesi, Karadeniz&rsquo;in kuzeyinde yaşayan ve o dönemde "Barbar Kavimler" olarak adlandırılan Ostrogotlar, Vizigotlar, Vandallar, Gepidler ve Alanlar gibi Germen kavimlerini yerlerinden etmiştir. Hunların askeri disiplini ve savaş gücü karşısında duramayan bu topluluklar, can havliyle batıya, Roma İmparatorluğu sınırlarına doğru kaçmaya başlamışlardır.</p>
+          <p data-path-to-node="4">Bu süreç sadece basit bir yer değiştirme değil, bir <strong data-path-to-node="4" data-index-in-node="52">domino etkisi</strong> şeklinde gelişmiştir. Bir kavim yerinden sökülürken, önündeki diğer kavmi de Roma topraklarına doğru itmiş; bu da yüzyıllardır süregelen Roma sınır düzeninin tamamen çökmesine yol açmıştır. Roma İmparatorluğu, bu kontrolsüz ve devasa insan selini durduramamış, gelen kavimleri topraklarına kabul etmek veya onlarla savaşmak arasında kalmıştır. Bu büyük baskı, imparatorluğun önce ikiye ayrılmasına, ardından Batı Roma&rsquo;nın tamamen yıkılmasına neden olacak süreci başlatmıştır.</p>
+          <p data-path-to-node="5">Sonuç olarak Kavimler Göçü; siyasi bağımsızlık tutkusu, iklim şartlarının zorlaması ve Hun askeri gücünün yarattığı baskının birleşmesiyle ortaya çıkmıştır. Bu göç hareketiyle Avrupa&rsquo;nın etnik yapısı tamamen değişmiş, bugünkü Avrupa milletlerinin (Alman, İngiliz, Fransız vb.) temelleri atılmış ve dünya tarihi İlk Çağ&rsquo;dan Orta Çağ&rsquo;a geçiş yapmıştır.        </p>
+</section>
+        <section class="section">
+        
+<h2> kavimler göçünün avrupadaki etkisi </h2>
+        <h3>Kavimler Göçü'nün Avrupa üzerindeki etkileri, kıtanın çehresini bir daha geri dönülemeyecek şekilde değiştirmiş ve günümüz Avrupa medeniyetinin köşe taşlarını döşemiştir</h3>
+        <p data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0">Siyasi Yapının Çöküşü ve Yeni Yönetim Biçimleri</strong> Göçün en radikal sonucu, antik çağın en büyük gücü olan Roma İmparatorluğu&rsquo;nun bu devasa nüfus baskısına dayanamayarak önce ikiye ayrılması ve ardından 476 yılında Batı Roma&rsquo;nın tamamen yıkılmasıdır. Merkezi otoritenin yok olmasıyla Avrupa&rsquo;da büyük bir güvenlik boşluğu doğmuş, bu boşluğu ise yerel toprak sahipleri doldurmuştur. Böylece Orta Çağ&rsquo;ın karakteristik yönetim biçimi olan feodalite (derebeylik) sistemi ortaya çıkmıştır. Artık kralların yerini, şatolarında yaşayan ve kendi ordularına sahip olan yerel beyler almıştır.</p>
+        <p data-path-to-node="2"><strong data-path-to-node="2" data-index-in-node="0">Modern Avrupa Milletlerinin Doğuşu</strong> Roma topraklarına giren Germen, Got, Vandal ve Frank gibi kavimler, buralardaki yerel halkla karışarak bugünkü Avrupa devletlerinin etnik temellerini atmışlardır. Örneğin; Britanya&rsquo;ya yerleşen Angllar ve Saksonlar İngilizleri, Galya&rsquo;ya yerleşen Franklar Fransızları, İber Yarımadası&rsquo;na giden Vizigotlar ise İspanyolları oluşturmuştur. Bu bakımdan Kavimler Göçü, Avrupa'nın bugünkü demografik ve siyasi haritasının ilk taslağını çizmiştir.</p>
+        <p data-path-to-node="3"><strong data-path-to-node="3" data-index-in-node="0">Hristiyanlığın Yayılması ve Kilise Otoritesi</strong> Karmaşa içindeki Avrupa halkı, siyasi bir otorite kalmayınca tek sığınak olarak Kiliseyi görmeye başlamıştır. Göç eden kavimler zamanla Hristiyanlığı kabul etmiş, bu da Katolik Kilisesi&rsquo;ni Avrupa&rsquo;daki en güçlü kurum haline getirmiştir. Eğitimden sanata, hukuktan günlük yaşama kadar her şey dinin etkisi altına girmiş; bu durum Orta Çağ boyunca sürecek olan dogmatik ve skolastik düşünce yapısını doğurmuştur.</p>
+        <p data-path-to-node="4"><strong data-path-to-node="4" data-index-in-node="0">Kültürel Etkileşim ve Gelişim</strong> Hunların Avrupa'ya girmesiyle birlikte Türk kültürü de bölgeyi etkilemiştir. Avrupalılar; atlı savaş tekniklerini, orduda onlu sistemi, pantolon ve ceket kullanımını, hatta at koşum takımları ve ileri metal işleme tekniklerini Türklerden (Hunlardan) öğrenmişlerdir. Her ne kadar Roma&rsquo;nın gelişmiş şehir kültürü ve kütüphaneleri bu süreçte zarar görse de, göç dalgası Avrupa&rsquo;ya dinamizm ve yeni bir askeri disiplin kazandırmıştır.</p>
+        <p data-path-to-node="5">Sonuç olarak Kavimler Göçü, Avrupa&rsquo;yı "İlk Çağ"ın köleci ve imparatorluk odaklı yapısından çıkarıp, "Orta Çağ"ın feodal, dindar ve ulusal kökenli yapısına taşıyan dev bir devrimdir.</p>
+        <p>&nbsp;</p>
+        
+        
+         
+         
+         
+         
+         
+         
+         
+         <section>
+         	
+         	
+         	
+         </section>
+        
+    </main>
+
+    <aside class="timeline-panel">
+        <div class="timeline-box">
+            <h4 style="font-family: 'Cinzel'; color: var(--hun-red); text-align: center; border-bottom: 2px solid var(--hun-gold); padding-bottom: 10px;">TARİHİN AKIŞI</h4>
+            
+            <div class="event-node">
+                <strong style="color:var(--hun-red)">MÖ 220:</strong>
+                <p style="font-size: 0.9rem; margin: 0;">Teoman Han'ın tüm boyları Ötüken'de birleştirmesi.</p>
+            </div>
+            
+            <div class="event-node">
+                <strong style="color:var(--hun-red)">MÖ 209:</strong>
+                <p style="font-size: 0.9rem; margin: 0;">Mete Han'ın tahta çıkışı ve Onlu Sistem devrimi.</p>
+            </div>
+
+            <div class="event-node">
+                <strong style="color:var(--hun-red)">MÖ 200:</strong>
+                <p style="font-size: 0.9rem; margin: 0;">Paiteng Zaferi ile Çin'in ağır vergiye bağlanması.</p>
+            </div>
+
+            <div class="event-node">
+                <strong style="color:var(--hun-red)">MÖ 174:</strong>
+                <p style="font-size: 0.9rem; margin: 0;">İmparatorluğun 18 milyon km² sınırla zirveye ulaşması.</p>
+            </div>
+
+            <div class="event-node">
+                <strong style="color:var(--hun-red)">MÖ 58:</strong>
+                <p style="font-size: 0.9rem; margin: 0;">Kuzey ve Güney Hunlarının kardeş kavgasıyla ayrılışı.</p>
+            </div>
+
+            <div class="event-node">
+                <strong style="color:var(--hun-red)">MS 155:</strong>
+                <p style="font-size: 0.9rem; margin: 0;">Kuzey Hunlarının Batı'ya yürüyüşü ve Kavimler Göçü.</p>
+            </div>
+
+            <div class="event-node" style="border-left: 3px transparent;">
+                <strong style="color:var(--hun-red)">MS 216:</strong>
+                <p style="font-size: 0.9rem; margin: 0;">Güney Hunlarının yıkılışı ve Asya Hun döneminin sonu.</p>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<footer>
+    <p>BÜYÜK HUN İMPARATORLUĞU DİJİTAL ARŞİVİ © 2025</p>
+    <p style="font-size: 0.9rem; color: #666;">"Gök Tanrı'nın emriyle, güneşin doğduğu yerden battığı yere kadar..."</p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

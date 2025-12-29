@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anadolu Selçuklu Medeniyeti </title>
+    <style>
+        :root {
+            --seljuk-turq: #00ced1;
+            --royal-gold: #b8860b;
+            --bg-creme: #fdfaf6;
+            --text-main: #2c3e50;
+            --accent-blue: #34495e;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-creme);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 2;
+            overflow-x: hidden;
+        }
+
+        /* HERO - ARKA PLANDA DEVLET BAYRAĞI */
+        .hero {
+            position: relative;
+            height: 600px;
+            /* Arka plana Anadolu Selçuklu Bayrağı / Çift Başlı Kartal sembolü */
+            background: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Flag_of_the_Seljuk.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 8px solid var(--seljuk-turq);
+        }
+
+        /* Bayrağın üzerinde yazıların net okunması için şeffaf katman */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.65); /* Bayrağı gösteren ama metni öne çıkaran denge */
+        }
+
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .hero h1 { 
+            font-size: 4.5rem; 
+            margin: 0; 
+            color: var(--accent-blue); 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--royal-gold);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* KAYDIRMA ANİMASYONU */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav {
+            background: #fff;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        nav a { color: var(--accent-blue); text-decoration: none; margin: 0 15px; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--seljuk-turq); }
+
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+
+        .section {
+            background: #ffffff;
+            padding: 60px;
+            margin-bottom: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border-left: 15px solid var(--seljuk-turq);
+        }
+
+        h2 { color: var(--royal-gold); font-size: 2.5rem; margin-bottom: 30px; border-bottom: 2px solid #eee; }
+        h3 { color: var(--accent-blue); font-size: 1.8rem; margin-top: 40px; border-left: 6px solid var(--seljuk-turq); padding-left: 20px; }
+
+        .info-card {
+            background: #f1fcfc;
+            border: 1px solid #d1eeee;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            transition: 0.3s ease;
+        }
+
+        .info-card:hover { transform: translateY(-5px); background: #faffff; }
+
+        footer { background: var(--accent-blue); color: #fff; text-align: center; padding: 80px; }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>ANADOLU SELÇUKLU DEVLETİ</h1>
+      <p style="font-size: 1.8rem; font-weight: bold; color: var(--royal-gold);">Anadolu'nun Kadim Türk Mührü</p>
+    </div>
+</section>
+
+<nav> 
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a>
+    <a href="#birinci-beylikler">İlk Beylikler</a>
+    <a href="#devlet-siyaset">Kuruluş & Sultanlar</a>
+    <a href="#savas-taktik">Büyük Savaşlar</a>
+    <a href="#mimari-sanat">Mimari & Sanat</a>
+    <a href="#bilim-dusunce">Bilim & Alimler</a>
+    <a href="#hukuk-idare">Adalet & Devlet</a>
+    <a href="#dil-edebiyat">Dil & Eserler</a>
+    <a href="#ikinci-beylikler">Son Beylikler</a>
+</nav>
+
+<div class="container">
+
+  <section id="birinci-beylikler" class="section reveal">
+        <h2>1. Malazgirt Sonrası Anadolu'nun İlk Türk Beylikleri</h2>
+        <p>1071 Malazgirt zaferinden sonra Sultan Alparslan, Anadolu'nun fethini hızlandırmak için komutanlarına "Toprak fethedenin malıdır" yetkisini vermiştir. Bu durum, Anadolu'un hızla Türkleşmesini sağlayan bir beylikler dönemini başlatmıştır.</p>
+        
+        <h3>Saltuklular (1072 - 1202)</h3>
+        <p>Ebu Kasım Saltuk Bey tarafından Erzurum merkezli kurulmuştur. Anadolu'da kurulan ilk Türk beyliği olması hasebiyle büyük önem taşır. Gürcü Krallığı'na karşı Anadolu'nun doğu sınırlarını korumuşlar, Erzurum Ulu Camii ve Üç Kümbetler gibi eşsiz mimari eserlerle bölgenin Türk kimliğini pekiştirmişlerdir. 1202 yılında Anadolu Selçuklu tarafından ilhak edilene kadar Doğu Anadolu’nun koruyuculuğunu üstlenmişlerdir.</p>
+        
+        <h3>Danişmentliler (1080 - 1178)</h3>
+        <p>Gümüştekin Ahmed Gazi tarafından Sivas, Tokat ve Malatya bölgesinde kurulmuştur. Anadolu Selçuklu Devleti ile bazen rekabet etmiş bazen de Haçlılara karşı ortak hareket etmişlerdir. Anadolu'nun ilk medreselerinden olan Yağıbasan Medresesi'ni kurarak tıp ve bilim eğitimini başlatmışlardır. Danişmendnâme destanı ile Türk halk edebiyatına büyük katkı sağlamışlardır.</p>
+        
+        <h3>Artuklular (1102 - 1409)</h3>
+        <p>Artuk Bey'in oğulları tarafından Hasankeyf, Mardin ve Harput olmak üzere üç kol halinde yönetilmiştir. Haçlılarla yapılan mücadelelerde kilit rol oynamışlardır. Mimari açıdan dünyaca ünlü Malabadi Köprüsü'nü inşa etmişlerdir. Bilim dünyasına yön veren sibernetiğin babası El-Cezeri, bu beyliğin himayesinde ünlü otomata (robot) tasarımlarını gerçekleştirmiştir.</p>
+        
+        
+        <h3>Mengücekliler (1080 - 1228)</h3>
+        <p>Erzincan, Kemah ve Divriği bölgelerinde hüküm sürmüşlerdir. UNESCO Dünya Mirası Listesi'nde yer alan Divriği Ulu Camii ve Darüşşifası, taş işçiliğinin dünyadaki en muazzam örneklerinden biridir. Bu beylik, Anadolu'da bilimin ve estetiğin harmanlandığı en önemli merkezlerden biri olmuştur.</p>
+    </section>
+
+  <section id="devlet-siyaset" class="section reveal">
+        <h2>2. Türkiye Selçuklu Devleti: Kuruluş, Yükseliş ve Siyasi Deha</h2>
+        <p>Kutalmışoğlu Süleyman Şah tarafından 1075 yılında İznik'in fethiyle kurulmuştur. Bu, Bizans'ın kapısında yeni bir Türk devletinin doğuşudur.</p>
+        
+        <div class="info-card">
+            <h3>Sultan I. Kılıçarslan ve Haçlı Savaşları</h3>
+            <p>Babasının ölümünden sonra devleti toparlayan I. Kılıçarslan, tarihin en büyük askeri sınavlarından biri olan I. Haçlı Seferi ile karşılaşmıştır. İznik'i kaybetmesine rağmen Anadolu içlerinde Haçlı ordularını yıpratma savaşına sokmuş, başkenti Konya'ya taşıyarak devletin kalıcı olmasını sağlamıştır. Onun liderliği sayesinde Anadolu, Haçlıların geçici bir geçiş güzergahı değil, Türklerin aşılmaz kalesi haline gelmiştir.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>I. Alaeddin Keykubad: Medeniyetin Zirvesi</h3>
+            <p>Selçuklu'nun en parlak dönemidir. Onun döneminde Antalya ve Alanya fethedilerek denizcilikte devleşilmiş, Kırım'a düzenlenen deniz seferiyle uluslararası ticarette söz sahibi olunmuştur. Kervansaraylar inşa ettirerek tüccarlara dünyada ilk kez devlet sigortası sağlamış, Anadolu'yu dünyanın ticaret merkezi yapmıştır. Mevlana gibi alimlerin Konya'ya gelmesini sağlayarak devleti ilimle taçlandırmıştır.</p>
+        </div>
+    </section>
+
+  <section id="savas-taktik" class="section reveal">
+        <h2>3. Anadolu'nun Kaderini Mühürleyen Büyük Savaşlar</h2>
+        <h3>Miryokefalon Savaşı (1176) - Anadolu'nun Tapu Senedi</h3>
+        
+        <p>Bizans İmparatoru Manuel Komnenos'un Türkleri Anadolu'dan tamamen atmak için kurduğu devasa orduya karşı II. Kılıçarslan, stratejik bir deha sergilemiştir. Düşmanı dar bir geçitte pusuya düşüren Selçuklu ordusu, Bizans'ın sayısal ve zırh üstünlüğünü geçitlerin darlığıyla yok etmiştir. Bu savaş sonunda Bizans artık savunmaya çekilmiş, Batı dünyası Anadolu'ya "Turchia" (Türkiye) demeye başlamıştır.</p>
+        
+        <h3>Kösedağ Savaşı (1243) - Büyük Felaket</h3>
+        <p>Sultan II. Gıyaseddin Keyhüsrev'in tecrübesizliği ve ordusunu Moğollara karşı açık alanda hatalı konumlandırmasıyla kaybedilmiştir. Bu savaşla Selçuklu bağımsızlığını yitirmiş, Anadolu İlhanlı (Moğol) hakimiyetine girmiştir. Bu süreç, devletin merkezi otoritesini bitirmiş ve ikinci dönem beyliklerin kurulmasına yol açmıştır.</p>
+    </section>
+
+  <section id="mimari-sanat" class="section reveal">
+        <h2>4. Taşa Fısıldayan Sanat: Selçuklu Mimarisi</h2>
+        <p>Selçuklu mimarisi, sadelik ile görkemin birleşimidir. Yapıların dış yüzeyleri mütevazı iken, "Taç Kapı" adı verilen giriş kapıları inanılmaz bir taş işçiliğiyle bezenmiştir.</p>
+        <ul style="padding-left: 20px;">
+            <li><strong>Kervansaraylar:</strong> Ticareti canlandırmak için 30 kilometrede bir inşa edilen kaleye benzeyen konaklama tesisleridir. Yolculara üç gün ücretsiz hizmet verilirdi.</li>
+            <li><strong>Darüşşifalar:</strong> Tıp eğitiminin verildiği ve hastaların tedavi edildiği yerlerdir. Kayseri Gevher Nesibe Darüşşifası, akıl hastalarının su ve müzikle tedavi edildiği ilk merkezlerdendir.</li>
+            <li><strong>Medreseler:</strong> Karatay Medresesi ve İnce Minareli Medrese gibi yapılar, hem astronomi hem dini bilimlerin öğretildiği üniversitelerdir.</li>
+        </ul>
+        
+    </section>
+
+  <section id="bilim-dusunce" class="section reveal">
+        <h2>5. Bilim, Tasavvuf ve Anadolu Aydınlanması</h2>
+        <p><strong>Mevlana Celaleddin-i Rumi:</strong> Konya'da yazdığı "Mesnevi" ile evrensel hoşgörünün temellerini atmış, düşünceleriyle tüm dünyayı etkilemiştir.</p>
+        <p><strong>Hacı Bektaş-ı Veli:</strong> Anadolu'nun Türkleşmesi ve İslamlaşmasında sevgi ve kardeşlik felsefesini yaymıştır.</p>
+        <p><strong>El-Cezeri:</strong> Sibernetik ve robotik biliminin kurucusu kabul edilir. Artuklu sarayında su saatleri ve kendi kendine hareket eden otomatlar yapmıştır.</p>
+    </section>
+
+  <section id="hukuk-idare" class="section reveal">
+        <h2>6. Devlet Teşkilatı ve Adil Yönetim Mekanizması</h2>
+        <p><strong>Divan-ı İstifa:</strong> Devletin tüm mali işlerinden ve hazineden sorumludur. Başında "Müstevfi" bulunur.</p>
+        <p><strong>Adalet Yapısı:</strong> Şer’i mahkemelerin başında Kadi’l-Kudat bulunur. Örfi mahkemelerin başında ise Emir-i Dad (Adalet Bakanı dengi) yer alırdı. Adalet o kadar kutsaldı ki, sultan dahi bir vatandaşla aynı mahkemede yargılanabilirdi. Kadılar bağımsız hareket ederdi.</p>
+    </section>
+
+  <section id="dil-edebiyat" class="section reveal">
+        <h2>7. Dil, Alfabe ve Yazılı Kültür Mirası</h2>
+        <p>Arap Alfabesi'nin estetik bir formu olan Hat sanatı kullanılmıştır. Mevlana'nın Mesnevi'si, Yunus Emre'nin Risaletü’n-Nushiyye'si ve Karamanoğlu Mehmet Bey'in Türkçeyi resmi dil ilan eden fermanı dönemin en büyük miraslarıdır. Bu dönemde tıp, matematik ve felsefe üzerine sayısız eser kaleme alınmıştır.</p>
+        
+    </section>
+
+  <section id="ikinci-beylikler" class="section reveal">
+        <h2>8. Selçuklu Mirasçıları: İkinci Dönem Anadolu Beylikleri</h2>
+        <div class="info-card">
+            <h3>Karamanoğulları</h3>
+            <p>Kendilerini Selçuklu'nun tek yasal varisi olarak gördüler. Konya ve Karaman'da hüküm sürdüler. Türkçeyi resmi dil ilan ederek kültürel bir direnç başlattılar.</p>
+        </div>
+        <div class="info-card">
+            <h3>Osmanoğulları</h3>
+            <p>Söğüt ve Domaniç bölgesinde bir uç beyliği olarak kuruldu. Selçuklu'nun teşkilatlanma ve adalet mirasını devralarak 600 yıllık dünya imparatorluğunu kuracak olan çekirdek yapıdır.</p>
+        </div>
+        <div class="info-card">
+            <h3>Karesioğulları</h3>
+            <p>Balıkesir ve Çanakkale çevresinde denizcilikte devleştiler. Osmanlı'nın ilk donanma gücünü oluşturan teknik kadro ve gemiler bu beylikten geçmiştir.</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <h2>ANADOLU SELÇUKLU DEVLETİ MEDENİYET ARŞİVİ</h2>
+  <p>© 2025 | Akademik Tarih Portalı | Tasarım ve Bilgi Bütünlüğü Korunmuştur</p>
+</footer>
+
+<script>
+    // Sayfayı kaydırdıkça bölümlerin yumuşakça belirmesini sağlayan fonksiyon
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal(); // Başlangıçta görünür alanlar için çalıştır
+</script>
+
+</body>
+</html>

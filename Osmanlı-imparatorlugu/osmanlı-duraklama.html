@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmanlı Duraklama Dönemi | Bunalım ve Arayış</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-blue: #2c3e50;
+            --sepia-dark: #5d4037;
+            --gold-leaf: #b8860b;
+            --silk-white: #fdfaf6;
+            --border-color: #e0d5c1;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--silk-white);
+            background-image: url('https://www.transparenttextures.com/patterns/paper.png'); /* Kağıt dokusu */
+            color: #2d2d2d;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(rgba(253, 250, 246, 0.9), rgba(253, 250, 246, 0.9)), 
+                        url('https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1000');
+            background-size: cover;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px double var(--gold-leaf);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--sepia-dark);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        header p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gold-leaf);
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 20px auto 100px;
+            padding: 20px;
+        }
+
+        /* Padişah Kart Stili */
+        .era-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 45px;
+            margin-bottom: 70px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .era-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .era-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 5px;
+            background: linear-gradient(to right, var(--gold-leaf), var(--sepia-dark));
+        }
+
+        .badge {
+            background: var(--gold-leaf);
+            color: white;
+            padding: 4px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--royal-blue);
+            margin-top: 15px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } }
+
+        .info-block {
+            background: #fcfbf8;
+            border: 1px dashed var(--border-color);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .info-block h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--sepia-dark);
+            border-bottom: 1px solid var(--gold-leaf);
+            margin-bottom: 10px;
+        }
+
+        /* Yazı Animasyonu */
+        .reveal-text {
+            border-right: 2px solid var(--gold-leaf);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(40, end) forwards;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reform-box {
+            background: #f1f8e9;
+            border-left: 5px solid #689f38;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        #scroll-up {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--royal-blue);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+            transition: 0.3s;
+        }
+
+        #scroll-up:hover { background: var(--gold-leaf); }
+
+    </style>
+</head>
+<body>
+ 
+    <header>
+        <h1>Osmanlı Duraklama Dönemi</h1>
+        <p>Arayış Yılları ve Sancılı Reformlar (1579 - 1699)</p>
+    </header>
+
+    <div class="container">
+<div class="content-grid"> <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/Osmanl%C4%B1-imparatorluk.html">Anasayfa </a></div>
+        <div class="era-card">
+            <span class="badge">1595 - 1603</span>
+            <h2>III. Mehmet</h2>
+            <p>Duraklama döneminin başında ordunun başında sefere çıkma geleneğini tekrar başlatan padişahtır. Sancak sisteminden yetişen son padişahtır.</p>
+            
+            <div class="content-grid">
+                <div class="info-block">
+                    <h3>Önemli Savaşlar</h3>
+                    <strong>Haçova Meydan Muharebesi (1596):</strong> Avusturya'ya karşı kazanılan bu zafer, Osmanlı'nın Batı'daki son büyük meydan savaşı zaferidir. Eğri ve Kanije kaleleri fethedilmiştir.
+                </div>
+                <div class="info-block">
+                    <h3>Sonuç ve Antlaşma</h3>
+                    <strong>Eğri Fatihi:</strong> Bu dönemde kazanılan başarılar devlete moral vermiş, ancak ekonomik kriz ve Celali İsyanları içten içe devleti kemirmeye başlamıştır.
+                </div>
+            </div>
+        </div>
+
+        <div class="era-card">
+            <span class="badge">1603 - 1617</span>
+            <h2>I. Ahmet</h2>
+            <p>Devlet yönetiminde "Ekber ve Erşed" sistemini getirerek taht kavgalarına son vermeyi amaçlayan, dindar ve reformist bir padişah.</p>
+            
+            <div class="content-grid">
+                <div class="info-block">
+                    <h3>Antlaşmalar</h3>
+                    <strong>Zitvatorok Antlaşması (1606):</strong> Avusturya Arşidükü, Osmanlı Padişahına eşit sayıldı. Diplomatik üstünlük kaybedildi.<br>
+                    <strong>Nasuh Paşa Antlaşması:</strong> Safevilerle yapıldı, sınırlar daraldı.
+                </div>
+                <div class="info-block">
+                    <h3>Yönetim ve Yenilik</h3>
+                    <strong>Veraset Sistemi:</strong> Hanedanın en yaşlı ve en olgun üyesinin tahta çıkması kuralı geldi. Şehzadelerin sancağa çıkma usulü kalktı (Kafes Sistemi).
+                </div>
+            </div>
+            <div class="reform-box">
+                <strong>Mimari:</strong> Sultan Ahmet Camii (Mavi Camii) bu dönemde inşa edilerek İstanbul'un silüeti değiştirildi.
+            </div>
+        </div>
+
+        <div class="era-card">
+            <span class="badge">1618 - 1622</span>
+            <h2>II. (Genç) Osman</h2>
+            <p>Osmanlı tarihinin ilk radikal reformcusudur. Yeniçeri Ocağı'nı kaldırmayı planladığı için hazin bir sonla tahttan indirilmiştir.</p>
+            
+            <div class="content-grid">
+                <div class="info-block">
+                    <h3>Kuşatmalar</h3>
+                    <strong>Hotin Seferi (1621):</strong> Lehistan üzerine gidildi. Yeniçerilerin disiplinsizliği nedeniyle tam başarı sağlanamadı.
+                </div>
+                <div class="info-block">
+                    <h3>Radikal Yenilikler</h3>
+                    Saray dışı evlilik yaparak saray geleneklerini yıktı. Başkenti Anadolu'ya taşımayı ve milli bir ordu kurmayı planladı.
+                </div>
+            </div>
+        </div>
+
+        <div class="era-card">
+            <span class="badge">1623 - 1640</span>
+            <h2>IV. Murad (Bağdat Fatihi)</h2>
+            <p>Duraklama içinde yükselme yaşatan, demir yumruklu padişah. İçki ve tütün yasağı gibi sert sosyal önlemlerle otoriteyi yeniden kurmuştur.</p>
+            
+            <div class="content-grid">
+                <div class="info-block">
+                    <h3>Savaşlar</h3>
+                    <strong>Revan ve Bağdat Seferleri:</strong> Safeviler Doğu'dan atıldı. Bağdat tekrar fethedildi.
+                </div>
+                <div class="info-block">
+                    <h3>Antlaşmalar</h3>
+                    <strong>Kasr-ı Şirin Antlaşması (1639):</strong> Bugün bile geçerli olan Türkiye-İran sınırı büyük ölçüde çizildi.
+                </div>
+            </div>
+            <div class="reform-box">
+                <strong>Yönetim:</strong> Koçi Bey ve Katip Çelebi'ye risaleler (raporlar) hazırlatarak devletin neden kötüye gittiğini araştırttı.
+            </div>
+        </div>
+
+        <div class="era-card">
+            <h2>Duraklama Dönemi Yönetim Analizi</h2>
+            <p>Bu dönemde devletin temel kurumları (Tımar, Yeniçeri, Medrese) bozulmaya başlamıştır. Ancak "Köprülüler Devri" gibi sadrazamların ön plana çıktığı dönemlerde devlet eski gücünü hatırlatmıştır.</p>
+            <ul>
+                <li><strong>Celali İsyanları:</strong> Anadolu'da asayiş bozuldu, halk köylerini terk etti (Büyük Kaçgun).</li>
+                <li><strong>Yeniçeri İsyanları:</strong> "Devlet ocak içindir" anlayışı hakim oldu, padişahlar öldürüldü.</li>
+                <li><strong>Ekonomi:</strong> Savaşların uzun sürmesi ve ticaret yollarının değişmesiyle hazine boşaldı.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <button id="scroll-up">↑</button>
+
+    <script>
+        // Sayfa kaydırma animasyonu
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.era-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Yukarı çık butonu
+        const btn = document.getElementById("scroll-up");
+        window.onscroll = function() {
+            if (window.scrollY > 300) btn.style.display = "block";
+            else btn.style.display = "none";
+        };
+        btn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>

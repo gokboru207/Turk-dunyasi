@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmanlı Arşivi | Kuruluş Devri (1299-1453)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-red: #5e0d0d;
+            --deep-gold: #b08d57;
+            --parchment: #fdfaf1;
+            --ink-black: #1a1a1a;
+            --sidebar-bg: #f4eee0;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulseGold { 0% { filter: drop-shadow(0 0 5px var(--deep-gold)); } 50% { filter: drop-shadow(0 0 15px #ffd700); } 100% { filter: drop-shadow(0 0 5px var(--deep-gold)); } }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--parchment);
+            color: var(--ink-black);
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), 
+                        url('https://images.unsplash.com/photo-1599940824399-b87987cb36e5?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--deep-gold);
+        }
+
+        .flag-img { width: 140px; animation: pulseGold 3s infinite ease-in-out; margin-bottom: 15px; }
+
+        header h1 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--deep-gold); letter-spacing: 4px; }
+
+        .nav-quick {
+            background: var(--royal-red);
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-quick a { color: white; margin: 0 15px; text-decoration: none; font-size: 0.85em; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .nav-quick a:hover { color: var(--deep-gold); }
+
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr 280px;
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .sidebar { padding: 20px; font-size: 0.9rem; height: fit-content; position: sticky; top: 80px; }
+        .note-card {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--deep-gold);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 3px 3px 0px var(--deep-gold);
+            animation: fadeIn 1s ease-out;
+        }
+        .note-card h4 { font-family: 'Cinzel', serif; color: var(--royal-red); font-size: 0.95rem; border-bottom: 1px solid var(--deep-gold); margin-bottom: 8px; padding-bottom: 5px; }
+
+        .content { background: white; padding: 50px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+
+        .period-box { margin-bottom: 60px; }
+        h2 { font-family: 'Cinzel', serif; color: var(--royal-red); text-align: center; margin-bottom: 35px; border-bottom: 2px double var(--deep-gold); padding-bottom: 10px; }
+
+        .monarch-detail { border-left: 5px solid var(--royal-red); padding-left: 25px; margin: 40px 0; }
+        .monarch-detail h3 { font-family: 'Cinzel', serif; color: #333; margin-bottom: 15px; font-size: 1.6rem; }
+
+        .war-box { background: #fdfaf0; border: 1px dashed var(--deep-gold); padding: 20px; margin: 15px 0; border-radius: 5px; }
+        .war-title { font-weight: bold; color: var(--royal-red); text-transform: uppercase; font-size: 1.1rem; display: block; margin-bottom: 10px; }
+
+        footer { background: var(--ink-black); color: var(--deep-gold); text-align: center; padding: 40px; margin-top: auto; }
+
+        @media (max-width: 1200px) { .main-wrapper { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+
+<header><img src="osmanlı devleti.png" width="298" height="169" alt=""/>
+    <h1>KURULUŞ DEVRİ: BEYLİKTEN CİHANA</h1>
+    <p style="color: #ccc; font-style: italic;">"Söğüt'te Dikilen Çınarın 150 Yıllık Destanı"</p>
+</header>
+
+<nav class="nav-quick"> 
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/Osmanl%C4%B1-imparatorlugu/Osmanl%C4%B1-imparatorluk.html">Anasayfa </a><a href="#osman">Osman Gazi</a>
+    <a href="#orhan">Orhan Gazi</a>
+    <a href="#murad">I. Murad</a>
+    <a href="#bayezid">Yıldırım</a>
+    <a href="#mehmed">I. Mehmed</a>
+</nav>
+
+<div class="main-wrapper">
+    
+    <aside class="sidebar left">
+        <div class="note-card">
+            <h4>İstimalet Politikası</h4>
+            <p>Osmanlı'nın "Gönül Çelme" siyasetidir. Fethedilen yerlerdeki yerli halkın dinine, diline ve geleneklerine dokunulmamış, vergi adaleti sağlanmıştır. Bu sayede Bizans halkı Osmanlı yönetimini Bizans'a tercih etmiştir.</p>
+        </div>
+        <div class="note-card">
+            <h4>Ahiler ve Devlet</h4>
+            <p>Şeyh Edebali liderliğindeki Ahi teşkilatı, beyliğin sadece askeri değil, ekonomik ve dini temelini oluşturmuştur. Esnaf birliği olan Ahiler, yeni şehirlerin Türkleşmesinde büyük rol oynamıştır.</p>
+        </div>
+        <div class="note-card">
+            <h4>Mimari Üslup</h4>
+            <p>Kuruluş dönemi mimarisi "Erken Dönem" olarak adlandırılır. İznik Hacı Özbek Camii (1333) bilinen ilk eserdir. Ters T planlı camiler ve çok kubbeli Ulu Camiler (Bursa Ulu Camii gibi) bu dönemin mührüdür.</p>
+        </div>
+    </aside>
+
+    <main class="content">
+        
+        <section id="osman" class="period-box">
+            <h2>OSMAN GAZİ: FAHRÜDDİN (1299-1326)</h2>
+            <p>Osman Gazi, sadece bir aşiret reisi değil, stratejik bir vizyonerdir. Uç bölgesindeki diğer beyliklerle savaşmak yerine rotasını tamamen Bizans'a kırmıştır.</p>
+            
+            <div class="monarch-detail">
+                <h3>Askeri Dehası ve İlk Meydan Savaşı</h3>
+                <div class="war-box">
+                    <span class="war-title">Koyunhisar (Bafeus) Savaşı - 1302</span>
+                    <p><strong>Detay:</strong> Bizans merkez ordusu ile Osmanlı arasındaki ilk doğrudan çatışmadır. Bizans'ın amacı İznik kuşatmasını kırmaktı.</p>
+                    <p><strong>Sonuç:</strong> Osmanlı galibiyetiyle sonuçlandı. Bizans'ın yerel güçleri (tekfurlar) üzerindeki otoritesi sarsıldı. Bu zafer, Osmanlı'nın bağımsız bir "devlet" olarak tanınmasını sağlamıştır.</p>
+                </div>
+            </div>
+            <p><strong>Yenilikler:</strong> İlk Osmanlı gümüş akçesi basıldı. "Bac" (pazar vergisi) sistemi getirilerek mali temel atıldı.</p>
+        </section>
+
+        <section id="orhan" class="period-box">
+            <h2>ORHAN GAZİ: SEYFÜDDİN (1326-1362)</h2>
+            <p>Devleti "Beylikten Devlete" taşıyan asıl teşkilatçıdır. Babasından aldığı mirası sınır bazında üç katına çıkarmıştır.</p>
+
+            <div class="monarch-detail">
+                <h3>Bizans'ın Anadolu'dan Tasfiyesi</h3>
+                <div class="war-box">
+                    <span class="war-title">Palekanon (Maltepe) Savaşı - 1329</span>
+                    <p><strong>Detay:</strong> Bizans İmparatoru III. Andronikos ordusunun başında gelerek kuşatma altındaki İznik'i kurtarmak istedi.</p>
+                    <p><strong>Sonuç:</strong> İmparator yaralanarak kaçtı. Bu savaş sonrası Bizans Anadolu'daki tüm ümidini kesti; İznik (1331) ve İzmit (1337) fethedildi.</p>
+                </div>
+            </div>
+
+            <div class="war-box">
+                <span class="war-title">Rumeli'ye Geçiş (Çimpe Kalesi) - 1353</span>
+                <p>Bizans taht kavgalarında Kantakuzen'e yardım karşılığında Gelibolu'daki Çimpe Kalesi alındı. Bu, Avrupa topraklarındaki ilk kalıcı askeri üstür. Süleyman Paşa önderliğinde Rumeli'nin fethi başlamıştır.</p>
+            </div>
+            <p><strong>Yönetim ve Mimari:</strong> İlk Divan Teşkilatı kuruldu. "Yaya ve Müsellem" adıyla ilk düzenli ordu oluşturuldu. İznik'te ilk Osmanlı medresesi açıldı ve Davud-u Kayseri ilk müderris olarak atandı.</p>
+        </section>
+
+        <section id="murad" class="period-box">
+            <h2>I. MURAD: HÜDAVENDİGAR (1362-1389)</h2>
+            <p>Balkanların kapısını sonuna kadar açan hükümdardır. Devletin merkezi Edirne'ye taşınmıştır.</p>
+
+            <div class="monarch-detail">
+                <h3>Haçlılarla Yüzleşme</h3>
+                <div class="war-box">
+                    <span class="war-title">Sırpsındığı Savaşı - 1364</span>
+                    <p><strong>Detay:</strong> Osmanlı'yı Balkanlar'dan atmak için kurulan ilk büyük Haçlı ittifakıdır. Hacı İlbeyi gece baskınıyla 50 bin kişilik orduyu dağıtmıştır.</p>
+                    <p><strong>Sonuç:</strong> Balkan yolu tamamen açıldı ve Edirne'nin güvenliği sağlandı.</p>
+                </div>
+                <div class="war-box">
+                    <span class="war-title">I. Kosova Savaşı - 1389</span>
+                    <p><strong>Detay:</strong> Sırp, Bosna ve Macar güçlerinden oluşan devasa bir ittifakla karşılaşıldı. İlk kez top kullanıldı.</p>
+                    <p><strong>Sonuç:</strong> Kesin zafer kazanıldı ancak Padişah Murad, savaş alanını gezerken yaralı bir Sırp askeri (Miloş) tarafından şehit edildi. Bu olay Osmanlı tarihinde bir ilktir.</p>
+                </div>
+            </div>
+            <p><strong>Sistem Kuruculuğu:</strong> Yeniçeri Ocağı (Pençik sistemi) kuruldu. Rumeli Beylerbeyliği oluşturularak eyalet sistemine geçildi. "Devlet padişah ve oğullarının malıdır" anlayışı getirilerek merkezi otorite güçlendirildi.</p>
+        </section>
+
+        <section id="bayezid" class="period-box">
+            <h2>YILDIRIM BAYEZİD (1389-1402)</h2>
+            <p>Sürati ve cesaretiyle "Yıldırım" unvanını almıştır. İstanbul'u kuşatan ve Anadolu Türk birliğini ilk kez tam sağlayan padişahtır.</p>
+
+            <div class="war-box">
+                <span class="war-title">Niğbolu Savaşı - 1396</span>
+                <p>Avrupa'nın en seçkin şövalyelerinden oluşan Haçlı ordusu Tuna nehri kıyısında imha edildi. Halife, Bayezid'e "Sultan-ı İklim-i Rum" (Anadolu Sultanı) unvanını verdi. Bu zafer İstanbul kuşatmasını daha da güçlendirdi.</p>
+            </div>
+            <p><strong>Trajik Son: Ankara Savaşı (1402).</strong> Timur ile yapılan bu savaşta fillerin etkisi ve Anadolu beylerinin taraf değiştirmesiyle ordu mağlup oldu. Devlet 11 yıl sürecek bir kargaşa (Fetret) devrine girdi.</p>
+        </section>
+
+    </main>
+
+    <aside class="sidebar right">
+        <div class="note-card">
+            <h4>İskân Politikası</h4>
+            <p>Fethedilen Balkan topraklarına Anadolu'dan göçer Türkmenlerin yerleştirilmesidir. Amaç, fetihleri kalıcı kılmak ve bölgede Türk-İslam nüfusunu artırmaktır. Göç edenlere toprak verilmiş ve belirli süre vergi alınmamıştır.</p>
+        </div>
+        <div class="note-card">
+            <h4>Gaza ve Cihad</h4>
+            <p>Kuruluş dönemi savaşlarının temel motivasyonudur. İslamiyeti yayma gayesi, sadece askeri ganimet için değil, dini bir ideal için savaşan adanmış bir savaşçı sınıfı (Alperenler) yaratmıştır.</p>
+        </div>
+        <div class="note-card">
+            <h4>Osmanlı'nın "Sırrı"</h4>
+            <p>Kuruluş döneminde neden bu kadar hızlı büyüdü? <br>1. Bizans'ın iç karışıklığı. <br>2. Moğol baskısından kaçan Türkmen göçleri. <br>3. Adaletli vergi sistemi. <br>4. Merkeziyetçi yapı.</p>
+        </div>
+    </aside>
+
+</div>
+
+<footer>
+    <p>Devlet-i Aliyye-i Osmâniyye Kuruluş Arşivi &copy; 2025</p>
+    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px;">"Kılıçla alınan topraklar, adaletle korunur."</p>
+</footer>
+
+</body>
+</html>

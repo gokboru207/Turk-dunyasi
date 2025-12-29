@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timur İmparatorluğu | Derinlemesine Tarih Arşivi</title>
+    <style>
+        :root {
+            --turquoise-light: #40e0d0; 
+            --sky-blue: #87ceeb; 
+            --sand-gold: #edc9af; 
+            --bg-pearl: #fdfdfb; 
+            --text-soft: #34495e;
+            --border-color: #e0f2f1;
+        }
+
+        body {
+            font-family: 'Constantia', 'Georgia', serif;
+            background-color: var(--bg-pearl);
+            color: var(--text-soft);
+            margin: 0;
+            line-height: 2.2;
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/58/TimuridFlag_attributed.svg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 8px solid var(--turquoise-light);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(2px);
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+        .hero h1 { 
+            font-size: 4.5rem; 
+            color: #2c3e50; 
+            margin: 0;
+            border-bottom: 5px solid var(--sand-gold);
+            display: inline-block;
+            padding-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* ANIMASYON */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        nav a { color: var(--text-soft); text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
+        nav a:hover { color: var(--turquoise-light); }
+
+        .main-layout {
+            display: flex;
+            max-width: 1850px;
+            margin: 0 auto;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            width: 320px;
+            position: sticky;
+            top: 120px;
+            margin: 40px 30px;
+        }
+
+        .note-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 6px solid var(--turquoise-light);
+            margin-bottom: 30px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            font-size: 0.9rem;
+        }
+
+        .container { flex: 1; max-width: 1100px; padding: 30px; }
+
+        .section {
+            background: #ffffff;
+            padding: 80px;
+            margin-bottom: 70px;
+            border-radius: 35px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.04);
+            border-top: 12px solid var(--sky-blue);
+        }
+
+        h2 { color: #2c3e50; font-size: 3rem; margin-bottom: 40px; border-bottom: 2px solid var(--border-color); }
+        h3 { color: #d35400; font-size: 2rem; margin-top: 50px; border-left: 8px solid var(--sand-gold); padding-left: 20px; }
+
+        .info-card {
+            background: #f4fdfe;
+            border: 1px solid #d1f2f2;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 35px 0;
+        }
+
+        footer { background: #2c3e50; color: #ecf0f1; text-align: center; padding: 100px; margin-top: 100px; }
+        
+        @media (max-width: 1550px) { .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>TİMUR İMPARATORLUĞU</h1>
+        <p style="font-size: 2rem; color: #34495e; font-weight: bold;">Cihan Devleti'nin Bilim ve Kılıçla Yazılan Tarihi</p>
+    </div>
+</section>
+
+<nav>
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a>
+    <a href="#kurulus">Emir Timur</a>
+    <a href="#hukumdarlar">Hükümdarlar</a>
+    <a href="#savaslar">Askeri Deha</a>
+    <a href="#bilim">Bilim & Astronomi</a>
+    <a href="#mimari">Mimari Miras</a>
+</nav>
+
+<div class="main-layout">
+    <aside class="sidebar">
+        <div class="note-box">
+            <h4>Büyük Satranç</h4>
+            <p>Timur, satranç oyununu çok basit bulduğu için 110 kareden oluşan "Tamerlane Chess"i geliştirmiştir. Bu oyunda zürafa, deve, fil ve boğa gibi 11 farklı taş türü bulunur ve oyunun kazananı stratejik kuşatma yeteneğiyle belirlenirdi.</p>
+        </div>
+        <div class="note-box">
+            <h4>Psikolojik Harp</h4>
+            <p>Timur, isyan eden şehirlere karşı sadece askeri güç değil, dehşet verici psikolojik yöntemler kullanırdı. Teslim olmayan şehirlerin kapılarına kuleler inşa ettirmesi, diğer şehirlerin savaşmadan teslim olmasını sağlayan bir stratejiydi.</p>
+        </div>
+    </aside>
+
+    <div class="container">
+        
+        <section id="hukumdarlar" class="section reveal">
+            <h2>1. Büyük Hükümdarlar ve Yönetim Felsefeleri</h2>
+            
+            <h3>Emir Timur: Cihan Hakimiyeti Mefkuresi (1370-1405)</h3>
+            <p>Emir Timur, sadece bir fetihçi değil, "Dünyanın düzeni bir tek hükümdara aittir" ilkesini savunan bir ideologdur. Cengiz Han soyundan gelmediği için "Sultan" veya "Han" unvanını hiç kullanmamış, kendisine "Emir" ya da "Gürgan" (Damat) denmesini istemiştir. Onun döneminde devlet, askerî bir kışla disipliniyle yönetilmiş ancak her fethedilen bölgenin en yetenekli sanatkârları ve âlimleri Semerkant’a gönderilerek imparatorluk entelektüel bir havza haline getirilmiştir. Tarih, hukuk ve dini bilimlere büyük önem vermiş, özellikle İslami kuralları Cengiz yasalarıyla sentezleyerek kendine has bir hukuk sistemi kurmuştur.</p>
+
+            <h3>Şahruh Mirza: Kültürel Restorasyon (1405-1447)</h3>
+            <p>Timur'un vefatından sonra çıkan taht kavgalarını sonlandıran Şahruh, imparatorluğu bir savaş devletinden "Kültür Devleti"ne dönüştürmüştür. Başkenti Semerkant'tan Herat'a taşımış ve burayı dünyanın sanat merkezi yapmıştır. Babasının aksine barışçıl bir diplomasi izlemiş, Çin’den Venedik’e kadar geniş bir ticaret ağı kurmuştur. Şahruh, kütüphanecilik ve hat sanatına olan tutkusuyla bilinir; sarayında 40'tan fazla uzman hattat gece gündüz bilimsel eserleri çoğaltmak için çalışırdı. Eşi Gevher Şad Hatun ise dönemin en büyük mimari hamisi olmuş, camiler ve medreselerle coğrafyayı donatmıştır.</p>
+
+            <h3>Uluğ Bey: Tahtta Bir Astronom (1447-1449)</h3>
+            <p>Dünya tarihinin en ilginç hükümdarlarından biridir. O, siyasi bir otorite olmaktan çok bir "Bilim Adamı" kimliğiyle öne çıkar. Semerkant'ı dünyanın en büyük rasathanesine dönüştürmüş, burada bizzat dersler vermiştir. Matematik ve astronomi alanındaki derinliği, devlet işlerini aksatmasına neden olsa da, onun döneminde bilim "saray himayesi" altındaki bir hobi değil, devletin temel varoluş amacı haline gelmiştir. Rasyonel düşünceyi o kadar önemsemiştir ki, medresesinin kapısına "İlim öğrenmek her Müslüman için farzdır" hadisini, felsefe ve matematik vurgusuyla işletmiştir.</p>
+        </section>
+
+        <section id="savaslar" class="section reveal">
+            <h2>2. Askeri Deha ve Tarihin Akışını Değiştiren Savaşlar</h2>
+            
+            <div class="info-card">
+                <h3>Ankara Savaşı (1402) - Taktiksel Üstünlük</h3>
+                <p>Yıldırım Bayezid ve Timur, Ankara’nın Çubuk Ovası’nda karşı karşıya geldiklerinde, bu sadece iki ordunun değil, iki farklı stratejinin savaşıydı. Timur, savaştan aylar önce Ankara bölgesindeki tüm kuyuları zehirletmiş veya kapatmış, Çubuk Çayı'nın yatağını değiştirerek Osmanlı ordusunu susuz bırakmıştır. Savaş meydanında ise zırhlı fillerini merkeze yerleştirmiş, bu devasa hayvanlar Osmanlı süvarilerinin atlarının ürkerek dağılmasına yol açmıştır. Ayrıca, Osmanlı saflarındaki Kara Tatarlar ve Anadolu beylikleriyle gizli anlaşmalar yaparak, savaşın en kritik anında saf değiştirmelerini sağlamış, Osmanlı ordusunu içeriden çökertmiştir. Bu zafer, Timur'a Batı'nın kapılarını açmış ancak Türk dünyasının birleşmesini bir yüzyıl geciktirmiştir.</p>
+            </div>
+            
+
+            <h3>Hindistan Seferi (1398) - Delhi'nin Fethi</h3>
+            <p>Timur'un Hindistan seferi, imkansızın nasıl başarıldığının öyküsüdür. Delhi Sultanı Mahmut Nasreddin’in 120 zırhlı savaş filinden oluşan "canlı tank" birliğine karşı, Timur dâhiyane bir çözüm bulmuştur. Develerin sırtına kuru samanlar bağlamış, fillerin saldırısı anında samanları ateşleyerek develeri fillerin üzerine sürmüştür. Can havliyle kaçan alevli develer, fillerin paniğe kapılmasına ve kendi Hint ordusunu ezmesine neden olmuştur. Timur bu sefer sonunda, Delhi’nin yüzyıllardır biriken muazzam hazinesini Semerkant’a taşımış ve meşhur Bibi Hanım Camii’nin yapımını bu ganimetle finanse etmiştir.</p>
+
+            <h3>Altın Orda Seferi ve Toktamış Han (1391-1395)</h3>
+            <p>Timur, eski dostu Toktamış Han’ın ihaneti üzerine Rusya steplerine yürümüştür. Terek Nehri kıyısında yapılan savaşta, Timur yine sahte ricat (Turan taktiği) kullanarak Altın Orda ordusunu pusuya düşürmüş ve imha etmiştir. Bu savaşın en önemli sonucu, Altın Orda Devleti'nin parçalanmasıyla Rus beyliklerinin üzerindeki Türk baskısının kalkması ve bugünkü Rusya İmparatorluğu'nun temellerinin atılmasına (istemeden de olsa) zemin hazırlanması olmuştur.</p>
+        </section>
+
+        <section id="bilim" class="section reveal">
+            <h2>3. Timur Rönesansı: Bilimin Altın Çağı</h2>
+            <p>Timur döneminde bilim, dogmatik kalıplardan çıkarak gözlem ve deneye dayalı bir kimlik kazanmıştır. Semerkant Gözlemevi (Rasathane), sadece bir yapı değil, matematiksel kesinliğin zirvesidir.</p>
+            
+            <ul style="padding-left: 20px;">
+                <li><strong>Gıyaseddin Cemşid el-Kaşi:</strong> Onluk kesirlerin asıl kaşifi kabul edilir. Pi sayısını, virgül sonrası 16 basamağa kadar (3,1415926535897932) hatasız hesaplamış, trigonometride modern hesaplama yöntemlerini geliştirmiştir.</li>
+                <li><strong>Zic-i Sultani:</strong> Uluğ Bey liderliğinde hazırlanan bu yıldız kataloğu, teleskopun icadından önceki dönemin en hassas astronomi belgesidir. 1018 yıldızın koordinatlarını içeren bu eser, yüzyıllar boyunca Avrupa üniversitelerinde (Oxford dahil) temel ders kitabı olarak okutulmuştur.</li>
+                <li><strong>Ali Kuşçu:</strong> Astronomiyi felsefeden arındırarak bağımsız bir fiziksel bilim haline getirmeye çalışmıştır. Dünya'nın dönme eksenindeki eğimi (23 derece 30 dakika) bugünkü verilere en yakın şekilde ölçmüştür.</li>
+            </ul>
+            
+        </section>
+
+        <section id="mimari" class="section reveal">
+            <h2>4. Göğe Uzanan Mavilik: Timurlu Mimarisi</h2>
+            <p>Timurlu mimarisi, "Anıtsal Ölçek" ve "Firuze Çini" üzerine kuruludur. Yapılarda kullanılan devasa kubbeler, imparatorluğun göksel ve dünyevi gücünü simgeler.</p>
+            <div class="info-card">
+                <p><strong>Registan Meydanı:</strong> Dünya şehircilik tarihinin en dengeli meydanlarından biridir. Üç büyük medresenin karşılıklı yerleşimi, akustik bir kusursuzluk sağlar. Meydanda konuşulan bir sözün yankılanmadan her noktadan duyulması, o dönemin mimarlarının ses mühendisliğindeki başarısını gösterir.</p>
+                <p><strong>Gür-i Emir (Timur'un Türbesi):</strong> İç mekandaki 63 yivli kubbe, Hz. Muhammed'in vefat yaşını simgeler. Türbenin altındaki yeşim taşından yapılmış dev lahit, dönemin taş işçiliğinin zirvesidir. Ayrıca bu yapıdaki yivli kubbe tekniği, daha sonra Hindistan'daki meşhur Taç Mahal’e ilham kaynağı olmuştur.</p>
+            </div>
+        </section>
+
+        <section id="edebiyat" class="section reveal">
+            <h2>5. Türkçenin Zaferi ve Tüzükât-ı Timur</h2>
+            <p><strong>Ali Şir Nevai:</strong> O, Türkçenin sadece bir göçebe dili değil, yüksek bir sanat dili olduğunu kanıtlamıştır. <em>Muhakemetü'l-Lügateyn</em> eserinde Türkçeyi Farsça ile kıyaslamış ve Türkçenin daha zengin olduğunu bilimsel argümanlarla ortaya koymuştur.</p>
+            <p><strong>Tüzükât (Timur Yasaları):</strong> Timur, devletin nasıl yönetilmesi gerektiğini 12 madde halinde özetlemiştir. "Bir devleti kılıçla alırsınız ama ancak adaletle tutarsınız" felsefesini bu yasalarla kurumsallaştırmıştır. Yasalarında, halka kötü davranan valilerin derhal azledilmesi ve ordudaki liyakat sistemi en ince detayına kadar yazılmıştır.</p>
+        </section>
+
+  </div>
+
+    <aside class="sidebar">
+        <div class="note-box">
+            <h4>Hattatların Gücü</h4>
+            <p>Timur döneminde bir kitabın kopyalanması bazen aylar sürerdi. Şahruh, sadece kitap kopyalamak için <strong>"Kitaphane"</strong> adında özel kurumlar kurmuştur.</p>
+        </div>
+      <div class="note-box">
+            <h4>Mimari Sır</h4>
+            <p>Semerkant çinilerinde kullanılan o parlak mavinin (Firuze) sırrı, içine karıştırılan özel madenler ve pişirme tekniğidir. Bu teknik bugün bile tam olarak taklit edilememektedir.</p>
+        </div>
+        <div class="note-box">
+            <h4>Uluğ Bey'in Sonu</h4>
+            <p>Bilime olan aşırı tutkusu ve askeri zafiyetleri nedeniyle kendi oğlu Abdüllatif tarafından tahttan indirilmiş ve bir bilim şehidi olarak tarihe geçmiştir.</p>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <h2>TİMUROĞULLARI MEDENİYET ARAŞTIRMALARI</h2>
+    <p>© 2025 | Büyük Turan Dijital Portalı | Akademik ve Detaylı Arşiv</p>
+</footer>
+
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal();
+</script>
+
+</body>
+</html>

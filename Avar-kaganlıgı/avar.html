@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avar Kağanlığı | Avrupa'nın Türk İmparatorluğu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --sky-blue: #00a8e8;
+            --gold: #ffcc00;
+            --dark-blue: #003366;
+            --text-dark: #222;
+            --bg-light: #f4f7f6;
+            --accent: #8b0000;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Başlık ve Giriş Animasyonları */
+        header {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url('https://upload.wikimedia.org/wikipedia/commons/b/b2/Avar_Horseman.jpg') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 8px solid var(--gold);
+            animation: fadeInDown 1.5s;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5em;
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            background: #111;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+
+        /* İçerik Blokları Animasyonu */
+        section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-blue);
+            font-size: 2.2em;
+            border-bottom: 4px solid var(--gold);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            color: var(--accent);
+            font-family: 'Cinzel', serif;
+            font-size: 1.6em;
+            margin-top: 40px;
+        }
+
+        .detail-box {
+            background: #f9f9f9;
+            border-left: 8px solid var(--dark-blue);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 3px 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        th {
+            background: var(--dark-blue);
+            color: white;
+            padding: 18px;
+            text-align: left;
+        }
+
+        td {
+            padding: 18px;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            background: #111;
+            color: #888;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .flag-img {
+            display: block;
+            margin: -60px auto 40px;
+            width: 320px;
+            border: 6px solid var(--gold);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 5;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AVAR KAĞANLIĞI</h1>
+    <p style="font-size: 1.5em; letter-spacing: 3px;">Avrupa'nın İlk Türk İmparatorluğu (562 - 805)</p>
+</header>
+
+<img src="avar.png" class="flag-img animate__animated animate__zoomIn" alt="Avar Bayrağı">
+
+<nav> 
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a>
+    <a href="#kurulus">Kuruluş</a>
+    <a href="#hukumdarlar">Hükümdarlar</a>
+    <a href="#yonetim">Devlet Yönetimi</a>
+    <a href="#mimari">Mimari ve Kültür</a>
+    <a href="#yikilis">Yıkılış</a>
+</nav>
+
+<div class="container">
+
+  <section id="kurulus">
+        <h2>Devletin Kuruluşu ve Parlak Dönemi</h2>
+        <p>Avarlar, Orta Asya'da <strong>Juan-Juan</strong> (Cücenler) Federasyonu'nun Kök Türkler karşısında yenilgiye uğramasıyla batıya yönelen büyük bir göç dalgasının öncüleridir. 560'lı yıllarda Karadeniz'in kuzeyine ulaştıklarında, dönemin süper gücü Bizans ile diplomatik temaslara başladılar. Ancak Avarların asıl amacı, Tuna boylarına yerleşerek Avrupa'da sarsılmaz bir hakimiyet kurmaktı.</p>
+        <div class="detail-box">
+            <p><strong>Parlak Dönem:</strong> Devletin en ihtişamlı yılları 562-630 yılları arasını kapsar. Bu süreçte Avarlar, bugünkü Macaristan, Avusturya, Sırbistan ve Romanya topraklarını içine alan devasa bir imparatorluğa dönüştüler. Bayan Kağan'ın dahi askeri dehasıyla Bizans İmparatorluğu her yıl 120.000 altın vergiye bağlandı. Bu dönemde Avar ordusu, Elbe Nehri'nden İstanbul surlarına kadar tüm Avrupa'yı titretmiş, bölgedeki Germen ve Slav kabilelerini tek bir bayrak altında toplamayı başarmıştır.</p>
+    </div>
+    </section>
+
+  <section id="hukumdarlar">
+        <h2>Büyük Hükümdarlar ve Stratejik Hamleler</h2>
+        
+        <h3>Bayan Kağan (562-602)</h3>
+        <p>Avar Kağanlığı'nın gerçek kurucusu ve en büyük lideridir. Onun dönemi, bir devletin nasıl dünya gücü haline geldiğinin dersidir. Bayan Kağan, sadece savaş meydanlarında değil, diplomasi masasında da rakiplerini alt etmiştir.</p>
+        <ul>
+            <li><strong>Gepid Krallığı'nın Sonu:</strong> 567 yılında Lombardlar ile stratejik bir pakt kurarak Avrupa'nın kadim güçlerinden Gepidleri tarih sahnesinden sildi.</li>
+            <li><strong>Sirmium Fethi:</strong> Bizans'ın Balkanlar'daki en kritik kalesi olan Sirmium'u (Sremska Mitrovica) 582 yılında alarak, Bizans ordusuna Avrupa kapılarını kapattı.</li>
+            <li><strong>Slav İskanı:</strong> Slav kabilelerini askeri birlik olarak organize etti ve onları bugünkü vatanlarına yerleştirerek Doğu Avrupa'nın modern etnik yapısının temelini attı.</li>
+        </ul>
+
+        <h3>II. Bayan ve 626 Kuşatması Dönemi</h3>
+        <p>Bayan Kağan'dan sonra gelen hükümdarlar, Bizans üzerindeki baskıyı artırmayı hedeflediler. Bu dönemin en kritik olayı, <strong>Sasanilerle yapılan askeri ittifaktır</strong>. Avar hükümdarları, Pers ordularıyla koordineli hareket ederek Bizans'ı iki ateş arasına almış, uluslararası siyaseti Türk çıkarları doğrultusunda yönetmişlerdir. 626 yılındaki kuşatmada kullanılan 10 metre boyundaki devasa kuşatma kuleleri, Avar askeri mühendisliğinin ne kadar ileri olduğunu tüm Avrupa'ya kanıtlamıştır.</p>
+    </section>
+
+    <section id="yonetim">
+        <h2>Devlet Yapısı ve Bozkır Yönetimi</h2>
+        <p>Avar Kağanlığı, Türk devlet geleneğinin en saf örneklerinden birini Avrupa'da uygulamıştır. Devlet yönetimi, "Kut" anlayışına dayalı bir mutlakiyetçilik ile askeri bir disiplinin harmanlanmasıydı.</p>
+        <div class="detail-box">
+            <strong>Yönetim Hiyerarşisi:</strong>
+            <ul>
+                <li><strong>Kağan:</strong> Tanrı'nın yeryüzündeki temsilcisi ve devletin mutlak hakimi.</li>
+                <li><strong>Jugurrus:</strong> Kağandan sonra gelen en yetkili kişi, günümüzün başbakanı ve dini lideri rolündeydi.</li>
+                <li><strong>Tudun:</strong> Merkeze bağlı eyaletleri yöneten, vergi toplamadan ve bölge asayişinden sorumlu yüksek rütbeli valiler.</li>
+                <li><strong>Tarkanlar:</strong> Sadece askeri değil, idari işlerde de söz sahibi olan, soylu ailelerden gelen yöneticiler.</li>
+            </ul>
+        </div>
+        <p>Avarlarda devlet yapısı <strong>İkili Teşkilat</strong> sistemine göre düzenlenmişti. Doğu ve Batı olarak bölünen yönetim, bozkırın geniş topraklarını denetlemeyi kolaylaştırıyordu. Ayrıca Avar töresi, hem Türkleri hem de tebaa olan Slav ve Germenleri kapsayan, adaleti merkeze alan bir hukuk sistemi sunuyordu.</p>
+    </section>
+
+  <section id="mimari">
+        <h2>Mimari Miras: Labirent Şehirler (Ringler)</h2>
+        <p>Avarlar, Avrupa'nın taş binalarına karşılık, askeri dehalarını yansıtan benzersiz bir şehir mimarisi geliştirdiler: <strong>"Ring" (Halka) Şehirler</strong>. Bu yapılar o kadar etkileyiciydi ki, Frank tarihçileri bunlardan efsanevi kaleler olarak bahsetmişlerdir.</p>
+        <p>Bu mimari yapıda, şehir iç içe geçmiş 9 devasa sur halkasından oluşurdu. En dıştaki halkada tarım arazileri bulunurken, en içteki halkada ise devletin hazinesi ve Kağan'ın sarayı yer alırdı. Bu sistem, şehri hem bir ticaret merkezi hem de aşılması imkansız bir askeri garnizon haline getiriyordu. 796 yılında Franklar bu halkaları ele geçirdiklerinde, içeride buldukları altın ve sanat eserlerini taşımak için 15 araba dolusu malzeme gerekmişti; bu da Avarların ekonomik ve sanatsal zenginliğini gösterir.</p>
+        <p><strong>Sanat:</strong> Avar kuyumculuğu, "Hayvan Üslubu" ile Avrupa'nın Gotik ve Germen sanatını derinden etkilemiş, üzengi ve ağır süvari zırhı gibi buluşlarla ortaçağ savaş teknolojisini devrimleştirmiştir.</p>
+    </section>
+
+    <section id="yikilis">
+        <h2>Zayıflama ve Yıkılış Süreci</h2>
+        <table>
+            <tr>
+                <th>Neden</th>
+                <th>Tarihsel Analiz</th>
+            </tr>
+            <tr>
+                <td>Frank-Avar Savaşları</td>
+                <td>İmparator Şarlman, Avarların Avrupa'daki gücünü kırmak için 791-796 yılları arasında ardı ardına haçlı ruhuyla seferler düzenledi.</td>
+            </tr>
+            <tr>
+                <td>İç Çatışmalar</td>
+                <td>Kağanlık içindeki kabile reislerinin (Tudunların) merkezi otoriteye başkaldırması, savunma hattını içeriden çökertti.</td>
+            </tr>
+            <tr>
+                <td>Bulgar Baskısı</td>
+                <td>Krum Han önderliğindeki Bulgarlar, doğu sınırından saldırarak Avar topraklarını parçaladı.</td>
+            </tr>
+        </table>
+        <p>805 yılında resmi varlığı sona eren Avar Kağanlığı'ndan geri kalan topluluklar, zamanla yerel halklarla kaynaşarak Macar ve Slav kültürlerinin temel taşlarından biri oldular.</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Türk Tarihi Portalı - Avar Kağanlığı Özel Arşivi</p>
+    <p><em>"Bozkırın süvarileri Avrupa'nın kaderini çizdi."</em></p>
+</footer>
+
+<script>
+    // Sayfa aşağı kaydırıldıkça bölümleri gösteren script
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            const top = section.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                section.classList.add('reveal');
+                // İçerideki divlere de efekt ver
+                const divs = section.querySelectorAll('.detail-box, table');
+                divs.forEach(div => div.classList.add('animate__animated', 'animate__fadeInUp'));
+            }
+        });
+    });
+
+    // Sayfa ilk yüklendiğinde ilk bölümü göster
+    window.onload = () => {
+        document.querySelector('section').classList.add('reveal');
+    };
+</script>
+
+</body>
+</html>

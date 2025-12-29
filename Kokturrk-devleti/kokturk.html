@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Köktürk Kağanlığı | Türk Adının Doğuşu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --kok-blue: #00BFFF; /* Gök Mavisi */
+            --kok-dark: #003366;
+            --kok-gold: #FFD700;
+            --kok-light-blue: #e3f2fd;
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a192f;
+            background-image: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+            margin: 0;
+            line-height: 1.7;
+            color: #e6f1ff;
+            overflow-x: hidden;
+        }
+
+        /* --- SİNE-HEADER (BAYRAK ARKA PLANLI) --- */
+        header {
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 6px solid var(--kok-gold);
+            overflow: hidden;
+            background: #000;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('köktürkdevleti.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: brightness(0.7) contrast(1.2);
+            z-index: 1;
+            animation: slowPan 20s infinite alternate linear;
+        }
+
+        @keyframes slowPan {
+            from { transform: scale(1) translateX(-2%); }
+            to { transform: scale(1.1) translateX(2%); }
+        }
+
+        /* --- ÖZEL YAZI ANİMASYONU (KÖKTÜRK KAĞANLIĞI) --- */
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            position: relative;
+            color: #fff;
+            /* Parlama ve Işık Geçişi Efekti */
+            background: linear-gradient(to right, #fff 20%, var(--kok-gold) 40%, var(--kok-gold) 60%, #fff 80%);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite, tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        @keyframes tracking-in-expand {
+            0% { letter-spacing: -0.5em; opacity: 0; }
+            40% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .sub-title {
+            font-size: 1.3rem;
+            letter-spacing: 5px;
+            color: var(--kok-blue);
+            font-weight: 300;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* --- LAYOUT VE KOLONLAR --- */
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 30px;
+            max-width: 1700px;
+            margin: -60px auto 0;
+            padding: 0 30px 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .side-bar {
+            padding: 30px;
+            background: rgba(10, 25, 47, 0.95);
+            border-radius: 12px;
+            border-top: 4px solid var(--kok-gold);
+            border-bottom: 4px solid var(--kok-blue);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+        }
+
+        .side-bar h4 { color: var(--kok-gold); border-bottom: 1px solid rgba(0, 191, 255, 0.3); padding-bottom: 10px; font-size: 1.2rem; }
+        .side-bar p { font-size: 0.95rem; color: #8892b0; margin-bottom: 20px; }
+
+        .container {
+            background: #ffffff;
+            color: #2c3e50;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        h2 { 
+            color: var(--kok-dark); 
+            border-left: 10px solid var(--kok-blue); 
+            padding-left: 20px; 
+            margin-top: 50px; 
+            font-size: 1.8rem;
+        }
+
+        .highlight-box {
+            background-color: #f0faff;
+            border-left: 6px solid var(--kok-blue);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #eee; padding: 18px; text-align: left; }
+        th { background-color: var(--kok-dark); color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #fcfcfc; }
+        tr:hover { background-color: #f1f9ff; }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--kok-gold);
+            color: var(--kok-dark);
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 4px;
+            margin-bottom: 40px;
+            transition: 0.4s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-btn:hover { background: var(--kok-blue); color: white; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 191, 255, 0.4); }
+
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            background: #020c1b;
+            color: #647196;
+            border-top: 5px solid var(--kok-gold);
+        }
+
+        @media (max-width: 1400px) {
+            .main-wrapper { grid-template-columns: 1fr; margin-top: 20px; }
+            .side-bar { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-bg"></div>
+    <div class="header-content">
+        <h1 class="main-title">KÖKTÜRK KAĞANLIĞI</h1>
+        <p class="sub-title">MS 552 - 745 | Türk Adını Taşıyan İlk Devlet</p>
+    </div>
+</header>
+
+<div class="main-wrapper">
+    <aside class="side-bar animate__animated animate__fadeInLeft">
+        <h4>Devlet ve Ordu</h4>
+        <p>Tarihin en disiplinli ordularından birine sahiptiler. Askeri hiyerarşi "Onlu Sistem" üzerine kuruluydu.</p>
+        <hr color="#112240">
+        <h4>Stratejik Zeka</h4>
+        <p>İpek Yolu kontrolü için Sasanilerle birleşip Ak Hunları, ardından Bizansla birleşip Sasanileri dize getirdiler.</p>
+    </aside>
+
+    <div class="container animate__animated animate__fadeInUp">
+        <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html" class="nav-btn">← Anasayfa</a>
+
+      <div class="section">
+        <h2>1. I. Köktürk Devleti (552 - 630)</h2>
+            <p data-path-to-node="0">Kök Türk Devleti, Türk adını siyasi bir topluluk ve devlet ismi olarak kullanan ilk imparatorluk olması bakımından Türk tarihinde bir dönüm noktasıdır. Beş yüz elli iki yılında Avar Kağanlığı&rsquo;na karşı kazanılan bağımsızlık zaferiyle kurulan bu devlet, Orta Asya&rsquo;daki tüm Türk boylarını tek bir çatı altında toplayarak Asya&rsquo;nın en büyük kara imparatorluklarından biri haline gelmiştir. Devletin kurucusu olan Bumin Kağan, Avar hükümdarına isyan ederek bağımsızlığını ilan etmiş ve Ötüken merkezli bu yapıyı inşa etmiştir. Bumin Kağan&rsquo;ın aynı yıl ölmesi üzerine yerine oğlu Mukan Kağan geçmiş, devletin batı kanadını ise Bumin&rsquo;in kardeşi İstemi Yabgu yönetmiştir.</p>
+            <p data-path-to-node="1">Kök Türklerin yürüttüğü askeri faaliyetler ve savaşlar, imparatorluğun jeopolitik stratejisinin bir parçasıdır. Devletin en büyük askeri hamlelerinden biri, İpek Yolu&rsquo;nun kontrolünü ele geçirmek amacıyla Sasanilerle ittifak yaparak beş yüz altmış yedi yılında Ak Hun İmparatorluğu&rsquo;nu yıkmalarıdır. Bu zafer, Türklerin Hindistan ve İran sınırlarına kadar dayanmasını sağlamıştır. Ancak bu başarının ardından, ganimet ve ticaret yollarının paylaşımı konusunda Sasanilerle araları açılmış, bu kez Bizans İmparatorluğu ile beş yüz altmış sekiz yılında tarihteki ilk Türk-Bizans ittifakı kurulmuştur. Bu diplomatik manevra ile Sasaniler iki ateş arasında bırakılmış ve Türk orduları İran içlerine kadar başarılı akınlar düzenlemiştir. Doğu kanadında ise Çin üzerindeki baskı artırılmış, yapılan seferlerle Çin&rsquo;deki hanedanlar vergiye bağlanmıştır.</p>
+          <p data-path-to-node="2">Yapılan antlaşmalar, devletin diplomatik zekasını yansıtmaktadır. Bizans ile yapılan ticaret ve askeri yardım antlaşması, Orta Asya&rsquo;dan Avrupa&rsquo;ya uzanan ticaretin güvenliğini sağlamıştır. Ancak yedi yüzlü yılların başında, Çin ile yapılan ve zaman zaman barışı sağlayan antlaşmalar, Çin&rsquo;in "böl ve yönet" taktiği nedeniyle Türk devletinin iç işlerine müdahale edilmesine de zemin hazırlamıştır. Bu süreçte yaşanan taht kavgaları ve Çin entrikaları sonucu devlet altı yüz otuz yılında elli yıl sürecek bir esaret dönemine girmiştir. Altı yüz seksen iki yılında Kutluk Kağan, İlteriş unvanıyla devleti ikinci kez kurmuş ve Çin'e karşı yapılan kırk altı seferle bağımsızlığı perçinlemiştir. Bilge Kağan ve Kültigin dönemlerinde Çin ile ticari ve siyasi dengeyi koruyan antlaşmalar yapılmış, bu sayede Türk milleti refah içinde yaşamıştır.</p>
+          <p data-path-to-node="3">Kök Türk Devleti&rsquo;nin askeri doktrini, atlı okçuların yüksek mobilitesine ve Turan taktiği olarak bilinen sahte ricat stratejisine dayanıyordu. Kendi alfabelerini (Orhun Alfabesi) kullanan bu devlet, sadece bir askeri güç değil, aynı zamanda yazılı hukuk ve edebiyatın başladığı bir medeniyet merkezidir. Yedi yüz kırk dört yılında Uygur, Karluk ve Basmıl boylarının birleşmesiyle yıkılan devlet, kendisinden sonraki tüm Türk devletlerine idari teşkilatlanma ve milli bilinç konusunda sarsılmaz bir miras bırakmıştır.</p>
+        <p data-path-to-node="3">&nbsp; </p>
+         
+          
+           <div class="highlight-box">
+           <h2>Savaşlar</h2>
+           <ul>
+             <li>
+              <p data-path-to-node="1,0,0"><strong data-path-to-node="1,0,0" data-index-in-node="0">Avarlara Karşı Bağımsızlık Savaşı (552):</strong> Bumin Kağan liderliğinde gerçekleşen bu savaş, devletin kuruluşunu sağlamıştır. Avar Kağanlığı'nın boyunduruğu altında yaşayan Türklerin isyan ederek Ötüken'i ele geçirmesi ve bölgedeki Avar hakimiyetine son vermesiyle sonuçlanmıştır.</p>
+            </li>
+            <li>
+              <p data-path-to-node="1,1,0"><strong data-path-to-node="1,1,0" data-index-in-node="0">Ak Hunlara Karşı Aksu Savaşı (567):</strong> Batı kanadı yöneticisi İstemi Yabgu, İpek Yolu'nun kontrolünü ele geçirmek için Sasani İmparatorluğu ile birleşmiştir. İki ateş arasında kalan Ak Hun İmparatorluğu bu savaşla yıkılmış ve toprakları Göktürkler ile Sasaniler arasında paylaşılmıştır.</p>
+            </li>
+            <li>
+              <p data-path-to-node="1,2,0"><strong data-path-to-node="1,2,0" data-index-in-node="0">Sasani-Türk Savaşları (568-571):</strong> Ak Hunların yıkılmasından sonra ticaret yolları nedeniyle eski müttefiki Sasanilerle arası açılan İstemi Yabgu, bu kez Bizans ile ittifak kurmuştur. Bu savaşlar sonucunda Sasaniler baskı altına alınmış ve Türk sınırları Hazar Denizi'ne kadar genişlemiştir.</p>
+            </li>
+            <li>
+              <p data-path-to-node="1,3,0"><strong data-path-to-node="1,3,0" data-index-in-node="0">Kırgız ve Kitan Seferleri (553-572):</strong> Mukan Kağan döneminde kuzeydeki Kırgızlar ve doğudaki Kitanlar üzerine seferler düzenlenmiştir. Bu harekatlar sonucunda Orta Asya'daki tüm göçebe boylar Kök Türk bayrağı altında toplanarak devletin sınırları en geniş noktasına ulaşmıştır.</p>
+            </li>
+            <li>
+              <p data-path-to-node="1,4,0"><strong data-path-to-node="1,4,0" data-index-in-node="0">Çin Üzerine Yapılan Bağımsızlık Seferleri (682-691):</strong> Elli yıllık esaret döneminden sonra Kutluk (İlteriş) Kağan, Çin'e karşı toplam 46 sefer düzenlemiştir. Bu savaşlar, İkinci Kök Türk Devleti'nin kuruluşunu ve Türklerin yeniden bağımsızlığını kazanmasını sağlamıştır.</p>
+            </li>
+            <li>
+              <p data-path-to-node="1,5,0"><strong data-path-to-node="1,5,0" data-index-in-node="0">Iduk Baş Savaşı (701):</strong> Kapgan Kağan döneminde Çin ve ona bağlı kabilelere karşı kazanılan bu zaferle, Kök Türklerin bölgedeki otoritesi yeniden sarsılmaz hale gelmiş ve Maveraünnehir bölgesine kadar uzanan geniş bir alan kontrol altına alınmıştır.</p>
+            </li>
+            <li>
+              <p data-path-to-node="1,6,0"><strong data-path-to-node="1,6,0" data-index-in-node="0">Bolçu Savaşı (711):</strong> Türgiş kağanına karşı kazanılan bu savaş, Batı Türkistan'daki Türk boylarının yeniden merkezi otoriteye bağlanmasını sağlamıştır. Bu zaferle devletin birliği kısa süreliğine de olsa yeniden tesis edilmiştir.</p>
+            </li>
+            <li>
+              <p data-path-to-node="1,7,0"><strong data-path-to-node="1,7,0" data-index-in-node="0">Şantung Seferi (720):</strong> Bilge Kağan ve Kültigin komutasındaki Türk ordusu, Çin'in içine kadar ilerlemiş ve Çin ordularını ağır bir yenilgiye uğratmıştır. Bu harekat sonucunda Çin, Türklerin üstünlüğünü kabul ederek barış istemek zorunda kalmıştır.</p>
+            </li>
+        </ul>
+		  </div>
+          
+        <div class="highlight-box">
+            <h2> <strong> Hükümdarlar</h2>
+            <h3 data-path-to-node="1">Bumin Kağan (552)</h3>
+            <p data-path-to-node="2">Bumin Kağan, sadece bir hükümdar değil, Türk tarihinin en büyük ihtilalcilerinden biridir. Altay Dağları çevresinde demircilikle uğraşan Türkleri (Aşina soyu), o dönemin Orta Asya hegemonu olan Avar Kağanlığı'na (Juan-Juan) karşı birleştirmiştir.</p>
+            <ul data-path-to-node="3">
+              <li>
+                <p data-path-to-node="3,0,0"><strong data-path-to-node="3,0,0" data-index-in-node="0">Bağımsızlık Hamlesi:</strong> Avar hükümdarının kızını istemiş, "Siz benim köle demircilerimsiniz" cevabını alınca isyan bayrağını açmıştır. 552 yılında Avarları bozguna uğratarak devleti kurmuş ve devlet kuran, ili derleyen anlamında "İl Kağan" unvanını almıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="3,1,0"><strong data-path-to-node="3,1,0" data-index-in-node="0">İkili Teşkilat:</strong> Türk devlet geleneğindeki "Doğu-Batı" yönetim sistemini kurarak merkezi (Doğu) kendine almış, batıyı ise kardeşi İstemi Yabgu&rsquo;ya bırakmıştır. Saltanatı çok kısa sürmüş olsa da attığı temeller iki asır boyunca sarsılmamıştır.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="4">İstemi Yabgu (552-576)</h3>
+            <p data-path-to-node="5">Resmen "Kağan" unvanı taşımasa da, yetkileri ve stratejik zekasıyla bir imparator gibi hareket etmiştir. Batı dünyasının "Stembis" olarak tanıdığı İstemi Yabgu, Türk dış politikasının dâhidir.</p>
+            <ul data-path-to-node="6">
+              <li>
+                <p data-path-to-node="6,0,0"><strong data-path-to-node="6,0,0" data-index-in-node="0">İpek Yolu Diplomasisi:</strong> İpek Yolu&rsquo;nu kontrol altına almak için önce Sasanilerle birleşip Ak Hunları (567) yıkmıştır. Daha sonra Sasanilerin ticareti kısıtlaması üzerine Bizans ile (568) ittifak kurarak Sasanileri iki ateş arasında bırakmıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="6,1,0"><strong data-path-to-node="6,1,0" data-index-in-node="0">Küresel Aktör:</strong> Onun döneminde Orta Asya&rsquo;dan İstanbul&rsquo;a elçiler gönderilmiş, Türkler ilk kez Avrupa siyasetine yön veren bir güç haline gelmiştir. Batı sınırlarını Hazar Denizi'ne kadar genişletmiştir.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="7">İssik Kağan (552-553)</h3>
+            <p data-path-to-node="8">Bumin Kağan&rsquo;ın büyük oğludur. Babasının ani ölümü üzerine tahta geçmiş ancak sadece bir yıl kadar hüküm sürebilmiştir.</p>
+            <ul data-path-to-node="9">
+              <li>
+                <p data-path-to-node="9,0,0"><strong data-path-to-node="9,0,0" data-index-in-node="0">Avarlarla Mücadele:</strong> Kısa saltanatı boyunca babasından kalan Avar kalıntılarını tamamen temizlemeye odaklanmıştır. Moğolistan düzlüklerinde Avarların son askeri direnişlerini kırmış, ancak devletin tam kurumsallaşmasını göremeden hayatını kaybetmiştir. Tarihte daha çok "geçiş dönemi hükümdarı" olarak anılır.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="10">Mukan Kağan (553-572)</h3>
+            <p data-path-to-node="11">Birinci Kök Türk Devleti&rsquo;nin en büyük ve en kudretli hükümdarıdır. Onun dönemi "Altın Çağ" olarak kabul edilir.</p>
+            <ul data-path-to-node="12">
+              <li>
+                <p data-path-to-node="12,0,0"><strong data-path-to-node="12,0,0" data-index-in-node="0">Cihan Hakimiyeti:</strong> Doğuda Kitanları, kuzeyde Kırgızları mağlup ederek toprakları Büyük Okyanus'tan Hazar Denizi'ne kadar uzanan devasa bir imparatorluk haline getirmiştir.</p>
+              </li>
+              <li>
+                <p data-path-to-node="12,1,0"><strong data-path-to-node="12,1,0" data-index-in-node="0">Çin Üzerindeki Baskı:</strong> Çin&rsquo;de hüküm süren hanedanlar arasındaki iç çatışmaları ustalıkla kullanmış, her iki tarafı da kendine vergi ödemeye mecbur bırakmıştır. Dönemin Çin imparatorları, Mukan Kağan&rsquo;ın öfkesinden korktukları için saraylarındaki lüks eşyaları ona hediye olarak göndermişlerdir. Devletin askeri disiplini onun zamanında zirveye ulaşmıştır.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="13">Taspar (Tapu) Kağan (572-581)</h3>
+            <p data-path-to-node="14">Mukan Kağan'dan sonra tahta geçen Taspar, devletin en geniş sınırlarına sahip olduğu bir dönemi devralmıştır ancak onun politikaları birliğin bozulmasına zemin hazırlamıştır.</p>
+            <ul data-path-to-node="15">
+              <li>
+                <p data-path-to-node="15,0,0"><strong data-path-to-node="15,0,0" data-index-in-node="0">Budizm Meselesi:</strong> Çinli rahiplerin etkisiyle Budizm'e ilgi duymuş, ülkede tapınaklar inşa ettirmeye başlamıştır. Ancak bu durum, Türk töresi ve Gök Tanrı inancıyla çeliştiği için halk ve devlet adamları arasında büyük huzursuzluk yaratmıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="15,1,0"><strong data-path-to-node="15,1,0" data-index-in-node="0">Yıkılışın Tohumları:</strong> Çin ile ilişkilerde Mukan Kağan kadar sert duramamış, Çin entrikalarına kapı aralamıştır. Onun ölümüyle birlikte taht kavgaları patlak vermiş ve devlet Doğu-Batı olarak ikiye bölünmüştür.</p>
+              </li>
+            </ul>
+            <p>&nbsp;</p>
+        </div>
+            <p>&nbsp;</p>
+            <div class="highlight-box">
+                <strong>Mukan Kağan Dönemi:</strong> Devletin en parlak dönemidir. Sınırlar Büyük Okyanus'tan İtil (Volga) nehrine kadar genişlemiştir.
+            </div>
+      </div>
+
+      <div class="section">
+        <h2>2. Fetret Devri ve Kürşad İhtilali</h2>
+          <h3 data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0"> Fetret Devri: 50 Yıllık Esaret ve Çin Siyaseti (630-682)</strong></h3>
+            <p data-path-to-node="2">Birinci Kök Türk Devleti, iç çekişmeler ve Çin&rsquo;in (Tang Hanedanlığı) sistematik "Böl, Parçala, Yönet" taktikleri sonucu 630 yılında yıkılmıştır. Bu tarihten itibaren Türkler için 50 yıl sürecek olan esaret dönemi başlamıştır.</p>
+            <ul data-path-to-node="3">
+              <li>
+                <p data-path-to-node="3,0,0"><strong data-path-to-node="3,0,0" data-index-in-node="0">Çin&rsquo;in Asimilasyon Politikası:</strong> Çin İmparatoru Tai-tsung, Türk boylarını birbirine düşürmekle kalmamış, Türk aristokrasisini Çinlileştirmek için ilginç bir yöntem izlemiştir. Türk prenslerine (Tiginlere) Çince isimler verilmiş, onlara Çin ordusunda yüksek rütbeli subaylıklar ve saray unvanları sunulmuştur. Amaç, Türk yönetim sınıfını kendi kültüründen koparmaktır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="3,1,0"><strong data-path-to-node="3,1,0" data-index-in-node="0">Sosyal Durum:</strong> Türk halkı bozkırdan sürülerek Çin sınırları içerisindeki kalelere veya tarım alanlarına yerleştirilmeye çalışılmıştır. Ancak göçebe ruhu ve "Töre"ye olan bağlılık, bu asimilasyonun önündeki en büyük engel olmuştur. Türkler, Çin sarayında rütbe alsalar bile kalplerindeki bağımsızlık ateşini söndürmemişlerdir.</p>
+              </li>
+            </ul>
+            <hr data-path-to-node="4">
+            <h3 data-path-to-node="5"><strong data-path-to-node="5" data-index-in-node="0"> Kürşad İhtilali: 40 Çeri ve Sarsılan Çin Sarayı (639)</strong></h3>
+            <p data-path-to-node="6">Esaretin dokuzuncu yılında, Çin sarayında muhafız alayında subay olan <strong data-path-to-node="6" data-index-in-node="70">Kürşad</strong> (asıl adı Chieh-she-shuai), milletinin yok oluşa sürüklendiğini görerek tarihin en çılgın ihtilal planını hazırlamıştır.</p>
+            <ul data-path-to-node="7">
+              <li>
+                <p data-path-to-node="7,0,0"><strong data-path-to-node="7,0,0" data-index-in-node="0">İhtilalin Amacı:</strong> Kürşad&rsquo;ın planı sadece bir isyan değil, stratejik bir rehine operasyonuydu. Plan şuydu: Çin İmparatoru Tai-tsung, geceleri kılık değiştirerek şehirde gezintiye çıkıyordu. Kürşad ve 40 yiğit arkadaşı (çerisi), imparatoru bu gezintilerinden birinde kaçıracak; karşılığında Çin hapishanelerindeki Türk prenslerini ve işgal altındaki Türk topraklarını geri isteyeceklerdi.</p>
+              </li>
+              <li>
+                <p data-path-to-node="7,1,0"><strong data-path-to-node="7,1,0" data-index-in-node="0">O Gece ve Baskın:</strong> 639 yılının bir gece yarısı operasyon başlatıldı. Ancak o gece tesadüfen çok şiddetli bir fırtına koptu ve sağanak yağmur başladı. İmparator saraydan çıkmadı. Kürşad, planın ifşa olmasından korkarak geri çekilmek yerine, 40 arkadaşıyla birlikte binlerce muhafızın bulunduğu <strong data-path-to-node="7,1,0" data-index-in-node="292">Çin İmparatorluk Sarayı&rsquo;nı basmaya</strong> karar verdi.</p>
+              </li>
+              <li>
+                <p data-path-to-node="7,2,0"><strong data-path-to-node="7,2,0" data-index-in-node="0">Vey Nehri Kıyısındaki Son:</strong> 40 Türk yiğidi, saray muhafızlarıyla göğüs göğüse çarpışarak sarayın içine kadar girdiler ve imparatora korku dolu anlar yaşattılar. Yüzlerce Çinli askeri öldürdükten sonra, sayıca çok üstün olan düşman karşısında geri çekilmek zorunda kaldılar. Şehirden çıkıp Vey Nehri kıyısına geldiklerinde, nehir fırtınadan taşmıştı ve köprüler yıkılmıştı. Kürşad ve arkadaşları, arkalarından gelen devasa orduya karşı nehir kıyısında son nefeslerine kadar çarpışarak şehit düştüler.</p>
+              </li>
+            </ul>
+            <hr data-path-to-node="8">
+            <h3 data-path-to-node="9"><strong data-path-to-node="9" data-index-in-node="0"> İhtilalin Tarihi Önemi ve Sonuçları</strong></h3>
+            <p data-path-to-node="10">Kürşad ve arkadaşlarının bu fedakarlığı askeri olarak başarısız görünse de, Türk milleti üzerindeki etkisi muazzam olmuştur.</p>
+            <ul data-path-to-node="11">
+              <li>
+                <p data-path-to-node="11,0,0"><strong data-path-to-node="11,0,0" data-index-in-node="0">Korku Duvarının Yıkılması:</strong> Çinliler, bir avuç Türk&rsquo;ün saraylarını basabileceğini görünce büyük bir dehşete kapılmış ve Türkleri saraydan uzaklaştırmaya başlamışlardır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="11,1,0"><strong data-path-to-node="11,1,0" data-index-in-node="0">İstiklal Ateşi:</strong> Bu olay, esaret altındaki Türk boyları arasında kulaktan kulağa yayılarak bir efsaneye dönüşmüştür. "Ölmek var ama esir kalmak yok" düşüncesi yeniden canlanmıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="11,2,0"><strong data-path-to-node="11,2,0" data-index-in-node="0">İkinci Kök Türk Devleti&rsquo;ne Giden Yol:</strong> Kürşad&rsquo;ın açtığı bu yol, 682 yılında <strong data-path-to-node="11,2,0" data-index-in-node="75">Kutluk (İlteriş) Kağan</strong>'ın dağa çıkarak başlattığı ve zaferle sonuçlanan bağımsızlık mücadelesinin ilham kaynağı olmuştur.</p>
+              </li>
+            </ul>
+          <p>&nbsp;</p>
+        </div>
+
+        <div class="section">
+          <h2>3. II. Köktürk (Kutluk) Devleti (682 - 745)</h2>
+            <h3 data-path-to-node="1">1. Kuruluş: İlteriş Kutluk Kağan&rsquo;ın İstiklal Mücadelesi</h3>
+            <p data-path-to-node="2">681 yılında, Aşina soyundan gelen <strong data-path-to-node="2" data-index-in-node="34">Kutluk</strong>, Çin&rsquo;e karşı büyük bir başkaldırı başlattı. Yanına sadece 17 arkadaşını alarak dağa çıkan Kutluk, kısa sürede bu sayıyı 70&rsquo;e, ardından 700&rsquo;e çıkardı.</p>
+            <ul data-path-to-node="3">
+              <li>
+                <p data-path-to-node="3,0,0"><strong data-path-to-node="3,0,0" data-index-in-node="0">İlteriş Unvanı:</strong> Dağınık haldeki Türk boylarını bir araya getirdiği, "ili (devleti) derleyip topladığı" için kendisine "İlteriş" unvanı verildi.</p>
+              </li>
+              <li>
+                <p data-path-to-node="3,1,0"><strong data-path-to-node="3,1,0" data-index-in-node="0">Ötüken&rsquo;in Geri Alınışı:</strong> 682 yılında Türklerin kutsal başkenti Ötüken, Çinlilerden geri alındı. Bu, devletin resmen kurulduğu andır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="3,2,0"><strong data-path-to-node="3,2,0" data-index-in-node="0">Tonyukuk Faktörü:</strong> İlteriş Kağan, Çin okulunda eğitim görmüş, Çin siyasetini çok iyi bilen <strong data-path-to-node="3,2,0" data-index-in-node="90">Vezir Tonyukuk</strong>'u yanına aldı. Tonyukuk, Türk tarihinin ilk büyük stratejisti ve "Aygucı" (başbakanı) oldu.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="4">2. Kapgan Kağan Dönemi: Cihan Hakimiyeti ve Sert Siyaset (691 - 716)</h3>
+            <p data-path-to-node="5">İlteriş&rsquo;in ölümünden sonra tahta kardeşi Kapgan geçti. Kapgan Kağan, askeri bir dehaydı ancak sert ve tavizsiz bir karakteri vardı.</p>
+            <ul data-path-to-node="6">
+              <li>
+                <p data-path-to-node="6,0,0"><strong data-path-to-node="6,0,0" data-index-in-node="0">Büyük Hedefler:</strong> Kapgan Kağan&rsquo;ın üç ana hedefi vardı: Çin&rsquo;i baskı altında tutmak, tüm Türk boylarını tek bayrakta toplamak ve Türkleri tarımda kendi kendine yeten bir hale getirmek.</p>
+              </li>
+              <li>
+                <p data-path-to-node="6,1,0"><strong data-path-to-node="6,1,0" data-index-in-node="0">Demir Kapı Seferi:</strong> Türk orduları ilk kez Maveraünnehir&rsquo;e girmiş ve Semerkant yakınlarındaki "Demir Kapı"ya kadar ulaşmıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="6,2,0"><strong data-path-to-node="6,2,0" data-index-in-node="0">Huzursuzluk ve Ölüm:</strong> Kapgan&rsquo;ın boylara karşı sert tutumu (Bayırkular, Kırgızlar ve Dokuz Oğuzlar ile savaşması) iç isyanlara neden oldu. 716 yılında bir pusuda öldürüldü.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="7">3. Bilge Kağan ve Kültigin Dönemi: Altın Çağ (716 - 734)</h3>
+            <p data-path-to-node="8">Kapgan&rsquo;ın ölümünden sonra devlet bir kargaşaya sürüklendi. Kapgan'ın oğlu İnel tahta çıksa da, Kutluk Kağan'ın çocukları olan <strong data-path-to-node="8" data-index-in-node="126">Kültigin</strong> ve <strong data-path-to-node="8" data-index-in-node="138">Bilge</strong>, bir darbe ile yönetimi ele aldılar.</p>
+            <ul data-path-to-node="9">
+              <li>
+                <p data-path-to-node="9,0,0"><strong data-path-to-node="9,0,0" data-index-in-node="0">Muazzam Üçlü:</strong> Bilge Kağan (Hakan), Kültigin (Ordu Komutanı) ve Tonyukuk (Vezir) tarihin en uyumlu yönetim kadrosunu oluşturdular.</p>
+              </li>
+              <li>
+                <p data-path-to-node="9,1,0"><strong data-path-to-node="9,1,0" data-index-in-node="0">720 Şantung Seferi:</strong> Çin ordusu 300 bin kişiyle saldırsa da, Tonyukuk&rsquo;un stratejisiyle Türk ordusu Çinlileri kendi topraklarında bozguna uğrattı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="9,2,0"><strong data-path-to-node="9,2,0" data-index-in-node="0">Sosyal Devlet Anlayışı:</strong> Bilge Kağan, Orhun Yazıtları'nda "Aç milleti doyurdum, çıplak milleti giydirdim, fakir milleti zengin kıldım" diyerek Türklerdeki "Babalık/Sosyal Devlet" kavramını perçinledi.</p>
+              </li>
+              <li>
+                <p data-path-to-node="9,3,0"><strong data-path-to-node="9,3,0" data-index-in-node="0">Kültigin'in Ölümü (731):</strong> Bilge Kağan&rsquo;ın sağ kolu, büyük savaşçı Kültigin öldüğünde Bilge Kağan yıkılmış ve onun adına meşhur yazıtı diktirmiştir.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="10">4. Orhun Yazıtları: Türk Tarihinin Tapu Senetleri</h3>
+            <p data-path-to-node="11">Bu devletin en büyük mirası, 730'lu yıllarda dikilen <strong data-path-to-node="11" data-index-in-node="53">Yolluğ Tigin</strong> tarafından kaleme alınan anıtlardır (Tonyukuk, Kültigin ve Bilge Kağan adına).</p>
+            <ul data-path-to-node="12">
+              <li>
+                <p data-path-to-node="12,0,0"><strong data-path-to-node="12,0,0" data-index-in-node="0">İçerik:</strong> Yazıtlarda Çin'in ipeğine ve tatlı sözüne kanılmaması gerektiği, Türk töresine sahip çıkılmazsa devletin yok olacağı "Milletim, uyan!" nidasıyla anlatılır. Bu yazıtlar, Türk dilinin ve edebiyatının ilk yazılı örnekleridir.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="13">5. Sosyal ve Ekonomik İnce Detaylar</h3>
+            <ul data-path-to-node="14">
+              <li>
+                <p data-path-to-node="14,0,0"><strong data-path-to-node="14,0,0" data-index-in-node="0">Para (Kamdu):</strong> Kök Türkler, ticaretin gelişmesiyle mühürlenmiş ipek parçalarını (Kamdu) para yerine kullanmışlardır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="14,1,0"><strong data-path-to-node="14,1,0" data-index-in-node="0">Din ve Kültür:</strong> Bilge Kağan, şehirlerin etrafına sur örmek ve Budizm'i kabul etmek istemiş; ancak Tonyukuk, "Biz azız, sur örersek hapsoluruz; Budizm ise savaşçı ruhumuzu öldürür" diyerek bu talebi reddetmiştir. Bu, Türk kimliğinin korunması adına tarihi bir karardır.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="15">6. Çöküş: 745</h3>
+            <p data-path-to-node="16">734 yılında Bilge Kağan, yakın bir danışmanı tarafından zehirlenerek öldürüldü. Ondan sonra gelen hükümdarlar (Yolluğ Tigin, Tengri Kağan) devleti ayakta tutamadılar.</p>
+            <ul data-path-to-node="17">
+              <li>
+                <p data-path-to-node="17,0,0"><strong data-path-to-node="17,0,0" data-index-in-node="0">Boyların İsyanı:</strong> Kök Türklerin baskısından yorulan <strong data-path-to-node="17,0,0" data-index-in-node="51">Uygur, Karluk ve Basmıl</strong> boyları birleşerek isyan ettiler.</p>
+              </li>
+              <li>
+                <p data-path-to-node="17,1,0"><strong data-path-to-node="17,1,0" data-index-in-node="0">Son Hükümdar:</strong> Son kağan Ozmış Kağan ve ardından Bomei Kağan'ın öldürülmesiyle 744-745 yıllarında devlet tamamen yıkıldı ve yerini <strong data-path-to-node="17,1,0" data-index-in-node="130">Uygur Kağanlığı</strong>'na bıraktı.</p>
+              </li>
+            </ul>
+            <p data-path-to-node="18">II. Kök Türk Devleti, "Türk" isminin silinmemek üzere tarihe kazındığı, milli benliğin ve yazı dilinin zirveye ulaştığı devlet olarak Türk medeniyetinin temel taşıdır.</p>
+            <p>&nbsp;</p>
+            <div class="highlight-box">
+                <strong>Orhun Yazıtları:</strong> Bilge Kağan, Kültigin ve Vezir Tonyukuk adına dikilen bu yazıtlar, Türk tarihinin ilk yazılı belgeleridir. Türk milliyetçiliğinin ve siyasetname geleneğinin temelidir.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Hükümdarlar ve Bilgeler</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hükümdar/Devlet Adamı</th>
+                        <th>Dönemi</th>
+                        <th>Önemli Başarısı</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bumin Kağan</td><td>552-553</td><td>Devletin kurucusu ve ilk Kağan.</td></tr>
+                    <tr><td>İstemi Yabgu</td><td>552-576</td><td>İpek Yolu için Bizans ve Sasani ile ittifak yaptı.</td></tr>
+                    <tr><td>Mukan Kağan</td><td>553-572</td><td>Devletin en geniş sınırlara ulaştığı dönem.</td></tr>
+                    <tr><td>İlteriş (Kutluk) Kağan</td><td>682-691</td><td>Devleti ikinci kez kuran büyük örgütçü.</td></tr>
+                    <tr><td>Bilge Kağan</td><td>716-734</td><td>Kültigin ve Tonyukuk ile devleti zirveye taşıdı.</td></tr>
+                    <tr><td>Vezir Tonyukuk</td><td>-</td><td>"Türklerin Bismarck'ı" olarak bilinen ilk Türk stratejist.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>5. Savaşlar ve Diploması</h2>
+            <h2 data-path-to-node="3"> Bağımsızlık Mücadeleleri ve Kuruluş Savaşları</h2>
+            <p data-path-to-node="4">İkinci Kök Türk Devleti'nin temeli, Çin esaretine karşı verilen <strong data-path-to-node="4" data-index-in-node="64">İlteriş (Kutluk) Kağan</strong> ve <strong data-path-to-node="4" data-index-in-node="90">Tonyukuk</strong>'un başlattığı isyanlarla atılmıştır.</p>
+            <ul data-path-to-node="5">
+              <li>
+                <p data-path-to-node="5,0,0"><strong data-path-to-node="5,0,0" data-index-in-node="0">İsyan Hareketleri (680-682):</strong> Kutluk Kağan, yanındaki az sayıda Türk ile Çogay Kuzey bölgesinde örgütlendi. Çin garnizonlarına yapılan baskınlarla Türk boyları birleştirildi.</p>
+              </li>
+              <li>
+                <p data-path-to-node="5,1,0"><strong data-path-to-node="5,1,0" data-index-in-node="0">İnekköl Savaşı:</strong> Dokuz Oğuzlara karşı yapılmış ve kazanılmıştır. Bu zafer, Türk boylarının Kutluk Kağan etrafında toplanmasını sağlamıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="5,2,0"><strong data-path-to-node="5,2,0" data-index-in-node="0">Ötüken&rsquo;in Fethi:</strong> Hunlardan beri Türklerin kutsal başkenti olan Ötüken, Oğuzlardan geri alınarak devletin merkezi yapılmıştır.</p>
+              </li>
+            </ul>
+            <hr data-path-to-node="6">
+            <h2 data-path-to-node="7"> Temel Savaşlar, Komutanlar ve Sonuçları</h2>
+            <p data-path-to-node="8">Devletin askeri gücü özellikle <strong data-path-to-node="8" data-index-in-node="31">Kapağan Kağan</strong>, <strong data-path-to-node="8" data-index-in-node="46">Bilge Kağan</strong> ve <strong data-path-to-node="8" data-index-in-node="61">Kül Tigin</strong> dönemlerinde zirveye ulaşmıştır.</p>
+            <h3 data-path-to-node="9">A. Çin Seferleri (Kuzey Çin Harekatları)</h3>
+            <ul data-path-to-node="10">
+              <li>
+                <p data-path-to-node="10,0,0"><strong data-path-to-node="10,0,0" data-index-in-node="0">Komutanlar:</strong> Kapağan Kağan, Kül Tigin.</p>
+              </li>
+              <li>
+                <p data-path-to-node="10,1,0"><strong data-path-to-node="10,1,0" data-index-in-node="0">Taraflar:</strong> Kök Türk Devleti vs. Çin (Tang Hanedanlığı).</p>
+              </li>
+              <li>
+                <p data-path-to-node="10,2,0"><strong data-path-to-node="10,2,0" data-index-in-node="0">Detay:</strong> Kapağan Kağan döneminde Çin üzerine <strong data-path-to-node="10,2,0" data-index-in-node="43">25 büyük sefer</strong> düzenlenmiştir. En önemlilerinden biri olan <strong data-path-to-node="10,2,0" data-index-in-node="102">Şantung Seferi</strong> ile Türk ordusu Sarı Irmak'a ve okyanusa kadar ulaşmıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="10,3,0"><strong data-path-to-node="10,3,0" data-index-in-node="0">Sonuç:</strong> Çin vergiye bağlandı, tarım aletleri ve tohumluk buğday alındı. Çin&rsquo;in Türkler üzerindeki baskısı kırıldı.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="11">B. Bolçu Savaşı (711)</h3>
+            <ul data-path-to-node="12">
+              <li>
+                <p data-path-to-node="12,0,0"><strong data-path-to-node="12,0,0" data-index-in-node="0">Komutanlar:</strong> Tonyukuk, Kül Tigin ve Bilge Kağan.</p>
+              </li>
+              <li>
+                <p data-path-to-node="12,1,0"><strong data-path-to-node="12,1,0" data-index-in-node="0">Taraflar:</strong> Kök Türk Devleti vs. Türgişler.</p>
+              </li>
+              <li>
+                <p data-path-to-node="12,2,0"><strong data-path-to-node="12,2,0" data-index-in-node="0">Detay:</strong> Batı Türkistan hakimiyeti için yapılmıştır. Türgiş Kağanı Sogü esir alınmıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="12,3,0"><strong data-path-to-node="12,3,0" data-index-in-node="0">Sonuç:</strong> Batıdaki Türk boyları yeniden merkeze bağlandı ve Kök Türk sınırları Demirkapı&rsquo;ya (Ceyhun Irmağı ötesi) kadar uzandı.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="13">C. Bayırku ve Oğuz İsyanları</h3>
+            <ul data-path-to-node="14">
+              <li>
+                <p data-path-to-node="14,0,0"><strong data-path-to-node="14,0,0" data-index-in-node="0">Komutanlar:</strong> Kül Tigin, Bilge Kağan.</p>
+              </li>
+              <li>
+                <p data-path-to-node="14,1,0"><strong data-path-to-node="14,1,0" data-index-in-node="0">Taraflar:</strong> Kök Türk Devleti vs. Bayırkular ve Dokuz Oğuzlar.</p>
+              </li>
+              <li>
+                <p data-path-to-node="14,2,0"><strong data-path-to-node="14,2,0" data-index-in-node="0">Detay:</strong> Kapağan Kağan'ın sert politikaları nedeniyle çıkan iç isyanlardır. Kül Tigin bu savaşlarda üstün cesaret göstermiştir.</p>
+              </li>
+              <li>
+                <p data-path-to-node="14,3,0"><strong data-path-to-node="14,3,0" data-index-in-node="0">Sonuç:</strong> Devletin iç birliği zor da olsa korunmuş, ancak Kapağan Kağan bir baskın sonucu öldürülmüştür.</p>
+              </li>
+            </ul>
+            <hr data-path-to-node="15">
+            <h2 data-path-to-node="16"> Diplomasi ve Devlet Stratejisi</h2>
+            <ol start="2" data-path-to-node="17">
+              <li>
+                <p data-path-to-node="17,0,0">Kök Türk Devleti&rsquo;nde diplomasi, sadece kağıt üzerinde değil, stratejik evlilikler ve ticari anlaşmalarla yürütülmüştür. Bu dönemin baş mimarı "Türklerin Bismarck'ı" olarak bilinen <strong data-path-to-node="17,0,0" data-index-in-node="180">Vezir Tonyukuk</strong>'tur.</p>
+              </li>
+            </ol>
+            <h3 data-path-to-node="18">Diplomatik İlkeler ve Uygulamalar:</h3>
+            <ul data-path-to-node="19">
+              <li>
+                <p data-path-to-node="19,0,0"><strong data-path-to-node="19,0,0" data-index-in-node="0">Denge Politikası:</strong> Çin'in "böl-parçala-yönet" taktiğine karşı Tonyukuk, Türk boylarını bir arada tutan ve Çin kültürüne asimilasyonu engelleyen bir politika izlemiştir. (Örneğin; Çin tarzı şehirleşmeye karşı çıkmıştır).</p>
+              </li>
+              <li>
+                <p data-path-to-node="19,1,0"><strong data-path-to-node="19,1,0" data-index-in-node="0">Kız Alıp Verme (Dünürlük):</strong> Çin prensesleri ve komşu boyların beyleriyle yapılan evlilikler, barış dönemlerini uzatmak için diplomatik bir araç olarak kullanılmıştır.</p>
+              </li>
+              <li>
+                <p data-path-to-node="19,2,0"><strong data-path-to-node="19,2,0" data-index-in-node="0">Ticari Anlaşmalar:</strong> İpek Yolu'nun kontrolü için Soğdlu tüccarlar ile iş birliği yapılmış ve Çin ile yapılan ticaret anlaşmalarında Türklerin üstünlüğü korunmuştur.</p>
+              </li>
+              <li>
+                <p data-path-to-node="19,3,0"><strong data-path-to-node="19,3,0" data-index-in-node="0">Psikolojik Diplomasi (Orhun Yazıtları):</strong> Bilge Kağan ve Kül Tigin adına dikilen taşlar, aslında halka ve komşu devletlere verilen diplomatik birer mesajdır. Devletin gücü, yapılan hatalar ve gelecekte ne yapılması gerektiği bu yazıtlarla hem dosta hem düşmana ilan edilmiştir.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="20">Diplomasi Sonrası Durum:</h3>
+            <p data-path-to-node="21">Savaşlardan sonra genellikle "Tabgaç" (Çin) ile barış antlaşmaları yapılmış, bu antlaşmalarla Çin&rsquo;in Türkleri içten bölme girişimleri engellenmeye çalışılmıştır. Ancak Bilge Kağan'ın ölümünden sonra diplomatik zeka zayıflamış; Basmil, Karluk ve Uygur ittifakı devletin sonunu getirmiştir.</p>
+            <p>&nbsp;</p></div>
+    </div>
+
+    <aside class="side-bar animate__animated animate__fadeInRight">
+        <h4>Ebedi Taşlar</h4>
+        <p>Orhun Yazıtları'nda Kağan, halkına hesap verir ve devletin nasıl yönetilmesi gerektiğini anlatır.</p>
+        <hr color="#112240">
+        <h4>Kuruluş Felsefesi</h4>
+        <p>Bumin Kağan, demircilikle uğraşan Türkleri birleştirerek bozkırın en büyük imparatorluğunu kurmuştur.</p>
+    </aside>
+</div>
+
+<footer>
+    <p>© 2024 Türk Dünyası Eğitici Portalı - Köktürk Tarihi Bölümü</p>
+</footer>
+
+</body>
+</html>

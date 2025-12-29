@@ -1,0 +1,256 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avrupa Hun İmparatorluğu | Liderler ve Devlet Yapısı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;900&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --accent-red: #7B0000;
+            --accent-gold: #B8860B;
+            --bg-light: #fefefe;
+            --text-main: #2c3e50;
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* --- KENAR NOTLARI --- */
+        .side-note {
+            position: absolute;
+            width: 200px;
+            font-size: 0.85rem;
+            background: #fff;
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            z-index: 10;
+            color: #555;
+            transition: 0.3s;
+        }
+        .side-note strong { display: block; color: var(--accent-red); margin-bottom: 5px; font-size: 0.95rem; }
+
+        .note-1 { left: 2%; top: 800px; }
+        .note-2 { right: 2%; top: 1200px; }
+        .note-3 { left: 2%; top: 1800px; }
+        .note-4 { right: 2%; top: 2500px; }
+
+        @media (max-width: 1300px) { .side-note { display: none; } }
+
+        /* --- HERO (Görsel Kalitesi ve Filtreler Artırıldı) --- */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            /* Yüksek çözünürlük hissi için degrade ve keskinleştirme efekti */
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                        url('https://upload.wikimedia.org/wikipedia/tr/8/89/Avrupa_Hun_%C4%B0mparatorlu%C4%9Fu.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        /* --- DAKTİLO ANİMASYONU --- */
+        .typewriter h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--accent-red);
+            margin: 0;
+            overflow: hidden; 
+            border-right: .15em solid var(--accent-gold); 
+            white-space: nowrap; 
+            margin: 0 auto; 
+            letter-spacing: .15em; 
+            animation: 
+                typing 3.5s steps(30, end),
+                blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-gold); }
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+
+        /* --- KONTEYNER --- */
+        .container { max-width: 900px; margin: 50px auto; padding: 0 40px; position: relative; }
+
+        section { margin-bottom: 120px; opacity: 0; }
+        section.visible { opacity: 1; transition: 1s ease-out; }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--accent-red); margin-bottom: 30px; }
+        h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-gold); margin-top: 30px; }
+
+        .ruler-section { background: #fff; border: 1px solid #eee; padding: 40px; border-radius: 8px; margin-bottom: 50px; }
+        .example-block { background: #fdfaf0; border-left: 5px solid var(--accent-red); padding: 25px; margin: 20px 0; font-style: italic; }
+        
+        .divider { height: 2px; background: linear-gradient(to right, transparent, var(--accent-gold), transparent); margin: 60px 0; }
+        
+        footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div class="side-note note-1">
+    <strong>Diplomatik Dil</strong>
+    Attila’nın sarayında Grekçe, Latince ve Hunca resmi yazışma dilleri olarak kullanılıyordu.
+</div>
+<div class="side-note note-2">
+    <strong>Turan Taktiği</strong>
+    Avrupalılar bu taktiği "Şeytanın Geri Çekilmesi" olarak adlandırmış ve yüzyıllarca çözüm bulamamıştır.
+</div>
+<div class="side-note note-3">
+    <strong>Altın Mirası</strong>
+    Bizans'tan alınan yıllık vergiler, Hun ekonomisini dünyanın en likit ekonomisi yapmıştı.
+</div>
+<div class="side-note note-4">
+    <strong>Papa'nın Korkusu</strong>
+    Tarihçiler, Papa'nın Attila'yı durdururken sadece dini değil, devasa bir haraç vaadini de sunduğunu yazar.
+</div>
+
+<div class="hero">
+    <div class="hero-content typewriter">
+        <h1>Avrupa Hun İmparatorluğu</h1>
+        <p style="color: var(--accent-gold); letter-spacing: 3px; font-weight: bold; margin-top: 10px;">DESTANSI LİDERLER VE DEVLET AKLI</p>
+    </div>
+</div>
+
+<nav>
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a>
+    <a href="#hukumdarlar">Hükümdarlar</a>
+    <a href="#yonetim">Devlet Yönetimi</a>
+    <a href="#askeri">Askeri Yapı</a>
+    <a href="#sosyal">Sosyal Yaşam</a>
+</nav>
+
+<div class="container">
+
+    <section id="hukumdarlar">
+        <h2>Bozkırın Efendileri: Hükümdar Portreleri</h2>
+        <p>Avrupa Hunları, her biri farklı bir siyasi deha sergileyen karizmatik liderler tarafından yönetilmiştir.</p>
+
+        <div class="ruler-section">
+            <h3>Balamir Kağan: Büyük Yürüyüşün Mimarı</h3>
+            <p>Balamir Kağan, 4. yüzyılın ikinci yarısında tarih sahnesine çıkarak Türk tarihinin seyrini değiştiren ve Avrupa Hun Devleti’nin kurucusu kabul edilen stratejik bir liderdir. Asya’dan batıya doğru hareket eden Hun kitlelerinin başına geçtiğinde, dünya tarihinin en büyük kitlesel göçlerinden biri olan Kavimler Göçü’nün fitilini ateşlemiştir. Balamir’in temel amacı, Hunlar için güvenli ve verimli yeni bir yurt bulmaktı; bu amaç doğrultusunda ilk büyük askeri harekatını İdil (Volga) Nehri’ni geçerek gerçekleştirmiştir.</p>
+            <p>Balamir’in katıldığı ve bizzat yönettiği en büyük askeri başarı, 374-375 yıllarında Karadeniz’in kuzeyinde hüküm süren güçlü Alan ve Got krallıklarına karşı kazandığı zaferlerdir. Öncelikle bölgenin savaşçı kavimlerinden olan Alanları mağlup ederek kendi saflarına katmış, ardından dönemin en büyük Germen güçlerinden olan Doğu Gotları (Ostrogotlar) üzerine yürümüştür. Yapılan kanlı savaşlar sonucunda Ostrogot Kralı Ermanarik’in ordularını bozguna uğratmış ve bu zafer Germen dünyasında büyük bir sarsıntıya yol açmıştır. Balamir, bu askeri başarıların ardından Batı Gotları (Vizigotlar) üzerine de baskı kurarak onları Roma İmparatorluğu sınırlarına doğru kaçmaya zorlamıştır. Bu askeri baskı, Avrupa’nın etnik yapısını kökten değiştiren büyük göç dalgasını başlatmıştır.</p>
+            <p>Balamir Kağan, sadece bir savaşçı değil, aynı zamanda idari ve diplomatik bir liderdir. Mağlup ettiği kavimlerle yaptığı anlaşmalarda, onları tamamen yok etmek yerine Hun sistemine bağlı birer vasal devlet haline getirme politikasını izlemiştir. Ostrogotları ve Alanları Hun hakimiyetine bağlayarak ordusunu devasa bir güç haline getirmiş, böylece Orta Avrupa’nın kapılarını Türkler için açmıştır. Onun döneminde yapılan anlaşmalar genellikle teslimiyet ve vergiye dayalı askeri ittifaklar niteliğindeydi. Roma İmparatorluğu ile doğrudan büyük bir savaşa girmek yerine, Roma sınırlarındaki Cermen kavimlerini baskı altında tutarak Roma’yı dolaylı yoldan zayıflatmış ve Hunların bölgedeki tartışmasız üstünlüğünü kabul ettirmiştir.</p>
+            <p>Onun liderliğinde Hunlar, bugünkü Macaristan ovalarına kadar uzanan topraklara kök salmış ve Avrupa’da yüzyıllarca sürecek Türk etkisinin temelini atmışlardır. Balamir’in askeri icraatları ve diplomasi hamleleri, Roma İmparatorluğu’nun ikiye bölünmesine giden süreci hızlandırmış ve kendisinden sonra gelen Uldız ve Attila gibi büyük liderler için güçlü bir devlet altyapısı bırakmıştır. Balamir Kağan, bozkırın disiplinli süvari taktiklerini Avrupa’ya taşıyan ve dünya tarihini Orta Çağ’a taşıyan kilit isimlerden biri olarak tarihteki yerini almıştır.</p>
+            <p>&nbsp;</p>
+            <div class="example-block">375 yılında İdil (Volga) nehrini geçerken kullandığı strateji, sadece askeri bir saldırı değil, düşman saflarında (Gotlar) panik yaratan bir psikolojik operasyondu. Bu hamleyle sadece bir krallığı değil, tüm Avrupa'nın demografik yapısını yıkıp yeniden kurmuştur. </div>
+        </div>
+
+        <div class="ruler-section">
+            <h3>Uldız Han: Stratejinin Atası</h3>
+            <p>Uldız Han, Balamir’den sonra Avrupa Hunlarının başına geçen ve Hunların dış politikasının ana hatlarını belirleyen, hem askeri hem de diplomatik dehasıyla öne çıkan bir liderdir. Onun döneminde Hunlar, sadece bir göçebe topluluk olmaktan çıkıp, Avrupa siyasetini yönlendiren profesyonel bir güç haline gelmişlerdir. Uldız Han’ın tarihteki en büyük başarısı, Doğu Roma ve Batı Roma imparatorluklarına karşı izlediği denge politikasıdır. Bu politika kapsamında Doğu Roma’yı sürekli baskı altında tutup vergiye bağlamayı, Batı Roma ile ise Cermen kavimlerine karşı ittifak kurarak iyi ilişkiler geliştirmeyi hedeflemiştir.</p>
+            <p>Askeri icraatları bakımından Uldız Han, 400 yılı civarında Tuna Nehri’ni geçerek günümüzdeki Macaristan topraklarını tamamen Hun hakimiyetine almış ve burayı devletin merkezi haline getirmiştir. 404 ve 405 yıllarında düzenlediği Balkan seferleriyle Doğu Roma İmparatorluğu’nu büyük bir paniğe sevk etmiş, Trakya üzerine yürüyerek imparatorluğu barışa zorlamıştır. Ancak onun en dikkat çekici askeri hamlelerinden biri, 406 yılında İtalya’yı istila etmeye çalışan Radagais komutasındaki yaklaşık 200 bin kişilik devasa Got ordusuna karşı Batı Roma’ya yardım etmesidir. Floransa yakınlarındaki Faesulae Savaşı’nda Romalılarla omuz omuza savaşan Uldız, bu vahşi Got ordusunu imha ederek Roma’yı büyük bir felaketten kurtarmış, bu sayede Batı Roma üzerindeki nüfuzunu en üst seviyeye çıkarmıştır.</p>
+            <p>Uldız Han’ın diplomasi tarihindeki en meşhur olayı ise kendisine barış için gelen Doğu Roma elçisine karşı takındığı vakur tavırdır. Güneşin doğduğu yerden battığı yere kadar her yeri fethedebileceğini söyleyerek Türk cihan hakimiyeti ülküsünü Avrupa’da ilk kez açıkça dile getirmiştir. Onun döneminde yapılan anlaşmalar, genellikle Roma’nın Hunlara yıllık vergi ödemesini ve Hunların düşmanlarına destek vermemesini içeriyordu. 408 yılında Doğu Roma’ya ait olan Castra Martis kalesini zapt ederek baskısını iyice artıran Uldız, Roma’nın sınır hatlarını (Limes) tamamen Hun denetimine sokmuştur.</p>
+            <p>Uldız Han, askeri harekatlarının yanı sıra Kafkasya üzerinden Anadolu’ya giren ilk Türk akınlarını da başlatan liderdir. 395-398 yılları arasında Hun süvarilerinin Erzurum, Malatya ve Antakya üzerinden Kudüs yakınlarına kadar inmesini sağlayan stratejik planın arkasındaki isim olduğu kabul edilir. Bu akınlarla Türklerin Anadolu’yu ilk kez tanımasını sağlamıştır. Uldız Han, hem Anadolu’ya yönelik bu stratejik keşifleri hem de Avrupa’daki akılcı ittifakları sayesinde, kendisinden sonra gelecek olan Rua ve Attila dönemindeki "Dünya İmparatorluğu" vizyonunun gerçek mimarı olmuştur.</p>
+            <p>&nbsp;</p>
+            <div class="example-box">404-405 yıllarında Bizans topraklarına girdiğinde, kendisiyle barış görüşmesine gelen Trakya Valisine dönerek tarihe geçen <em>"Güneşin battığı yere kadar her yeri zapt edebilirim"</em> sözünü söylemiştir. Bu söz, Hunların dünya hakimiyeti idealinin Avrupa'daki ilk resmi deklarasyonudur.
+            </div>
+        </div>
+
+        <div class="ruler-section" style="border-top: 6px solid var(--accent-red);">
+            <h3>Attila (Tanrı'nın Kırbacı) </h3>
+            <p>Attila, Avrupa Hun Devleti’nin en parlak dönemini yaşatan ve Avrupalılar tarafından kendisine "Tanrı’nın Kırbacı" unvanı verilen, tarihin en karizmatik ve askeri dehası en yüksek hükümdarlarından biridir. 434 yılında kardeşi Bleda ile birlikte tahta çıkan Attila, kısa süre sonra devletin tek hakimi olmuş ve Hun İmparatorluğu'nu dönemin bilinen dünyasının en büyük gücü haline getirmiştir. Onun hükümdarlık süreci, hem Doğu hem de Batı Roma İmparatorluklarını dize getiren devasa askeri harekatlar ve keskin bir diplomasi ile geçmiştir.</p>
+            <p>Attila’nın ilk büyük diplomatik başarısı, 434 yılında Doğu Roma ile imzalanan Margus Antlaşması’dır. Bu antlaşma ile Bizans’tan alınan vergiler iki katına çıkarılmış ve Roma’nın Hunlara karşı başka kavimlerle ittifak kurması yasaklanmıştır. Ancak Roma’nın bu şartlara uymaması üzerine Attila, 441 ve 447 yıllarında Birinci ve İkinci Balkan Seferleri’ne çıkmıştır. Bu seferlerde ordularıyla Konstantinopolis (İstanbul) surlarına kadar dayanan Attila, Doğu Roma’yı 447 yılındaki Anatolios Antlaşması ile ağır bir vergiye bağlamış ve imparatorluğu Hunların adeta bir eyaleti konumuna getirmiştir.</p>
+          <p>Doğu Roma’yı tamamen etkisiz hale getirdikten sonra yönünü Batı Roma’ya çeviren Attila, 451 yılında tarihin en büyük meydan savaşlarından biri olan Katalon (Galyo) Savaşı’nı gerçekleştirmiştir. Dönemin en güçlü iki ordusunun, Hunlar ile Romalı ve Cermen ittifakının karşı karşıya geldiği bu savaşta her iki taraf da ağır kayıplar vermiş, ancak Batı Roma’nın askeri direnci büyük ölçüde kırılmıştır. Bu savaşın hemen ardından 452 yılında Alpleri aşarak İtalya Seferi’ne çıkan Attila, dönemin en önemli şehirlerini birer birer ele geçirmiş ve Roma şehrinin kapılarına dayanmıştır. Roma halkı ve senatosunun büyük bir dehşete düştüğü bu dönemde, Papa I. Leo bizzat Attila’nın huzuruna çıkarak Roma’nın bağışlanmasını talep etmiştir. Attila, hem Roma’nın eski ihtişamına duyduğu saygı hem de ordusundaki salgın hastalık ve lojistik sorunlar nedeniyle şehre girmeyerek geri dönmüştür.</p>
+            <p>Attila sadece bir fatih değil, aynı zamanda çok disiplinli ve adil bir devlet adamıdır. Sarayında son derece sade bir yaşam sürdüğü, elçileri kabul ederken gösterişten kaçındığı ve halkına karşı şefkatli, düşmanlarına karşı ise amansız olduğu bilinir. Onun kurduğu devlet sistemi, Orta Avrupa’dan Hazar Denizi’ne kadar uzanan devasa bir coğrafyada huzuru ve otoriteyi sağlamıştır. 453 yılında evlendiği gece şüpheli bir şekilde hayatını kaybeden Attila, arkasında efsanelerle dolu bir miras bırakmıştır. Mezarı, nehrin yatağı değiştirilerek gizlice gömülmüş ve bu büyük hükümdar, hem Türk tarihinde hem de Avrupa destanlarında (örneğin Nibelungen Destanı'nda Etzel adıyla) silinmez bir iz bırakmıştır.</p>
+            <p><strong>Papa I. Leo ile Görüşmesi ve Roma’yı Bağışlaması</strong> 452 yılında İtalya seferi sırasında Roma kapılarına dayandığında, Papa I. Leo bizzat gelerek şehri yakmaması için ona yalvarmıştır. Attila’nın Roma’ya girmeme kararı tarihin en büyük gizemlerinden biri olarak kalmıştır. Bazı tarihçiler bunu bir salgın hastalığa, bazıları lojistik eksikliğe, bazıları ise Papa’nın sunduğu büyük miktardaki altına bağlar. Ancak bu olay, Attila’nın sadece bir savaşçı değil, aynı zamanda ruhani liderleri ve kültürel değerleri dinleyen bir devlet adamı olduğunu kanıtlar</p>
+            <p>&nbsp;</p>
+            <div class="example-block">
+                <p><strong>margus Antlaşması (434):</strong></p>
+                <p>Attila ve Bleda’nın tahta çıkışıyla imzalanan bu antlaşma, Hunların Doğu Roma üzerindeki kesin üstünlüğünü simgeler. Hunların at sırtında görüşerek psikolojik baskı kurduğu bu anlaşma ile Roma’nın ödediği yıllık vergi iki katına çıkarılmıştır.</p>
+                <p><strong>Anatolios antlaşması (443): </strong></p> 
+                Attila, Margus Antlaşması’nın şartlarına uymayan ve vergi ödemelerini aksatan Doğu Roma İmparatorluğu’nu cezalandırmak amacıyla 441 yılında Birinci Balkan Seferi’ne çıkmıştır. Roma, 443 yılında Birinci Anatolios Antlaşması’nı imzalamak zorunda kalmıştır.
+            </div>
+          <p><strong>attilanın ani ölümünden sonra </strong> oğulları sırasıyla başa geçmiştir ancak hiçbiri babalarının otoritesini ve imparatorluğunun birliğini koeumayı başaramamıştır</p>
+          <p><strong>İlek Han (En Büyük Oğul)</strong> Attila ölünce tahta büyük oğlu İlek geçmiştir. Ancak İlek’in hükümdarlığı çok kısa ve savaşlarla dolu geçmiştir. 454 yılında yapılan <strong>Nedao Savaşı</strong>'nda Hun ordusu ağır bir yenilgi almış ve İlek hayatını kaybetmiştir.</p>
+          <p><strong>Dengizik Han (Ortanca Oğul)</strong> İrnek’ten önce devletin başına Dengizik geçmiştir. Dengizik, imparatorluğu eski gücüne kavuşturmak için büyük bir azimle mücadele etmiştir. Fakat 469 yılında Bizans ordusuyla yapılan bir savaşta hayatını kaybetmiştir.</p>
+          <p><strong>İrnek Han (Küçük Oğul)</strong> Attila’nın en küçük ve en gerçekçi oğludur. İrnek, Avrupa’da artık Hunlar için bir gelecek kalmadığını anlamıştır. Kalan Hun boylarını toplayarak Karadeniz’in kuzeyine çekilmiştir. Burada <strong>Bulgar</strong> devletlerinin etnik temelini oluşturmuştur.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="yonetim">
+        <h2>III. Devlet Yönetimi ve Bürokrasi</h2>
+        <p>Avrupa Hun Devleti, kökeni Asya Hunlarına dayanan ve Türk devlet geleneğinin en temel taşı olan "İkili Teşkilat" sistemiyle yönetilirdi. Bu sisteme göre devlet; doğu ve batı olmak üzere iki ana idari bölgeye ayrılırdı. Devletin asıl hükümdarı doğu kanadını yönetirken, batı kanadının yönetimi hükümdar ailesinden birine bırakılırdı.</p>
+        <p>Hun bürokrasisinin en üst karar organı "Kurultay" adı verilen devlet meclisiydi. Bu meclis, savaş ilanından barış antlaşmalarına kadar kritik kararların alındığı bir merkezdi.</p>
+        
+        <h3>Meclis ve Danışmanlar</h3>
+        <p><strong>Hun Devlet Meclisi: Seçkinler Meclisi</strong></p>
+        <p>Avrupa Hun Devleti’nde en kritik kararların alındığı yapıya "Seçkinler Meclisi" denirdi. Bu meclis, devletin en üst düzey yöneticilerinden ve boy beylerinden oluşurdu.</p>
+        <p><strong>Danışmanlık Sistemi ve Logades Sınıfı</strong></p>
+        <p>Attila’nın yönetiminde dikkat çeken en profesyonel yapı ise "Logades" olarak adlandırılan özel danışmanlar sınıfıdır. Bu sınıf, hükümdarın en yakınında bulunan uzman kişilerden oluşurdu.</p>
+        
+        <div class="example-block">Attila'nın sarayında sadece Türkler değil, Roma kökenli danışmanlar da bulunuyordu. Bu, Hun yönetiminin ne kadar "evrensel" ve "liyakat odaklı" olduğunu gösterir.</div>
+    </section>
+
+    <section id="askeri">
+      <h2>IV. Askeri Doktrin: Hızın Egemenliği</h2>
+        <p>Avrupa Hun Devleti'nin askeri doktrini, tamamen hız, manevra ve menzilli silahlara dayalı bir sistem geliştirmişlerdir.</p>
+        <p><strong>Stratejik Hareketlilik ve Atlı Okçuluk:</strong> Hun askeri doktrininin kalbinde hafif süvari birlikleri yer alırdı. En ölümcül silahı ise kompozit yaylardı.</p>
+        <p><strong>Turan Taktiği:</strong> Avrupa Hunlarının en meşhur doktrini, "Kurt Kapanı" olarak da bilinen Turan Taktiği'dir. Sahte geri çekilme ve pusu temeline dayanır.</p>
+        
+        <div class="example-box">
+            <strong>Askeri Detay: Bileşik Yay Teknolojisi</strong>
+            Hunların kullandığı yaylar, iç bükey yapısıyla inanılmaz bir gerilim yaratıyordu. Hun okçuları 250-300 metreden düşman zırhını delebiliyordu.
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>Avrupa Hun İmparatorluğu Araştırma Portalı © 2025</p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                entry.target.classList.add('animate__animated');
+                entry.target.classList.add('animate__fadeInUp');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

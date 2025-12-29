@@ -1,0 +1,459 @@
+
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ak Hun İmparatorluğu | Dijital Tarih Portalı</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-red: #8b0000;
+            --light-bg: #fdfcf8;
+            --text-color: #2c3e50;
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        /* --- SİNEMATİK HERO --- */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9)), 
+                        url(https://upload.wikimedia.org/wikipedia/commons/7/70/Ak_Hun_%C4%B0mparatorlu%C4%9Fu_bayra%C4%9F%C4%B1.jpg);
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .reveal-text {
+            color: var(--gold);
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: 15px;
+            margin: 0;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: elegantShow 2.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes elegantShow {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-subtitle {
+            color: #fff;
+            letter-spacing: 8px;
+            font-weight: 300;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+
+        /* --- NAVİGASYON --- */
+        nav {
+            background: #111;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        /* --- ANA YAPI --- */
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            max-width: 1700px;
+            margin: 50px auto;
+            gap: 40px;
+            padding: 0 40px;
+        }
+
+        .side-column {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: 0.4s ease;
+        }
+
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .info-card h4 { color: var(--dark-red); margin: 0 0 10px 0; font-size: 1.2rem; }
+
+        .container { grid-column: 2; }
+
+        section {
+            background: white;
+            padding: 60px;
+            margin-bottom: 70px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease-out;
+        }
+
+        section.active { opacity: 1; transform: translateY(0); }
+
+        h2 { color: var(--dark-red); border-bottom: 2px solid #f8f1e1; padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2rem; }
+        h3 { color: #333; margin-top: 0; }
+
+        .kart {
+            background: #fdfcf8;
+            padding: 35px;
+            border: 1px solid #f1ece0;
+            margin-bottom: 25px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .kart:hover { border-color: var(--gold); background: #fff; transform: scale(1.01); }
+
+        .war-box {
+            background: #fffafa;
+            border-left: 5px solid var(--dark-red);
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .highlight { color: var(--dark-red); font-weight: bold; }
+
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #fff; }
+        th, td { padding: 20px; border: 1px solid #eee; text-align: left; }
+        th { background: #fdfbf5; color: var(--dark-red); font-weight: 800; text-transform: uppercase; font-size: 0.9rem; }
+
+        footer { background: #0b0b0b; color: #888; text-align: center; padding: 100px 20px; margin-top: 120px; border-top: 5px solid var(--gold); }
+
+        @media (max-width: 1300px) {
+            .main-wrapper { grid-template-columns: 1fr; }
+            .side-column { display: none; }
+            .container { grid-column: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-bg-image"></div>
+    <div class="hero-content">
+        <h1 class="reveal-text">AK HUN İMPARATORLUĞU</h1>
+        <p class="hero-subtitle">BOZKIRIN BEYAZ EFENDİLERİ</p>
+    </div>
+</div>
+
+<nav> 
+    <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfa</a>
+    <a href="#kurulus">Jeopolitik Doğuş</a>
+    <a href="#hukumdarlar">Hükümdarları</a>
+    <a href="#savaslar">Askeri Doktrin</a>
+    <a href="#kultur">Medeniyet & Ekonomi</a>
+    <a href="#yokulus">Büyük Çöküş</a>
+</nav>
+
+<div class="main-wrapper">
+    <aside class="side-column">
+        <div class="info-card">
+            <h4>Katafrakt Birliği</h4>
+            <p>Ak Hunlar, atlarını da zırhlayan <strong>Ağır Süvari</strong> birimlerini Orta Asya'da en etkin kullanan güçtür.</p>
+        </div>
+        <div class="info-card">
+            <h4>Para Birimi</h4>
+            <p>Üzerinde Grek alfabesiyle Türkçe unvanlar yazılı olan gümüş <strong>Drahmiler</strong>, dönemin rezerv parasıydı.</p>
+        </div>
+        <div class="info-card">
+            <h4>Nüfus ve Boylar</h4>
+            <p>Konfederasyonun çekirdeğini <strong>Halaç Türkleri</strong> oluşturuyordu; bu boy bugün hala varlığını sürdürmektedir.</p>
+        </div>
+    </aside>
+
+    <div class="container">
+        <section id="kurulus" class="reveal">
+            <h2>Jeopolitik Doğuş ve Köken</h2>
+            <p data-path-to-node="2">Ak Hunlar, tarihte Eftalitler olarak da bilinen ve 4. yüzyılın ortalarından 6. yüzyılın ortalarına kadar Orta Asya&rsquo;nın kaderini tayin eden en önemli güçlerden biridir. Kökenleri hakkında bilim dünyasında farklı tartışmalar olsa da genel kanaat, Büyük Hun İmparatorluğu&rsquo;nun dağılmasından sonra Altaylar&rsquo;dan güneye doğru sarkan "Uar" ve "Hun" kabilelerinin birleşmesiyle oluştukları yönündedir. Çinliler onlara "Hua", Bizanslılar ise fiziksel görünümleri veya giyinişleri sebebiyle "Ak Hunlar" (Beyaz Hunlar) ismini vermiştir.</p>
+            <p data-path-to-node="3">Jeopolitik doğuşları, o dönemde Asya&rsquo;daki güç dengelerinin değişmesiyle doğrudan bağlantılıdır. Ak Hunlar, bugünkü Türkistan, Afganistan ve Kuzey Hindistan coğrafyasını kapsayan, dünyanın en kritik "geçiş koridoru" üzerinde devletleşmişlerdir. Bu bölge, hem İpek Yolu&rsquo;nun kalbidir hem de yerleşik medeniyetler (Sasani ve Hindistan) ile bozkır kültürünün çarpıştığı noktadır.</p>
+            <p data-path-to-node="4">Ak Hunların jeopolitik stratejisinin üç temel ayağı vardır: Birincisi, İpek Yolu ticaretini denetim altına alarak devasa bir ekonomik güç elde etmişlerdir. Bu sayede bölgedeki diğer devletlere karşı askeri üstünlük sağlamışlardır. İkincisi, Sasani İmparatorluğu ile kurdukları karmaşık ilişkidir. Sasanileri zaman zaman vergiye bağlamış, bazen de iç isyanlarını (Mazdek İsyanı gibi) bastırarak İran siyaseti üzerinde bir "koruyucu" veya "hakem" rolü üstlenmişlerdir. Üçüncüsü ise Hindistan üzerindeki baskılarıdır. Gupta İmparatorluğu&rsquo;nu sarsarak Hindistan&rsquo;ın siyasi birliğini bozmuşlar ve Kuzey Hindistan&rsquo;da derin izler bırakmışlardır.</p>
+            <p data-path-to-node="5">Ancak bu jeopolitik konum, onları iki ateş arasında bırakmıştır. 6. yüzyılın ortalarında, İpek Yolu&rsquo;nun kontrolünü tamamen eline almak isteyen Göktürk Devleti ile Batı&rsquo;daki Sasani İmparatorluğu, Ak Hunlara karşı stratejik bir ittifak kurmuştur. Kuzeyden Göktürklerin, batıdan Sasanilerin sıkıştırması sonucunda bu büyük devlet 567 yılında yıkılmıştır. Onların tarih sahnesinden çekilmesi, bölgenin tamamen Türk (Göktürk) hakimiyetine girmesine ve Sasanilerin Orta Asya&rsquo;daki en büyük rakiplerinden kurtulmasına yol açmıştır.</p>
+            <p>&nbsp;</p>
+            <blockquote>"Onlar, beyaz tenleri ve asil duruşları nedeniyle diğer Hunlardan ayrıldıkları için 'Ak Hun' olarak adlandırılmışlardır." - Procopius (Bizanslı Tarihçi)</blockquote>
+        </section>
+
+        <section id="hukumdarlar" class="reveal">
+          <h2>Hükümdarlar</h2>
+            <div class="kart">
+                <h3>Aksuvar Han (470 - 496)</h3>
+                <p data-path-to-node="0">Aksuvar Han (470-496) dönemi, Ak Hunların hem askeri hem de diplomatik anlamda zirveye ulaştığı, Orta Asya&rsquo;nın kaderini tek başlarına tayin ettikleri bir "altın çağ" niteliğindedir. Aksuvar Han&rsquo;ın izlediği politikayı ve askeri başarılarını şu şekilde özetlemek mümkündür:</p>
+                <p data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0">Siyasi Liderlik ve Sasanilerle Güç Mücadelesi</strong></p>
+                <p data-path-to-node="2">Aksuvar Han&rsquo;ın hükümdarlığı, o dönemin süper gücü olan Sasani İmparatorluğu ile girilen büyük bir satranç maçı gibidir. Sasani Şahı Firuz, Ak Hunları kendisi için en büyük tehdit olarak görüyor ve bu gücü kırmak istiyordu. Aksuvar Han ise sadece bir savaşçı değil, aynı zamanda usta bir diplomattı. Sasanileri sürekli baskı altında tutarak, İran iç siyasetindeki dengeleri kendi lehine çevirmeyi başardı.</p>
+                <p data-path-to-node="3"><strong data-path-to-node="3" data-index-in-node="0">Herat Savaşı ve Askeri Deha</strong></p>
+                <p data-path-to-node="4">Aksuvar Han&rsquo;ın askeri dehasının en büyük kanıtı 484 yılındaki Herat Savaşı&rsquo;dır. Sayıca üstün olan Sasani ordusuna karşı, tarihe "Hendek Stratejisi" olarak geçen bir tuzak hazırladı. Savaş meydanına devasa hendekler kazdırıp üzerlerini kamışlarla ve ince bir toprak tabakasıyla örttürdü. Sasani süvarileri saldırıya geçtiğinde, bu gizli tuzaklara düşerek büyük bir bozguna uğradılar. Şah Firuz&rsquo;un bu savaşta ölmesi, Sasaniler için tarihlerindeki en büyük utançlardan biri olurken, Ak Hunlar bölgenin tartışmasız tek hakimi haline geldiler.</p>
+                <p data-path-to-node="5"><strong data-path-to-node="5" data-index-in-node="0">Siyasi Vesayet ve Mazdek İsyanı</strong></p>
+                <p data-path-to-node="6">Bu zaferden sonra Aksuvar Han, Sasanileri ağır bir yıllık vergiye bağladı. Artık İran tahtına kimin oturacağına karar verecek kadar güçlüydü. İran&rsquo;da toplumsal ve dini bir kargaşa olan Mazdek İsyanı patlak verdiğinde, tahtını kaybeden Şah Kubad, Aksuvar Han&rsquo;a sığındı. Aksuvar Han, Kubad&rsquo;ı 30 bin kişilik bir orduyla destekleyerek tekrar tahtına oturttu. Bu olay, Sasanilerin Ak Hunlara olan siyasi bağımlılığını en üst noktaya taşıdı.</p>
+                <p data-path-to-node="7"><strong data-path-to-node="7" data-index-in-node="0">Ekonomik Güç ve İpek Yolu Denetimi</strong></p>
+                <p data-path-to-node="8">Jeopolitik açıdan Aksuvar Han, devletin sınırlarını Hazar Denizi&rsquo;nden Kuzey Hindistan&rsquo;a kadar genişletti. Bu genişleme, İpek Yolu&rsquo;nun en kritik geçiş noktalarının tamamen Ak Hun denetimine girmesini sağladı. Ticaret yollarından elde edilen gümrük gelirleri, Ak Hun hazinesini o dönemin en zengin devletlerinden biri yaptı. Bu ekonomik refah, kendisinden sonraki hükümdarların Hindistan içlerine kadar ilerlemesine imkan tanıyan askeri altyapıyı oluşturdu.</p>
+                <p data-path-to-node="9">Aksuvar Han dönemi, bir bozkır devletinin nasıl dünya siyasetine yön veren bir imparatorluğa dönüştüğünün en somut örneğidir.</p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="kart">
+                <h3>Toraman Han (490 - 515)</h3>
+                <p data-path-to-node="0">Toraman Han dönemi, Ak Hun İmparatorluğu'nun yönünü tamamen güneye, Hindistan'ın zengin topraklarına çevirdiği ve bozkır hakimiyetini bir "Hint İmparatorluğu" seviyesine taşıdığı tarihi bir dönemeçtir. Aksuvar Han&rsquo;ın batıda Sasanilere karşı kurduğu üstünlüğün ardından Toraman Han, bu güvenliği arkasına alarak imparatorluğun sınırlarını Hindistan içlerine kadar genişletmiştir.</p>
+                <p data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0">Hindistan Seferleri ve Gupta İmparatorluğu'nun Çöküşü</strong></p>
+                <p data-path-to-node="2">Toraman Han, hükümdarlığı boyunca askeri enerjisinin büyük bir kısmını Hindistan&rsquo;a yöneltmiştir. O dönemde Hindistan&rsquo;ın en büyük gücü olan Gupta İmparatorluğu, Toraman Han&rsquo;ın düzenlediği sistemli ve güçlü akınlar karşısında savunmasız kalmıştır. Toraman, ordularıyla stratejik Hayber Geçidi&rsquo;ni aşarak Pencap, Sind ve Malwa bölgelerini ele geçirmiştir. Bu fetihler sıradan birer yağma hareketi olmaktan öte, Kuzey Hindistan&rsquo;da kalıcı bir Hun siyasi otoritesinin kurulmasını sağlamış ve Hindistan&rsquo;ın o güne kadarki en büyük imparatorluklarından biri olan Gupta Devleti'nin parçalanma sürecini başlatmıştır.</p>
+                <p data-path-to-node="3"><strong data-path-to-node="3" data-index-in-node="0">Kültürel Etkileşim ve İdari Yapı</strong></p>
+                <p data-path-to-node="4">Toraman Han döneminde Ak Hunlar, fethettikleri bölgelerde yerleşik Hint kültürü ile yoğun bir temas kurmuşlardır. Toraman sadece askeri bir lider değil, aynı zamanda idari bir teşkilatçıdır. Onun döneminde basılan gümüş ve bakır sikkeler, üzerinde hem Hun hem de Hint etkilerini taşıyan yazılar ve sembollerle doludur. Bu paralar, Ak Hunların bölgede ne kadar güçlü bir ekonomik ve siyasi sistem kurduğunun en somut kanıtıdır. Fethettiği yerlerde yerel Hint yöneticilerini kendisine bağlayarak esnek bir yönetim modeli geliştirmiştir.</p>
+                <p data-path-to-node="5"><strong data-path-to-node="5" data-index-in-node="0">Jeopolitik Genişleme ve Güneyin Kaynakları</strong></p>
+                <p data-path-to-node="6">Toraman Han&rsquo;ın başarısı, Ak Hunların jeopolitik merkezini Orta Asya bozkırlarından Güney Asya&rsquo;nın bereketli vadilerine doğru kaydırmıştır. Bu sayede imparatorluk, hem İpek Yolu&rsquo;nun hem de Hindistan ticaret yollarının kavşağında devasa bir güç haline gelmiştir. Toraman&rsquo;ın kurduğu bu düzen, Kuzey Hindistan&rsquo;ı on yıllar boyunca bir "Hun Bölgesi" haline getirmiş ve güneyin zengin kaynaklarının imparatorluk merkezine akmasını sağlamıştır. Bu genişleme politikası, Ak Hunları dönemin dünyasında hem Çin hem de Bizans kaynaklarında anılan küresel bir aktör yapmıştır.</p>
+                <p data-path-to-node="7"><strong data-path-to-node="7" data-index-in-node="0">Toraman Han&rsquo;ın Tarihi Mirası</strong></p>
+                <p data-path-to-node="8">515 yılında vefat ettiğinde Toraman Han, geride Hindistan&rsquo;ın siyasi haritasını kökten değiştirmiş bir imparatorluk bırakmıştır. Onun açtığı yoldan giden oğlu Mihiragula, bu hakimiyeti daha sert ve geniş kapsamlı bir noktaya taşıyarak babasının kurduğu askeri altyapıyı bir Hint-Hun imparatorluğuna dönüştürecektir. Toraman Han, tarih boyunca Hindistan&rsquo;daki Türk-Hun hakimiyetinin gerçek mimarı ve "Fatihi" olarak kabul edilir.</p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="kart">
+                <h3>Mihiragula (515 - 542)</h3>
+                <p data-path-to-node="0">Mihiragula (515-542) dönemi, Ak Hun İmparatorluğu'nun askeri gücünün doruğa ulaştığı, ancak aynı zamanda devletin sert politikalar nedeniyle en büyük iç ve dış dirençle karşılaştığı dönemi temsil eder. Babası Toraman Han'ın mirasını devralan Mihiragula, tarihe "Hindistan&rsquo;ın Attila&rsquo;sı" olarak geçmiş ve Kuzey Hindistan&rsquo;daki Hun otoritesini mutlaklaştırmıştır.</p>
+                <p data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0">Askeri Güç ve Kuzey Hindistan Hakimiyeti</strong></p>
+                <p data-path-to-node="2">Mihiragula, babasının başlattığı Hindistan fetihlerini çok daha ileriye taşımıştır. Başkentini bugünkü Sialkot (Sakala) şehrine taşıyarak operasyon merkezini Hindistan'ın kalbine kurmuştur. Dönemin kaynakları, Mihiragula'nın emrinde binlerce savaş fili ve on binlerce atlı okçudan oluşan devasa bir ordu olduğunu kaydeder. Bu askeri makine sayesinde Keşmir, Pencap ve Ganj Vadisi'ne kadar olan toprakları sıkı bir denetim altına almış, bölgedeki yerel krallıkları ağır vergilere bağlamıştır.</p>
+                <p data-path-to-node="3"><strong data-path-to-node="3" data-index-in-node="0">Dini ve Sosyal Politikalar: Budizm ile Çatışma</strong></p>
+                <p data-path-to-node="4">Mihiragula'nın tarih sahnesindeki en tartışmalı yönü, izlediği dini politikalardır. Şiva inancına (Şivizm) gönülden bağlı olan Mihiragula, Budizm'e karşı son derece sert bir tutum takınmıştır. Budist manastırlarını yıktırması ve rahiplere karşı uyguladığı baskılar, Budist kaynaklarda onun "zalim" ve "yıkıcı" bir hükümdar olarak tasvir edilmesine neden olmuştur. Bu sert tutum, Hindistan halkı arasında Hun yönetimine karşı toplumsal bir hoşnutsuzluğun ve direnişin fitilini ateşlemiştir.</p>
+                <p data-path-to-node="5"><strong data-path-to-node="5" data-index-in-node="0">Jeopolitik Kırılma ve Koalisyon Direnişi</strong></p>
+                <p data-path-to-node="6">Mihiragula&rsquo;nın sertleşen yönetimi, Hindistan'daki yerel güçlerin kendisine karşı birleşmesine yol açmıştır. Gupta Kralı Narasimhagupta ve Malwa Kralı Yasodharman önderliğinde kurulan büyük bir Hint koalisyonu, Mihiragula'ya karşı birleşmiştir. 528 yılı civarında gerçekleşen savaşlarda Mihiragula bir miktar güç kaybetmiş ve hakimiyet alanı daralmaya başlamıştır. Ancak bu yenilgilere rağmen, Keşmir ve çevresindeki dağlık bölgelerde otoritesini ölümüne kadar sürdürmeyi başarmıştır.</p>
+                <p data-path-to-node="7"><strong data-path-to-node="7" data-index-in-node="0">Mihiragula&rsquo;nın Tarihi Portresi ve Çöküşün Başlangıcı</strong></p>
+                <p data-path-to-node="8">Mihiragula, sadece askeri bir lider değil, aynı zamanda korkuyla harmanlanmış bir otorite figürüydü. Onun dönemi, Ak Hunların Hindistan'daki fiziksel varlığının en güçlü olduğu, ancak meşruiyet ve halk desteği anlamında en çok sarsıldığı dönemdir. 542 yılında ölümünden sonra Ak Hunlar, Hindistan'daki topraklarının çoğunu kaybetmiş ve ana merkezleri olan Orta Asya&rsquo;ya doğru çekilmek zorunda kalmışlardır. Mihiragula'nın ardından gelen süreç, devletin Göktürk-Sasani ittifakı karşısında yıkılışına giden yolu hızlandırmıştır.</p>
+                <p>&nbsp;</p>
+            </div>
+        </section>
+
+        <section id="savaslar" class="reveal">
+            <h2>Askeri Doktrin ve Büyük Zaferler</h2>
+            <p data-path-to-node="0">Ak Hun İmparatorluğu'nun askeri doktrini, geleneksel bozkır taktiklerini yerleşik medeniyetlerin stratejik ihtiyaçlarıyla harmanlayan, Orta Asya askeri tarihinin en özgün yapılarından biridir. Akademik düzeyde incelendiğinde, Ak Hunların başarısının tesadüfi olmadığı, coğrafi avantajları askeri teknoloji ve psikolojik harple birleştirdikleri görülür.</p>
+            <p data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0">Askeri Doktrin: Bozkır Mobilitesi ve Kuşatıcı Strateji</strong></p>
+            <p data-path-to-node="2">Ak Hun askeri doktrininin temel taşı, hafif ve orta sınıf süvari birliklerinin sağladığı olağanüstü mobilitedir. Ancak onları diğer bozkır kavimlerinden ayıran en önemli özellik, fethettikleri bölgelerdeki askeri teknolojilere hızla uyum sağlamalarıdır. Özellikle Hindistan seferlerinde, Hint ordularının en güçlü birimi olan savaş fillerini ordularına entegre etmişler ve bu sayede bozkırın sürati ile yerleşik orduların yıkıcı gücünü birleştirmişlerdir.</p>
+            <p data-path-to-node="3">Stratejik düzeyde "Yıpratma Harbi" ve "Psikolojik Baskı" unsurlarını ustalıkla kullanmışlardır. Düşmanı kuşatmak, lojistik hatlarını kesmek ve ardından sahte ricat (geri çekilme) taktikleriyle hasmı pusuya düşürmek, Ak Hun komuta kademesinin temel oyun planıdır. Ayrıca, savunma stratejilerinde coğrafyayı bir silah olarak kullanma yetenekleri (hendekler, dar geçitler), onların savunulamaz denilen bölgeleri dahi fethetmesini sağlamıştır.</p>
+            <p data-path-to-node="4"><strong data-path-to-node="4" data-index-in-node="0">Büyük Zaferler ve Dönüm Noktaları</strong></p>
+          <p data-path-to-node="5">Ak Hun tarihinin en büyük zaferi, hiç şüphesiz 484 yılında Sasani İmparatorluğu'na karşı kazanılan <strong data-path-to-node="5" data-index-in-node="99">Herat (Aksuvar) Zaferi</strong>'dir. Bu savaş, sadece bir askeri başarı değil, aynı zamanda bir mühendislik ve zekâ ürünüdür. Aksuvar Han, Sasani ağır süvarilerini durdurmak için savaş meydanına gizli hendekler kazdırmış; bu taktik sayesinde dönemin en güçlü ordularından birini imha etmiştir. Bu zaferle birlikte Sasaniler tarihinde ilk kez bir bozkır kavmine ağır vergi ödemeyi kabul etmiş, bu da Ak Hunların Batı Asya'daki tartışmasız üstünlüğünü tescillemiştir.</p>
+            <p data-path-to-node="6">Bir diğer büyük başarı ise 5. yüzyılın sonu ve 6. yüzyılın başında Hindistan'ın kuzeyinde elde edilmiştir. Toraman Han ve oğlu Mihiragula dönemlerinde, Hindistan&rsquo;ın o dönemdeki en büyük gücü olan <strong data-path-to-node="6" data-index-in-node="196">Gupta İmparatorluğu</strong>'na karşı kazanılan zaferler, Hint alt kıtasının siyasi haritasını değiştirmiştir. Hayber Geçidi'nin kontrolünü ele geçiren Ak Hunlar, "Sialkot" merkezli bir yönetim kurarak Ganj Vadisi'ne kadar ilerlemişlerdir. Bu zaferler dizisi, Hindistan&rsquo;daki klasik dönemin sona ermesine ve bölgesel krallıkların doğmasına neden olan jeopolitik bir kırılma yaratmıştır.</p>
+            <p data-path-to-node="1"><strong data-path-to-node="1" data-index-in-node="0">1. 459 Yılı Sasani-Ak Hun Savaşı (Şah Firuz&rsquo;un İlk Yenilgisi)</strong> Sasani Şahı Firuz, tahta geçtikten sonra Ak Hunların topraklarına saldırarak onları baskı altına almak istemiştir. Ancak Aksuvar Han liderliğindeki Ak Hun ordusu, Sasanileri pusuya düşürerek ağır bir yenilgiye uğratmıştır. Şah Firuz, hayatını kurtarabilmek için Ak Hunlara yıllık vergi ödemeyi ve bir daha saldırmayacağına dair yemin etmeyi kabul etmiştir. Bu savaş, Ak Hunların Sasaniler üzerindeki ilk büyük psikolojik ve askeri üstünlüğünü simgeler.</p>
+            <p data-path-to-node="2"><strong data-path-to-node="2" data-index-in-node="0">2. 484 Herat (Aksuvar) Savaşı (Sasanilerin Ezilmesi)</strong> Bu savaş, Ak Hun askeri tarihinin en büyük ve en meşhur zaferidir. Şah Firuz, daha önceki antlaşmaları bozarak devasa bir orduyla Ak Hun topraklarına girmiştir. Aksuvar Han, düşmanın sayıca üstünlüğünü bildiği için savaş meydanına derin ve geniş hendekler kazdırıp üzerlerini kamış ve toprakla örttürmüştür. Sasani ağır süvarileri hücuma geçtiğinde bu gizli hendeklere düşmüş ve Ak Hun okçuları tarafından imha edilmiştir. Şah Firuz bu savaşta ölmüş, Sasani ordusunun tamamı yok edilmiştir. Bu zaferle Sasaniler fiilen Ak Hunlara bağlı bir devlet haline gelmiştir.</p>
+            <p data-path-to-node="3"><strong data-path-to-node="3" data-index-in-node="0">3. 496 Mazdek İsyanı ve İran Müdahalesi</strong> İran&rsquo;da çıkan ve devleti yıkılma noktasına getiren dini-sosyal içerikli Mazdek İsyanı sırasında, tahtından edilen Şah Kubad, Ak Hunlara sığınmıştır. Aksuvar Han, Kubad&rsquo;a 30 bin kişilik bir ordu vererek onu İran&rsquo;a göndermiştir. Ak Hun ordusu, isyancıları ezerek Kubad&rsquo;ı tekrar tahta oturtmuştur. Bu askeri müdahale, Ak Hunların bölgedeki "düzen sağlayıcı" ve "koruyucu" güç olduğunu kanıtlamıştır.</p>
+            <p data-path-to-node="4"><strong data-path-to-node="4" data-index-in-node="0">4. 5. Yüzyıl Sonu Hindistan (Gupta) Seferleri</strong> Toraman Han komutasındaki Ak Hun orduları, meşhur Hayber Geçidi&rsquo;ni aşarak Hindistan&rsquo;ın o dönemdeki en güçlü devleti olan Gupta İmparatorluğu&rsquo;na karşı bir dizi sefer düzenlemiştir. Eran ve Malwa bölgelerinde yapılan savaşlarda Gupta orduları ağır yenilgilere uğratılmıştır. Bu zaferler sonucunda Pencap, Sind ve Kuzey Hindistan&rsquo;ın büyük bölümü Hun kontrolüne geçmiş, yüzyıllardır süren Gupta hakimiyeti parçalanmıştır.</p>
+            <p data-path-to-node="5"><strong data-path-to-node="5" data-index-in-node="0">5. 520-530 Mihiragula&rsquo;nın Hindistan Fetihleri ve Kuşatması</strong> Mihiragula döneminde, savaş fillerinin de orduda yoğun kullanılmasıyla Ganj Vadisi&rsquo;ne kadar ilerlenmiştir. Bu dönemde yapılan savaşlar, Hindistan&rsquo;ın iç kesimlerindeki yerel krallıkların tamamen Ak Hun otoritesine girmesiyle sonuçlanmıştır. Mihiragula&rsquo;nın ordusu, dönemin Hindistan&rsquo;ındaki en korkutucu askeri güç haline gelmiş ve birçok yerel hükümdar savaşmadan teslim olmuştur.</p>
+            <p data-path-to-node="6"><strong data-path-to-node="6" data-index-in-node="0">6. 567 Buhara Savaşı (Devletin Yıkılışı)</strong> Bu savaş, Ak Hunların sonunu getiren trajik bir çatışmadır. Yeni bir güç olarak yükselen Göktürk Kağanlığı (İstemi Yabgu liderliğinde) ile Sasani İmparatorluğu, Ak Hunları ortadan kaldırmak için birleşmiştir. Ak Hun ordusu, Buhara yakınlarında iki ateş arasında kalmıştır. Günlerce süren şiddetli çarpışmaların ardından Ak Hunlar yenilmiş ve imparatorluk bu büyük askeri koalisyon karşısında dağılmıştır.</p>
+            <p data-path-to-node="6">&nbsp;</p>
+            <p data-path-to-node="7"><strong data-path-to-node="7" data-index-in-node="0">Lojistik ve Silah Teknolojisi</strong></p>
+            <p data-path-to-node="8">Ak Hunlar, metalurji alanında da ileri gitmiş; çift kavisli yaylar (refleks yaylar) ve zırh delici ok uçları kullanarak ateş gücü üstünlüğü kurmuşlardır. Ordunun lojistik yapısı, İpek Yolu üzerindeki vaha şehirlerinden sağlanan ikmal hatlarıyla desteklenmiştir. Bu durum, onların çok uzak coğrafyalarda bile (İran platosundan Hindistan&rsquo;ın içlerine kadar) uzun süreli askeri operasyonlar yürütebilmesine olanak tanımıştır.</p>
+            <p data-path-to-node="9">Sonuç olarak Ak Hun askeri sistemi; stratejik esneklik, teknolojik adaptasyon ve coğrafi zekânın birleşimiyle, iki yüzyıl boyunca Avrasya&rsquo;nın en korkulan askeri mekanizması olmayı başarmıştır.</p>
+            <p>&nbsp;</p>
+            
+            
+
+            <div class="war-box">
+                <h3>484 Aksu / Herat Meydan Muharebesi</h3>
+                <p><span class="highlight">Olay:</span> Sasani Şahı Firuz'un büyük bir orduyla Hun topraklarına girmesi.</p>
+                <p><span class="highlight">Strateji:</span> Aksuvar Han, sahte ricat (geri çekilme) yaparak Sasani ordusunu önceden hazırlanmış devasa hendeklerin bulunduğu bölgeye çekti. Hendeklerin üzeri kamış ve toprakla ustaca kapatılmıştı.</p>
+                <p><span class="highlight">Sonuç:</span> Şah Firuz ve ordusu hendeklere düşerek imha oldu. Sasaniler 2 yıl boyunca yıllık 30 yük gümüş vergi ödemeyi kabul etti.</p>
+            </div>
+            <table>
+                <thead>
+                    <tr><th>Sefer Adı</th><th>Tarih</th><th>Tarihsel Dönüm Noktası</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Eran-Shahr Operasyonu</td><td>457-459</td><td>Sasaniler ilk kez vergiye bağlandı.</td></tr>
+                    <tr><td>Magadha Kuşatması</td><td>510</td><td>Kuzey Hindistan'da Hun egemenliği tescillendi.</td></tr>
+                    <tr><td>Soğdiyana Fethi</td><td>470</td><td>İpek Yolu'nun kontrolü tamamen ele geçirildi.</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+      <section id="kultur" class="reveal">
+          <h2>Medeniyet, Ekonomi ve Sosyal Hayat</h2>
+            <h3 data-path-to-node="2">Sosyal Hayat ve Toplumsal Yapı</h3>
+            <p data-path-to-node="3">Ak Hunlar, bozkır geleneklerini yerleşik Orta Asya kültürüyle birleştiren bir toplum yapısına sahipti.</p>
+            <ul data-path-to-node="4">
+              <li>
+                <p data-path-to-node="4,0,0"><strong data-path-to-node="4,0,0" data-index-in-node="0">Yarı-Yerleşik Yaşam:</strong> Ak Hunlar tamamen göçebe değillerdi. Mevsimlik olarak yaylak-kışlak hayatı sürseler de Belh, Herat ve Sialkot gibi büyük şehirleri idari merkez olarak kullandılar.</p>
+              </li>
+              <li>
+                <p data-path-to-node="4,1,0"><strong data-path-to-node="4,1,0" data-index-in-node="0">Saray ve Protokol:</strong> Çinli seyyahların notlarına göre Ak Hun hakanları, altın tahtlarda oturur ve ipek kıyafetler giyerlerdi. Saray hayatında Türk devlet geleneğindeki "Kurultay" benzeri danışma meclisleri mevcuttu.</p>
+              </li>
+              <li>
+                <p data-path-to-node="4,2,0"><strong data-path-to-node="4,2,0" data-index-in-node="0">Kadın ve Aile:</strong> Sosyal yapıda kadın oldukça saygındı. Hükümdar eşleri (Hatunlar) devlet yönetiminde söz sahibiydi ve kendi mühürlerini kullanabiliyorlardı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="4,3,0"><strong data-path-to-node="4,3,0" data-index-in-node="0">Kişisel Görünüm:</strong> Ak Hun erkekleri genellikle kısa saçlıydı ve asalet göstergesi olarak kulaklarına değerli taşlardan küpeler takarlardı. Bu, bölgedeki diğer toplumlardan ayırt edilmelerini sağlayan belirgin bir sosyal sınıfsal işaretti.</p>
+              </li>
+            </ul>
+            <hr data-path-to-node="5">
+            <h3 data-path-to-node="6"> Ekonomi ve Ticari Güç</h3>
+            <p data-path-to-node="7">Ak Hun ekonomisi, tarihin en büyük ticaret ağı olan İpek Yolu'nun kontrolü üzerine inşa edilmişti.</p>
+            <ul data-path-to-node="8">
+              <li>
+                <p data-path-to-node="8,0,0"><strong data-path-to-node="8,0,0" data-index-in-node="0">İpek Yolu Tekeli:</strong> Ak Hunlar, Çin'den başlayıp İran ve Bizans'a uzanan ticaret hattının tam kalbinde yer alıyordu. Bu yoldan geçen kervanlardan alınan gümrük vergileri devletin en büyük gelir kaynağıydı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="8,1,0"><strong data-path-to-node="8,1,0" data-index-in-node="0">Para Sistemi (Drahmi):</strong> Kendi adlarına gümüş sikkeler bastırmışlardır. Bu sikkeler üzerinde hükümdarın büstü ve Hun damgaları yer alırdı. Bu paralar, o dönemde bölgede "geçer akçe" olarak kabul edilen en güvenilir değişim araçlarından biriydi.</p>
+              </li>
+              <li>
+                <p data-path-to-node="8,2,0"><strong data-path-to-node="8,2,0" data-index-in-node="0">Tarım ve Hayvancılık:</strong> Bozkırlarda at ve koyun yetiştiriciliği yapılırken, nehir kenarlarındaki vahalarda gelişmiş sulama kanalları sayesinde pamuk, buğday ve üzüm üretimi yapılıyordu. Özellikle Baktria bölgesindeki sulama tarımı oldukça ileri düzeydeydi.</p>
+              </li>
+            </ul>
+            <hr data-path-to-node="9">
+            <h3 data-path-to-node="10"> Medeniyet, Din ve Kültürel Yapı</h3>
+            <p data-path-to-node="11">Farklı kültürlerin kesişim noktasında olmaları, Ak Hunları kozmopolit bir medeniyet haline getirmiştir.</p>
+            <ul data-path-to-node="12">
+              <li>
+                <p data-path-to-node="12,0,0"><strong data-path-to-node="12,0,0" data-index-in-node="0">Dini Hoşgörü:</strong> Ak Hunlar arasında Gök Tanrı inancı yaygındı. Ancak sınırları içerisinde Budizm, Zerdüştlük ve Maniheizm gibi dinlere de rastlanıyordu. Devlet, bu dinlerin mensuplarına karşı genellikle hoşgörülü bir politika izlemiş, bu da ticari istikrarı korumuştur.</p>
+              </li>
+              <li>
+                <p data-path-to-node="12,1,0"><strong data-path-to-node="12,1,0" data-index-in-node="0">Dil ve Yazı:</strong> Devlet işlerinde ve yönetimde Grek alfabesiyle yazılan "Baktria Dili"ni kullanmışlardır. Ticaret dili olarak ise Soğdca yaygındı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="12,2,0"><strong data-path-to-node="12,2,0" data-index-in-node="0">Sanat ve Mimari:</strong> Ak Hun sanatı, bozkırın "hayvan üslubu" (mücadele eden hayvan figürleri) ile yerleşik Hint-İran estetiğinin bir birleşimidir. Gümüş işlemeciliğinde, özellikle kabartmalı gümüş kap ve tabak yapımında dünya çapında bir ustalık sergilemişlerdir.</p>
+              </li>
+              <li>
+                <p data-path-to-node="12,3,0"><strong data-path-to-node="12,3,0" data-index-in-node="0">Hukuki Yapı:</strong> "Baktrian Belgeleri" adı verilen arkeolojik buluntular; Ak Hunlarda evlilik sözleşmeleri, arazi satışı ve borç senetleri gibi gelişmiş bir hukuk ve bürokrasi sisteminin olduğunu kanıtlamaktadır.</p>
+              </li>
+            </ul>
+            <p>&nbsp;</p>
+        </section>
+
+        <section id="yokulus" class="reveal">
+          <h2>Büyük Çöküş: 567 Aksu Savaşı</h2>
+            <p data-path-to-node="0">Ak Hun İmparatorluğu&rsquo;nun tarih sahnesinden silinmesine neden olan <strong data-path-to-node="0" data-index-in-node="66">567 Aksu Savaşı</strong> (bazı kaynaklarda Buhara Savaşı olarak geçer), sadece bir askeri çarpışma değil, Orta Asya&rsquo;nın jeopolitik dengelerini kökten değiştiren "devlerin savaşı"dır. Bu savaş, Türk tarihinin en stratejik ittifaklarından birine ve bir imparatorluğun dramatik çöküşüne sahne olmuştur.</p>
+            <p data-path-to-node="1">İşte bu büyük çöküşün tüm detayları:</p>
+            <h3 data-path-to-node="2">1. Savaşın Arka Planı ve Stratejik İttifak</h3>
+            <p data-path-to-node="3">560&rsquo;lı yıllara gelindiğinde Ak Hunlar, doğuda yükselen <strong data-path-to-node="3" data-index-in-node="55">Göktürk Kağanlığı</strong> ile batıdaki kadim düşmanları <strong data-path-to-node="3" data-index-in-node="103">Sasaniler</strong> arasında bir "tampon devlet" konumuna düşmüştü.</p>
+            <ul data-path-to-node="4">
+              <li>
+                <p data-path-to-node="4,0,0"><strong data-path-to-node="4,0,0" data-index-in-node="0">İpek Yolu Rekabeti:</strong> Göktürklerin batı kanadı yöneticisi <strong data-path-to-node="4,0,0" data-index-in-node="56">İstemi Yabgu</strong>, İpek Yolu ticaretini doğrudan Bizans&rsquo;a ulaştırmak istiyordu ancak yolun ana arterleri Ak Hunların elindeydi.</p>
+              </li>
+              <li>
+                <p data-path-to-node="4,1,0"><strong data-path-to-node="4,1,0" data-index-in-node="0">Kız Alıp Verme Diplomasisi:</strong> İstemi Yabgu, kızı Bikeç Hanım&rsquo;ı Sasani Şahı <strong data-path-to-node="4,1,0" data-index-in-node="73">Enuşirvan (I. Hüsrev)</strong> ile evlendirerek tarihin en büyük "çevreleme" ittifakını kurdu. İki güç, Ak Hunları ortadan kaldırmak ve topraklarını paylaşmak üzere gizli bir anlaşma yaptı.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="5">2. Savaşın Cereyanı: Aksu (Buhara) Meydan Muharebesi</h3>
+            <p data-path-to-node="6">567 yılında Göktürk orduları Tanrı Dağları'nı aşarak batıya ilerlerken, eş zamanlı olarak Sasani orduları da batıdan taarruza geçti.</p>
+            <ul data-path-to-node="7">
+              <li>
+                <p data-path-to-node="7,0,0"><strong data-path-to-node="7,0,0" data-index-in-node="0">İki Ateş Arasında:</strong> Ak Hun hükümdarı <strong data-path-to-node="7,0,0" data-index-in-node="36">Gatfar</strong> (veya Katulfos), ordusunu Aksu (Buhara yakınlarında bir bölge) düzlüklerinde topladı. Ak Hun ordusu, bozkırın en disiplinli birliklerine sahip olsa da, aynı anda iki süper güce karşı savaşmak zorundaydı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="7,1,0"><strong data-path-to-node="7,1,0" data-index-in-node="0">Askeri Çarpışma:</strong> Savaş sekiz gün sürdüğü rivayet edilen son derece kanlı bir meydan muharebesine dönüştü. Göktürklerin yüksek mobiliteli atlı okçuları ile Sasanilerin ağır zırhlı süvarileri (Savaran), Ak Hun saflarını iki koldan yardı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="7,2,0"><strong data-path-to-node="7,2,0" data-index-in-node="0">Ak Hunların Direnişi:</strong> Ak Hunlar, özellikle merkez hattında büyük direnç gösterse de, İstemi Yabgu&rsquo;nun uyguladığı kuşatma taktiği ve Sasanilerin ağır kuşatma araçları karşısında hatlar çöktü. Gatfar, ordusunun büyük bir kısmını bu savaş alanında kaybetti.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="8">3. Savaşın Sonuçları ve İmparatorluğun Paylaşılması</h3>
+            <p data-path-to-node="9">Aksu Savaşı&rsquo;ndaki ağır yenilgi, Ak Hun İmparatorluğu&rsquo;nun merkezi otoritesinin tamamen yok olmasına neden oldu.</p>
+            <ul data-path-to-node="10">
+              <li>
+                <p data-path-to-node="10,0,0"><strong data-path-to-node="10,0,0" data-index-in-node="0">Toprakların Paylaşımı:</strong> Ceyhun (Amu Derya) Nehri sınır kabul edildi. Nehrin kuzeyi (Maveraünnehir bölgesi) <strong data-path-to-node="10,0,0" data-index-in-node="106">Göktürklerin</strong>, güneyi (Afganistan ve Horasan) ise <strong data-path-to-node="10,0,0" data-index-in-node="155">Sasanilerin</strong> kontrolüne geçti.</p>
+              </li>
+              <li>
+                <p data-path-to-node="10,1,0"><strong data-path-to-node="10,1,0" data-index-in-node="0">Siyasi Dağılma:</strong> Merkezi devlet yıkılsa da, Ak Hun hanedan üyeleri ve yerel komutanlar dağlık bölgelere çekilerek "Zabulistan" ve "Kabil" gibi bölgelerde küçük prenslikler (Huna beylikleri) halinde bir süre daha varlıklarını sürdürdüler.</p>
+              </li>
+            </ul>
+            <h3 data-path-to-node="11">4. Jeopolitik Etkiler: Orta Asya'da Yeni Düzen</h3>
+            <p data-path-to-node="12">Bu savaş, dünya tarihini etkileyen şu sonuçları doğurmuştur:</p>
+            <ul data-path-to-node="13">
+              <li>
+                <p data-path-to-node="13,0,0"><strong data-path-to-node="13,0,0" data-index-in-node="0">Göktürklerin Küresel Güç Oluşu:</strong> Göktürkler, bu zaferle İpek Yolu'nun kontrolünü ele geçirerek Bizans ile doğrudan diplomatik ilişki kuracak (Maniach elçiliği) seviyeye ulaştı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="13,1,0"><strong data-path-to-node="13,1,0" data-index-in-node="0">Sasani-Göktürk Çatışmasının Başlaması:</strong> Ortak düşman Ak Hunlar ortadan kalkınca, ganimet ve toprak paylaşımı yüzünden Göktürkler ve Sasaniler karşı karşıya geldi. Bu durum, Sasanileri zayıflatarak ileride İslam ordularının İran'ı fethini kolaylaştıran bir zemin hazırladı.</p>
+              </li>
+              <li>
+                <p data-path-to-node="13,2,0"><strong data-path-to-node="13,2,0" data-index-in-node="0">Türk Göçleri:</strong> Ak Hun bakiyesi olan kabilelerin bir kısmı Hindistan&rsquo;a, bir kısmı ise daha batıya göç ederek bölgedeki etnik yapıyı kalıcı olarak değiştirdi.</p>
+              </li>
+            </ul>
+            <blockquote data-path-to-node="14">
+              <p data-path-to-node="14,0"><strong data-path-to-node="14,0" data-index-in-node="0">Özetle:</strong> 567 Aksu Savaşı, Ak Hunlar için bir "final", Göktürkler için ise bir "cihan imparatorluğu" başlangıcıdır. Ak Hunlar, bozkır savaşçılığını şehirli bir medeniyetle birleştirmelerine rağmen, dönemin iki dev gücünün stratejik kıskacından kurtulamamışlardır.</p>
+
+            </blockquote>
+            <p>&nbsp;</p>
+        </section>
+    </div>
+
+    <aside class="side-column">
+        <div class="info-card">
+            <h4>İstihbarat Gücü</h4>
+            <p>Kervan yollarını kullanarak Bizans ve Çin saraylarından anlık istihbarat alan geniş bir casus ağına sahiptiler.</p>
+        </div>
+        <div class="info-card">
+            <h4>Mihiragula'nın Ordusu</h4>
+            <p>Mihiragula'nın sadece saray muhafızları dahi 10.000 seçkin zırhlı süvariden oluşuyordu.</p>
+        </div>
+        <div class="info-card">
+            <h4>Diplomatik Üstünlük</h4>
+            <p>Sasaniler, bir dönem Ak Hun hakanının onayı olmadan tahta geçemezlerdi.</p>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p>Ak Hun İmparatorluğu Bilgi Portalı | 2025 - Tarihin Tozlu Sayfalarından Dijitale</p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>

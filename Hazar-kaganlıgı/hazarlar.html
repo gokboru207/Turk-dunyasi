@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazar Kağanlığı | Türk Tarihinin Hoşgörü Köprüsü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --hazar-blue: #1e4d8c;
+            --gold: #c5a021;
+            --soft-white: #fdfdfd;
+            --text-dark: #222;
+            --bg-light: #f4f7f6;
+            --accent: #8b4513;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Başlık Bölümü */
+        header {
+            background: linear-gradient(rgba(30, 77, 140, 0.9), rgba(30, 77, 140, 0.9)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Khazar_Empire_map.png/1200px-Khazar_Empire_map.png') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 8px solid var(--gold);
+            animation: fadeInDown 1.5s;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5em;
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            background: #111;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--hazar-blue);
+            font-size: 2.2em;
+            border-bottom: 4px solid var(--gold);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .info-panel {
+            background: #f0f7ff;
+            border-left: 10px solid var(--hazar-blue);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            font-style: italic;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 5px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .flag-box {
+            display: block;
+            margin: -60px auto 40px;
+            width: 330px;
+            border: 6px solid var(--gold);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 5;
+            position: relative;
+            background: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background: #111;
+            color: #888;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HAZAR KAĞANLIĞI</h1>
+    <p style="font-size: 1.5em; letter-spacing: 3px;">Türk Tarihinin Hoşgörü ve Ticaret İmparatorluğu</p>
+</header>
+
+<div class="flag-box animate__animated animate__zoomIn">
+  <img src="hazardevleti.jpeg" width="300" alt="Hazar Bayrağı">
+  <p style="font-size: 0.8em; color: #666; margin-top: 10px;"><em>Hazar Kağanlığı Tamgası</em></p>
+</div>
+
+<nav> 
+   <a href="file:///C:/Users/Quantum/Desktop/t%C3%BCrk%20d%C3%BCnyas%C4%B1%20ve%20tarihi/index.html.html">Anasayfas</a>
+    <a href="#tarih">Siyasi Tarih</a>
+    <a href="#din">Din ve Kültür</a>
+    <a href="#ekonomi">Pax Khazarica</a>
+    <a href="#savaslar">Arap Savaşları</a>
+    <a href="#yikilis">Yıkılış</a>
+</nav>
+
+<div class="container">
+
+    <section id="tarih">
+        <h2>Kuruluş ve Jeopolitik Konum</h2>
+        <p>Hazar Kağanlığı, 7. yüzyılın ortalarında Batı Kök Türk İmparatorluğu'nun parçalanma sürecine girmesiyle birlikte Kafkasya ile İdil (Volga) Nehri arasındaki sahada bağımsız bir güç olarak yükseldi. Hazarlar, sadece askeri bir göçebe topluluk değil, Batı ile Doğu arasında duran stratejik bir devlet yapısı inşa ettiler.</p>
+        
+        <div class="info-panel">
+            <strong>Başkentlerin Değişimi:</strong> Devletin ilk merkezi Dağıstan bölgesindeki <strong>Belencer</strong> şehriydi. Ancak İslam ordularının Kafkasya'daki baskısı nedeniyle merkez, daha kuzeye, İdil Nehri'nin Hazar Denizi'ne döküldüğü noktada kurulan devasa ticaret şehri <strong>İtil</strong>'e taşındı. İtil, zamanla binlerce tüccarın, din adamının ve zanaatkarın yaşadığı bir dünya metropolü haline geldi.
+        </div>
+    </section>
+
+    <section id="din">
+        <h2>Hazar Mucizesi: Dinler Arası Hoşgörü</h2>
+        <p>Hazarları dünya tarihindeki en ilginç devletlerden biri yapan unsur, dini politikalarıdır. Hazar Kağanı ve yönetici aristokrasi, 8. yüzyılın sonlarında <strong>Museviliği</strong> benimsemiş olsa da, devlet asla teokratik bir baskı kurmamıştır.</p>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Yedi Hakim Sistemi</h3>
+                <p>Hazarların adalet sistemi benzersizdi. Başkent İtil'de kurulan yüksek mahkemede 7 hakim bulunurdu: 2 Müslüman, 2 Musevi, 2 Hristiyan ve 1 Gök Tanrı inancına sahip bilge. Vatandaşlar hangi dinden olursa olsun, kendi dinlerinin hukukuyla yargılanırdı.</p>
+            </div>
+            <div class="card">
+                <h3>Kültürel Çeşitlilik</h3>
+                <p>Hazar topraklarında camiler, havralar ve kiliseler yan yana yükselirdi. Bu dönemde Bizans'tan kaçan Museviler ve Arap Yarımadası'ndan gelen tüccarlar Hazar koruması altında huzur içinde yaşamışlardır.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ekonomi">
+        <h2>Pax Khazarica (Hazar Barış Çağı)</h2>
+        <p>7. ve 9. yüzyıllar arasında Karadeniz'in kuzeyinden İdil boyuna kadar uzanan sahada sağlanan mutlak güvenliğe tarihçiler <strong>"Pax Khazarica"</strong> derler. Hazarlar, İpek Yolu'nun kuzey hattını ellerinde tutarak dünya ticaretine yön verdiler.</p>
+        <p><strong>Ticaret ve Ekonomi:</strong> Devletin temel gelir kaynağı kervanlardan alınan gümrük vergileriydi. Ayrıca kürk, balmumu ve esir ticareti de ekonominin ana damarlarıydı. Hazarlar, diğer Türk devletlerinden farklı olarak "Arsiya" adı verilen profesyonel ve paralı bir ordu besleyerek ticaret yollarını her türlü yağmadan korumuşlardır.</p>
+    </section>
+
+    <section id="savaslar">
+        <h2>Hazar-Arap Mücadeleleri: İslam'ın Kuzey Seddi</h2>
+        <p>Hazarlar, İslam tarihinin akışını değiştiren bir savunma hattı kurdular. Kafkasya üzerinden Rus steplerine ve Doğu Avrupa'ya ilerlemek isteyen Emevi ordularına karşı yüzyıl süren bir direniş gösterdiler.</p>
+        <div class="info-panel">
+            <strong>Belencer Savaşı (652):</strong> Hz. Osman döneminde gerçekleşen bu savaşta Hazarlar, İslam ordularını durdurarak kuzeye ilerleyişi kestiler. Eğer bu direniş olmasaydı, Doğu Avrupa ve Rusya bugün tamamen farklı bir demografik ve dini yapıya sahip olabilirdi. Bu mücadeleler, Hazarların Bizans İmparatorluğu ile güçlü bir ittifak kurmasına da zemin hazırlamıştır.
+        </div>
+    </section>
+
+    <section id="yikilis">
+        <h2>Devletin Zayıflaması ve Rus Darbesi</h2>
+        <p>9. yüzyılın sonlarından itibaren Hazar Kağanlığı hem iç hem de dış tehditlerle sarsılmaya başladı:</p>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Rus Knezliği Yükselişi</h3>
+                <p>965 yılında Kiev Knezi Svyatoslav, Hazarların ekonomik can damarı olan İtil şehrini kuşatarak yerle bir etti. Bu saldırı, devletin merkezi otoritesini bir daha toparlanamayacak şekilde kırdı.</p>
+            </div>
+            <div class="card">
+                <h3>Peçenek Akınları</h3>
+                <p>Doğudan gelen bir diğer Türk boyu olan Peçenekler, Hazar ticaret kervanlarını ve otlaklarını sürekli taciz ederek imparatorluğun ekonomik yapısını çökertti.</p>
+            </div>
+        </div>
+        <p>11. yüzyılda tamamen tarih sahnesinden çekilen Hazarların mirası, bugün Kırım'da yaşayan Musevi Karay Türkleri ile hala yaşamaktadır.</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Hazar Tarihi Portalı - Bozkırın Altın Çağı</p>
+    <p><em>"Dostluk ve hoşgörü, kılıçtan daha keskindir."</em></p>
+</footer>
+
+<script>
+    // Kaydırma (Scroll) Efekti
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach((section) => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
