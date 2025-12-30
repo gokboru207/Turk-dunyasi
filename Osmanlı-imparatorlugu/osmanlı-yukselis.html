@@ -51,6 +51,40 @@
             letter-spacing: 5px;
             animation: tracking-in-expand 1.5s ease-out;
         }
+		 header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--sepia-dark);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInDown 1.5s ease;
+   
+        }
+
+        /* NAV */
+        .nav-quick {
+            background: var(--royal-red);
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-quick a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-quick a:hover { color: var(--deep-gold); }
+
 
         header p {
             font-family: 'Lora', serif;
@@ -176,7 +210,10 @@
     </header>
 
     <div class="container">
-<div class= bgcolor:"yellow" color:"blac" aling:"blue" > <a href="Osmanlı-imparatorluk" href:"index.html">Anasayfa</a></div>
+<div class="container">
+<nav class="quick">
+	> <a href="Osmanlı-imparatorluk" href:"index.html">Anasayfa</a></div>
+</nav>
       <div class="section-card">
             <span class="badge">1451 - 1481</span>
             <h2>I. Fatih Sultan Mehmet</h2>
@@ -314,3 +351,4 @@
 </body>
 
 </html>
+
